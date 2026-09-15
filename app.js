@@ -175,7 +175,7 @@
     ready: false,
     storageOk: true,
     state: {
-      prefs: { rate: 1, voiceURI: '', pitch: 1, lastCourse: null },
+      prefs: { rate: 0.95, voiceURI: '', pitch: 1, lastCourse: null },
       byCourse: {}
     },
     _timer: null,
@@ -504,23 +504,46 @@
       });
     },
 
-    pickVoice: function () {
-      var want = Store.state.prefs.voiceURI;
-      var v = null, i;
-      for (i = 0; i < Speaker.voices.length; i++) {
-        if (Speaker.voices[i].voiceURI === want) { v = Speaker.voices[i]; break; }
-      }
-      if (v) return v;
+    /* Not all system voices are equal. The premium/neural ones sound like a
+       person; the default compact ones are the robot everybody complains about.
+       Score them so the good one is chosen and the picker can say which is which. */
+    score: function (v) {
+      var n = (v.name || '') + ' ' + (v.voiceURI || '');
+      var sc = 0;
+      if (/premium|enhanced|neural|natural/i.test(n)) sc += 60;   /* Apple premium, MS Natural */
+      if (/siri/i.test(n)) sc += 55;
+      if (/\bonline\b/i.test(n)) sc += 25;                        /* Edge network voices */
+      if (v.localService === false) sc += 20;                     /* network voices beat compact */
+      if (/google/i.test(n)) sc += 18;
+      if (/compact|espeak|pico/i.test(n)) sc -= 40;
+      if (/^en-GB/i.test(v.lang)) sc += 6;
+      if (/^en/i.test(v.lang)) sc += 10;
+      return sc;
+    },
+
+    quality: function (v) {
+      var sc = Speaker.score(v);
+      return sc >= 55 ? 'natural' : sc >= 25 ? 'good' : 'basic';
+    },
+
+    /* English voices, best first */
+    ranked: function () {
       var en = Speaker.voices.filter(function (x) { return /^en(-|_|$)/i.test(x.lang); });
-      /* prefer the higher-quality system voices where they exist */
-      var pref = ['Samantha', 'Daniel', 'Serena', 'Karen', 'Google UK English Male',
-                  'Google UK English Female', 'Google US English', 'Microsoft Guy',
-                  'Microsoft Aria', 'Microsoft Ryan'];
-      for (i = 0; i < pref.length; i++) {
-        var hit = en.filter(function (x) { return x.name.indexOf(pref[i]) === 0; })[0];
-        if (hit) return hit;
+      var list = en.length ? en : Speaker.voices.slice();
+      return list.sort(function (a, b) { return Speaker.score(b) - Speaker.score(a); });
+    },
+
+    /* is anything genuinely good installed on this device? */
+    hasNatural: function () {
+      return Speaker.ranked().some(function (v) { return Speaker.quality(v) === 'natural'; });
+    },
+
+    pickVoice: function () {
+      var want = Store.state.prefs.voiceURI, i;
+      for (i = 0; i < Speaker.voices.length; i++) {
+        if (Speaker.voices[i].voiceURI === want) return Speaker.voices[i];
       }
-      return en[0] || Speaker.voices[0] || null;
+      return Speaker.ranked()[0] || Speaker.voices[0] || null;
     },
 
     setUnits: function (units) {
@@ -553,11 +576,16 @@
       if (v) { u.voice = v; u.lang = v.lang; }
       u.rate = clamp(Store.state.prefs.rate || 1, 0.5, 2);
       u.pitch = Store.state.prefs.pitch || 1;
+      var gap = Speaker.units[Speaker.idx].gap;
+      if (gap == null) gap = /[.!?\u2026]$/.test(Speaker.units[Speaker.idx].text) ? 300 : 170;
       u.onend = function () {
         if (!Speaker.playing) return;
         Speaker.idx += 1;
         Speaker.tick();
-        Speaker._utter();
+        /* a real lecturer pauses. Without this the sentences run together
+           and even a good voice sounds like a machine reading a list. */
+        if (gap > 0) setTimeout(function () { Speaker._utter(); }, gap * (2 - clamp(Store.state.prefs.rate || 1, 0.5, 1.6)));
+        else Speaker._utter();
       };
       u.onerror = function (e) {
         if (!Speaker.playing) return;
@@ -620,8 +648,14 @@
     var secN = 0;
     figCounter = 0;
 
-    function addSpeech(text, anchor) {
-      splitSentences(text).forEach(function (s) { units.push({ text: s, anchor: anchor }); });
+    /* `hold` is the silence AFTER the last sentence of this piece, in ms.
+       A lecturer stops properly at a heading and breathes at a paragraph end;
+       without that the whole thing runs together and sounds like a machine. */
+    function addSpeech(text, anchor, hold) {
+      var parts = splitSentences(text);
+      parts.forEach(function (sn, i) {
+        units.push({ text: sn, anchor: anchor, gap: (i === parts.length - 1 && hold != null) ? hold : null });
+      });
     }
 
     blocks.forEach(function (b, bi) {
@@ -631,17 +665,17 @@
         case 'h2':
           secN += 1;
           node = el('h2', 'spk', '<span class="sec-n">Section ' + secN + '</span>' + inline(b.text));
-          addSpeech(b.text, aid);
+          addSpeech(b.text, aid, 900);
           break;
 
         case 'h3':
           node = el('h3', 'spk', inline(b.text));
-          addSpeech(b.text, aid);
+          addSpeech(b.text, aid, 650);
           break;
 
         case 'p':
           node = el('p', 'spk', inline(b.text));
-          addSpeech(b.say != null ? b.say : b.text, aid);
+          addSpeech(b.say != null ? b.say : b.text, aid, 430);
           break;
 
         case 'ul':
@@ -656,7 +690,7 @@
           node = el('blockquote', 'box box-case spk',
             '<div class="box-label">Quotation</div><p style="font-family:var(--font-display);font-size:17px">' +
             inline(b.text) + '</p><p style="color:var(--ink-3);font-size:12.5px;margin-top:8px">— ' + inline(b.who) + '</p>');
-          addSpeech(b.text + ' -- ' + b.who, aid);
+          addSpeech(b.text + ' -- ' + b.who, aid, 800);
           break;
 
         case 'exercises':
@@ -698,8 +732,18 @@
           node = el('div', 'box box-math spk',
             '<div class="box-label">' + inline(b.label || 'The arithmetic') + '</div>' +
             (b.eqs || []).map(function (x) { return '<div class="eq">' + esc(x) + '</div>'; }).join('') +
+            /* every symbol named, so the formula is readable rather than decorative */
+            (b.terms && b.terms.length
+              ? '<div class="eq-key">' + b.terms.map(function (t) {
+                  return '<div class="eq-key-row"><span class="eq-sym">' + esc(t.sym) + '</span>' +
+                    '<span class="eq-means">' + inline(t.means) + '</span></div>';
+                }).join('') + '</div>'
+              : '') +
+            (b.use ? '<div class="eq-use"><b>What it is for.</b> ' + inline(b.use) + '</div>' : '') +
             (b.ps || []).map(function (x) { return '<p style="font-family:var(--font-ui);font-size:13.5px">' + inline(x) + '</p>'; }).join(''));
           if (b.say) addSpeech(b.say, aid);
+          (b.terms || []).forEach(function (t) { addSpeech(t.sym + ' means ' + t.means + '.', aid); });
+          if (b.use) addSpeech('What it is for. ' + b.use, aid);
           (b.ps || []).forEach(function (x) { addSpeech(x, aid); });
           break;
 
@@ -990,6 +1034,8 @@
       }, 0);
     }
 
+    if (!subject()) col.appendChild(subjectCard());
+
     /* what the calendar says about today */
     var tIdx = H.scheduledIdx(), nowD = new Date(); nowD.setHours(0, 0, 0, 0);
     var strip = el('div', 'sched-strip');
@@ -1052,6 +1098,8 @@
     rcard.innerHTML = rhtml;
     col.appendChild(rcard);
 
+    if (subject()) col.appendChild(subjectCard(true));
+
     /* how it works */
     var hcard = el('div', 'card');
     hcard.innerHTML =
@@ -1078,6 +1126,63 @@
   }
   function dismissedInstall() {
     try { return localStorage.getItem('tms.installed') === '1'; } catch (e) { return false; }
+  }
+
+  /* The business every exercise is applied to. Set once; it turns eighty
+     separate lectures into one long piece of work on a real thing. */
+  function subject() { return P().subject || null; }
+
+  function subjectCard(compact) {
+    var sub = subject();
+    var card = el('div', sub ? 'card subject-card set' : 'card subject-card');
+    if (sub) {
+      card.innerHTML =
+        '<div class="eyebrow" style="margin-bottom:8px">Your running case</div>' +
+        '<h3>' + esc(sub.name) + '</h3>' +
+        '<p class="card-sub">' + esc(sub.what) + (sub.who ? ' · for ' + esc(sub.who) : '') + '</p>' +
+        '<p style="font-size:13px;color:var(--ink-2);line-height:1.6;margin:0 0 12px;max-width:56ch">' +
+        'Every exercise in the course applies to this. By week sixteen you will have written a complete ' +
+        'marketing plan for it, one piece at a time, without ever sitting down to write a plan.</p>' +
+        '<button class="btn btn-sm" id="subjEdit">Change it</button>';
+    } else {
+      card.innerHTML =
+        '<div class="eyebrow" style="margin-bottom:8px">Before lecture one</div>' +
+        '<h3>Choose the thing you are going to work on</h3>' +
+        '<p style="font-size:14px;color:var(--ink-2);line-height:1.65;margin:0 0 14px;max-width:58ch">' +
+        'Pick one real organisation and keep it for the whole course. Your employer, a family business, ' +
+        'a club, a campaign, or something you want to start. It does not have to be yours and it does not ' +
+        'have to be big — it has to be <b>real</b>, so that when a lecture asks who your customer is, there ' +
+        'is a true answer rather than an invented one.<br><br>' +
+        'This is the difference between eighty lectures you listened to and one thing you built.</p>' +
+        '<button class="btn btn-primary btn-sm" id="subjSet">Choose it now</button>';
+    }
+    setTimeout(function () {
+      var open = $('#subjSet', card) || $('#subjEdit', card);
+      if (open) open.onclick = function () { subjectForm(card); };
+    }, 0);
+    return card;
+  }
+
+  function subjectForm(card) {
+    var sub = subject() || { name: '', what: '', who: '' };
+    card.innerHTML =
+      '<div class="eyebrow" style="margin-bottom:10px">Your running case</div>' +
+      '<div class="subj-form">' +
+        '<label>What is it called?<input type="text" id="sjName" value="' + esc(sub.name) + '" placeholder="e.g. Pärnu Kohviröster"></label>' +
+        '<label>What does it do, in one line?<input type="text" id="sjWhat" value="' + esc(sub.what) + '" placeholder="e.g. roasts and sells coffee beans"></label>' +
+        '<label>Who does it serve? (your best guess for now)<input type="text" id="sjWho" value="' + esc(sub.who) + '" placeholder="e.g. people who brew coffee at home"></label>' +
+      '</div>' +
+      '<div style="display:flex;gap:9px;margin-top:14px"><button class="btn btn-primary btn-sm" id="sjSave">Save</button>' +
+      '<button class="btn btn-sm" id="sjCancel">Cancel</button></div>';
+    $('#sjName', card).focus();
+    $('#sjSave', card).onclick = function () {
+      var n = $('#sjName', card).value.trim();
+      if (!n) { $('#sjName', card).focus(); return; }
+      P().subject = { name: n, what: $('#sjWhat', card).value.trim(), who: $('#sjWho', card).value.trim() };
+      Store.save();
+      Router.render();
+    };
+    $('#sjCancel', card).onclick = function () { Router.render(); };
   }
 
   function avgScore() {
@@ -1193,6 +1298,21 @@
       '</ol></div>';
     col.appendChild(head);
 
+    /* --- the thread: this lecture's place in the course's argument --- */
+    if (L.thread) {
+      var wkq = (C().weeks[meta.week - 1] || {}).question;
+      var th = el('div', 'thread');
+      th.innerHTML =
+        '<div class="thread-head"><span class="eyebrow">The thread</span>' +
+        (wkq ? '<span class="thread-wq">Week ' + meta.week + ' asks: ' + esc(wkq) + '</span>' : '') + '</div>' +
+        '<div class="thread-steps">' +
+          '<div class="th-step th-from"><span class="th-lab">You already know</span><span class="th-txt">' + inline(L.thread.from) + '</span></div>' +
+          '<div class="th-step th-adds"><span class="th-lab">This lecture adds</span><span class="th-txt">' + inline(L.thread.adds) + '</span></div>' +
+          '<div class="th-step th-toward"><span class="th-lab">You will need it for</span><span class="th-txt">' + inline(L.thread.toward) + '</span></div>' +
+        '</div>';
+      col.appendChild(th);
+    }
+
     /* --- weak-prerequisite banner: the adaptive bit --- */
     var gaps = (L.concepts || []).concat(L.prereq || []).map(function (c) {
       return typeof c === 'string' ? c : c.id;
@@ -1210,8 +1330,10 @@
     var body = L.blocks.slice();
     if (L.exercises && L.exercises.length) {
       body.push({ t: 'h2', text: 'Work to do before the next lecture' });
+      var sj = P().subject;
       body.push({ t: 'p', text: L.exercisesLead ||
-        'These are not test questions. They are the hour after the hour — the part that turns a lecture you followed into something you can use.' });
+        'These are not test questions. They are the hour after the hour — the part that turns a lecture you followed into something you can use.' +
+        (sj ? ' Apply every one of them to **' + sj.name + '**.' : '') });
       body.push({ t: 'exercises', items: L.exercises });
     }
     var built = T.renderBlocks(body, meta);
@@ -1220,6 +1342,21 @@
 
     /* --- body --- */
     col.appendChild(built.node);
+
+    /* --- hard words --- */
+    if (L.vocab && L.vocab.length) {
+      glossInText(built.node, L.vocab);
+      var vh = el('div', 'block-head');
+      vh.innerHTML = '<h2>Words in this lecture</h2><span class="hint">Marked in the text the first time each appears</span>';
+      col.appendChild(vh);
+      var vg = el('div', 'vocab');
+      vg.innerHTML = '<div class="vocab-grid">' + L.vocab.map(function (v) {
+        return '<div class="vocab-item"><div class="vocab-word">' + esc(v.word) + '</div>' +
+          '<div class="vocab-plain">' + inline(v.plain) + '</div>' +
+          (v.et ? '<span class="vocab-et">eesti keeles: ' + esc(v.et) + '</span>' : '') + '</div>';
+      }).join('') + '</div>';
+      col.appendChild(vg);
+    }
 
     /* --- glossary --- */
     if (L.glossary && L.glossary.length) {
@@ -1281,6 +1418,54 @@
     Speaker.onEnd = function () { markHeard(meta.id); };
   }
 
+  /* Underline each hard word the first time it appears, with its meaning on
+     hover. Only plain text inside paragraphs is touched, so existing markup —
+     term chips, bold, links — is never broken. */
+  function glossInText(root, vocab) {
+    var pending = {};
+    vocab.forEach(function (v) { pending[v.word.toLowerCase()] = v; });
+
+    var paras = $$('p.spk, li', root);
+    for (var i = 0; i < paras.length; i++) {
+      var left = Object.keys(pending);
+      if (!left.length) break;
+      walk(paras[i]);
+    }
+
+    function walk(node) {
+      var kids = Array.prototype.slice.call(node.childNodes);
+      for (var j = 0; j < kids.length; j++) {
+        var n = kids[j];
+        if (n.nodeType === 3) tryText(n);
+        else if (n.nodeType === 1 && !/^(CODE|SPAN)$/.test(n.tagName)) walk(n);
+      }
+    }
+
+    function tryText(textNode) {
+      var txt = textNode.nodeValue;
+      var words = Object.keys(pending);
+      for (var k = 0; k < words.length; k++) {
+        var v = pending[words[k]];
+        var re = new RegExp('\\b(' + v.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')\\b', 'i');
+        var m = txt.match(re);
+        if (!m) continue;
+        var before = txt.slice(0, m.index);
+        var after = txt.slice(m.index + m[0].length);
+        var span = document.createElement('span');
+        span.className = 'word-gloss';
+        span.title = v.plain + (v.et ? '  —  ' + v.et : '');
+        span.textContent = m[0];
+        var parent = textNode.parentNode;
+        parent.insertBefore(document.createTextNode(before), textNode);
+        parent.insertBefore(span, textNode);
+        textNode.nodeValue = after;
+        delete pending[words[k]];
+        tryText(textNode);
+        return;
+      }
+    }
+  }
+
   function markHeard(id) {
     var p = P().lessons[id] || (P().lessons[id] = {});
     if (!p.listened) {
@@ -1315,6 +1500,7 @@
         '<label>Speed <input type="range" id="rateSel" min="0.6" max="1.6" step="0.05" value="' + (Store.state.prefs.rate || 1) + '"><span class="mono" id="rateVal" style="font-size:11px">' + (Store.state.prefs.rate || 1).toFixed(2) + '×</span></label>' +
         '<button class="btn btn-sm" id="readBtn">Read silently</button>' +
         '<span class="mono" style="font-size:10.5px;color:var(--ink-3)" id="syncNote">Saved on this device</span>' +
+        '<div class="voice-help" id="voiceHelp" hidden></div>' +
       '</div>';
 
     if (!Speaker.supported) {
@@ -1389,15 +1575,37 @@
     };
 
     var sel = $('#voiceSel', wrap);
+    var LABEL = { natural: 'natural', good: 'decent', basic: 'robotic' };
     function fillVoices() {
+      var help = $('#voiceHelp', wrap);
       if (!Speaker.voices.length) { sel.innerHTML = '<option>Device default</option>'; return; }
-      var en = Speaker.voices.filter(function (v) { return /^en(-|_|$)/i.test(v.lang); });
-      var list = en.length ? en : Speaker.voices;
+      var list = Speaker.ranked();
       var cur = Speaker.pickVoice();
       sel.innerHTML = list.map(function (v) {
         return '<option value="' + esc(v.voiceURI) + '"' + (cur && v.voiceURI === cur.voiceURI ? ' selected' : '') + '>' +
-          esc(v.name) + ' (' + esc(v.lang) + ')</option>';
+          esc(v.name) + ' — ' + LABEL[Speaker.quality(v)] + '</option>';
       }).join('');
+
+      /* if nothing good is installed, say how to get one — this is the single
+         biggest improvement available and it is free */
+      if (help) {
+        if (Speaker.hasNatural()) { help.hidden = true; return; }
+        var ios = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+                  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        var mac = /Macintosh|Mac OS X/.test(navigator.userAgent) && !ios;
+        var steps = ios
+          ? 'Settings → Accessibility → Spoken Content → Voices → English → pick a name marked ' +
+            '<b>Premium</b> or <b>Enhanced</b> and download it. Come back and choose it here.'
+          : mac
+            ? 'System Settings → Accessibility → Spoken Content → System Voice → <b>Manage Voices…</b> → English → ' +
+              'download one marked <b>Premium</b>. Come back and choose it here.'
+            : 'On a phone, the system text-to-speech settings usually offer a higher-quality voice to download. ' +
+              'In Edge or Chrome on a computer, look for a voice whose name contains <b>Natural</b> or <b>Online</b>.';
+        help.hidden = false;
+        help.innerHTML = '<b>Your device only has robotic voices installed.</b> A better one is free and takes a minute: ' +
+          steps + '<br><span style="color:var(--ink-3)">It is a system download, not part of this course — every ' +
+          'app on the device gets the better voice.</span>';
+      }
     }
     fillVoices();
     Speaker.onVoices = fillVoices;
@@ -1495,6 +1703,61 @@
       if (b.say) out.push(H.plain(b.say));
     });
     return out.join('\n');
+  }
+
+  /* =========================================================
+     TOOLKIT — every tool earned so far, in one place
+     ========================================================= */
+  function viewToolkit(main) {
+    crumb('Toolkit');
+    var col = el('div', 'col');
+    col.innerHTML =
+      '<div class="lesson-head">' +
+        '<div class="kicker"><span class="tagline">What you can now do</span></div>' +
+        '<h1 class="lesson-title">Toolkit</h1>' +
+        '<p class="lesson-standfirst">Every formula, framework and rule the course has handed you, with the ' +
+        'question each one answers. It grows as you pass lectures. When you are stuck on a real problem, ' +
+        'this is the page to read — not the lecture.</p>' +
+      '</div>';
+    main.appendChild(col);
+
+    var weeks = (T.WRITTEN || []).slice().sort(function (a, b) { return a - b; });
+    if (!weeks.length) { col.appendChild(el('div', 'empty', 'No lectures written yet for this course.')); return; }
+
+    Promise.all(weeks.map(function (n) { return Lessons.load(n); })).then(function (loaded) {
+      var rows = [];
+      loaded.forEach(function (wk) {
+        if (!wk) return;
+        Object.keys(wk).forEach(function (lid) {
+          var L = wk[lid], meta = LESSON_BY_ID(lid);
+          if (!L.tools || !meta) return;
+          L.tools.forEach(function (t) {
+            rows.push({ t: t, meta: meta, done: H.isDone(lid) });
+          });
+        });
+      });
+      rows.sort(function (a, b) { return a.meta.idx - b.meta.idx; });
+
+      if (!rows.length) { col.appendChild(el('div', 'empty', 'Tools appear here as lectures introduce them.')); return; }
+
+      var KIND = { formula: 'Formula', framework: 'Framework', rule: 'Rule', test: 'Test' };
+      var list = el('div', 'tool-list');
+      rows.forEach(function (r) {
+        var item = el('div', 'tool' + (r.done ? ' earned' : ''));
+        item.innerHTML =
+          '<div class="tool-top">' +
+            '<span class="tool-kind tk-' + esc(r.t.kind || 'framework') + '">' + esc(KIND[r.t.kind] || 'Framework') + '</span>' +
+            '<span class="tool-name">' + inline(r.t.name) + '</span>' +
+            '<button class="tool-src" data-go="#/lesson/' + r.meta.id + '">Lecture ' + r.meta.idx + '</button>' +
+          '</div>' +
+          (r.t.form ? '<div class="tool-form mono">' + esc(r.t.form) + '</div>' : '') +
+          '<div class="tool-q"><b>Answers:</b> ' + inline(r.t.answers) + '</div>' +
+          '<div class="tool-when"><b>Use it when:</b> ' + inline(r.t.when) + '</div>';
+        list.appendChild(item);
+      });
+      col.appendChild(list);
+      wireGo(col);
+    });
   }
 
   /* =========================================================
@@ -1615,7 +1878,8 @@
   window.__TMS.views = { renderRail: renderRail, go: go, viewToday: viewToday,
                          viewSyllabus: viewSyllabus, viewLesson: viewLesson, viewPlan: viewPlan,
                          wireGo: wireGo, crumb: crumb, ICON: ICON, avgScore: avgScore,
-                         viewCourses: viewCourses, isWritten: isWritten, withCourse: withCourse };
+                         viewCourses: viewCourses, isWritten: isWritten, withCourse: withCourse,
+                         subject: subject, viewToolkit: viewToolkit };
 })();
 
 /* ============================================================
@@ -1636,7 +1900,7 @@
   /* ---------------------------------------------------------
      Quiz component
      --------------------------------------------------------- */
-  function buildQuiz(questions, host) {
+  function buildQuiz(questions, host, ownCount) {
     var answers = {};       /* qid -> value */
     var selfMarks = {};     /* qid -> 0|1 for short answers */
     var graded = false;
@@ -1660,8 +1924,11 @@
         body = '<textarea id="' + q.id + '-in" placeholder="Three or four sentences. Write it out — the act of writing is the point."></textarea>';
       }
 
+      var carried = ownCount != null && i >= ownCount;
+      if (carried) box.classList.add('q-carried');
       box.innerHTML =
-        '<div class="q-head"><span class="q-n">Q' + (i + 1) + '</span>' +
+        '<div class="q-head"><span class="q-n">' + (carried ? 'R' + (i - ownCount + 1) : 'Q' + (i + 1)) + '</span>' +
+        (carried && q.fromLecture ? '<span class="q-from">Lecture ' + q.fromLecture + '</span>' : '') +
         '<span class="q-concept">' + esc(q.conceptName || q.concept) + '</span></div>' +
         '<p class="q-text">' + inline(q.q) + '</p>' + body +
         '<div class="explain" hidden></div>';
@@ -1773,7 +2040,7 @@
     return { grade: grade, selfMarkPhase: selfMarkPhase, answers: answers, nodes: nodes };
   }
 
-  function scorePanel(results, title, sub) {
+  function scorePanel(results, title, sub, carried) {
     var total = results.reduce(function (a, r) { return a + r.score; }, 0);
     var pctv = Math.round(total / results.length * 100);
     var grade = pctv >= 90 ? 'Distinction' : pctv >= 80 ? 'Strong pass' : pctv >= PASS ? 'Pass' : pctv >= 50 ? 'Below the line' : 'Resit this';
@@ -1804,7 +2071,14 @@
         '<div class="score-grade" style="margin-top:6px">' + grade + '</div></div>' +
         '<div class="score-note"><b>' + esc(title) + '</b><br>' + esc(sub || note) + '</div>' +
       '</div>' +
-      '<div class="concept-bars"><div class="eyebrow" style="margin-bottom:4px">By concept</div>' + bars + '</div>';
+      '<div class="concept-bars"><div class="eyebrow" style="margin-bottom:4px">By concept</div>' + bars +
+      (carried && carried.length
+        ? '<div class="carried-note"><b>Carried forward:</b> ' +
+          carried.filter(function (r) { return r.score >= 1; }).length + ' of ' + carried.length +
+          ' from earlier lectures. These do not affect the pass mark, but they do move your mastery — ' +
+          'and they are the questions that tell you whether anything is actually sticking.</div>'
+        : '') +
+      '</div>';
     return { node: panel, pct: pctv };
   }
 
@@ -1853,22 +2127,40 @@
       qhost.style.marginTop = '22px';
       col.appendChild(qhost);
 
-      var quiz = buildQuiz(qs, qhost);
-
       var foot = el('div', 'lesson-foot');
       foot.innerHTML = '<button class="btn btn-gold" id="submitBtn">Submit answers</button>' +
         '<button class="btn" data-go="#/lesson/' + id + '">Back to the lecture</button>';
       col.appendChild(foot);
       V.wireGo(col);
 
-      $('#submitBtn', foot).onclick = function () {
-        $('#submitBtn', foot).disabled = true;
-        quiz.selfMarkPhase(function () { finish(); });
-      };
+      /* Knowledge that is only ever tested in the lecture that taught it stays
+         glued to that lecture. Mixing earlier material into every test —
+         interleaving — is the best-evidenced fix for that, so each test carries
+         a few questions forward from lectures already passed. */
+      var quiz;
+      carryForward(meta, 3).then(function (older) {
+        if (older.length) {
+          var head = el('div', 'block-head');
+          head.innerHTML = '<h2>From earlier lectures</h2>' +
+            '<span class="hint">Mixed in on purpose — it is how knowledge stops being stuck to one lesson</span>';
+          qhost.appendChild(head);
+        }
+        quiz = buildQuiz(qs.concat(older), qhost, qs.length);
+        $('#submitBtn', foot).disabled = false;
+        $('#submitBtn', foot).onclick = function () {
+          $('#submitBtn', foot).disabled = true;
+          quiz.selfMarkPhase(function () { finish(older.length); });
+        };
+      });
+      $('#submitBtn', foot).disabled = true;
 
-      function finish() {
+      function finish(carried) {
         var results = quiz.grade();
-        var sp = scorePanel(results, meta.title, null);
+        /* the lecture's own mark is what decides a pass; carried questions
+           still feed mastery, but a slip on week-one material should not fail
+           week five */
+        var own = results.slice(0, results.length - (carried || 0));
+        var sp = scorePanel(own, meta.title, null, carried ? results.slice(own.length) : null);
         slot.appendChild(sp.node);
         sp.node.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
@@ -1907,6 +2199,54 @@
         $('#retakeBtn', foot).onclick = function () { V.go('#/test/' + id); };
       }
     });
+  }
+
+  /* Choose questions from earlier, already-passed lectures. Weak concepts
+     first, then a spread across the course so nothing goes cold. */
+  function carryForward(meta, want) {
+    var earlier = C().flat.filter(function (l) { return l.idx < meta.idx && H.isDone(l.id); });
+    if (!earlier.length) return Promise.resolve([]);
+
+    var weak = {};
+    H.weakConcepts().forEach(function (c) { weak[c.id] = c.ema; });
+
+    var weeks = {};
+    earlier.forEach(function (l) { weeks[l.week] = true; });
+    return Promise.all(Object.keys(weeks).map(function (w) { return Lessons.load(parseInt(w, 10)); }))
+      .then(function (loaded) {
+        var pool = [];
+        loaded.forEach(function (wk) {
+          if (!wk) return;
+          Object.keys(wk).forEach(function (lid) {
+            var lm = LESSON_BY_ID(lid);
+            if (!lm || lm.idx >= meta.idx || !H.isDone(lid)) return;
+            var cmap = {};
+            (wk[lid].concepts || []).forEach(function (c) { cmap[c.id] = c.name; });
+            (wk[lid].quiz || []).forEach(function (q) {
+              pool.push(Object.assign({}, q, {
+                conceptName: cmap[q.concept] || q.concept,
+                lessonId: lid,
+                fromLecture: lm.idx,
+                weakness: weak[q.concept] != null ? 1 - weak[q.concept] : 0.25,
+                age: meta.idx - lm.idx
+              }));
+            });
+          });
+        });
+        if (!pool.length) return [];
+        pool.sort(function (a, b) {
+          var d = (b.weakness + b.age * 0.02) - (a.weakness + a.age * 0.02);
+          return d !== 0 ? d : Math.random() - 0.5;
+        });
+        /* no more than one per concept, so a single weak spot cannot fill the set */
+        var seen = {}, out = [];
+        for (var i = 0; i < pool.length && out.length < want; i++) {
+          if (seen[pool[i].concept]) continue;
+          seen[pool[i].concept] = true;
+          out.push(pool[i]);
+        }
+        return out;
+      }).catch(function () { return []; });
   }
 
   /* ---------------------------------------------------------
@@ -2235,6 +2575,7 @@
       if ((m = rest.match(/^lesson\/(\w+)/))) V.viewLesson(main, m[1]);
       else if ((m = rest.match(/^test\/(\w+)/))) viewTest(main, m[1]);
       else if (rest.indexOf('plan') === 0) V.viewPlan(main);
+      else if (rest.indexOf('toolkit') === 0) V.viewToolkit(main);
       else if (rest.indexOf('syllabus') === 0) V.viewSyllabus(main);
       else if (rest.indexOf('progress') === 0) viewProgress(main);
       else if (rest.indexOf('review') === 0) viewReview(main);

@@ -1453,3 +1453,167 @@ body[data-nocourse="1"] #syllabus { display: none; }
 .rd-author { font-weight: 600; }
 .rd-work { font-style: italic; }
 .rd-note { display: block; margin-top: 5px; font-size: 12.5px; color: var(--ink-2); line-height: 1.55; }
+
+/* ---------- voice help ---------- */
+.voice-help {
+  flex-basis: 100%;
+  margin-top: 4px;
+  padding: 11px 13px;
+  border-radius: 4px;
+  background: var(--gold-soft);
+  color: var(--gold-ink);
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+.voice-help b { color: inherit; }
+
+/* ---------- hard words ---------- */
+.vocab { margin: 34px 0 0; }
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.vocab-item { background: var(--surface); padding: 12px 15px; }
+.vocab-word {
+  font-family: var(--font-ui); font-size: 13.5px; font-weight: 600;
+  color: var(--ink); margin-bottom: 4px;
+}
+.vocab-plain { font-size: 13px; color: var(--ink-2); line-height: 1.5; }
+.vocab-et {
+  display: block; margin-top: 5px;
+  font-size: 12.5px; color: var(--accent);
+  font-style: italic;
+}
+.word-gloss {
+  border-bottom: 1.5px dotted var(--gold);
+  cursor: help;
+}
+
+/* ---------- formula key ---------- */
+.eq-key {
+  margin-top: 12px; padding-top: 11px;
+  border-top: 1px dashed var(--rule-strong);
+  display: grid; gap: 7px;
+  font-family: var(--font-ui); font-size: 13px;
+}
+.eq-key-row { display: grid; grid-template-columns: 62px 1fr; gap: 12px; align-items: baseline; }
+.eq-sym {
+  font-family: var(--font-mono); font-size: 13px; font-weight: 500;
+  color: var(--accent-ink); background: var(--accent-soft);
+  padding: 1px 6px; border-radius: 3px; justify-self: start;
+}
+.eq-means { color: var(--ink-2); line-height: 1.5; }
+.eq-use {
+  margin-top: 11px; padding: 10px 12px;
+  background: var(--paper); border-radius: 4px;
+  font-family: var(--font-ui); font-size: 13px; line-height: 1.6; color: var(--ink);
+}
+.eq-use b { color: var(--accent-ink); }
+
+/* ---------- the thread: where a lecture sits in the argument ---------- */
+.thread {
+  margin: 24px 0 0;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--surface);
+  overflow: hidden;
+}
+.thread-head {
+  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  padding: 11px 16px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--rule);
+}
+.thread-wq { font-size: 12.5px; color: var(--ink-2); font-style: italic; }
+.thread-steps { display: grid; grid-template-columns: repeat(3, 1fr); }
+.th-step {
+  padding: 14px 16px 15px;
+  border-left: 1px solid var(--rule);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.th-step:first-child { border-left: 0; }
+.th-lab {
+  font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ink-3);
+}
+.th-txt { font-size: 13.5px; line-height: 1.5; color: var(--ink-2); }
+.th-adds { background: var(--accent-soft); }
+.th-adds .th-lab { color: var(--accent); }
+.th-adds .th-txt { color: var(--accent-ink); font-weight: 500; }
+@media (max-width: 720px) {
+  .thread-steps { grid-template-columns: 1fr; }
+  .th-step { border-left: 0; border-top: 1px solid var(--rule); }
+  .th-step:first-child { border-top: 0; }
+}
+
+/* ---------- the running case ---------- */
+.subject-card { border-left: 3px solid var(--gold); }
+.subject-card.set { border-left-color: var(--accent); }
+.subj-form { display: grid; gap: 12px; }
+.subj-form label {
+  display: grid; gap: 6px;
+  font-size: 12.5px; color: var(--ink-2);
+}
+.subj-form input {
+  padding: 10px 12px;
+  border: 1px solid var(--rule-strong); border-radius: 4px;
+  background: var(--paper); color: var(--ink);
+  font-family: var(--font-ui); font-size: 14px;
+}
+
+/* ---------- toolkit ---------- */
+.tool-list { display: flex; flex-direction: column; gap: 11px; margin: 24px 0 0; }
+.tool {
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  background: var(--surface);
+  padding: 15px 17px;
+  opacity: .62;
+}
+.tool.earned { opacity: 1; border-left: 3px solid var(--accent); }
+.tool-top { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 9px; }
+.tool-kind {
+  font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .07em;
+  text-transform: uppercase; padding: 2px 7px; border-radius: 3px;
+  background: var(--surface-2); color: var(--ink-3);
+}
+.tool-kind.tk-formula { background: var(--accent-soft); color: var(--accent-ink); }
+.tool-kind.tk-rule { background: var(--gold-soft); color: var(--gold-ink); }
+.tool-kind.tk-test { background: var(--good-soft); color: var(--good); }
+.tool-name {
+  font-family: var(--font-display); font-size: 18px; font-weight: 500;
+  color: var(--ink); flex: 1; min-width: 160px;
+}
+.tool-src {
+  background: none; border: 1px solid var(--rule); border-radius: 3px;
+  padding: 2px 8px; font-family: var(--font-mono); font-size: 10px;
+  color: var(--ink-3); cursor: pointer;
+}
+.tool-src:hover { color: var(--ink); border-color: var(--rule-strong); }
+.tool-form {
+  background: var(--surface-2); border-radius: 4px;
+  padding: 9px 12px; margin-bottom: 9px;
+  font-size: 13px; color: var(--ink);
+  overflow-x: auto; white-space: nowrap;
+}
+.tool-q, .tool-when { font-size: 13.5px; line-height: 1.55; color: var(--ink-2); margin-bottom: 4px; }
+.tool-q b, .tool-when b { color: var(--ink); font-weight: 600; }
+
+/* ---------- carried-forward questions ---------- */
+.q.q-carried { border-left: 3px solid var(--gold); background: var(--paper); }
+.q-from {
+  font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .05em;
+  text-transform: uppercase; color: var(--gold-ink);
+  background: var(--gold-soft); padding: 1px 6px; border-radius: 3px;
+}
+.carried-note {
+  margin-top: 14px; padding: 11px 13px;
+  background: var(--gold-soft); color: var(--gold-ink);
+  border-radius: 4px; font-size: 13px; line-height: 1.55;
+}
+.carried-note b { color: inherit; }

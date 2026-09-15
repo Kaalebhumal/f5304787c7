@@ -6,102 +6,99 @@ window.LESSONS['marketing.w01'] = {
    1.1  The exchange at the centre of everything
    ============================================================ */
 "w01l01": {
-  standfirst: "Before there was advertising, before there were brands, before anyone held a job title with the word marketing in it, there was **exchange**. Everything in this course is an elaboration of one idea: two parties, each holding something the other wants more.",
+  standfirst: "Before any theory: what marketing actually **is**, what it is **made of**, and **where** it is used — which turns out to include a hospital, a political campaign and a government trying to make you stop doing something.",
+  thread: {
+    from: "Nothing. This is where the course begins.",
+    adds: "A working definition, the six activities the job is made of, and the range of places it is used.",
+    toward: "Everything. The six activities in section two are the skeleton of all sixteen weeks."
+  },
   objectives: [
     "Define marketing in one sentence you could defend to a sceptical accountant.",
-    "List the five conditions that must hold before an exchange can happen at all, and spot which one is missing when a deal stalls.",
-    "Explain, with an example, why marketing is neither advertising nor selling.",
-    "Name the eight states of demand and the marketing task each one calls for.",
-    "Identify the customer in a case where the buyer, the payer and the user are three different people."
+    "Name the six activities the job is made of, and say which one advertising belongs to.",
+    "Give five organisations that use marketing, only one of which is a normal company.",
+    "Explain why marketing is neither advertising nor selling.",
+    "Use the five conditions for exchange to diagnose a deal that is not happening.",
+    "Identify the customer when the buyer, the payer and the user are three different people."
   ],
   concepts: [
-    { id: "exchange",      name: "Exchange and its conditions" },
-    { id: "def-marketing", name: "Defining marketing" },
-    { id: "mkt-vs-sell",   name: "Marketing vs selling" },
-    { id: "demand-states", name: "The eight demand states" },
-    { id: "cust-roles",    name: "Buyer, payer, user" }
+    { id: "def-marketing",  name: "Defining marketing" },
+    { id: "six-activities", name: "The six activities" },
+    { id: "where-used",     name: "Where marketing is used" },
+    { id: "mkt-vs-sell",    name: "Marketing vs selling" },
+    { id: "exchange",       name: "Exchange and its conditions" },
+    { id: "demand-states",  name: "Managing demand" },
+    { id: "cust-roles",     name: "Buyer, payer, user" }
+  ],
+  vocab: [
+    { word: "exchange", plain: "Two people each giving the other something, because each wants what the other has more than what they are giving up.", et: "vahetus" },
+    { word: "offering", plain: "Whatever you are putting in front of someone: a product, a service, an idea, an experience.", et: "pakkumine" },
+    { word: "demand", plain: "People wanting something AND being able and willing to pay for it.", et: "nõudlus" },
+    { word: "discipline", plain: "A field of study and practice with its own methods — like medicine or engineering.", et: "valdkond, distsipliin" },
+    { word: "sceptical", plain: "Not easily convinced; wanting proof before believing you.", et: "skeptiline, kahtlev" },
+    { word: "stall", plain: "To stop making progress without anyone deciding to stop.", et: "seiskuma, takerduma" },
+    { word: "deliberate", plain: "Done on purpose, after thinking about it.", et: "tahtlik, teadlik" },
+    { word: "discourage", plain: "To make someone less likely to do something.", et: "pärssima, heidutama" },
+    { word: "intermediary", plain: "Someone in the middle between the maker and the buyer — a shop, a distributor, an agent.", et: "vahendaja" },
+    { word: "diagnose", plain: "To work out what is actually wrong, the way a doctor does.", et: "diagnoosima" }
+  ],
+  tools: [
+    { kind: "framework", name: "The six activities",
+      answers: "What does the marketing job actually consist of?",
+      when: "Whenever a plan feels thin. Walk the six and find the one nobody has thought about — it is almost always place or service." },
+    { kind: "test", name: "The five conditions for exchange",
+      answers: "Why is this deal not happening?",
+      when: "A customer will not buy and nobody can say why. Walk the five conditions and exactly one of them will be missing. Four of the five point somewhere other than ‘spend more on advertising’." },
+    { kind: "framework", name: "User, buyer, payer",
+      answers: "Who do I actually have to convince?",
+      when: "Before writing a single word of any campaign. When a campaign fails for reasons nobody can name, the usual cause is that it gave one role another role's argument." }
   ],
   blocks: [
-    { t: "h2", text: "Two people and a want" },
-    { t: "p", text: "Picture a market square on a cold Saturday. A woman has brought thirty eggs. Her hens have been productive and her family cannot eat thirty eggs. Across from her a man has a cart of split birch, more than his stove will burn before spring. She wants firewood. He wants eggs. In ten minutes they have traded, and both of them walk home believing they got the better end of it." },
-    { t: "p", text: "Notice what did **not** happen. No new eggs were laid. No new tree was felled. Nothing was manufactured, nothing was added to the physical stock of the world. And yet both parties are better off — genuinely, not as a figure of speech — because a thing of low value to its holder moved to somebody who valued it more. Economists call this the *gains from trade*. It is the only kind of value creation that requires no raw material at all." },
-    { t: "p", text: "Here is the uncomfortable part, and the reason this course exists. Those gains do not happen by themselves. Somebody had to know the other person existed. Somebody had to carry eggs to a place where a man with firewood might plausibly be. Somebody had to make the eggs look fresh enough to be worth the risk. Somebody had to name a rate — six eggs a bundle, or eight — and somebody had to believe the other was not a fraud. Every one of those is a marketing problem, and every one of them can fail." },
-    { t: "p", text: "That is the whole subject. Not posters. Not slogans. The unglamorous, permanent work of getting an exchange to occur when it otherwise would not have." },
-
-    { t: "fig", title: "An exchange is two flows, not one", sketch: true,
-      say: "Two boxes face each other. From party A to party B runs the offering — a good, a service, an idea or an experience. From party B back to party A runs the value received — money, but also time, attention, a vote or a donation. Both parties can walk away at any moment.",
-      cap: "The second arrow is the one beginners forget. Marketing is not the art of pushing the top arrow harder; it is the management of both, including the price attached to the lower one.",
-      svg: '<svg viewBox="0 0 680 235" role="img" aria-label="Diagram: an exchange runs in two directions between two parties">' +
-        '<defs>' +
-        '<marker id="ahA1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--series-1)"/></marker>' +
-        '<marker id="ahB1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--series-2)"/></marker>' +
-        '</defs>' +
-        '<rect x="20" y="66" width="164" height="96" rx="5" fill="var(--surface-2)" stroke="var(--rule-strong)" stroke-width="1"/>' +
-        '<text x="102" y="104" text-anchor="middle" fill="var(--ink)" font-size="15" font-weight="600">Party A</text>' +
-        '<text x="102" y="124" text-anchor="middle" fill="var(--ink-3)" font-size="11">a firm, a charity,</text>' +
-        '<text x="102" y="139" text-anchor="middle" fill="var(--ink-3)" font-size="11">a candidate, a neighbour</text>' +
-        '<rect x="496" y="66" width="164" height="96" rx="5" fill="var(--surface-2)" stroke="var(--rule-strong)" stroke-width="1"/>' +
-        '<text x="578" y="104" text-anchor="middle" fill="var(--ink)" font-size="15" font-weight="600">Party B</text>' +
-        '<text x="578" y="124" text-anchor="middle" fill="var(--ink-3)" font-size="11">a customer, a donor,</text>' +
-        '<text x="578" y="139" text-anchor="middle" fill="var(--ink-3)" font-size="11">a voter, a neighbour</text>' +
-        '<text x="340" y="80" text-anchor="middle" fill="var(--ink-2)" font-size="11.5">Offering — good, service, idea, experience</text>' +
-        '<line x1="192" y1="94" x2="484" y2="94" stroke="var(--series-1)" stroke-width="2" marker-end="url(#ahA1)"/>' +
-        '<text x="340" y="121" text-anchor="middle" fill="var(--ink-3)" font-size="10.5" letter-spacing="1.6">EXCHANGE</text>' +
-        '<line x1="484" y1="140" x2="192" y2="140" stroke="var(--series-2)" stroke-width="2" marker-end="url(#ahB1)"/>' +
-        '<text x="340" y="160" text-anchor="middle" fill="var(--ink-2)" font-size="11.5">Value back — money, time, attention, a vote</text>' +
-        '<line x1="20" y1="192" x2="660" y2="192" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3 3"/>' +
-        '<text x="340" y="212" text-anchor="middle" fill="var(--ink-3)" font-size="11">Either party may refuse. That freedom is what makes it marketing and not taxation.</text>' +
-        '</svg>' },
-
-    { t: "h2", text: "A definition worth defending" },
-    { t: "p", text: "The American Marketing Association has revised its official definition several times, which tells you something about how contested the ground is. The current wording runs: *marketing is the activity, set of institutions, and processes for creating, communicating, delivering, and exchanging offerings that have value for customers, clients, partners, and society at large*." },
-    { t: "p", text: "It is a committee sentence and it reads like one, but it earns its keep, because four verbs are doing real work." },
-    { t: "ul", lead: "Take them one at a time.", items: [
-      "**Creating.** Marketing is upstream of the product, not downstream of it. The decision about what to make — which features, for whom, at what quality — is a marketing decision informed by research, even when an engineer executes it.",
-      "**Communicating.** Making the offering known and understood. This is the part everyone thinks is the whole job.",
-      "**Delivering.** Getting the thing into the hands of the person who wants it, at the moment they want it. A product nobody can physically obtain does not exist commercially.",
-      "**Exchanging.** Agreeing terms — chiefly price — and completing the trade. This is where the firm captures some of the value it created."
-    ]},
-    { t: "p", text: "Note also who the value is for: *customers, clients, partners, and society at large*. That last clause is not decoration. It is the hook on which the entire week sixteen discussion of ethics and sustainability hangs, and it was added deliberately." },
-    { t: "p", text: "For working purposes, carry this compressed version in your head: **marketing is the work of making exchange happen — profitably, repeatedly, and at scale.** *Profitably* rules out giving things away. *Repeatedly* rules out the one-off con. *At scale* is what separates marketing from ordinary haggling." },
-
-    { t: "write", items: [
-      "AMA definition, all four verbs: creating, communicating, delivering, exchanging.",
-      "Working definition: making exchange happen — profitably, repeatedly, at scale.",
-      "Gains from trade: value is created by movement, not only by manufacture."
-    ]},
-
-    { t: "h2", text: "The five conditions for an exchange" },
-    { t: "p", text: "Philip Kotler, whose textbook has taught more marketers than any other, sets out five conditions. All five must hold, simultaneously, or no exchange occurs." },
+    { t: "h2", text: "What marketing is" },
+    { t: "p", text: "Think about the last thing you bought that cost more than a coffee. A pair of shoes, a phone, a ticket. Four things had to be true before you bought it." },
     { t: "ol", items: [
-      "There are **at least two parties**.",
-      "Each party has **something of value** to the other.",
-      "Each party is **capable of communication and delivery**.",
-      "Each party is **free to accept or reject** the offer.",
-      "Each party **believes it is appropriate** to deal with the other."
+      "**You knew it existed.** Somebody made sure of that.",
+      "**You believed it was for someone like you.** Somebody decided who it was for, and made it look and sound that way.",
+      "**You could actually get it.** It was in a shop you go to, or a site that delivers to Estonia.",
+      "**The price felt about right.** Somebody chose that number, and chose what to compare it with."
     ]},
-    { t: "p", text: "Read as a list it is almost insultingly obvious. Its value is diagnostic. When a deal is not happening and nobody can say why, one of those five is missing, and the discipline of walking the list tells you which — and therefore which lever to pull." },
-    { t: "case", title: "A stalled deal, diagnosed in five questions",
-      ps: [
-        "A small software firm sells a scheduling tool to dental practices. The product is good. The price is fair. Sales have flatlined. The founder’s instinct is to spend more on advertising. Walk the list instead.",
-        "**Two parties?** Yes — but *who*, exactly? The practice owner signs, the receptionist uses it. If the marketing speaks to the receptionist, the person with the chequebook never hears it. Condition one is about identifying the *right* second party.",
-        "**Something of value each way?** The tool saves perhaps four receptionist-hours a week. Whether that is *of value* depends on whether the owner experiences those hours as a cost. If the receptionist is salaried and not overloaded, the saving may be real and still not valuable.",
-        "**Capable of communication and delivery?** The firm can deliver. But can it communicate? Dentists do not read software blogs. If every message is published where the audience is not, the condition fails on a technicality of media, not of argument.",
-        "**Free to accept or reject?** Usually yes — unless the practice is locked into a three-year contract with an incumbent. Then no marketing will work until month thirty-four, and the correct action is to time the approach, not to shout louder.",
-        "**Believes it appropriate to deal?** A two-person company asking a clinic to trust it with patient appointment data is asking for trust it has not yet earned. This is the condition that most often fails silently, and the remedy is not advertising — it is references, certification, a trial, an insurer’s endorsement.",
-        "Four of those five diagnoses lead somewhere other than *buy more advertising*. That is the point of the list."
-      ]},
+    { t: "p", text: "All four of those are marketing. Not one of them is an advertisement, although an advertisement may have been involved in the first one." },
+    { t: "p", text: "So here is the working definition. Keep it; you will use it all year." },
+    { t: "write", items: [
+      "**Marketing is the work of making an exchange happen — profitably, repeatedly, and at scale.**",
+      "*Profitably* rules out giving things away. *Repeatedly* rules out the one-off trick. *At scale* is what separates marketing from ordinary haggling in a market square."
+    ]},
+    { t: "p", text: "The official version, from the American Marketing Association, says the same thing in committee language: marketing is the activity and set of processes for *creating, communicating, delivering and exchanging* offerings that have value for customers, clients, partners and society at large." },
+    { t: "p", text: "Four verbs, and they are worth separating, because most people only think of the second one." },
+    { t: "ul", items: [
+      "**Creating** — deciding what to make, for whom, at what quality. This happens *before* the product exists.",
+      "**Communicating** — making it known and understood. This is the part everybody thinks is the whole job.",
+      "**Delivering** — getting it to the person, at the moment they want it. A product nobody can obtain does not commercially exist.",
+      "**Exchanging** — agreeing the terms, mostly price, and completing the trade."
+    ]},
 
-    { t: "h2", text: "Marketing is not advertising, and not selling" },
-    { t: "quote", text: "The aim of marketing is to make selling superfluous. The aim is to know and understand the customer so well that the product or service fits him and sells itself.", who: "Peter Drucker, 1973" },
-    { t: "p", text: "Drucker is overstating for effect — selling never becomes entirely superfluous — but the direction of the claim is right. Selling starts with a product the firm already has and looks for someone to take it. Marketing starts with a person the firm understands and works backwards to what should be made. They point in opposite directions in time." },
-    { t: "p", text: "Advertising is narrower still. Advertising is *paid, mediated communication from an identified sponsor*. Every word of that is load-bearing: paid distinguishes it from public relations, mediated distinguishes it from a salesperson in a room, identified sponsor distinguishes it from propaganda and from undeclared influence. It is one tool among five in promotion, and promotion is one of four Ps." },
+    { t: "h2", text: "What the job is made of" },
+    { t: "p", text: "That is the definition. Now the concrete version: if you did this job, what would actually be on your desk?" },
+    { t: "p", text: "Six activities. Every marketing task you will meet in sixteen weeks belongs to one of them, and this list is the skeleton of the whole course." },
+    { t: "table",
+      head: ["Activity", "The question it answers", "What you would actually be doing"],
+      rows: [
+        ["**Research**", "Who are they and what do they want?", "Surveys, interviews, watching people shop, reading sales data, running tests"],
+        ["**Product**", "What should we offer?", "Deciding features, quality, range, packaging, name, warranty, what to stop making"],
+        ["**Price**", "What should it cost?", "Setting the price, discounts, payment terms, what to charge extra for"],
+        ["**Place**", "How does it reach them?", "Choosing shops, distributors, a website, delivery, how much stock sits where"],
+        ["**Promotion**", "How do they find out?", "Advertising, PR, social, email, sales staff, events, the words on the box"],
+        ["**Service**", "What happens after?", "Support, returns, complaints, repairs, whether they come back"]
+      ],
+      say: "Six activities. Research asks who they are and what they want. Product asks what we should offer. Price asks what it should cost. Place asks how it reaches them. Promotion asks how they find out. Service asks what happens afterwards.",
+      cap: "Copy this table into your notebook now. When a marketing plan feels thin, walk these six and find the one nobody has thought about. It is almost always **place** or **service**."
+    },
+    { t: "p", text: "Notice where advertising sits. It is one item inside **promotion**, which is one of six activities. So the person who thinks marketing means advertising is working with roughly a thirtieth of the subject — and, as we will see, not the important thirtieth." },
 
     { t: "fig", title: "Where advertising actually sits", sketch: true,
       say: "The marketing function spans six activities: research, product, price, place, promotion and service. Promotion opens into five tools: advertising, public relations, sales promotion, personal selling and direct marketing. Advertising is one tool inside one activity.",
-      cap: "This diagram shows **scope, not proportion**. The boxes are equal because the relative sizes vary enormously by industry, not because the work divides evenly. A pharmaceutical firm spends most of its effort on the left; a confectionery brand on the right.",
+      cap: "This shows **scope, not proportion**. The boxes are equal because the real sizes vary enormously by industry — a pharmaceutical company spends most of its effort on the left, a chocolate brand on the right.",
       svg: '<svg viewBox="0 0 680 246" role="img" aria-label="Diagram showing advertising as one of five promotional tools within one of six marketing activities">' +
-        '<text x="20" y="22" fill="var(--ink-3)" font-size="10.5" letter-spacing="1.4">THE MARKETING FUNCTION</text>' +
+        '<text x="20" y="22" fill="var(--ink-3)" font-size="10.5" letter-spacing="1.4">THE SIX ACTIVITIES</text>' +
         '<g font-size="11.5" text-anchor="middle">' +
         '<rect x="20" y="32" width="102" height="42" rx="4" fill="var(--surface-2)" stroke="var(--rule-strong)"/><text x="71" y="58" fill="var(--ink-2)">Research</text>' +
         '<rect x="128" y="32" width="102" height="42" rx="4" fill="var(--surface-2)" stroke="var(--rule-strong)"/><text x="179" y="58" fill="var(--ink-2)">Product</text>' +
@@ -112,7 +109,7 @@ window.LESSONS['marketing.w01'] = {
         '</g>' +
         '<path d="M503 74 L503 100 M110 100 L610 100" stroke="var(--accent)" stroke-width="1.2" fill="none"/>' +
         '<path d="M110 100 L110 128 M235 100 L235 128 M360 100 L360 128 M485 100 L485 128 M610 100 L610 128" stroke="var(--accent)" stroke-width="1.2" fill="none"/>' +
-        '<text x="20" y="122" fill="var(--ink-3)" font-size="10.5" letter-spacing="1.4">THE PROMOTION MIX</text>' +
+        '<text x="20" y="122" fill="var(--ink-3)" font-size="10.5" letter-spacing="1.4">INSIDE PROMOTION</text>' +
         '<g font-size="11" text-anchor="middle">' +
         '<rect x="52" y="128" width="116" height="40" rx="4" fill="var(--accent)" stroke="var(--accent)"/><text x="110" y="152" fill="var(--on-accent)" font-weight="600">Advertising</text>' +
         '<rect x="177" y="128" width="116" height="40" rx="4" fill="var(--surface-2)" stroke="var(--rule-strong)"/><text x="235" y="152" fill="var(--ink-2)">PR</text>' +
@@ -121,80 +118,166 @@ window.LESSONS['marketing.w01'] = {
         '<rect x="552" y="128" width="108" height="40" rx="4" fill="var(--surface-2)" stroke="var(--rule-strong)"/><text x="606" y="152" fill="var(--ink-2)">Direct</text>' +
         '</g>' +
         '<line x1="20" y1="196" x2="660" y2="196" stroke="var(--rule)" stroke-dasharray="3 3"/>' +
-        '<text x="20" y="218" fill="var(--ink-3)" font-size="11">One tool, inside one activity, inside the function. Scope — not proportion of spend or effort.</text>' +
+        '<text x="20" y="218" fill="var(--ink-3)" font-size="11">One tool, inside one activity, inside the job. Scope — not share of money or effort.</text>' +
         '</svg>' },
 
+    { t: "h2", text: "Where it is used" },
+    { t: "p", text: "Here is the part that surprises people, and the reason this is a serious subject rather than a commercial trick." },
+    { t: "p", text: "Marketing is used anywhere somebody needs a voluntary exchange to happen. That includes a great many places with no product and no profit." },
+    { t: "table",
+      head: ["Organisation", "What is exchanged", "Who the “customer” is", "A real marketing decision it must make"],
+      rows: [
+        ["A bakery", "Bread for money", "The person who walks in", "Whether to open at 06:00 for commuters or 08:00 for families"],
+        ["A software firm selling to hospitals", "A system for a contract", "A procurement committee, not a user", "Whether to sell on cost saved or on risk avoided"],
+        ["A hospital", "Care for attendance and compliance", "The patient, and the public", "How to get people to actually attend the screening they were invited to"],
+        ["A political campaign", "A promise for a vote", "The voter", "Which two issues to talk about, out of twenty it cares about"],
+        ["A charity", "A cause for a donation", "The donor, who never receives the benefit", "Whether to show the problem or the solution in its appeal"],
+        ["A health ministry", "Nothing — it wants you to stop", "The public", "How to reduce demand for something people enjoy"]
+      ],
+      say: "A bakery exchanges bread for money. A software firm sells to a procurement committee rather than a user. A hospital needs patients to attend screening. A political campaign exchanges a promise for a vote. A charity asks a donor to pay for a benefit somebody else receives. And a health ministry uses marketing to reduce demand rather than increase it.",
+      cap: "Same six activities in every row. What changes is what is exchanged and who the other party is — which is why the discipline transfers between a shop and a ministry without being rewritten."
+    },
+    { t: "p", text: "Look at the last two rows, because they break the assumption most people carry. In a charity, **the person who pays never receives the benefit** — which makes the argument you must make completely different. And a health ministry running an anti-smoking campaign is doing marketing whose goal is to *reduce* demand. It is usually written by people from advertising agencies, using the same tools, pointed the other way." },
+    { t: "p", text: "That last case has a name, and it belongs to a wider idea worth having early: marketing is really the **management of demand**, and demand is not always too low." },
+    { t: "table",
+      head: ["When demand is…", "The job is to…", "Example"],
+      rows: [
+        ["Absent — nobody wants it yet", "Connect it to a need they already feel", "A product in a category that does not exist yet"],
+        ["Latent — they want it, nothing provides it", "Build the thing", "A route nobody flies; a cure that does not exist"],
+        ["Irregular — swings by season or hour", "Move demand into the quiet periods", "A cinema empty on Tuesday, full on Friday"],
+        ["Full — matches what you can supply", "Hold quality, watch costs, do not get bored", "A well-run business at capacity"],
+        ["Excessive — more than you can serve well", "Reduce it", "A national park being worn out by visitors"],
+        ["Harmful — it exists and it hurts people", "Destroy it", "Smoking, speeding, gambling"]
+      ],
+      say: "When demand is absent, connect the offering to a need people already feel. When it is latent, build the thing. When it is irregular, move demand into the quiet periods. When it is full, hold quality. When it is excessive, reduce it. When it is harmful, destroy it.",
+      cap: "Three of these six ask you to *reduce* demand. Any definition of marketing that means “selling more” cannot account for half the table."
+    },
+
+    { t: "h2", text: "What marketing is not" },
+    { t: "p", text: "Two things get confused with marketing constantly, and being precise about them will make you immediately more useful than most people in the room." },
+    { t: "h3", text: "It is not advertising" },
+    { t: "p", text: "Advertising is **paid, mediated communication from an identified sponsor**. Every word of that does work: *paid* separates it from press coverage, *mediated* separates it from a salesperson in a room, *identified sponsor* separates it from propaganda. It is one tool, inside promotion, inside the job." },
+    { t: "h3", text: "It is not selling" },
+    { t: "p", text: "Selling starts with a product you already have and looks for someone to take it. Marketing starts with a person you understand and works backwards to what should be made. **They point in opposite directions in time.**" },
+    { t: "quote", text: "The aim of marketing is to make selling superfluous. The aim is to know and understand the customer so well that the product or service fits him and sells itself.", who: "Peter Drucker, 1973" },
+    { t: "p", text: "Drucker is overstating for effect — selling never disappears entirely — but the direction of the claim is right, and Theodore Levitt put the same thing more usefully: *selling focuses on the needs of the seller; marketing on the needs of the buyer.* Learn that sentence." },
     { t: "warn", title: "The mistake that defines an amateur", ps: [
-      "If you take one habit from this lecture, take this one: when someone says *we need marketing*, ask them what they actually mean. Nine times in ten they mean *we need someone to make the posters*.",
-      "A firm that believes marketing is the poster department will locate marketing at the end of the process, after the product is finished and the price is set, and then wonder why the posters are not working. The posters are not working because the three decisions that mattered were made without a marketer in the room."
+      "When somebody says *we need marketing*, ask what they actually mean. Nine times in ten they mean *we need someone to make the posters*.",
+      "A firm that believes marketing is the poster department will put marketing at the end of the process — after the product is finished and the price is set — and then wonder why the posters are not working. The posters are not working because the three decisions that mattered were made without a marketer in the room."
     ]},
 
-    { t: "h2", text: "Transaction, exchange, relationship" },
-    { t: "p", text: "Three words that are not synonyms, and the distinction pays rent later." },
-    { t: "p", text: "An **exchange** is the concept: value moving both ways between two willing parties. A **transaction** is a single instance of it, with agreed terms, a time and a place — eggs for firewood, on Saturday, at six-to-a-bundle. A **relationship** is a durable arrangement in which repeated transactions are expected, and in which both parties invest in the expectation." },
-    { t: "p", text: "The shift from transactional to relationship marketing is one of the genuine intellectual movements of the last forty years. The arithmetic behind it is simple: if a customer will trade with you fifteen times rather than once, the value of acquiring that customer is fifteen times larger, and it becomes rational to spend far more to acquire them and far more to keep them happy. That single idea produced loyalty schemes, customer relationship management systems, subscription business models, and the metric — customer lifetime value — that we will compute properly in week fourteen." },
-    { t: "p", text: "It also produced a great deal of nonsense, which we will examine in week four, because the empirical evidence on how loyal customers actually are is much less flattering than the consultants' slides suggest." },
-
-    { t: "h2", text: "Marketing as the management of demand" },
-    { t: "p", text: "Here is the framework that most first-year courses skip and that will make you immediately more useful than someone who has not seen it. Marketing is often described as *demand management*, and demand can be in eight distinct states. Each state calls for a different task. Crucially, in three of the eight the correct task is to **reduce** demand — which is impossible to see if you believe marketing means selling more." },
-    { t: "table",
-      head: ["State of demand", "What it looks like", "The marketing task"],
-      rows: [
-        ["Negative", "People actively dislike the product and would pay to avoid it — dentistry, vaccination for some, insurance paperwork.", "**Conversional.** Find the source of the aversion and redesign or reframe the offer."],
-        ["None", "The target is indifferent or unaware — a new category nobody has a word for yet.", "**Stimulational.** Connect the product to an existing need the person already recognises."],
-        ["Latent", "A strong want exists that no current product satisfies — a cure that does not exist, a route nobody flies.", "**Developmental.** Build the product. This is where new categories come from."],
-        ["Declining", "Demand is falling, for the category or the brand — printed newspapers, landlines.", "**Remarketing.** Find new segments, new uses, or new channels; or harvest gracefully."],
-        ["Irregular", "Demand swings by season, day or hour — ski resorts, restaurants at 20:00, buses at 08:00.", "**Synchromarketing.** Flex price and promotion to move demand into the troughs."],
-        ["Full", "Demand matches what the firm can supply and wants to supply.", "**Maintenance.** Hold quality, watch costs, defend against entrants. Do not get bored."],
-        ["Overfull", "More demand than can be served, and serving it damages quality or the asset — an overcrowded national park.", "**Demarketing.** Raise price, ration, discourage. Genuine marketing work."],
-        ["Unwholesome", "Demand exists for something socially harmful — tobacco, gambling, speeding.", "**Countermarketing.** Destroy the demand. Public health campaigns are marketing."]
-      ],
-      say: "The eight states of demand. Negative demand calls for conversional marketing. No demand calls for stimulational marketing. Latent demand calls for developmental marketing. Declining demand calls for remarketing. Irregular demand calls for synchromarketing. Full demand calls for maintenance marketing. Overfull demand calls for demarketing. And unwholesome demand calls for countermarketing.",
-      cap: "Learn the left column and the right column together. An examiner — and a job interviewer — will give you the middle column and ask for the other two."
-    },
-    { t: "p", text: "The two that surprise people are **demarketing** and **countermarketing**. A city that raises a tourist tax to protect its old town is doing marketing. A health ministry running a campaign against smoking is doing marketing — in fact it is doing marketing against marketing, which is why those campaigns are often written by people from advertising agencies." },
-    { t: "case", title: "Synchromarketing, worked",
+    { t: "h2", text: "The exchange underneath all of it" },
+    { t: "p", text: "Now that you know what the job is and where it is done, here is the single idea that holds it together. Every row of that table was an **exchange**: two parties, each giving the other something, each free to walk away." },
+    { t: "p", text: "Philip Kotler sets out five conditions. All five must hold at once, or no exchange happens — and this is your first real tool, because when a deal is not happening you can walk the list and find which one is missing." },
+    { t: "ol", items: [
+      "There are **at least two parties**.",
+      "Each has **something of value** to the other.",
+      "Each can **communicate and deliver**.",
+      "Each is **free to accept or reject**.",
+      "Each **believes it is appropriate** to deal with the other."
+    ]},
+    { t: "p", text: "Read as a list it looks obvious. Its value is that it is a **diagnostic** — it turns *we don't know why they won't buy* into a specific answer." },
+    { t: "case", title: "A stalled deal, diagnosed in five questions",
       ps: [
-        "A cinema has 200 seats and seven screenings a week. Friday and Saturday evenings sell out; Tuesday afternoon runs at perhaps a tenth full. The seats are identical. The film is identical. The cost of running the Tuesday screening is almost entirely fixed — the projector, the heat, one member of staff.",
-        "Selling *more tickets* is the wrong framing. The Friday screening cannot hold more people. The task is to **move** demand, not to add it: a cheaper Tuesday ticket, a parent-and-baby screening, a pensioners’ club, a student card that is valid only before 17:00.",
-        "Every one of those is a price or promotion decision aimed at a trough. None of them is an attempt to persuade the world that films are good. And note the trap: if the Tuesday discount is advertised loudly enough, some of the Friday audience will simply shift to Tuesday, and the cinema will have converted full-price customers into discount ones. Synchromarketing works only when the discount is **fenced** — restricted to a group that would not otherwise have come at all. We will do the arithmetic of that fence in week ten."
+        "A two-person software company sells appointment scheduling to dental practices. The product is good. The price is fair. Sales have flatlined for a year. The founder's instinct is to spend more on advertising. Walk the five conditions instead.",
+        "**Two parties?** Yes — but *who*? The practice owner signs; the receptionist uses it. If everything the company writes speaks to the receptionist, the person with the chequebook never hears it. Condition one is about identifying the *right* second party.",
+        "**Something of value each way?** The tool saves about four receptionist-hours a week. Whether that is valuable depends on whether the owner *experiences* those hours as a cost. If the receptionist is salaried and not overloaded, the saving is real and still worth nothing to the buyer.",
+        "**Able to communicate and deliver?** They can deliver. Can they communicate? Dentists do not read software blogs. If every message is published where the audience is not, the condition fails on media, not on argument.",
+        "**Free to accept or reject?** Usually — unless the practice is locked into a three-year contract with an existing supplier. Then nothing will work until month thirty-four, and the correct action is to *time* the approach, not to shout louder.",
+        "**Believes it is appropriate to deal?** A two-person company asking a clinic to trust it with patient appointment data is asking for trust it has not earned. This is the condition that most often fails silently, and the fix is not advertising — it is references, a certification, a free trial, an insurer's endorsement.",
+        "**Four of those five diagnoses lead somewhere other than *buy more advertising*.** That is what a diagnostic tool is for."
       ]},
 
     { t: "h2", text: "Who, exactly, is the customer?" },
-    { t: "p", text: "One more distinction and the lecture is done. In the egg-and-firewood trade, one person wanted, paid and consumed. Almost no commercially interesting exchange is that simple. Three roles come apart, and they are frequently three different people:" },
+    { t: "p", text: "One more tool, and it is the one you will reach for most often. Three roles come apart, and they are frequently three different people." },
     { t: "ul", items: [
-      "The **user** — who consumes the benefit.",
-      "The **buyer** — who makes the choice and executes the purchase.",
+      "The **user** — who gets the benefit.",
+      "The **buyer** — who chooses and does the buying.",
       "The **payer** — whose money leaves the account."
     ]},
-    { t: "p", text: "A breakfast cereal aimed at children has a user of six and a buyer-payer of thirty-five, which is why the box is designed to be argued for by the child and justified by the parent — cartoon on the front, vitamins on the side. A hospital drug has a user who is ill, a buyer who is a physician, and a payer who is an insurer or a state; all three must be marketed to, in three entirely different languages. A workplace pension has a user who is the employee, a buyer who is an HR committee, and a payer who is the employer." },
-    { t: "p", text: "Ask the three questions — who uses, who chooses, who pays — before you write a single word of any campaign. When a campaign fails for reasons nobody can identify, the most common cause is that it addressed the user with an argument only the payer cares about, or the reverse." },
+    { t: "p", text: "A children's cereal has a user of six and a buyer-payer of thirty-five — which is why the box has a cartoon on the front and a vitamin table on the side. One face argues, the other justifies. A hospital drug has a user who is ill, a buyer who is a doctor and a payer who is a state or an insurer; all three must be convinced, in three different languages. A workplace pension has a user who is an employee, a buyer who is an HR committee and a payer who is the employer." },
+    { t: "p", text: "**Ask the three questions — who uses, who chooses, who pays — before writing a single word of any campaign.** When a campaign fails and nobody can say why, the most common cause is that it gave one role another role's argument." },
 
     { t: "write", items: [
-      "The five conditions for exchange — all five, in order.",
-      "Marketing points backwards from the customer; selling points forwards from the product.",
-      "Advertising = paid, mediated communication from an identified sponsor.",
-      "The eight demand states with their eight tasks. Copy the table.",
-      "User, buyer, payer — three questions to ask before any campaign."
+      "Marketing = making an exchange happen, profitably, repeatedly, at scale.",
+      "The six activities: research, product, price, place, promotion, service. Copy the whole table.",
+      "Advertising is one tool inside promotion inside the job.",
+      "Selling points forwards from the product; marketing points backwards from the person.",
+      "The five conditions for exchange, in order. This is a diagnostic, not a list.",
+      "User, buyer, payer — three questions before any campaign."
     ]},
 
-    { t: "h2", text: "What you should be able to do now" },
-    { t: "p", text: "You can define marketing without saying the word advertising. You can diagnose a stalled deal by walking five conditions instead of guessing. You know that reducing demand is sometimes the correct marketing objective, and you have a name for it. And you know that the customer is often three people wearing one word." },
-    { t: "p", text: "Next lecture: the five beliefs a firm can hold about its customer, why most firms hold an outdated one without knowing it, and how to tell from the outside which one you are dealing with." }
+    { t: "h2", text: "What you can do now" },
+    { t: "p", text: "You can define marketing without saying the word advertising. You can name the six activities the job is made of and say which one a given task belongs to. You can point to five organisations that use it, only one of which is a normal company. And you have two working tools: a five-question diagnostic for a deal that has stalled, and a three-role test for who you actually have to convince." },
+    { t: "p", text: "Next lecture: the five beliefs a company can hold about its customers, why most companies hold an out-of-date one without knowing, and how to tell which one you are dealing with from the outside in about ten minutes." }
+  ],
+  exercises: [
+    { task: "**Walk the six activities.** For your running case, write one line under each of the six: research, product, price, place, promotion, service. Then mark the ones where you genuinely do not know the answer.",
+      hint: "The blanks are the point. Most organisations can fill product and promotion and go quiet at research and service. Those gaps are your syllabus for the next sixteen weeks." },
+    { task: "**Find the exchange.** Write down exactly what your case gives, and exactly what it gets back. Then write what the other party gives up besides money — time, effort, risk, having to admit they need it.",
+      hint: "If the only thing you can name on the second list is money, look harder. The non-money costs are usually where the business is actually being lost." },
+    { task: "**Diagnose a stalled deal.** Think of one customer or supporter who did not say yes. Walk all five conditions and name the one that failed. Write one sentence on what would actually fix it.",
+      hint: "If you conclude it was condition two — no value — be suspicious. That is the comfortable answer. Condition five, trust, fails far more often and fails silently." },
+    { task: "**Who uses, who chooses, who pays?** For your case, name all three. If they are the same person, find a situation where they would not be — a gift, a company purchase, a child.",
+      hint: "Then write the single sentence you would say to each of the three. If the three sentences are the same, one of them is wrong." },
+    { task: "**Find marketing where you did not expect it.** Find one real campaign by a government, hospital or charity — a poster, a letter, a broadcast. Write which of the six demand states it is trying to move, and in which direction.",
+      hint: "Estonian public-health and road-safety campaigns are the easiest to find and are usually trying to destroy demand, not create it." }
+  ],
+  reading: [
+    { author: "Philip Kotler and Kevin Lane Keller", work: "Marketing Management", where: "Pearson", year: 2016,
+      note: "The standard textbook of the field. Chapter 1 covers this lecture. You do not need to own it — any edition from the last fifteen years will do, and libraries have it." },
+    { author: "Theodore Levitt", work: "Marketing Myopia", where: "Harvard Business Review", year: 1960,
+      note: "Short, and you will meet it properly in lecture four. The line about selling versus marketing is in here." },
+    { author: "Peter F. Drucker", work: "Management: Tasks, Responsibilities, Practices", where: "Harper & Row", year: 1973,
+      note: "Where the line about making selling superfluous comes from. Drucker's chapter on the purpose of a business is worth an hour even if you read nothing else." }
   ],
   glossary: [
-    { term: "Exchange", def: "Value moving in both directions between two parties, each free to refuse. The unit concept of the entire discipline." },
-    { term: "Transaction", def: "One instance of an exchange, with agreed terms, a time and a place." },
-    { term: "Relationship marketing", def: "Managing a customer for repeated transactions over time rather than optimising each sale in isolation." },
-    { term: "Gains from trade", def: "The increase in total value created when a good moves from someone who values it less to someone who values it more, without anything new being produced." },
-    { term: "Advertising", def: "Paid, mediated communication from an identified sponsor. One of five promotional tools." },
-    { term: "Demand management", def: "The view of marketing as bringing actual demand into line with desired demand — which sometimes means reducing it." },
-    { term: "Demarketing", def: "Deliberately discouraging demand, usually because serving it damages quality, the asset, or the wider public." },
+    { term: "Marketing", def: "The work of making an exchange happen — profitably, repeatedly and at scale." },
+    { term: "The six activities", def: "Research, product, price, place, promotion, service. Every marketing task belongs to one of them." },
+    { term: "Exchange", def: "Value moving in both directions between two parties, each free to refuse. The unit concept of the whole discipline." },
+    { term: "Advertising", def: "Paid, mediated communication from an identified sponsor. One tool, inside promotion, inside the job." },
+    { term: "Selling", def: "Starting from a product you have and finding someone to take it — the opposite direction in time from marketing." },
+    { term: "Demand management", def: "The view of marketing as bringing actual demand into line with desired demand, which sometimes means reducing it." },
+    { term: "Demarketing", def: "Deliberately discouraging demand, usually because serving it damages quality, the asset or the public." },
     { term: "Countermarketing", def: "Working to destroy demand for something judged harmful — public health campaigns being the standard case." },
-    { term: "Synchromarketing", def: "Shifting demand in time to match capacity, typically with price and promotion aimed at troughs." },
-    { term: "User / buyer / payer", def: "The three roles in a purchase, which are often three different people and need three different arguments." }
+    { term: "User / buyer / payer", def: "The three roles in a purchase, often three different people needing three different arguments." },
+    { term: "Value proposition", def: "The specific reason this offering is worth more to this person than what they give up for it." }
   ],
   quiz: [
+    { id: "w01l01q12", concept: "six-activities", type: "mcq",
+      q: "A company decides to stop selling through independent shops and sell only from its own website. Which of the six activities is that decision?",
+      options: ["Product", "Promotion", "Place", "Service"],
+      answer: 2,
+      explain: "Place — channel choice. It will certainly be *announced* through promotion, but announcing a decision and making it are different activities, and confusing them is how the promotions team ends up setting distribution strategy. Being able to put a decision in the right box quickly is most of the skill in a first year on the job." },
+
+    { id: "w01l01q13", concept: "six-activities", type: "short",
+      q: "A marketing plan you are handed covers the product, the price and the advertising in detail. Which two of the six activities are most likely missing, and why does it matter?",
+      answer: "Almost certainly **place** and **service**. Place is missing because it feels like logistics rather than marketing, so it gets delegated to operations — but if the customer cannot easily obtain the thing, every other decision in the plan is wasted; availability is a growth lever, not a back-office matter. Service is missing because it happens after the sale, when the plan is considered finished — but it decides whether the customer ever returns, and repeat purchase is where the profit in most businesses actually sits. The reason it matters is that both gaps are invisible in the plan itself: the document looks complete and detailed, and nothing in it announces the two quarters of the job that were never considered.",
+      explain: "This is the practical use of the six-activity list: it is a completeness check. Walk it against any plan and the blanks are the finding." },
+
+    { id: "w01l01q14", concept: "where-used", type: "multi",
+      q: "Which of these are doing marketing, in the sense used in this lecture? Select all that apply.",
+      options: [
+        "A health ministry campaigning to reduce smoking",
+        "A charity asking for donations to help people the donor will never meet",
+        "A hospital trying to get invited patients to actually attend screening",
+        "A city raising a tourist tax to reduce visitor numbers in the old town",
+        "A company deciding which factory to close"
+      ],
+      answer: [0, 1, 2, 3],
+      explain: "All four of the first are marketing: each needs a *voluntary* exchange from someone who is free to refuse, and each uses the same six activities. Two of them are trying to *reduce* demand, which is why a definition of marketing as “selling more” fails. Closing a factory is an operations and finance decision — it becomes a marketing question only where it changes what customers can get." },
+
+    { id: "w01l01q15", concept: "where-used", type: "mcq",
+      q: "Why does a charity appeal need a different argument from a shop's advertisement, even when both are asking for money?",
+      options: [
+        "Charities have smaller budgets, so the message must be simpler",
+        "The person who pays never receives the benefit, so the exchange offers something other than a product",
+        "Donations are voluntary whereas purchases are not",
+        "Charities are not allowed to use persuasion"
+      ],
+      answer: 1,
+      explain: "The structure of the exchange is different. In a shop the payer is normally the user: money out, benefit back to the same person. In a charity the benefit goes to a third party, so what the donor receives is something else entirely — a sense of having acted, an identity, relief from discomfort, membership of a cause. Getting that wrong is why so many appeals describe the problem in detail and never say what the donor actually gets in return." },
+
     { id: "w01l01q1", concept: "def-marketing", type: "mcq",
       q: "Which of these is the best one-sentence working definition of marketing?",
       options: [
@@ -831,14 +914,14 @@ window.LESSONS['marketing.w01'] = {
    1.4  Marketing myopia
    ============================================================ */
 "w01l04": {
-  standfirst: "In July 1960 a Harvard lecturer published nine thousand words arguing that the great industries of the age were not being destroyed by competitors, by recession or by falling demand. They were being destroyed by the answer their own executives gave to one question: **what business are we in?** It became the most reprinted article Harvard Business Review has ever published, and firms are still making the mistake — usually with the article on the shelf behind them.",
+  standfirst: "Here is a question you can ask about any company, including the one you work for: **what business are we in?** It sounds harmless. It is the most dangerous question in this course — because the answer decides who you count as a competitor, and a competitor you do not count is one who can take your customers without you ever noticing.",
   objectives: [
-    "State Levitt’s argument precisely, including the claim about growth industries that most summaries drop.",
-    "Unpack the four self-deceptions and recognise each one in a live firm.",
-    "Compute how long a dismissible substitute takes to overtake an incumbent, and read the answer honestly.",
+    "Explain why the question “what business are we in?” decides which threats a firm can see at all.",
+    "State Levitt’s argument, including the claim about growth industries that most summaries drop.",
+    "Name the four self-deceptions and spot each one in a real firm.",
+    "Use the crossover formula to work out how many years a small, fast-growing rival needs to overtake you.",
     "Define a business on Abell’s three dimensions, and test the definition by what it rules out.",
-    "Argue the case against Levitt — hyperopia and the resource-based view — and state the synthesis.",
-    "Run the five-step myopia test on a real organisation and produce a competitor list its own reports do not contain."
+    "Argue the case against Levitt — hyperopia and capability — and state the synthesis."
   ],
   concepts: [
     { id: "myopia",        name: "Marketing myopia" },
@@ -849,14 +932,38 @@ window.LESSONS['marketing.w01'] = {
     { id: "substitutes",   name: "Substitution arithmetic" },
     { id: "capability",    name: "Capability and the counter-argument" }
   ],
+  vocab: [
+    { word: "myopia", plain: "Short-sightedness. You see clearly what is close to you and miss what is further away.", et: "lühinägelikkus" },
+    { word: "hyperopia", plain: "Long-sightedness — the opposite error. You see the far distance and miss what is in front of you.", et: "kaugnägelikkus" },
+    { word: "substitute", plain: "A different kind of product that does the same job for the customer.", et: "asendaja, aseaine" },
+    { word: "incumbent", plain: "The company that already holds the market. The one being attacked, not the attacker.", et: "turgu valitsev olemasolev ettevõte" },
+    { word: "complacency", plain: "Feeling safe and satisfied when you have no good reason to be.", et: "eneserahulolu" },
+    { word: "self-deception", plain: "Believing something about yourself that is not true, without meaning to lie.", et: "enesepettus" },
+    { word: "capability", plain: "Something a firm is genuinely able to do well, better than others can.", et: "võimekus" },
+    { word: "volatile", plain: "Changes fast and unpredictably.", et: "kiiresti muutuv, kõikuv" },
+    { word: "durable", plain: "Lasts a long time without changing.", et: "püsiv, kestev" },
+    { word: "residual", plain: "What is left over after you subtract everything you can explain.", et: "jääk" },
+    { word: "dismiss", plain: "To decide something is not worth paying attention to.", et: "kõrvale heitma" },
+    { word: "crossover", plain: "The moment two lines on a chart meet and swap places.", et: "ristumiskoht" },
+    { word: "prescription", plain: "The action a theory recommends you take.", et: "soovitus, ettekirjutus" }
+  ],
   blocks: [
-    { t: "h2", text: "The railroads did not run out of passengers" },
-    { t: "p", text: "Theodore Levitt opened with the American railroads, and the choice was deliberate. Within living memory of his readers they had been the largest enterprises on earth — larger than most governments, the defining industrial achievement of the previous century. By 1960 they were a problem to be managed rather than a business to be envied." },
-    { t: "p", text: "The explanation everyone gave was the obvious one: cars, lorries and aeroplanes took their traffic. Levitt agreed with the facts and rejected the explanation, and the distinction is the whole lecture." },
-    { t: "quote", text: "The railroads did not stop growing because the need for passenger and freight transportation declined. That grew. The railroads are in trouble today not because the need was filled by others (cars, trucks, airplanes, even telephones), but because it was not filled by the railroads themselves.", who: "Theodore Levitt, “Marketing Myopia”, Harvard Business Review, July–August 1960" },
-    { t: "p", text: "Read the second sentence twice. The demand for moving people and goods did not shrink; it grew enormously across exactly the decades in which the railroads declined. Every one of those new tonne-miles and passenger-miles was available. The railroads did not lose a contest for that traffic. They never entered it — because a firm that understands itself as *a railroad* is watching other railroads, and a lorry is not a railroad." },
-    { t: "p", text: "This is the mechanism, and it is worth stating as a general principle before we go near the four causes: **a firm defined by what it makes can only perceive competitors who make the same thing.** When the customer’s need is met by something structurally different, the firm does not lose the fight. It does not notice there was one." },
+    { t: "h2", text: "A question you can ask about any company" },
+    { t: "p", text: "Think of where you work, or a shop you use every week. Ask the people there what business they are in. The answer comes fast, and it is almost always the product. *We make furniture. We run a gym. We sell insurance.*" },
+    { t: "p", text: "Now watch what that answer does to them. If you are a gym, your competitors are the other gyms. So you watch the other gyms. You compare prices with them. You worry when one opens nearby. You do not watch the running app, or the weights somebody bought for their spare room, or the padel court that opened last spring — because none of those is a gym." },
+    { t: "p", text: "That is the trap. Your customer never wanted a gym. They wanted to be fitter, or to feel better, or to have a reason to leave the house at seven in the morning. Anything that does that job is competing with you, whether or not you count it." },
+    { t: "p", text: "So this is not an academic question. **It decides which threats you are able to see at all.** Answer it badly and you will be extremely well informed about the wrong competitors, right up to the day your customers leave for somewhere you were not looking." },
+    { t: "p", text: "That is what this lecture is for. You will get a name for the failure, four reasons it happens, a piece of arithmetic that tells you how much time you have, and a method for defining a business that avoids both this mistake and the opposite one — which is just as expensive and far less famous." },
 
+    { t: "h2", text: "The firm that answered it wrong" },
+    { t: "p", text: "The classic case is the American railroads. It is worth a minute, because the scale is hard to picture now." },
+    { t: "p", text: "For most of the nineteenth century the railroads were the largest companies on earth. They were bigger than most governments. They were the defining industrial achievement of the age, the way that software companies are today. By 1960 they were a problem to be managed rather than a business anyone envied." },
+    { t: "p", text: "Everyone had the same explanation: cars, lorries and aeroplanes took their traffic. Theodore Levitt, writing in *Harvard Business Review* in 1960, agreed with every fact in that sentence and rejected the explanation completely." },
+    { t: "quote", text: "The railroads did not stop growing because the need for passenger and freight transportation declined. That grew. The railroads are in trouble today not because the need was filled by others (cars, trucks, airplanes, even telephones), but because it was not filled by the railroads themselves.", who: "Theodore Levitt, “Marketing Myopia”, Harvard Business Review, July–August 1960" },
+    { t: "p", text: "Read the second sentence again, slowly. Demand for moving people and goods did not shrink. It grew enormously, across exactly the decades when the railroads were shrinking. Every one of those new journeys and new tonnes was there to be won." },
+    { t: "p", text: "The railroads did not lose a fight for that business. They never turned up to it. A company that understands itself as *a railroad* watches other railroads — and a lorry is not a railroad." },
+    { t: "p", text: "Levitt gave this failure a name: **marketing myopia**. Myopia is the medical word for short-sightedness. You see what is close to you perfectly well and miss what is further out." },
+    { t: "p", text: "Here is the mechanism, stated as a general rule before we go near the causes. **A firm defined by what it makes can only see competitors who make the same thing.** When the customer's need gets met by something structurally different, the firm does not lose the contest. It never knew there was one." },
     { t: "h2", text: "The claim most summaries drop" },
     { t: "p", text: "Ask ten marketers what marketing myopia means and nine will say *defining your business too narrowly*. That is half of it, and the missing half is the half Levitt cared about most." },
     { t: "p", text: "His central assertion was about **growth industries** — and it was that there is no such thing." },
@@ -891,20 +998,27 @@ window.LESSONS['marketing.w01'] = {
     { t: "h2", text: "Making the threat numerical" },
     { t: "p", text: "Here is where this lecture asks more of you than most treatments do. *Watch for substitutes* is advice nobody can act on. The way to convert it into a decision is arithmetic, and the arithmetic is simple enough to do on the back of an envelope." },
     { t: "p", text: "Take a category where you hold 97 units of volume and a substitute holds 3. Your category is drifting down by 2% a year; the substitute is growing at 40% a year off its tiny base. Nobody in your industry is worried, and at today's numbers nobody should be — the substitute is 3% of the market." },
-    { t: "math", label: "When does the substitute overtake?",
+    { t: "math", label: "The crossover formula",
       eqs: [
-        "  incumbent(n) = 97 × 0.98ⁿ",
-        "  substitute(n) =  3 × 1.40ⁿ",
+        "  n  =  ln(share ratio)  ÷  ln(growth ratio)",
         "",
-        "  set equal:   (1.40 / 0.98)ⁿ  =  97 / 3  =  32.3",
-        "               1.4286ⁿ         =  32.3",
-        "               n = ln(32.3) / ln(1.4286)",
-        "               n = 3.48 / 0.357  ≈  9.7 years"
+        "  share ratio   =  your units  ÷  their units        = 97 ÷ 3    = 32.3",
+        "  growth ratio  =  their factor ÷ your factor        = 1.40 ÷ 0.98 = 1.4286",
+        "",
+        "  n  =  ln(32.3) ÷ ln(1.4286)  =  3.48 ÷ 0.357  ≈  9.7 years"
       ],
-      say: "Set ninety-seven times nought point nine eight to the n equal to three times one point four to the n. Dividing gives one point four two eight six to the n equals thirty-two point three. Taking logs, n equals about nine point seven years.",
+      terms: [
+        { sym: "n", means: "the answer: how many years until they pass you." },
+        { sym: "growth factor", means: "one plus the growth rate. Growing 40% a year is a factor of **1.40**. Shrinking 2% a year is a factor of **0.98**. Multiply by the factor once per year." },
+        { sym: "share ratio", means: "how many times bigger you are than them, today. If you have 97 units and they have 3, you are 32.3 times bigger." },
+        { sym: "growth ratio", means: "how much faster they grow than you, each year. Their factor divided by yours." },
+        { sym: "ln", means: "the natural logarithm — the `ln` button on any calculator or phone. It answers: *how many times do I have to multiply by this, to get that?* You do not need to know why it works to use it." }
+      ],
+      use: "Use this the moment somebody in a meeting says *that competitor is tiny, ignore them*. It turns an argument about feelings into a number of years, which is something a budget can respond to. Two rough estimates are enough — the answer is far less sensitive to your guesses than your intuition is.",
+      say: "The crossover formula. n equals the natural log of the share ratio, divided by the natural log of the growth ratio.",
       ps: [
-        "Under ten years. And notice where the danger sits: at year five the substitute is still only 16 units against your 88 — about one unit in six, comfortably ignorable, and by then you have **four years left**, not ten.",
-        "The general form is worth memorising, because you can run it in your head in a meeting: `n = ln(share ratio) / ln(growth ratio)`. Two numbers you can estimate badly and still get a useful answer — the result is far less sensitive to your estimates than your intuition is."
+        "**Why a logarithm has to appear.** Growth compounds: each year multiplies, it does not add. So the unknown — the number of years — sits up in the exponent, and you cannot get at it by ordinary arithmetic. The logarithm is the tool that brings an exponent down where you can solve for it. That is the whole reason it is here.",
+        "**Reading the answer.** Just under ten years. Now notice where the danger actually sits. At year five the substitute has 16 units against your 88 — about one in six, easy to dismiss. And you have four years left, not ten."
       ]},
 
     { t: "fig", title: "A 3% substitute growing at 40% a year", sketch: true,
