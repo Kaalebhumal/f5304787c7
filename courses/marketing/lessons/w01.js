@@ -1066,6 +1066,118 @@ window.LESSONS['marketing.w01'] = {
       say: "Year zero: ninety-seven against three, a three percent share. Year three: eight percent. Year five: sixteen percent. Year eight: thirty-five percent. Year ten: fifty-two percent, and the substitute is now the market.",
       cap: "Copy this table. The right-hand column is the part that is not arithmetic, and it is the part that decides outcomes: at every row the firm's reading of the situation is defensible, and at exactly one row — year three or five — acting would still have been cheap." },
 
+    { t: "h2", text: "Two real cases, and how the arithmetic did" },
+    { t: "p", text: "A formula you cannot check against reality is a party trick. So here are two substitutions that actually happened, with published numbers. In one the arithmetic was about right. In the other it was wrong in a way worth understanding." },
+
+    { t: "h3", text: "Case one: Blockbuster and Netflix" },
+    { t: "p", text: "In 2004 Blockbuster was at its peak: around 9,100 shops, about 84,300 staff, roughly **$6 billion** of revenue. Netflix that year did about **$500 million**, posting DVDs in red envelopes. Blockbuster was twelve times larger." },
+    { t: "table",
+      head: ["Year", "Blockbuster revenue", "Netflix revenue", "Netflix as % of Blockbuster"],
+      rows: [
+        ["2004", "$6.0bn", "$0.50bn", "8%"],
+        ["2006", "$5.52bn", "$1.00bn", "18%"],
+        ["2007", "$5.54bn", "$1.21bn", "22%"],
+        ["2008", "$5.29bn", "$1.37bn", "26%"],
+        ["2010", "$3.24bn", "$2.16bn", "67%"],
+        ["2011", "gone — sold out of bankruptcy for $320m", "$3.2bn", "—"]
+      ],
+      say: "In 2004 Blockbuster took six billion dollars against Netflix's five hundred million. By 2008 Netflix was at twenty-six percent of Blockbuster. By 2010 it was sixty-seven percent, and Blockbuster filed for bankruptcy that September.",
+      cap: "Figures as reported by the two companies and in contemporary coverage. Blockbuster filed for bankruptcy in September 2010 and was sold to Dish Network for $320m in 2011." },
+    { t: "math", label: "What the formula said in 2004",
+      eqs: [
+        "  share ratio   =  6.0bn ÷ 0.50bn                    =  12",
+        "  Netflix growth 2004→2008: (1.37 ÷ 0.50)^(1/4)      =  1.285   (+28.5%/yr)",
+        "  Blockbuster   2004→2008: (5.29 ÷ 6.00)^(1/4)       =  0.969   (−3.1%/yr)",
+        "",
+        "  n = ln(12) ÷ ln(1.285 ÷ 0.969) = 2.485 ÷ 0.282  ≈  8.8 years",
+        "  → crossover predicted for late 2012 / 2013"
+      ],
+      say: "The share ratio was twelve. Netflix grew twenty-eight and a half percent a year, Blockbuster shrank three point one percent a year. The formula gives eight point eight years, so a crossover in late twenty-twelve.",
+      terms: [
+        { sym: "^(1/4)", means: "the fourth root — the average yearly growth factor across four years, rather than the total over four years." }
+      ],
+      use: "Run this on any pair where you have two revenue figures four or five years apart. You do not need a forecast from anybody; the published accounts are enough.",
+      ps: [
+        "**What actually happened: Blockbuster filed for bankruptcy in September 2010.** Six years, not nine.",
+        "**Why the formula was too kind.** It compares two lines and asks when they cross. It knows nothing about the roughly $1 billion of debt Blockbuster was carrying, or about 9,100 leases that had to be paid whether or not anybody walked in. A company with heavy fixed costs does not survive until the crossover; it fails when the *cash* runs out, which happens earlier — sometimes years earlier.",
+        "**The lesson to keep:** the crossover year is a **ceiling on your remaining time, not a promise of it.** If the incumbent is heavily indebted or carries large fixed costs, subtract."
+      ]},
+
+    { t: "h3", text: "Case two: Revolut and the high-street banks" },
+    { t: "p", text: "Now a case still running, in an industry that looked immovable. In February 2018 Revolut had about **1.5 million customers**. Barclays — one of the largest banks in the United Kingdom — reported **over 48 million customers worldwide** in 2025. In 2018, Barclays was more than thirty times larger by that measure." },
+    { t: "table",
+      head: ["Date", "Revolut customers", "What was happening on the other side"],
+      rows: [
+        ["Feb 2018", "1.5m", "Dismissible. An app for travel money."],
+        ["Oct 2019", "7m", "Still a niche. Branch closures beginning in earnest."],
+        ["Feb 2021", "15m", ""],
+        ["Nov 2022", "25m", ""],
+        ["Oct 2023", "35m", "Barclays has closed over a thousand branches since 2019."],
+        ["Nov 2024", "50m", "Past Barclays' reported worldwide customer count."],
+        ["Jan 2026", "70m+", "16 million added in 2025 alone."]
+      ],
+      say: "Revolut went from one and a half million customers in early twenty-eighteen to fifty million by November twenty twenty-four, and past seventy million by January twenty twenty-six.",
+      cap: "Revolut figures as published by the company; Barclays customer count as reported for 2025; UK branch closure counts from industry tracking. Dates are when each milestone was announced." },
+    { t: "math", label: "What the formula said in 2018",
+      eqs: [
+        "  share ratio   =  48m ÷ 1.5m                        =  32",
+        "  Revolut growth 2018→2024: (50 ÷ 1.5)^(1/6.75)      =  1.68   (+68%/yr)",
+        "  Barclays customer growth: roughly flat             =  1.00",
+        "",
+        "  n = ln(32) ÷ ln(1.68 ÷ 1.00) = 3.47 ÷ 0.519  ≈  6.7 years",
+        "  → crossover predicted for around mid-2024"
+      ],
+      say: "The share ratio was thirty-two. Revolut grew sixty-eight percent a year against a flat incumbent. The formula gives six point seven years, so a crossover around mid twenty twenty-four.",
+      use: "The same two estimates, in an industry where everybody agreed the incumbents could not be touched.",
+      ps: [
+        "**What actually happened: Revolut passed 50 million customers in November 2024.** The formula was out by a few months across nearly seven years.",
+        "**But now be sceptical of your own result.** A Revolut customer and a Barclays customer are not the same thing. Many Revolut accounts are secondary — a card for travel, not a salary account — and revenue per customer differs enormously between the two. On *customers* the crossover happened in 2024. On *deposits*, or on *primary banking relationships*, it plainly has not.",
+        "**The lesson to keep:** the formula answers the question you asked it, on the measure you chose. **Choosing the measure is the real work.** A crossover on a flattering metric is how an incumbent reassures itself, and how a challenger over-claims."
+      ]},
+
+    { t: "fig", title: "Revolut against a flat incumbent — prediction and outcome", sketch: true,
+      say: "Revolut's customer count climbs from one and a half million in twenty-eighteen to seventy million in twenty twenty-six. A flat line marks Barclays at about forty-eight million. The formula, run in twenty-eighteen, predicted the crossing for mid twenty twenty-four; the actual crossing came in late twenty twenty-four.",
+      cap: "Revolut's published milestones. Barclays is drawn as a flat reference line at its reported 2025 worldwide customer count — an approximation, since its customer base has not grown at anything like Revolut's rate. The lecture's point does not depend on that line being exact.",
+      svg: '<svg viewBox="0 0 680 348" role="img" aria-label="Revolut customer growth crossing a flat incumbent line, with predicted and actual crossover marked">' +
+        '<line class="grid-line" x1="52" y1="292" x2="570" y2="292"/>' +
+        '<line class="grid-line" x1="52" y1="202" x2="570" y2="202"/>' +
+        '<line class="grid-line" x1="52" y1="112" x2="570" y2="112"/>' +
+        '<line class="grid-line" x1="52" y1="22" x2="570" y2="22"/>' +
+        '<text class="ax-label" x="44" y="296" text-anchor="end">0</text>' +
+        '<text class="ax-label" x="44" y="206" text-anchor="end">25m</text>' +
+        '<text class="ax-label" x="44" y="116" text-anchor="end">50m</text>' +
+        '<text class="ax-label" x="44" y="26" text-anchor="end">75m</text>' +
+        '<text class="ax-label" x="18" y="160" text-anchor="middle" transform="rotate(-90 18 160)">customers</text>' +
+        '<line x1="52" y1="119.2" x2="570" y2="119.2" stroke="var(--series-1)" stroke-width="2" stroke-dasharray="7 4"/>' +
+        '<text class="ser-label" x="578" y="123" fill="var(--series-1)">Barclays ≈48m</text>' +
+        '<line x1="472.9" y1="22" x2="472.9" y2="292" stroke="var(--gold)" stroke-width="1.4" stroke-dasharray="4 4"/>' +
+        '<text class="ax-label" x="468" y="40" text-anchor="end" fill="var(--gold-ink)">formula said mid-2024</text>' +
+        '<line x1="489.1" y1="119.2" x2="489.1" y2="292" stroke="var(--good)" stroke-width="1.4"/>' +
+        '<circle cx="489.1" cy="119.2" r="5" fill="var(--good)" stroke="var(--surface)" stroke-width="2"/>' +
+        '<text class="ax-label" x="495" y="280" fill="var(--good)">actual, late 2024</text>' +
+        '<path d="M58.5 286.6 L168.6 266.8 L252.7 238 L369.3 202 L427.6 166 L498.8 112 L570 40" fill="none" stroke="var(--series-2)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>' +
+        '<g fill="var(--series-2)" stroke="var(--surface)" stroke-width="2">' +
+        '<circle cx="58.5" cy="286.6" r="4"/><circle cx="168.6" cy="266.8" r="4"/><circle cx="252.7" cy="238" r="4"/>' +
+        '<circle cx="369.3" cy="202" r="4"/><circle cx="427.6" cy="166" r="4"/><circle cx="498.8" cy="112" r="4"/><circle cx="570" cy="40" r="4"/>' +
+        '</g>' +
+        '<text class="val-label" x="58.5" y="277" text-anchor="middle" fill="var(--ink-3)">1.5m</text>' +
+        '<text class="ser-label" x="578" y="44" fill="var(--series-2)">Revolut</text>' +
+        '<line class="axis-line" x1="52" y1="22" x2="52" y2="292"/>' +
+        '<text class="ax-label" x="52" y="312" text-anchor="middle">2018</text>' +
+        '<text class="ax-label" x="181.5" y="312" text-anchor="middle">2020</text>' +
+        '<text class="ax-label" x="311" y="312" text-anchor="middle">2022</text>' +
+        '<text class="ax-label" x="440.5" y="312" text-anchor="middle">2024</text>' +
+        '<text class="ax-label" x="570" y="312" text-anchor="middle">2026</text>' +
+        '<text x="52" y="338" fill="var(--ink-3)" font-size="11">Run in 2018 on two published numbers, the formula missed the crossing by a few months over seven years.</text>' +
+        '</svg>' },
+
+    { t: "write", items: [
+      "Blockbuster 2004: $6.0bn and 9,100 shops. Netflix: $0.50bn. Bankrupt September 2010.",
+      "Formula said 8.8 years. Reality was 6 — **debt and fixed costs break an incumbent before the crossover**.",
+      "Revolut 2018: 1.5m customers against a bank with 48m. Formula said mid-2024. Reality: November 2024.",
+      "The crossover year is a **ceiling on your time, not a promise**. Subtract if the incumbent is indebted.",
+      "The formula answers the question you asked, on the measure you chose. **Choosing the measure is the real work.**"
+    ]},
     { t: "h3", text: "Three: faith in mass production and falling unit costs" },
     { t: "p", text: "The belief that making more, more cheaply, is always the road to profit. Levitt's objection is not that economies of scale are unreal — they are very real — but that they create a gravitational field. A firm that has sunk capital into an efficient plant making a particular thing has enormous, continuous, entirely rational pressure to keep that plant full." },
     { t: "p", text: "The consequence is a reversal of the marketing concept from week one. Instead of finding out what people need and making it, the firm produces what the plant makes efficiently and then goes looking for demand. Every decision downstream — pricing, promotion, channel — becomes a response to the question *how do we shift this output?* rather than *what should we be making?* The firm is selling-oriented not by choice but by capital structure." },

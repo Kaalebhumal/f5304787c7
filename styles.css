@@ -1684,3 +1684,60 @@ body.et-mode .prose .sent:hover { background: var(--accent-soft); }
 }
 .look-out.hit { color: var(--ink-2); }
 .look-out b { color: var(--accent-ink); }
+
+/* ---------- end of lecture ---------- */
+.end-card {
+  margin: 44px 0 0;
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--accent);
+  border-radius: 6px;
+  background: var(--surface);
+  overflow: hidden;
+}
+.end-head {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  flex-wrap: wrap;
+  padding: 13px 18px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--rule);
+}
+.end-sub { font-family: var(--font-mono); font-size: 10.5px; color: var(--ink-3); }
+.end-steps { display: flex; flex-direction: column; }
+.end-step {
+  display: grid;
+  grid-template-columns: 34px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  width: 100%;
+  padding: 16px 18px;
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--rule);
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.end-step:first-child { border-top: 0; }
+.end-step:hover { background: var(--surface-2); }
+.end-step.primary { background: var(--accent-soft); }
+.end-step.primary:hover { background: color-mix(in srgb, var(--accent-soft) 70%, var(--accent) 12%); }
+.es-n {
+  width: 26px; height: 26px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-family: var(--font-mono); font-size: 12px;
+  background: var(--surface-3); color: var(--ink-2);
+}
+.end-step.primary .es-n { background: var(--accent); color: var(--on-accent); }
+.es-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.es-title { font-family: var(--font-display); font-size: 19px; font-weight: 500; color: var(--ink); }
+.end-step.primary .es-title { color: var(--accent-ink); }
+.es-note { font-size: 13px; line-height: 1.5; color: var(--ink-2); }
+.es-arrow {
+  width: 20px; height: 20px; fill: none; stroke: var(--accent);
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+@media (max-width: 560px) {
+  .end-step { grid-template-columns: 28px 1fr; }
+  .es-arrow { display: none; }
+}

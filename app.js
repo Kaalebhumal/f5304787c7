@@ -1369,6 +1369,36 @@
     /* --- body --- */
     col.appendChild(built.node);
 
+    /* --- the end of the lecture: say plainly what to do next --- */
+    var nx = el('div', 'end-card');
+    var exN = (L.exercises || []).length;
+    nx.innerHTML =
+      '<div class="end-head"><span class="eyebrow">End of the lecture</span>' +
+      '<span class="end-sub">' + meta.mins + ' minutes of listening done</span></div>' +
+      '<div class="end-steps">' +
+        (exN ? '<button class="end-step" id="goEx">' +
+          '<span class="es-n">1</span>' +
+          '<span class="es-body"><span class="es-title">Do the ' + exN + ' exercises</span>' +
+          '<span class="es-note">On paper, applied to your own case. This is the part that makes it stick.</span></span>' +
+        '</button>' : '') +
+        '<button class="end-step primary" data-go="#/test/' + meta.id + '">' +
+          '<span class="es-n">' + (exN ? 2 : 1) + '</span>' +
+          '<span class="es-body"><span class="es-title">Sit the test</span>' +
+          '<span class="es-note">' + ((L.quiz || []).length) + ' questions, plus a few carried forward from earlier lectures. ' +
+          'Read every explanation, including on the ones you get right.</span></span>' +
+          '<svg viewBox="0 0 24 24" class="es-arrow"><path d="M5 12h14M13 6l6 6-6 6"/></svg>' +
+        '</button>' +
+      '</div>';
+    col.appendChild(nx);
+    setTimeout(function () {
+      var gx = $('#goEx', nx);
+      if (gx) gx.onclick = function () {
+        var t = $('.exercise-list');
+        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      };
+    }, 0);
+    wireGo(nx);
+
     /* --- hard words --- */
     glossInText(built.node, L.vocab, L.glossary);
     wireGloss();
