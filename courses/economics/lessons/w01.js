@@ -126,49 +126,59 @@ window.LESSONS['economics.w01'] = {
     "blocks": [
       {
         "t": "h2",
-        "text": "Where the subject starts"
+        "text": "Where the subject starts",
+        "say": "Let's start where the subject starts."
       },
       {
         "t": "p",
-        "text": "Economics is often introduced as the study of money. That is a bad start, because it makes the subject sound narrow and slightly grubby, and because it is wrong: money is one of the things economics studies, not what it is about."
+        "text": "Economics is often introduced as the study of money. That is a bad start, because it makes the subject sound narrow and slightly grubby, and because it is wrong: money is one of the things economics studies, not what it is about.",
+        "say": "Economics usually gets introduced as the study of money. That's a bad start. It makes the subject sound narrow and slightly grubby, and it's wrong. Money is one of the things economics studies. It isn't what economics is about."
       },
       {
         "t": "write",
         "items": [
           "**Economics is the study of how people and societies choose, when what they want exceeds what is available.**",
           "The condition that makes choosing necessary is called **scarcity**. Without it there would be no subject at all — you could have everything, and nothing would have to be decided."
-        ]
+        ],
+        "say": "Economics is the study of how people and societies choose, when what they want exceeds what's available. The condition that makes choosing necessary is called scarcity. Without it there'd be no subject at all. You could have everything, and nothing would have to be decided."
       },
       {
         "t": "p",
-        "text": "Scarcity is not the same as poverty, and this is the distinction most people slide past. Scarcity means that at a price of zero, more is wanted than exists. A very rich person faces no scarcity of shoes and absolute scarcity of hours: there are twenty-four, there will never be twenty-five, and every hour spent on one thing is unavailable for every other. Wealth changes which constraints bind. It does not remove the fact of binding."
+        "text": "Scarcity is not the same as poverty, and this is the distinction most people slide past. Scarcity means that at a price of zero, more is wanted than exists. A very rich person faces no scarcity of shoes and absolute scarcity of hours: there are twenty-four, there will never be twenty-five, and every hour spent on one thing is unavailable for every other. Wealth changes which constraints bind. It does not remove the fact of binding.",
+        "say": "Now, scarcity is not the same thing as poverty, and that's the distinction most people slide straight past. Scarcity means that at a price of zero, more is wanted than exists. A very rich person faces no scarcity of shoes, and absolute scarcity of hours. There are twenty-four. There'll never be twenty-five. And every hour spent on one thing is unavailable for everything else. Wealth changes which constraint binds. It doesn't remove the fact of binding."
       },
       {
         "t": "p",
-        "text": "That is why economics applies as naturally to a person deciding how to spend a Saturday as to a government deciding how to spend a budget. The mechanism is identical: a limited means, competing uses, and no way to escape choosing."
+        "text": "That is why economics applies as naturally to a person deciding how to spend a Saturday as to a government deciding how to spend a budget. The mechanism is identical: a limited means, competing uses, and no way to escape choosing.",
+        "say": "Which is why economics applies just as naturally to a person deciding how to spend a Saturday as to a government deciding how to spend a budget. The mechanism is identical. A limited means, competing uses, and no way to escape choosing."
       },
       {
         "t": "h2",
-        "text": "The cost that does not appear on the bill"
+        "text": "The cost that does not appear on the bill",
+        "say": "Now here's the cost that never appears on the bill."
       },
       {
         "t": "p",
-        "text": "Here is the idea that separates economic thinking from ordinary bookkeeping, and it is worth slowing down for."
+        "text": "Here is the idea that separates economic thinking from ordinary bookkeeping, and it is worth slowing down for.",
+        "say": "This is the idea that separates economic thinking from ordinary bookkeeping, and it's worth slowing down for."
       },
       {
         "t": "write",
         "items": [
           "**The opportunity cost of a choice is the value of the next best alternative you gave up to make it.**",
           "Not the money you paid. Not everything you gave up added together. The **single best** thing you did not do."
-        ]
+        ],
+        "say": "The opportunity cost of a choice is the value of the next best alternative you gave up to make it. Not the money you paid. Not everything you gave up, added together. The single best thing you didn't do."
       },
       {
         "t": "p",
-        "text": "Three details in that sentence are doing work. **Next best** — if you choose A over B, C and D, the cost is B alone, because you could only have had one of them. **Value** — measured in whatever the alternative was worth to you, which need not be money. **Gave up** — it must genuinely have been available; you cannot count an alternative you could never have had."
+        "text": "Three details in that sentence are doing work. **Next best** — if you choose A over B, C and D, the cost is B alone, because you could only have had one of them. **Value** — measured in whatever the alternative was worth to you, which need not be money. **Gave up** — it must genuinely have been available; you cannot count an alternative you could never have had.",
+        "say": "Three details in that sentence are doing work. Next best. If you choose A over B, C and D, the cost is B alone, because you could only ever have had one of them. Value — measured in whatever the alternative was worth to you, which doesn't have to be money. And gave up — it has to have genuinely been available. You can't count an alternative you could never have had."
       },
       {
         "t": "p",
-        "text": "Take a concrete case, and take it seriously rather than as an illustration. Suppose you spend a year studying full time instead of working."
+        "text": "Take a concrete case, and take it seriously rather than as an illustration. Suppose you spend a year studying full time instead of working.",
+        "say": "Let me take a concrete case, and take it seriously rather than as an illustration. Suppose you spend a year studying full time instead of working."
       },
       {
         "t": "math",
@@ -204,7 +214,8 @@ window.LESSONS['economics.w01'] = {
           }
         ],
         "use": "Whenever anyone tells you what an education, a training course or a career break costs, this is the calculation they have almost certainly not done. The tuition is usually the smaller half. If you compare two courses purely on their fees, you are comparing the small numbers and ignoring the large one.",
-        "why": "The forgone wage is a real cost because the alternative was really available: you could have taken the job. Economics counts it for the same reason you would feel it — at the end of the year you are poorer by that amount than the version of you who worked, and no invoice anywhere records it."
+        "why": "The forgone wage is a real cost because the alternative was really available: you could have taken the job. Economics counts it for the same reason you would feel it — at the end of the year you are poorer by that amount than the version of you who worked, and no invoice anywhere records it.",
+        "say": "There are two parts to what that costs. The explicit cost is tuition, books and materials — money that actually leaves your hand, and that somebody invoices you for. And the implicit cost is the wage you didn't earn. Nobody bills you for that, and it's a cost all the same. So put a number on it. Statistics Estonia reports that in twenty twenty-five the average gross monthly wage was two thousand and ninety-two euros, and the median — the middle wage — was one thousand seven hundred and twenty-four. Take the median, because a few very high salaries pull an average upward. Twelve months at one thousand seven hundred and twenty-four euros is twenty thousand six hundred and eighty-eight euros of forgone income. Now, whenever anybody tells you what an education or a career break costs, that's the calculation they almost certainly haven't done. The tuition is usually the smaller half. If you compare two courses purely on their fees, you're comparing the small numbers and ignoring the large one."
       },
       {
         "t": "warn",
@@ -212,19 +223,23 @@ window.LESSONS['economics.w01'] = {
         "ps": [
           "The €20,688 is an upper bound and should be described as one. It is **gross**, so the loss to your bank account is smaller after tax. It assumes you would have worked the whole year, full time, at the national median — but someone entering the labour market for the first time typically earns below the median, and many students work part-time, which recovers a share of it.",
           "State the number and then state what it assumes. A figure whose assumptions are visible can be argued with, which is what makes it useful. A figure presented bare invites the reader either to swallow it or to dismiss it, and both are worse than an argument."
-        ]
+        ],
+        "say": "But use that number honestly. It's an upper bound, and you should say so. It's gross, so the loss to your bank account is smaller after tax. It assumes you'd have worked the whole year, full time, at the national median — and somebody entering the labour market for the first time typically earns below the median, while plenty of students work part-time and recover some of it. State the number, then state what it assumes. A figure whose assumptions are visible can be argued with. That's what makes it useful."
       },
       {
         "t": "h2",
-        "text": "Accounting profit and economic profit"
+        "text": "Accounting profit and economic profit",
+        "say": "Accounting profit and economic profit."
       },
       {
         "t": "p",
-        "text": "Now apply the same idea to a business, because this is where it stops being philosophy and starts changing decisions."
+        "text": "Now apply the same idea to a business, because this is where it stops being philosophy and starts changing decisions.",
+        "say": "Now apply the same idea to a business, because this is where it stops being philosophy and starts changing decisions."
       },
       {
         "t": "p",
-        "text": "Consider a small café. The owner left a salaried job to open it, and put €40,000 of her own savings into the fit-out. In a year it takes €120,000 and pays out €95,000 in rent, coffee, wages, electricity and everything else that is invoiced."
+        "text": "Consider a small café. The owner left a salaried job to open it, and put €40,000 of her own savings into the fit-out. In a year it takes €120,000 and pays out €95,000 in rent, coffee, wages, electricity and everything else that is invoiced.",
+        "say": "Take a small café. The owner left a salaried job to open it, and put forty thousand euros of her own savings into the fit-out. In a year it takes a hundred and twenty thousand euros, and pays out ninety-five thousand in rent, coffee, wages, electricity and everything else that gets invoiced."
       },
       {
         "t": "table",
@@ -260,27 +275,33 @@ window.LESSONS['economics.w01'] = {
             "**−€6,600 loss**"
           ]
         ],
-        "cap": "Illustrative figures, using an owner's salary near the Estonian average. Same café, same year, two answers — and they point in opposite directions."
+        "cap": "Illustrative figures, using an owner's salary near the Estonian average. Same café, same year, two answers — and they point in opposite directions.",
+        "say": "The accountant's version: a hundred and twenty thousand in, ninety-five thousand out, twenty-five thousand euros of profit. The economist's version adds two lines. The owner gave up a thirty thousand euro salary, and forty thousand euros of savings that could have earned four percent — sixteen hundred euros. So a hundred and twenty thousand, minus ninety-five, minus thirty, minus one point six, is minus six thousand six hundred euros. Same café, same year, two answers, pointing in opposite directions."
       },
       {
         "t": "p",
-        "text": "The accountant is not wrong; she is answering a different question. **Accounting profit** asks whether more money came in than went out, which is what tax authorities and banks need to know. **Economic profit** asks whether this was the best available use of the owner's time and money — and the answer here is no. She is working a year to end up €6,600 worse off than if she had kept her job and left her savings in the bank."
+        "text": "The accountant is not wrong; she is answering a different question. **Accounting profit** asks whether more money came in than went out, which is what tax authorities and banks need to know. **Economic profit** asks whether this was the best available use of the owner's time and money — and the answer here is no. She is working a year to end up €6,600 worse off than if she had kept her job and left her savings in the bank.",
+        "say": "The accountant isn't wrong. She's answering a different question. Accounting profit asks whether more money came in than went out, which is what tax authorities and banks need to know. Economic profit asks whether this was the best available use of the owner's time and money. And here the answer is no. She's working a year to end up six thousand six hundred euros worse off than if she'd kept her job and left her savings in the bank."
       },
       {
         "t": "p",
-        "text": "Economic profit is the better predictor of behaviour, and that is the practical reason to learn it. If cafés in a town all make an accounting profit but a negative economic profit, people stop opening cafés, and the ones that exist quietly close when the owner is offered a job. Nothing in the accounts explains that. The opportunity cost does."
+        "text": "Economic profit is the better predictor of behaviour, and that is the practical reason to learn it. If cafés in a town all make an accounting profit but a negative economic profit, people stop opening cafés, and the ones that exist quietly close when the owner is offered a job. Nothing in the accounts explains that. The opportunity cost does.",
+        "say": "Economic profit is the better predictor of behaviour, and that's the practical reason to learn it. If cafés in a town all make an accounting profit but a negative economic profit, people stop opening cafés, and the ones that exist quietly close when the owner gets offered a job. Nothing in the accounts explains that. The opportunity cost does."
       },
       {
         "t": "p",
-        "text": "Note also the sign: an economic profit of **zero** is not failure. It means the business is doing exactly as well as the next best use of the same time and money — a normal return, not a bad one."
+        "text": "Note also the sign: an economic profit of **zero** is not failure. It means the business is doing exactly as well as the next best use of the same time and money — a normal return, not a bad one.",
+        "say": "And note the sign. An economic profit of zero is not failure. It means the business is doing exactly as well as the next best use of the same time and money. A normal return, not a bad one."
       },
       {
         "t": "h2",
-        "text": "The same idea at three scales"
+        "text": "The same idea at three scales",
+        "say": "The same idea, at three scales."
       },
       {
         "t": "p",
-        "text": "The concept does not change when the decider gets larger. Only the currency of the alternative does."
+        "text": "The concept does not change when the decider gets larger. Only the currency of the alternative does.",
+        "say": "The concept doesn't change when the decider gets bigger. Only the currency of the alternative does."
       },
       {
         "t": "ul",
@@ -288,19 +309,23 @@ window.LESSONS['economics.w01'] = {
           "**A person.** An hour spent on this lecture is an hour not spent on something else. If the next best hour was paid work, the cost is that wage; if it was sleep, the cost is whatever the sleep was worth to you, which on some days is more.",
           "**A firm.** A factory running at full capacity that accepts a new order must drop another. The cost of the new order is not the materials — it is the profit on the order displaced. This is why a business running at capacity should price very differently from one with space to spare, and week 5 will make that precise.",
           "**A government.** A hospital wing costs the schools, roads or debt repayment that the same money would have bought. Politicians almost never state the alternative, because naming it is politically expensive — which is exactly why an economically literate citizen should ask for it. *Compared to what?* is the entire discipline in three words."
-        ]
+        ],
+        "say": "A person. An hour spent on this lecture is an hour not spent on something else. If the next best hour was paid work, the cost is that wage. If it was sleep, the cost is whatever the sleep was worth to you, which on some days is more. A firm. A factory running at full capacity that takes a new order has to drop another one. So the cost of the new order isn't the materials — it's the profit on the order it displaced. Which is why a business at capacity should price completely differently from one with space to spare. And a government. A hospital wing costs the schools, the roads or the debt repayment the same money would have bought."
       },
       {
         "t": "p",
-        "text": "The third case deserves an extra sentence, because public argument is where the concept is most often abandoned. A policy described only by its benefits has not been analysed. Benefits are the easy half, and no proposal in history has been argued for by listing what it displaces."
+        "text": "The third case deserves an extra sentence, because public argument is where the concept is most often abandoned. A policy described only by its benefits has not been analysed. Benefits are the easy half, and no proposal in history has been argued for by listing what it displaces.",
+        "say": "That third one deserves an extra sentence, because public argument is where the concept gets abandoned most. A policy described only by its benefits hasn't been analysed. Benefits are the easy half, and no proposal in history was ever argued for by listing what it displaces. Compared to what? That's the whole discipline, in three words."
       },
       {
         "t": "h2",
-        "text": "“Free” is a statement about price, not about cost"
+        "text": "“Free” is a statement about price, not about cost",
+        "say": "Now: free is a statement about price, not about cost."
       },
       {
         "t": "p",
-        "text": "Once you have the concept, a whole class of claims becomes readable."
+        "text": "Once you have the concept, a whole class of claims becomes readable.",
+        "say": "Once you've got the concept, a whole class of claims becomes readable."
       },
       {
         "t": "ul",
@@ -309,15 +334,18 @@ window.LESSONS['economics.w01'] = {
           "**Free parking** is paid for in the land it occupies, which could have been something else, and in the rent of every shop that includes it.",
           "**Free healthcare at the point of use** means nobody pays at the door. It is paid in taxation, and sometimes in waiting — and waiting is a real cost borne by the patient, which is why waiting lists are an economic fact and not merely an administrative one.",
           "A **free upgrade** given to a customer who would have paid is not free to the seller: it costs the money that customer would have handed over."
-        ]
+        ],
+        "say": "A free app is paid for in attention and in data about you. The price to you isn't zero. It's just not denominated in euros. Free parking is paid for in the land it occupies, and in the rent of every shop that includes it. Free healthcare at the point of use means nobody pays at the door — it's paid in taxation, and sometimes in waiting, and waiting is a real cost borne by the patient. And a free upgrade given to a customer who'd have paid isn't free to the seller. It costs the money that customer would have handed over."
       },
       {
         "t": "p",
-        "text": "The habit to build is not cynicism. It is the reflex of asking *who pays, and in what currency* — because the answer tells you who will change their behaviour, and how."
+        "text": "The habit to build is not cynicism. It is the reflex of asking *who pays, and in what currency* — because the answer tells you who will change their behaviour, and how.",
+        "say": "The habit to build here isn't cynicism. It's the reflex of asking who pays, and in what currency. Because the answer tells you who's going to change their behaviour, and how."
       },
       {
         "t": "h2",
-        "text": "What opportunity cost cannot do"
+        "text": "What opportunity cost cannot do",
+        "say": "And what opportunity cost cannot do."
       },
       {
         "t": "ol",
@@ -325,7 +353,8 @@ window.LESSONS['economics.w01'] = {
           "**It cannot tell you what to value.** It compares alternatives against a scale you brought with you. If you value a year of your life with your children above €20,688, opportunity cost does not object; it simply requires you to say so, which is more than most arguments manage.",
           "**It does not, by itself, handle risk or irreversibility.** The next best alternative may be uncertain, and some choices cannot be reversed. Week 4 adds the machinery for risk, and both are reasons why the concept is necessary but not sufficient.",
           "**It requires you to identify the next best alternative, and that is a judgement.** Different people will name different alternatives for the same decision and reach different answers, honestly. The discipline is to state which alternative you used, so that someone who disagrees can say where."
-        ]
+        ],
+        "say": "One. It can't tell you what to value. It compares alternatives against a scale you brought with you. If you value a year of your life with your children above twenty thousand euros, opportunity cost doesn't object. It just requires you to say so, which is more than most arguments manage. Two. It doesn't handle risk or irreversibility on its own. The next best alternative may be uncertain, and some choices can't be reversed. And three. It requires you to identify the next best alternative, and that's a judgement. Different people will name different alternatives for the same decision and reach different answers, honestly. The discipline is to state which alternative you used."
       },
       {
         "t": "warn",
@@ -333,11 +362,13 @@ window.LESSONS['economics.w01'] = {
         "ps": [
           "Opportunity cost is the **next best** forgone alternative, not the **sum** of all forgone alternatives. If you could have spent Saturday working (€120), hiking (worth €80 to you) or sleeping (worth €50), the cost of the hike is €120 — the best thing you actually gave up. It is not €120 + €50.",
           "The reason is that the alternatives were mutually exclusive. You could have had one of them, so you lost one of them. Adding them up produces an enormous, meaningless number, and it is the single most frequent mistake in first-year answers."
-        ]
+        ],
+        "say": "And here's the most common error, and it's an arithmetic one. Opportunity cost is the next best forgone alternative. Not the sum of all forgone alternatives. If you could have spent Saturday working for a hundred and twenty euros, hiking — worth eighty to you — or sleeping, worth fifty, then the cost of the hike is a hundred and twenty euros. The best thing you actually gave up. It is not a hundred and twenty plus fifty. The alternatives were mutually exclusive. You could have had one of them, so you lost one of them. Adding them up produces an enormous, meaningless number, and it's the single most frequent mistake in first-year answers."
       },
       {
         "t": "h2",
-        "text": "What you should be able to do now"
+        "text": "What you should be able to do now",
+        "say": "So what should you be able to do now?"
       },
       {
         "t": "ul",
@@ -348,7 +379,8 @@ window.LESSONS['economics.w01'] = {
           "Apply the idea to a person, a firm and a government without changing the method.",
           "Ask *compared to what?* of any proposal, including your own.",
           "Avoid the summing error, and say why it is an error."
-        ]
+        ],
+        "say": "Define scarcity without using the word poverty. Compute an opportunity cost with its explicit and implicit parts separated. Turn an accounting profit into an economic profit and explain the difference to somebody who's never met it. Apply the idea to a person, a firm and a government without changing the method. Ask compared to what, of any proposal, including your own. And avoid the summing error."
       }
     ],
     "exercises": [
@@ -858,15 +890,18 @@ window.LESSONS['economics.w01'] = {
     "blocks": [
       {
         "t": "h2",
-        "text": "Drawing what 1.1 said in words"
+        "text": "Drawing what 1.1 said in words",
+        "say": "Last lecture in words. This one in a picture."
       },
       {
         "t": "p",
-        "text": "In the last lecture, cost was the next best alternative given up. Now picture an economy — or a person, or a firm — that can make exactly two things, and has a fixed amount of time and equipment to make them with."
+        "text": "In the last lecture, cost was the next best alternative given up. Now picture an economy — or a person, or a firm — that can make exactly two things, and has a fixed amount of time and equipment to make them with.",
+        "say": "Last time, cost was the next best alternative you gave up. Now picture an economy — or a person, or a firm — that can make exactly two things, with a fixed amount of time and equipment to make them with."
       },
       {
         "t": "p",
-        "text": "Plot one good on each axis, and mark every combination that could be produced if nothing were wasted. Join them. The line you get is the **production possibility frontier**, and it says something unusually precise for economics: here is the exact boundary between what is possible and what is not."
+        "text": "Plot one good on each axis, and mark every combination that could be produced if nothing were wasted. Join them. The line you get is the **production possibility frontier**, and it says something unusually precise for economics: here is the exact boundary between what is possible and what is not.",
+        "say": "Plot one good on each axis, and mark every combination that could be produced if nothing were wasted. Join them up. The line you get is the production possibility frontier, and it says something unusually precise for economics. Here is the exact boundary between what's possible and what isn't."
       },
       {
         "t": "fig",
@@ -883,35 +918,43 @@ window.LESSONS['economics.w01'] = {
           "**On the curve** — efficient, and now the hard part begins. Every extra unit of one good must be paid for in units of the other, and the exchange rate is the **slope** of the curve at that point. This is opportunity cost, made visible.",
           "**Outside the curve** — not attainable with today's resources and today's knowledge. Wanting it does not help.",
           "**The curve shifting outward** — growth. More people, more machines, better skills, better technology. This is what weeks 12 and 15 are ultimately about, and it is a different question from getting onto the curve you already have."
-        ]
+        ],
+        "say": "Inside the curve, you're producing less than you could. Something's idle — unemployed people, empty machines, land nobody's farming. And getting to the curve costs nothing in the other good. It's pure gain, which is why a recession is such a distinctive kind of waste. On the curve, you're efficient, and now the hard part starts. Every extra unit of one good has to be paid for in units of the other, and the exchange rate is the slope of the curve at that point. That's opportunity cost, made visible. Outside the curve, not attainable with today's resources and today's knowledge. Wanting it doesn't help. And the curve shifting outward is growth. More people, more machines, better skills, better technology."
       },
       {
         "t": "h2",
-        "text": "Why it bows outward"
+        "text": "Why it bows outward",
+        "say": "So why does it bow outward?"
       },
       {
         "t": "p",
-        "text": "The curve is normally drawn bowed away from the origin, and the reason is worth understanding rather than memorising, because it is a fact about resources rather than a convention of drawing."
+        "text": "The curve is normally drawn bowed away from the origin, and the reason is worth understanding rather than memorising, because it is a fact about resources rather than a convention of drawing.",
+        "say": "The curve is normally drawn bowed away from the origin, and the reason is worth understanding rather than memorising, because it's a fact about resources and not a convention of drawing."
       },
       {
         "t": "p",
-        "text": "Resources are not identical, and they are not equally suited to every use. Imagine an economy making bread and software. Start with everything in software and move resources into bread. The first to move are the ones least suited to software and best suited to farming — good land, people who would rather farm. You gain a lot of bread and give up little software."
+        "text": "Resources are not identical, and they are not equally suited to every use. Imagine an economy making bread and software. Start with everything in software and move resources into bread. The first to move are the ones least suited to software and best suited to farming — good land, people who would rather farm. You gain a lot of bread and give up little software.",
+        "say": "Resources aren't identical, and they aren't equally suited to every use. Imagine an economy making bread and software. Start with everything in software and move resources into bread. The first ones to move are the ones least suited to software and best suited to farming — good land, people who'd rather be farming. You gain a lot of bread and give up very little software."
       },
       {
         "t": "p",
-        "text": "Keep going. Eventually you are moving fibre-optic engineers onto wheat fields and planting crops on rocky hillsides. Now each extra loaf costs a great deal of software. The opportunity cost of bread **rises** as you produce more of it, and a curve whose slope steepens as you move along it is a curve that bows outward."
+        "text": "Keep going. Eventually you are moving fibre-optic engineers onto wheat fields and planting crops on rocky hillsides. Now each extra loaf costs a great deal of software. The opportunity cost of bread **rises** as you produce more of it, and a curve whose slope steepens as you move along it is a curve that bows outward.",
+        "say": "Keep going. Eventually you're moving fibre-optic engineers onto wheat fields and planting crops on rocky hillsides. Now each extra loaf costs a great deal of software. So the opportunity cost of bread rises as you produce more of it. And a curve whose slope steepens as you move along it is a curve that bows outward."
       },
       {
         "t": "p",
-        "text": "Two consequences follow immediately. First, extreme specialisation by a whole economy is usually wasteful — at the very end of the curve, the last units are being bought at a terrible price. Second, the shape is an empirical claim, not a law: if resources genuinely were identical and equally suited to both uses, the frontier would be a straight line and opportunity cost would be constant. Straight-line frontiers are used in teaching, including later in this lecture, precisely because they keep the arithmetic clean."
+        "text": "Two consequences follow immediately. First, extreme specialisation by a whole economy is usually wasteful — at the very end of the curve, the last units are being bought at a terrible price. Second, the shape is an empirical claim, not a law: if resources genuinely were identical and equally suited to both uses, the frontier would be a straight line and opportunity cost would be constant. Straight-line frontiers are used in teaching, including later in this lecture, precisely because they keep the arithmetic clean.",
+        "say": "Two things follow immediately. First, extreme specialisation by a whole economy is usually wasteful, because at the very end of the curve the last units are being bought at a terrible price. And second, the shape is an empirical claim, not a law. If resources genuinely were identical and equally suited to both uses, the frontier would be a straight line and opportunity cost would be constant."
       },
       {
         "t": "h2",
-        "text": "Being better at something, and being the right person to do it"
+        "text": "Being better at something, and being the right person to do it",
+        "say": "Now: being better at something, and being the right person to do it."
       },
       {
         "t": "p",
-        "text": "Now the surprising part. Two people, two tasks, one working day each."
+        "text": "Now the surprising part. Two people, two tasks, one working day each.",
+        "say": "Here's the surprising part. Two people, two tasks, one working day each."
       },
       {
         "t": "table",
@@ -932,11 +975,13 @@ window.LESSONS['economics.w01'] = {
             "16"
           ]
         ],
-        "cap": "Anna is better at both tasks. The ordinary conclusion is that Anna should do the important work and Ben should help where he can. The ordinary conclusion is wrong."
+        "cap": "Anna is better at both tasks. The ordinary conclusion is that Anna should do the important work and Ben should help where he can. The ordinary conclusion is wrong.",
+        "say": "In a day, Anna can produce ten reports, or twenty spreadsheets. Ben can produce four reports, or sixteen spreadsheets. So Anna is better at both."
       },
       {
         "t": "p",
-        "text": "Anna has an **absolute advantage** in both: more reports per day and more spreadsheets per day. If absolute advantage decided who should do what, there would be nothing to discuss and no gains available. But the question is not who is better. The question from lecture 1.1 is *what does each task cost the person doing it* — and cost means what they give up."
+        "text": "Anna has an **absolute advantage** in both: more reports per day and more spreadsheets per day. If absolute advantage decided who should do what, there would be nothing to discuss and no gains available. But the question is not who is better. The question from lecture 1.1 is *what does each task cost the person doing it* — and cost means what they give up.",
+        "say": "Anna has an absolute advantage in both. More reports per day, and more spreadsheets per day. If absolute advantage decided who should do what, there'd be nothing to discuss and no gains available. But the question isn't who's better. The question, from last lecture, is what does each task cost the person doing it. And cost means what they give up."
       },
       {
         "t": "math",
@@ -970,11 +1015,13 @@ window.LESSONS['economics.w01'] = {
           }
         ],
         "use": "Use this whenever work is divided between two people or two teams. Convert each party's abilities into what each task costs them in units of the other task, and give the task to whoever gives up least. It will regularly tell you to hand a task to the person who is slower at it.",
-        "why": "It works because the scarce thing is not skill but **time**. Anna's hour is the same length as Ben's. When Anna makes a spreadsheet she is not making half a report, and that forgone half-report is the real cost to the pair of them. Ben forgoes only a quarter of a report to do the same job. So every spreadsheet Ben takes off Anna frees more value than it destroys — and notice that it is arithmetically impossible for one party to have the lower cost in both, which is why there is always something to gain."
+        "why": "It works because the scarce thing is not skill but **time**. Anna's hour is the same length as Ben's. When Anna makes a spreadsheet she is not making half a report, and that forgone half-report is the real cost to the pair of them. Ben forgoes only a quarter of a report to do the same job. So every spreadsheet Ben takes off Anna frees more value than it destroys — and notice that it is arithmetically impossible for one party to have the lower cost in both, which is why there is always something to gain.",
+        "say": "So compute it. Anna's day makes ten reports or twenty spreadsheets, so one report costs her two spreadsheets. Ben's day makes four reports or sixteen spreadsheets, so one report costs him four spreadsheets. Reports are cheaper for Anna. Now the other direction. A spreadsheet costs Anna half a report, and it costs Ben a quarter of a report. So spreadsheets are cheaper for Ben. And notice what cheaper means here. It means costs less in units of the other good. It has nothing to do with money, and nothing to do with who's faster. Why does this work? Because the scarce thing isn't skill. It's time. Anna's hour is the same length as Ben's. When Anna makes a spreadsheet she isn't making half a report, and that forgone half-report is the real cost to the pair of them. Ben gives up only a quarter of a report to do the same job. So every spreadsheet Ben takes off Anna frees more value than it destroys. And it's arithmetically impossible for one party to have the lower cost in both, which is why there's always something to gain."
       },
       {
         "t": "p",
-        "text": "Now prove that the gain is real rather than rhetorical, by counting output before and after."
+        "text": "Now prove that the gain is real rather than rhetorical, by counting output before and after.",
+        "say": "Now let me prove the gain is real rather than rhetorical, by counting output before and after."
       },
       {
         "t": "table",
@@ -1008,58 +1055,71 @@ window.LESSONS['economics.w01'] = {
             "**+2**"
           ]
         ],
-        "cap": "More of both, from the same two days of work. Nobody worked harder, nothing was invented, and no machine was bought."
+        "cap": "More of both, from the same two days of work. Nobody worked harder, nothing was invented, and no machine was bought.",
+        "say": "If each of them splits the day half and half, Anna makes five reports and ten spreadsheets, Ben makes two reports and eight. Total: seven reports, eighteen spreadsheets. Now let Anna spend eighty percent of her day on reports and Ben spend all of his on spreadsheets. Anna makes eight reports and four spreadsheets. Ben makes sixteen spreadsheets. Total: eight reports, and twenty spreadsheets. More of both."
       },
       {
         "t": "p",
-        "text": "That is the result, and it deserves a moment. The pair produced one more report **and** two more spreadsheets, from exactly the same resources, purely by matching tasks to opportunity costs rather than to ability. There is no trick in the table; you can rebuild it with any numbers you like and the same thing will happen whenever the two parties' opportunity costs differ."
+        "text": "That is the result, and it deserves a moment. The pair produced one more report **and** two more spreadsheets, from exactly the same resources, purely by matching tasks to opportunity costs rather than to ability. There is no trick in the table; you can rebuild it with any numbers you like and the same thing will happen whenever the two parties' opportunity costs differ.",
+        "say": "That's the result, and it deserves a moment. The pair produced one more report and two more spreadsheets, from exactly the same resources. Nobody worked harder. Nothing was invented. No machine was bought. All that happened is that tasks got matched to opportunity costs instead of to ability."
       },
       {
         "t": "p",
-        "text": "Notice also what the table does **not** say. Anna did not specialise completely. Pushing her to 100% reports would give (10, 16) — more reports than before, but fewer spreadsheets than the 18 they started with. Full specialisation is a simplification used in textbooks; the honest statement is *specialise toward your comparative advantage*, and how far depends on what is wanted."
+        "text": "Notice also what the table does **not** say. Anna did not specialise completely. Pushing her to 100% reports would give (10, 16) — more reports than before, but fewer spreadsheets than the 18 they started with. Full specialisation is a simplification used in textbooks; the honest statement is *specialise toward your comparative advantage*, and how far depends on what is wanted.",
+        "say": "Notice also what the table doesn't say. Anna didn't specialise completely. Pushing her to a hundred percent reports would give ten reports and sixteen spreadsheets — more reports than before, but fewer spreadsheets than the eighteen they started with. Full specialisation is a textbook simplification. The honest statement is: specialise toward your comparative advantage, and how far depends on what's wanted."
       },
       {
         "t": "h2",
-        "text": "On what terms?"
+        "text": "On what terms?",
+        "say": "So, on what terms?"
       },
       {
         "t": "p",
-        "text": "Establishing who should do what leaves the second question: at what exchange rate do they swap? This is the **terms of trade**, and it decides how the gains are split."
+        "text": "Establishing who should do what leaves the second question: at what exchange rate do they swap? This is the **terms of trade**, and it decides how the gains are split.",
+        "say": "Working out who should do what leaves a second question. At what exchange rate do they swap? That's the terms of trade, and it decides how the gains get split."
       },
       {
         "t": "p",
-        "text": "Anna will not accept fewer than 2 spreadsheets for a report, because she can make 2 herself by not making the report. Ben will not pay more than 4, because making it himself costs him 4. So any rate strictly between **2 and 4 spreadsheets per report** makes both better off than doing it alone, and the closer to 4, the more of the gain goes to Anna."
+        "text": "Anna will not accept fewer than 2 spreadsheets for a report, because she can make 2 herself by not making the report. Ben will not pay more than 4, because making it himself costs him 4. So any rate strictly between **2 and 4 spreadsheets per report** makes both better off than doing it alone, and the closer to 4, the more of the gain goes to Anna.",
+        "say": "Anna won't accept fewer than two spreadsheets for a report, because she can make two herself by not making the report. Ben won't pay more than four, because making it himself costs him four. So any rate strictly between two and four spreadsheets per report makes both of them better off than working alone. And the closer to four, the more of the gain goes to Anna."
       },
       {
         "t": "write",
         "items": [
           "**A trade is mutually beneficial exactly when its exchange rate lies strictly between the two parties' opportunity costs.**",
           "Comparative advantage says the gains exist. The terms of trade decide who gets them — and that second question is bargaining, not arithmetic."
-        ]
+        ],
+        "say": "So: a trade is mutually beneficial exactly when its exchange rate lies strictly between the two parties' opportunity costs. Comparative advantage says the gains exist. The terms of trade decide who gets them. And that second question is bargaining, not arithmetic."
       },
       {
         "t": "p",
-        "text": "This distinction matters far beyond the example. Much political argument about trade is not a dispute about whether gains exist; it is a dispute about the terms on which they are divided. Confusing the two produces a conversation where one side proves gains are possible and the other side is asking who receives them, and both are right."
+        "text": "This distinction matters far beyond the example. Much political argument about trade is not a dispute about whether gains exist; it is a dispute about the terms on which they are divided. Confusing the two produces a conversation where one side proves gains are possible and the other side is asking who receives them, and both are right.",
+        "say": "That distinction matters far beyond this example. Most political argument about trade isn't a dispute about whether gains exist. It's a dispute about the terms on which they're divided. Confusing the two produces a conversation where one side proves gains are possible and the other side is asking who receives them. And both of them are right."
       },
       {
         "t": "h3",
-        "text": "The same logic outside a spreadsheet"
+        "text": "The same logic outside a spreadsheet",
+        "say": "Let me test the logic somewhere that isn't a spreadsheet."
       },
       {
         "t": "p",
-        "text": "The reasoning is not about office work, so test it somewhere else. A surgeon may be the fastest typist in her hospital. It does not follow that she should type her own notes: an hour typing costs the hospital an hour of surgery, while the same hour costs an administrator almost nothing in surgical terms. Being the best at a task is an argument for doing it only when nothing more valuable is displaced."
+        "text": "The reasoning is not about office work, so test it somewhere else. A surgeon may be the fastest typist in her hospital. It does not follow that she should type her own notes: an hour typing costs the hospital an hour of surgery, while the same hour costs an administrator almost nothing in surgical terms. Being the best at a task is an argument for doing it only when nothing more valuable is displaced.",
+        "say": "A surgeon may be the fastest typist in her hospital. It does not follow that she should type her own notes. An hour typing costs the hospital an hour of surgery. The same hour costs an administrator almost nothing in surgical terms. Being the best at a task is an argument for doing it only when nothing more valuable is displaced."
       },
       {
         "t": "p",
-        "text": "The same pattern shows up in national statistics, though it must be read carefully. Statistics Estonia reports that in 2025 average gross monthly wages were **€3,651** in information and communication and **€1,333** in accommodation and food service — against a national average of **€2,092**. Wages are not a direct measure of productivity, and the gap reflects hours, skills, capital and bargaining as well as output per hour. But a country whose highest-paid sector is software is a country whose resources are being pulled toward where they give up least, and that pull is comparative advantage operating without anyone planning it."
+        "text": "The same pattern shows up in national statistics, though it must be read carefully. Statistics Estonia reports that in 2025 average gross monthly wages were **€3,651** in information and communication and **€1,333** in accommodation and food service — against a national average of **€2,092**. Wages are not a direct measure of productivity, and the gap reflects hours, skills, capital and bargaining as well as output per hour. But a country whose highest-paid sector is software is a country whose resources are being pulled toward where they give up least, and that pull is comparative advantage operating without anyone planning it.",
+        "say": "The same pattern shows up in national statistics, though you have to read it carefully. Statistics Estonia reports that in twenty twenty-five, average gross monthly wages were three thousand six hundred and fifty-one euros in information and communication, and one thousand three hundred and thirty-three in accommodation and food service. The national average was two thousand and ninety-two. Now, wages aren't a direct measure of productivity, and the gap reflects hours, skills, capital and bargaining as well as output. But a country whose highest-paid sector is software is a country whose resources are being pulled toward where they give up least. And that pull is comparative advantage operating without anybody planning it."
       },
       {
         "t": "h2",
-        "text": "What the theory does not say"
+        "text": "What the theory does not say",
+        "say": "Now, what the theory does not say."
       },
       {
         "t": "p",
-        "text": "This is where careless teaching does damage, so state the limits plainly."
+        "text": "This is where careless teaching does damage, so state the limits plainly.",
+        "say": "This is where careless teaching does damage, so let me state the limits plainly."
       },
       {
         "t": "ol",
@@ -1068,7 +1128,8 @@ window.LESSONS['economics.w01'] = {
           "**Adjustment is slow, local and expensive.** The theory moves resources between uses instantly and without cost. Real people cannot move industry or town in a season, and the regions that lose are often the regions least able to absorb it. Most of what is called a debate about trade is really a debate about adjustment.",
           "**It assumes the opportunity costs stay put.** If specialising in one sector changes what a country becomes capable of — because skills and knowledge accumulate where activity happens — then today's comparative advantage is partly a consequence of yesterday's choices, not a fixed fact to be obeyed.",
           "**It ignores everything not in the model.** Transport costs, market power, strategic dependence on a single supplier, environmental costs. Each can be added, and each changes the conclusion in the specific case."
-        ]
+        ],
+        "say": "One. It says total output rises. It does not say everybody gains. In our example both parties gained because they shared the output. In a real economy the gains land on consumers and on the expanding sector, while the losses land on specific people in the contracting one. And the total being larger is no comfort at all to a person whose particular job was the cost. Two. Adjustment is slow, local and expensive. The theory moves resources between uses instantly and for free. Real people can't change industry or town in a season. Three. It assumes opportunity costs stay put. If specialising changes what a country becomes capable of, then today's advantage is partly a consequence of yesterday's choices. And four. It ignores everything not in the model. Transport costs, market power, strategic dependence on a single supplier, environmental costs."
       },
       {
         "t": "warn",
@@ -1076,11 +1137,13 @@ window.LESSONS['economics.w01'] = {
         "ps": [
           "Comparative advantage is one of the few results in economics with near-universal professional agreement, and it is also one of the most frequently used to end conversations that should have continued.",
           "The defensible position is precise: **specialisation and exchange make the total larger, and say nothing about the distribution.** If you assert the first and stay silent on the second, you are not stating the theory — you are using it. Week 13 returns to this with the trade evidence, and the honest version has losers in it."
-        ]
+        ],
+        "say": "So how do you hold this idea honestly? Comparative advantage is one of the few results in economics with near-universal professional agreement. It's also one of the most frequently used to end conversations that should have continued. The defensible position is precise. Specialisation and exchange make the total larger, and say nothing about the distribution. If you assert the first and stay silent on the second, you're not stating the theory. You're using it."
       },
       {
         "t": "h2",
-        "text": "What you should be able to do now"
+        "text": "What you should be able to do now",
+        "say": "So what can you do now?"
       },
       {
         "t": "ul",
@@ -1091,7 +1154,8 @@ window.LESSONS['economics.w01'] = {
           "Show with numbers that specialising toward comparative advantage raises total output.",
           "State the range of terms of trade that both parties accept, and why.",
           "Say who loses, and resist using the theory to end an argument it does not settle."
-        ]
+        ],
+        "say": "Draw a frontier and say what inside, on, outside and shifting each mean. Explain the outward bow in terms of resources being unequally suited to uses. Compute both opportunity costs from a two-by-two table, in both directions. Show with numbers that specialising raises total output. State the range of terms both parties would accept. And say who loses."
       }
     ],
     "exercises": [
@@ -1589,42 +1653,51 @@ window.LESSONS['economics.w01'] = {
     "blocks": [
       {
         "t": "h2",
-        "text": "A map that left nothing out"
+        "text": "A map that left nothing out",
+        "say": "A map that left nothing out."
       },
       {
         "t": "p",
-        "text": "Imagine a map of Tallinn at a scale of one to one, showing every building, every parked car, every person and the weather. It would be perfectly accurate and completely useless: it would cover the city, take a day to unroll, and be out of date by lunchtime. What makes a map useful is precisely what it leaves out."
+        "text": "Imagine a map of Tallinn at a scale of one to one, showing every building, every parked car, every person and the weather. It would be perfectly accurate and completely useless: it would cover the city, take a day to unroll, and be out of date by lunchtime. What makes a map useful is precisely what it leaves out.",
+        "say": "Imagine a map of Tallinn at a scale of one to one. Every building, every parked car, every person, and the weather. It would be perfectly accurate and completely useless. It would cover the city, take a day to unroll, and be out of date by lunchtime. What makes a map useful is precisely what it leaves out."
       },
       {
         "t": "p",
-        "text": "An economic model is a map in exactly this sense. It is a deliberate simplification of a situation, built to make one relationship visible by holding everything else still. Judging it by whether its assumptions are realistic is like objecting that the map does not show the cars."
+        "text": "An economic model is a map in exactly this sense. It is a deliberate simplification of a situation, built to make one relationship visible by holding everything else still. Judging it by whether its assumptions are realistic is like objecting that the map does not show the cars.",
+        "say": "An economic model is a map in exactly that sense. It's a deliberate simplification, built to make one relationship visible by holding everything else still. So judging it by whether its assumptions are realistic is like objecting that the map doesn't show the cars."
       },
       {
         "t": "write",
         "items": [
           "**A model is not true or false. It is useful or useless, over a stated range of situations.**",
           "So the question to ask is never *is this realistic?* but *is this a good enough approximation for the question I am asking, and where does it stop being one?*"
-        ]
+        ],
+        "say": "A model isn't true or false. It's useful or useless, over a stated range of situations. So the question to ask is never is this realistic. It's: is this a good enough approximation for the question I'm asking, and where does it stop being one?"
       },
       {
         "t": "p",
-        "text": "You have already used two. Opportunity cost assumed you can identify a single next-best alternative and put a value on it — which is often hard and sometimes impossible. The production frontier assumed two goods, fixed resources and no uncertainty, which describes no economy that has ever existed. Both were still worth having, because each made one thing visible that is otherwise buried."
+        "text": "You have already used two. Opportunity cost assumed you can identify a single next-best alternative and put a value on it — which is often hard and sometimes impossible. The production frontier assumed two goods, fixed resources and no uncertainty, which describes no economy that has ever existed. Both were still worth having, because each made one thing visible that is otherwise buried.",
+        "say": "And you've already used two. Opportunity cost assumed you can identify a single next-best alternative and put a value on it, which is often hard and sometimes impossible. The production frontier assumed two goods, fixed resources and no uncertainty, which describes no economy that has ever existed. Both were worth having, because each made one thing visible that's otherwise buried."
       },
       {
         "t": "h2",
-        "text": "Ceteris paribus"
+        "text": "Ceteris paribus",
+        "say": "Ceteris paribus."
       },
       {
         "t": "p",
-        "text": "The Latin means *other things being equal*, and it is the device that makes economic statements possible at all. When an economist says that a rise in price reduces the quantity demanded, the claim is always *ceteris paribus* — holding income, tastes, the prices of other goods, expectations and everything else still."
+        "text": "The Latin means *other things being equal*, and it is the device that makes economic statements possible at all. When an economist says that a rise in price reduces the quantity demanded, the claim is always *ceteris paribus* — holding income, tastes, the prices of other goods, expectations and everything else still.",
+        "say": "The Latin means other things being equal, and it's the device that makes economic statements possible at all. When an economist says a rise in price reduces the quantity demanded, the claim is always ceteris paribus. Holding income, tastes, the prices of other goods, expectations, and everything else, still."
       },
       {
         "t": "p",
-        "text": "This is not a dodge. It is the same move any experimental science makes: change one thing, hold the rest constant, observe. The difficulty is that economics usually cannot hold anything constant in reality, only in the model — and in the world those other things move at the same time, often *because* of the change you are studying."
+        "text": "This is not a dodge. It is the same move any experimental science makes: change one thing, hold the rest constant, observe. The difficulty is that economics usually cannot hold anything constant in reality, only in the model — and in the world those other things move at the same time, often *because* of the change you are studying.",
+        "say": "That isn't a dodge. It's the same move any experimental science makes. Change one thing, hold the rest constant, observe. The difficulty is that economics usually can't hold anything constant in reality, only in the model. And in the world those other things move at the same time — often because of the change you're studying."
       },
       {
         "t": "p",
-        "text": "So ceteris paribus conceals a specific risk, and it is worth naming precisely. A prediction of the form *price up, quantity down, other things equal* can be perfectly correct and still be followed by quantity **rising**, if one of the held-still things moved more. Petrol prices rise and consumption rises anyway, because incomes rose faster. The model was not refuted. It was swamped."
+        "text": "So ceteris paribus conceals a specific risk, and it is worth naming precisely. A prediction of the form *price up, quantity down, other things equal* can be perfectly correct and still be followed by quantity **rising**, if one of the held-still things moved more. Petrol prices rise and consumption rises anyway, because incomes rose faster. The model was not refuted. It was swamped.",
+        "say": "So ceteris paribus conceals a specific risk, and it's worth naming precisely. A prediction of the form price up, quantity down, other things equal, can be perfectly correct and still be followed by quantity rising, if one of the held-still things moved further. Petrol prices rise and consumption rises anyway, because incomes rose faster. The model wasn't refuted. It was swamped."
       },
       {
         "t": "warn",
@@ -1632,19 +1705,23 @@ window.LESSONS['economics.w01'] = {
         "ps": [
           "Two failures share the same root. The first is the economist who says *the model predicts X* and forgets that everything else was held still, then is surprised. The second is the critic who says *economics is wrong, prices rose and demand rose too*, which mistakes a swamped prediction for a refuted one.",
           "The honest habit is to say out loud what is being held still, and then ask whether it plausibly stayed still. That single sentence prevents both errors, and it is one of the cheapest disciplines in the subject."
-        ]
+        ],
+        "say": "And there are two ways this goes wrong in public argument, sharing the same root. The first is the economist who says the model predicts X, forgets that everything else was held still, and is then surprised. The second is the critic who says economics is wrong, prices rose and demand rose too — which mistakes a swamped prediction for a refuted one. The honest habit is to say out loud what's being held still, and then ask whether it plausibly stayed still. One sentence, and it prevents both errors."
       },
       {
         "t": "h2",
-        "text": "Finding the assumption that carries the weight"
+        "text": "Finding the assumption that carries the weight",
+        "say": "Now, finding the assumption that carries the weight."
       },
       {
         "t": "p",
-        "text": "Models contain many assumptions and they are not equally important. Most are there for tractability — to keep the mathematics manageable — and can be relaxed without disturbing the conclusion. Usually one or two are doing the actual work."
+        "text": "Models contain many assumptions and they are not equally important. Most are there for tractability — to keep the mathematics manageable — and can be relaxed without disturbing the conclusion. Usually one or two are doing the actual work.",
+        "say": "Models contain a lot of assumptions and they aren't equally important. Most are there for tractability — to keep the mathematics manageable — and can be relaxed without disturbing the conclusion. Usually one or two are doing the actual work."
       },
       {
         "t": "p",
-        "text": "The test is mechanical. Take an assumption, relax it, and ask whether the conclusion survives."
+        "text": "The test is mechanical. Take an assumption, relax it, and ask whether the conclusion survives.",
+        "say": "The test is mechanical. Take an assumption, relax it, and ask whether the conclusion survives."
       },
       {
         "t": "table",
@@ -1679,19 +1756,23 @@ window.LESSONS['economics.w01'] = {
             "Depends entirely on the question — sometimes fatal, sometimes not",
             "**Depends — check**"
           ]
-        ]
+        ],
+        "say": "Take a simple market model. Buyers and sellers are numerous and small — relax that and the conclusion changes completely, because one large seller sets prices. Load-bearing. Everyone has perfect information — relax it and the conclusions weaken, and week seven is devoted to what happens. Load-bearing. The good is perfectly uniform — relax it and the conclusions survive with adjustments. There are exactly two goods — nothing important changes. That one's there so it can be drawn on a page. Pure decoration."
       },
       {
         "t": "p",
-        "text": "This matters because arguments about models are usually conducted at the wrong level. Someone objects that people are not perfectly rational, or that there are more than two goods, and feels they have refuted something. They have refuted a decoration. The useful objection is always: *which assumption is holding your conclusion up, and is it true here?*"
+        "text": "This matters because arguments about models are usually conducted at the wrong level. Someone objects that people are not perfectly rational, or that there are more than two goods, and feels they have refuted something. They have refuted a decoration. The useful objection is always: *which assumption is holding your conclusion up, and is it true here?*",
+        "say": "This matters because arguments about models are usually conducted at the wrong level. Somebody objects that people aren't perfectly rational, or that there are more than two goods, and feels they've refuted something. They've refuted a decoration. The useful objection is always: which assumption is holding your conclusion up, and is it true here?"
       },
       {
         "t": "h3",
-        "text": "The test run on something you can check yourself"
+        "text": "The test run on something you can check yourself",
+        "say": "Let me run the test on something you can check yourself."
       },
       {
         "t": "p",
-        "text": "Take a claim you will meet constantly: *a rent cap will reduce the supply of rental housing.* It follows from a standard model, and it is often stated as though it were arithmetic. Run the load-bearing test on it rather than agreeing or disagreeing."
+        "text": "Take a claim you will meet constantly: *a rent cap will reduce the supply of rental housing.* It follows from a standard model, and it is often stated as though it were arithmetic. Run the load-bearing test on it rather than agreeing or disagreeing.",
+        "say": "Take a claim you'll meet constantly. A rent cap will reduce the supply of rental housing. It follows from a standard model, and it's often stated as though it were arithmetic. So run the test rather than agreeing or disagreeing."
       },
       {
         "t": "ol",
@@ -1701,31 +1782,38 @@ window.LESSONS['economics.w01'] = {
           "**The cap binds.** If it is set above most market rents, nothing happens at all. **Load-bearing, and usually the first thing to check empirically.**",
           "**All landlords are identical.** Pure tractability; the conclusion survives with a mix of landlords. **Decoration.**",
           "**The market is in equilibrium at the start.** Simplifies the story, does not carry it. **Decoration.**"
-        ]
+        ],
+        "say": "Landlords respond to returns. Relax it — suppose many are small owners with one flat, for whom selling means a large transaction and a tax bill. The conclusion weakens substantially. Load-bearing. There are alternative uses for the property. Relax it — in a city where selling is slow and short-term letting is restricted, there may be nowhere for the supply to go in the short run. Load-bearing. The cap binds — if it's set above most market rents, nothing happens at all. Load-bearing, and it's the first thing to check. All landlords are identical — pure tractability. Decoration. And the market starts in equilibrium — simplifies the story, doesn't carry it."
       },
       {
         "t": "p",
-        "text": "Now notice what the exercise produced. It did not tell you whether rent caps are good or bad — that is lecture 1.4's territory. It told you **what the argument depends on**, which converts a shouting match into three checkable questions: does the cap bind, how quickly can owners exit, and what else can the property be used for. Those have answers, and they differ between cities, which is why the same policy genuinely produces different results in different places."
+        "text": "Now notice what the exercise produced. It did not tell you whether rent caps are good or bad — that is lecture 1.4's territory. It told you **what the argument depends on**, which converts a shouting match into three checkable questions: does the cap bind, how quickly can owners exit, and what else can the property be used for. Those have answers, and they differ between cities, which is why the same policy genuinely produces different results in different places.",
+        "say": "Now notice what that produced. It did not tell you whether rent caps are good or bad — that's next lecture's territory. It told you what the argument depends on, which converts a shouting match into three checkable questions. Does the cap bind. How quickly can owners exit. And what else can the property be used for. Those have answers, and they differ between cities, which is why the same policy genuinely produces different results in different places."
       },
       {
         "t": "p",
-        "text": "That is what a model is for. Not to deliver a verdict, but to tell you which three facts to go and find."
+        "text": "That is what a model is for. Not to deliver a verdict, but to tell you which three facts to go and find.",
+        "say": "That's what a model is for. Not to deliver a verdict. To tell you which three facts to go and find."
       },
       {
         "t": "h2",
-        "text": "The “as if” defence, and the objection to it"
+        "text": "The “as if” defence, and the objection to it",
+        "say": "The as-if defence, and the objection to it."
       },
       {
         "t": "p",
-        "text": "Milton Friedman made the strongest version of the case for unrealistic assumptions in 1953. A model, he argued, should be judged by the accuracy of its **predictions**, not by the realism of its assumptions. An expert billiards player does not solve equations of motion, yet a model that assumes he does will predict his shots well — so the model is good, and complaining that he does no algebra misses the point."
+        "text": "Milton Friedman made the strongest version of the case for unrealistic assumptions in 1953. A model, he argued, should be judged by the accuracy of its **predictions**, not by the realism of its assumptions. An expert billiards player does not solve equations of motion, yet a model that assumes he does will predict his shots well — so the model is good, and complaining that he does no algebra misses the point.",
+        "say": "Milton Friedman made the strongest version of the case for unrealistic assumptions in nineteen fifty-three. A model, he argued, should be judged by the accuracy of its predictions, not by the realism of its assumptions. An expert billiards player doesn't solve equations of motion. Yet a model that assumes he does will predict his shots well. So the model is good, and complaining that he does no algebra misses the point."
       },
       {
         "t": "p",
-        "text": "The argument is powerful and it is also incomplete, in a way worth holding onto. If a model predicts well only in the conditions where it was built, its assumptions being false becomes a problem the moment conditions change — because you have no way of knowing whether you are still inside the range where the false assumption is harmless. A model that is right for the wrong reasons gives no warning when it starts being wrong."
+        "text": "The argument is powerful and it is also incomplete, in a way worth holding onto. If a model predicts well only in the conditions where it was built, its assumptions being false becomes a problem the moment conditions change — because you have no way of knowing whether you are still inside the range where the false assumption is harmless. A model that is right for the wrong reasons gives no warning when it starts being wrong.",
+        "say": "The argument is powerful, and it's also incomplete, in a way worth holding onto. If a model predicts well only in the conditions where it was built, its assumptions being false becomes a problem the moment conditions change — because you've no way of knowing whether you're still inside the range where the false assumption was harmless. A model that's right for the wrong reasons gives no warning when it starts being wrong."
       },
       {
         "t": "p",
-        "text": "That is not a hypothetical worry, and the rest of this lecture is the case that demonstrates it."
+        "text": "That is not a hypothetical worry, and the rest of this lecture is the case that demonstrates it.",
+        "say": "And that's not a hypothetical worry. The rest of this lecture is the case that demonstrates it."
       },
       {
         "t": "case",
@@ -1738,35 +1826,42 @@ window.LESSONS['economics.w01'] = {
           "Here is the detail that makes this a lesson rather than an anecdote. The failure was **predicted in advance**. In the late 1960s Milton Friedman and Edmund Phelps, independently, identified the load-bearing assumption: the curve held wage-setters' **expectations of inflation** still. If governments deliberately and repeatedly used the trade-off, workers and firms would learn, build the expected inflation into wage demands, and the trade-off would vanish — leaving the inflation and returning unemployment to where it started.",
           "So the assumption that carried the whole conclusion was not stated in Phillips's work at all. It was invisible for as long as inflation was low and stable, which is exactly why a century of data could not reveal it: across 1861–1957 nobody was systematically exploiting the relationship, so expectations had no reason to move. The moment policy started using the curve, policy destroyed it.",
           "Two lessons, and they point in different directions. **First**: a model can fit a hundred years of data and still be built on an assumption that fails the moment somebody acts on the model. Fitting the past is much weaker evidence than it feels like. **Second**, and in fairness to the model: the Phillips relationship was not nonsense. A version with expectations built in is standard today and central banks use it. The curve was not deleted; its domain was discovered, and week 11 covers the modern form properly."
-        ]
+        ],
+        "say": "In nineteen fifty-eight the economist A. W. Phillips published a study of British data running from eighteen sixty-one to nineteen fifty-seven. Nearly a hundred years. And he found a clear inverse relationship. When unemployment was low, wages rose quickly. When unemployment was high, wages rose slowly. Plotted, it's a smooth downward-sloping curve, and it fitted remarkably well. The mechanism seemed obvious, which is part of why it was believed. A tight labour market means employers competing for scarce workers, so they bid wages up. A slack one means workers competing for scarce jobs, so wages stagnate. Nothing strange about that. And the policy conclusion followed immediately, and was adopted across the Western world. Governments could choose a point on the curve. Accept a little more inflation, buy a little less unemployment. It was presented as a menu. Then it broke. Through the nineteen seventies the United States had high inflation and high unemployment at the same time — the combination the curve said was unavailable. As average inflation rose from about two and a half percent in the sixties to about seven percent in the seventies, unemployment didn't fall. It rose, from about four percent to above six. The word stagflation had to be invented, because the existing vocabulary had no room for what was happening. And here's the detail that makes this a lesson rather than an anecdote. The failure was predicted in advance. In the late sixties Milton Friedman and Edmund Phelps, independently, identified the load-bearing assumption. The curve held wage-setters' expectations of inflation still. If governments deliberately and repeatedly used the trade-off, workers and firms would learn, build the expected inflation into their wage demands, and the trade-off would vanish — leaving the inflation, and returning unemployment to where it started. So the assumption carrying the whole conclusion wasn't stated in Phillips's work at all. It was invisible for as long as inflation was low and stable, which is exactly why a century of data couldn't reveal it. Across eighteen sixty-one to nineteen fifty-seven, nobody was systematically exploiting the relationship, so expectations had no reason to move. The moment policy started using the curve, policy destroyed it. Two lessons, and they point in different directions. First: a model can fit a hundred years of data and still rest on an assumption that fails the moment somebody acts on the model. Fitting the past is much weaker evidence than it feels like. And second, in fairness to the model: the Phillips relationship wasn't nonsense. A version with expectations built into it is standard today, and central banks use it. The curve wasn't deleted. Its domain was discovered."
       },
       {
         "t": "h2",
-        "text": "Two opposite ways to get this wrong"
+        "text": "Two opposite ways to get this wrong",
+        "say": "So there are two opposite ways to get this wrong."
       },
       {
         "t": "ol",
         "items": [
           "**Believing the model.** Treating its conclusions as facts about the world, forgetting the assumptions, and being genuinely astonished when reality does something the model excluded. The Phillips-curve policy of the 1960s is the textbook case, and it was made by clever, well-informed people.",
           "**Dismissing all models.** Concluding that because models are simplified they are worthless, and reasoning instead from anecdote and intuition — which is also a model, merely an unwritten one whose assumptions cannot be examined because nobody has stated them."
-        ]
+        ],
+        "say": "One. Believing the model. Treating its conclusions as facts about the world, forgetting the assumptions, and being genuinely astonished when reality does something the model excluded. The Phillips curve policy of the nineteen sixties is the textbook case, and it was made by clever, well-informed people. And two. Dismissing all models. Concluding that because models are simplified they're worthless, and reasoning instead from anecdote and intuition. Which is also a model. Just an unwritten one, whose assumptions can't be examined because nobody has stated them."
       },
       {
         "t": "p",
-        "text": "The position between them is not a compromise; it is a practice. Use the model, know which assumption is carrying the weight, and write down in advance what observation would tell you it had failed. Friedman and Phelps did exactly that with the Phillips curve, which is why they were right before the data arrived rather than after."
+        "text": "The position between them is not a compromise; it is a practice. Use the model, know which assumption is carrying the weight, and write down in advance what observation would tell you it had failed. Friedman and Phelps did exactly that with the Phillips curve, which is why they were right before the data arrived rather than after.",
+        "say": "The position in between isn't a compromise. It's a practice. Use the model. Know which assumption is carrying the weight. And write down in advance what observation would tell you it had failed. Friedman and Phelps did exactly that, which is why they were right before the data arrived rather than after."
       },
       {
         "t": "quote",
         "text": "The relevant question to ask about the 'assumptions' of a theory is not whether they are descriptively 'realistic', for they never are, but whether they are sufficiently good approximations for the purpose in hand.",
-        "who": "Milton Friedman, 1953"
+        "who": "Milton Friedman, 1953",
+        "say": "Friedman's own words. The relevant question to ask about the assumptions of a theory is not whether they are descriptively realistic, for they never are, but whether they are sufficiently good approximations for the purpose in hand."
       },
       {
         "t": "p",
-        "text": "Keep the last four words. *For the purpose in hand* is the whole of the discipline: the same model can be an excellent approximation for one question and a dangerous one for the next, and nothing about the model itself tells you which situation you are in."
+        "text": "Keep the last four words. *For the purpose in hand* is the whole of the discipline: the same model can be an excellent approximation for one question and a dangerous one for the next, and nothing about the model itself tells you which situation you are in.",
+        "say": "Keep those last four words. For the purpose in hand is the whole of the discipline. The same model can be an excellent approximation for one question and a dangerous one for the next. And nothing about the model itself tells you which situation you're in."
       },
       {
         "t": "h2",
-        "text": "What you should be able to do now"
+        "text": "What you should be able to do now",
+        "say": "So what can you do now?"
       },
       {
         "t": "ul",
@@ -1777,7 +1872,8 @@ window.LESSONS['economics.w01'] = {
           "Find the load-bearing assumption in an argument and aim your objection there.",
           "State the 'as if' defence and the specific gap in it.",
           "Describe how the Phillips curve failed, and why fitting a century of data did not protect it."
-        ]
+        ],
+        "say": "Explain why leaving things out is what makes a model useful, without sounding defensive about it. Say what ceteris paribus holds still, and what it therefore risks. Tell a swamped prediction from a refuted one. Find the load-bearing assumption in an argument and aim your objection there. State the as-if defence and the specific gap in it. And describe how the Phillips curve failed, and why fitting a century of data didn't protect it."
       }
     ],
     "exercises": [
@@ -2284,11 +2380,13 @@ window.LESSONS['economics.w01'] = {
     "blocks": [
       {
         "t": "h2",
-        "text": "Two kinds of claim"
+        "text": "Two kinds of claim",
+        "say": "Two kinds of claim."
       },
       {
         "t": "p",
-        "text": "Economics makes two sorts of statement and they behave completely differently."
+        "text": "Economics makes two sorts of statement and they behave completely differently.",
+        "say": "Economics makes two sorts of statement, and they behave completely differently."
       },
       {
         "t": "table",
@@ -2323,26 +2421,31 @@ window.LESSONS['economics.w01'] = {
             "Real, and limited to the evidence",
             "None beyond any other citizen's"
           ]
-        ]
+        ],
+        "say": "A positive statement is about what is, or what would happen if. Evidence can settle it, at least in principle. A normative statement is about what ought to be, and nothing you can measure will settle it. A ten percent rise in the minimum wage changes teenage employment by some amount — that's positive. A ten percent rise in the minimum wage would be a good thing — that's normative. And when people disagree about the first, somebody is mistaken or the evidence isn't good enough yet. When they disagree about the second, they're weighing things differently, and both of them may be reasonable. Expert authority is real on the first, and limited to the evidence. On the second it's no greater than any other citizen's."
       },
       {
         "t": "write",
         "items": [
           "**A positive claim could in principle be shown to be wrong by evidence. A normative claim cannot.**",
           "That is the whole distinction. It says nothing about which kind matters more — in the end, the normative questions are the ones that decide how people live."
-        ]
+        ],
+        "say": "A positive claim could in principle be shown to be wrong by evidence. A normative claim cannot. That's the whole distinction. And it says nothing about which kind matters more — in the end, the normative questions are the ones that decide how people live."
       },
       {
         "t": "p",
-        "text": "Notice what the definition does **not** say. It does not say positive claims are easy; most of the interesting ones are extremely hard and week 2 is about why. It does not say normative claims are arbitrary; they can be argued about carefully, consistently and well. And it does not say economists should stay out of normative questions — only that when they enter them they are speaking as citizens with a good grasp of the consequences, not as experts with a finding."
+        "text": "Notice what the definition does **not** say. It does not say positive claims are easy; most of the interesting ones are extremely hard and week 2 is about why. It does not say normative claims are arbitrary; they can be argued about carefully, consistently and well. And it does not say economists should stay out of normative questions — only that when they enter them they are speaking as citizens with a good grasp of the consequences, not as experts with a finding.",
+        "say": "Notice what that definition does not say. It doesn't say positive claims are easy — most of the interesting ones are extremely hard, and the whole of week two is about why. It doesn't say normative claims are arbitrary — they can be argued about carefully and well. And it doesn't say economists should stay out of normative questions. Only that when they enter them, they're speaking as citizens with a good grasp of the consequences, not as experts with a finding."
       },
       {
         "t": "h2",
-        "text": "Where the judgement hides"
+        "text": "Where the judgement hides",
+        "say": "So where does the judgement hide?"
       },
       {
         "t": "p",
-        "text": "If the two kinds always arrived labelled, this lecture would be over. The difficulty is that normative claims routinely travel inside words that sound technical."
+        "text": "If the two kinds always arrived labelled, this lecture would be over. The difficulty is that normative claims routinely travel inside words that sound technical.",
+        "say": "If the two kinds always arrived labelled, this lecture would be over. The difficulty is that normative claims routinely travel inside words that sound technical."
       },
       {
         "t": "ul",
@@ -2352,23 +2455,28 @@ window.LESSONS['economics.w01'] = {
           "**Natural.** The 'natural rate' of unemployment is a technical concept — the rate consistent with stable inflation. The word *natural* quietly suggests it is not anybody's responsibility.",
           "**Unsustainable.** Usually means a trend that cannot continue indefinitely. Often used to mean *I would like it to stop sooner than that*.",
           "**Fair share.** Entirely normative, and frequently deployed as though it were an accounting term."
-        ]
+        ],
+        "say": "Distortion. A tax distorts the market, meaning it moves the outcome away from what an untaxed market would produce. That part is positive. But the word carries a suggestion that the untaxed outcome was the correct one, and that is a value judgement about which baseline deserves to be called undistorted. Burden. The burden of taxation is simply who bears the cost, which is a technical question with an answer. The word arrives pre-loaded with the view that the thing is unwelcome. Natural. The natural rate of unemployment is a technical concept — the rate consistent with stable inflation. The word natural quietly suggests it's nobody's responsibility. Unsustainable usually means a trend that can't continue indefinitely, and is often used to mean I'd like it to stop sooner than that. And fair share is entirely normative, and gets deployed as though it were an accounting term."
       },
       {
         "t": "p",
-        "text": "None of these words should be banned; they are useful and there are no neutral substitutes for some of them. The discipline is to notice the standard of comparison each one implies, and to be able to state it when asked. *Distorted relative to what?* is a fair question and it always has an answer."
+        "text": "None of these words should be banned; they are useful and there are no neutral substitutes for some of them. The discipline is to notice the standard of comparison each one implies, and to be able to state it when asked. *Distorted relative to what?* is a fair question and it always has an answer.",
+        "say": "None of those words should be banned. They're useful, and some of them have no neutral substitute. The discipline is to notice the standard of comparison each one implies, and to be able to state it when asked. Distorted relative to what? That's a fair question, and it always has an answer."
       },
       {
         "t": "h2",
-        "text": "Splitting a real dispute"
+        "text": "Splitting a real dispute",
+        "say": "Let me split a real dispute."
       },
       {
         "t": "p",
-        "text": "Take the most argued-about question in applied economics: should there be a minimum wage, and how high?"
+        "text": "Take the most argued-about question in applied economics: should there be a minimum wage, and how high?",
+        "say": "Take the most argued-about question in applied economics. Should there be a minimum wage, and how high?"
       },
       {
         "t": "p",
-        "text": "The argument as normally conducted is a single undifferentiated fight. Split it, and there are two entirely separate questions."
+        "text": "The argument as normally conducted is a single undifferentiated fight. Split it, and there are two entirely separate questions.",
+        "say": "As normally conducted it's a single undifferentiated fight. Split it, and there are two entirely separate questions."
       },
       {
         "t": "table",
@@ -2385,15 +2493,18 @@ window.LESSONS['economics.w01'] = {
             "Evidence can answer this, and a great deal of evidence has been gathered.",
             "No amount of evidence can answer this. It depends on what you think a society owes its lowest-paid members."
           ]
-        ]
+        ],
+        "say": "The positive question: if the minimum wage rises by a given amount, what happens to employment, hours, prices, profits, turnover and the incomes of low-paid workers? Evidence can answer that, and a great deal of evidence has been gathered. The normative question: given whatever the answer turns out to be, is that trade worth making? Whose gains count, and how much, against whose losses? No amount of evidence answers that. It depends on what you think a society owes its lowest-paid members."
       },
       {
         "t": "p",
-        "text": "Now the crucial observation. Two people can **agree completely** on the positive answer and still disagree entirely — one thinking a small employment loss is a price worth paying to raise millions of incomes, the other thinking no policy should knowingly cost anyone their job. Neither is confused. They are weighing differently."
+        "text": "Now the crucial observation. Two people can **agree completely** on the positive answer and still disagree entirely — one thinking a small employment loss is a price worth paying to raise millions of incomes, the other thinking no policy should knowingly cost anyone their job. Neither is confused. They are weighing differently.",
+        "say": "And now the crucial observation. Two people can agree completely on the positive answer and still disagree entirely. One thinks a small employment loss is a price worth paying to raise millions of incomes. The other thinks no policy should knowingly cost anybody their job. Neither of them is confused. They're weighing differently."
       },
       {
         "t": "p",
-        "text": "And yet the argument is almost always conducted as though it were about the facts, because factual claims sound more respectable than value claims. That is the disguise this lecture is teaching you to remove — including when you are the one wearing it."
+        "text": "And yet the argument is almost always conducted as though it were about the facts, because factual claims sound more respectable than value claims. That is the disguise this lecture is teaching you to remove — including when you are the one wearing it.",
+        "say": "And yet the argument is almost always conducted as though it were about the facts. Because factual claims sound more respectable than value claims. That's the disguise this lecture is teaching you to remove — including when you're the one wearing it."
       },
       {
         "t": "case",
@@ -2406,7 +2517,8 @@ window.LESSONS['economics.w01'] = {
           "Sit with the shape of that exchange, because it is what serious empirical economics actually looks like. Three careful studies, the same event, three answers: up, down, and roughly nothing. The disagreements were about **whose data, collected how, from which establishments** — not about ideology, and not about arithmetic.",
           "Where has it settled? Not on a single number, and anyone who tells you otherwise is selling something. The broad direction of thirty further years of work is that moderate minimum wages have **much smaller employment effects than the simple textbook model predicts**, with real disagreement remaining about how high is moderate, about which workers bear the effects, and about what happens at levels far above those studied. One mechanism now widely discussed is **monopsony** — employers with enough wage-setting power that a floor can raise pay without cutting jobs — which week 8 covers properly.",
           "Card received half of the **2021 Nobel Memorial Prize** for his empirical contributions to labour economics; Joshua Angrist and Guido Imbens shared the other half for the methods that make this kind of study interpretable. That is the subject's own verdict on the approach, and week 2.3 is about the methods themselves."
-        ]
+        ],
+        "say": "So let me give you the positive half, honestly. On the first of April nineteen ninety-two, New Jersey raised its minimum wage from four dollars twenty-five to five dollars five an hour. Pennsylvania, next door, did not. David Card and Alan Krueger surveyed four hundred and ten fast-food restaurants on both sides of the border, before and after, and compared the change in one state with the change in the other. The textbook prediction was clear. A higher wage floor should reduce employment. Card and Krueger found the opposite of the prediction's direction. Employment in New Jersey restaurants rose by about thirteen percent relative to Pennsylvania's. Their own conclusion was cautious: they found no evidence that the increase had reduced employment. The result was explosive, and the reply came with the strongest possible objection — not about theory, but about data. Card and Krueger had collected employment by telephoning restaurants. David Neumark and William Wascher obtained administrative payroll records, which are in principle far more reliable than what a manager says on the phone, and reported that employment had fallen. Card and Krueger then answered with payroll data of their own, drawn from unemployment-insurance tax records covering essentially all fast-food establishments in both states, and reported that the increase had probably had no effect on employment. And they argued the sample their challengers had been given was selected in a way that biased the result. Now sit with the shape of that exchange, because it's what serious empirical economics actually looks like. Three careful studies, the same event, three answers. Up, down, and roughly nothing. And the disagreements were about whose data, collected how, from which establishments. Not about ideology, and not about arithmetic. So where has it settled? Not on a single number, and anybody who tells you otherwise is selling something. The broad direction of thirty further years of work is that moderate minimum wages have much smaller employment effects than the simple textbook model predicts, with real disagreement remaining about how high is moderate, about which workers bear the effects, and about what happens at levels far above those studied. Card received half of the twenty twenty-one Nobel prize for his empirical contributions to labour economics."
       },
       {
         "t": "warn",
@@ -2414,31 +2526,38 @@ window.LESSONS['economics.w01'] = {
         "ps": [
           "The temptation is to cite the study that agrees with you and stop. Both sides of the minimum-wage argument have done this for thirty years, and it is why the public discussion is so much less informative than the research.",
           "The honest form is: *the best evidence suggests X, with this much uncertainty, and here is the strongest finding that points the other way.* If you cannot state the other side's best evidence, you do not yet know the positive question well enough to have a normative opinion worth defending on it."
-        ]
+        ],
+        "say": "And here's how to use contested evidence honestly. The temptation is to cite the study that agrees with you and stop. Both sides of the minimum-wage argument have done that for thirty years, and it's why the public discussion is so much less informative than the research. The honest form is: the best evidence suggests X, with this much uncertainty, and here is the strongest finding that points the other way. If you can't state the other side's best evidence, you don't yet know the positive question well enough to have a normative opinion worth defending on it."
       },
       {
         "t": "h2",
-        "text": "Efficiency: the word that carries a value while denying it"
+        "text": "Efficiency: the word that carries a value while denying it",
+        "say": "Now, efficiency. The word that carries a value while denying it."
       },
       {
         "t": "p",
-        "text": "One word deserves separate treatment, because it does more hidden work than all the others combined."
+        "text": "One word deserves separate treatment, because it does more hidden work than all the others combined.",
+        "say": "One word deserves separate treatment, because it does more hidden work than all the others combined."
       },
       {
         "t": "p",
-        "text": "In its strict sense, an outcome is **Pareto efficient** if nobody can be made better off without making somebody worse off. That is close to value-free — almost everyone accepts that if a change helps someone and harms nobody, it is an improvement. But it is also extremely weak: a society where one person owns everything can be Pareto efficient, because taking anything from them makes them worse off."
+        "text": "In its strict sense, an outcome is **Pareto efficient** if nobody can be made better off without making somebody worse off. That is close to value-free — almost everyone accepts that if a change helps someone and harms nobody, it is an improvement. But it is also extremely weak: a society where one person owns everything can be Pareto efficient, because taking anything from them makes them worse off.",
+        "say": "In its strict sense, an outcome is Pareto efficient if nobody can be made better off without making somebody worse off. That's close to value-free — almost everybody accepts that if a change helps someone and harms nobody, it's an improvement. But it's also extremely weak. A society where one person owns everything can be Pareto efficient, because taking anything from them makes them worse off."
       },
       {
         "t": "p",
-        "text": "So economists mostly use a second, more useful and much less innocent standard: a change is an improvement if the winners gain **more than enough to compensate** the losers — whether or not any compensation actually takes place. That is the **Kaldor–Hicks** criterion, and the value judgement inside it is unmissable once you see it: it treats a euro of gain to a rich winner as cancelling a euro of loss to a poor loser."
+        "text": "So economists mostly use a second, more useful and much less innocent standard: a change is an improvement if the winners gain **more than enough to compensate** the losers — whether or not any compensation actually takes place. That is the **Kaldor–Hicks** criterion, and the value judgement inside it is unmissable once you see it: it treats a euro of gain to a rich winner as cancelling a euro of loss to a poor loser.",
+        "say": "So economists mostly use a second standard. More useful, and much less innocent. A change is an improvement if the winners gain more than enough to compensate the losers — whether or not any compensation actually happens. That's the Kaldor-Hicks criterion, and the value judgement inside it is unmissable once you see it. It treats a euro of gain to a rich winner as cancelling a euro of loss to a poor loser."
       },
       {
         "t": "p",
-        "text": "You may think that is a reasonable working assumption; many careful people do. What you cannot do is call the resulting conclusion purely technical. When an analysis says a policy 'increases efficiency', the right question is which standard, and whether the compensation is going to happen or is merely hypothetical. This is the same distinction lecture 1.2 raised about trade, and it is the point where much economic advice quietly becomes political."
+        "text": "You may think that is a reasonable working assumption; many careful people do. What you cannot do is call the resulting conclusion purely technical. When an analysis says a policy 'increases efficiency', the right question is which standard, and whether the compensation is going to happen or is merely hypothetical. This is the same distinction lecture 1.2 raised about trade, and it is the point where much economic advice quietly becomes political.",
+        "say": "You may think that's a reasonable working assumption. Many careful people do. What you can't do is call the resulting conclusion purely technical. When an analysis says a policy increases efficiency, the right questions are: which standard, and is the compensation going to happen, or is it merely hypothetical? That's the point where a great deal of economic advice quietly becomes political."
       },
       {
         "t": "h2",
-        "text": "What an economist can actually offer"
+        "text": "What an economist can actually offer",
+        "say": "So what can an economist actually offer?"
       },
       {
         "t": "ol",
@@ -2448,15 +2567,18 @@ window.LESSONS['economics.w01'] = {
           "**What the alternatives cost** — lecture 1.1's question, applied to policy. Nobody else in the room is reliably asking it.",
           "**Where the disagreement actually is** — whether the room is arguing about evidence or about values. Naming this is often the single most useful sentence anyone says in a meeting.",
           "**What they cannot offer:** which trade to make. That requires saying whose welfare counts and how much, and no training confers authority on that question."
-        ]
+        ],
+        "say": "One. What's likely to happen, with an honest statement of the uncertainty. That's the core professional contribution and it isn't small. Two. Who gains and who loses, by how much, and when — frequently the most valuable output, because it's the part political argument leaves out. Three. What the alternatives cost, which is last lecture's question applied to policy, and nobody else in the room is reliably asking it. Four. Where the disagreement actually is — whether the room is arguing about evidence or about values. Naming that is often the single most useful sentence anybody says in a meeting. And five, what they cannot offer: which trade to make. That requires saying whose welfare counts, and how much, and no training confers authority on that question."
       },
       {
         "t": "p",
-        "text": "There is an honest complication and it should not be skipped. Economists do not float above the values; they have them, and professional disagreement sometimes runs along value lines while being conducted in technical language. The defence is not to pretend otherwise but to be explicit — to say *this is what the evidence shows, and this is my own judgement about what to do with it,* and to keep the two in separate sentences."
+        "text": "There is an honest complication and it should not be skipped. Economists do not float above the values; they have them, and professional disagreement sometimes runs along value lines while being conducted in technical language. The defence is not to pretend otherwise but to be explicit — to say *this is what the evidence shows, and this is my own judgement about what to do with it,* and to keep the two in separate sentences.",
+        "say": "There's an honest complication and it shouldn't be skipped. Economists don't float above the values. They have them, and professional disagreement sometimes runs along value lines while being conducted in technical language. The defence isn't to pretend otherwise. It's to be explicit. This is what the evidence shows, and this is my own judgement about what to do with it — in two separate sentences."
       },
       {
         "t": "h2",
-        "text": "What you should be able to do now"
+        "text": "What you should be able to do now",
+        "say": "So what can you do now?"
       },
       {
         "t": "ul",
@@ -2467,7 +2589,8 @@ window.LESSONS['economics.w01'] = {
           "Explain why two people who agree on all the facts can still disagree entirely and both be reasonable.",
           "Say which efficiency standard an argument is using and whether compensation is real or hypothetical.",
           "Name the five things an economist can contribute, and the one they cannot."
-        ]
+        ],
+        "say": "Split any policy sentence into what evidence could settle and what it couldn't. Spot a value judgement travelling inside a technical word, and ask what the reference point is. State the minimum-wage evidence honestly, including the findings that cut against your own view. Explain why two people who agree on all the facts can still disagree entirely and both be reasonable. And say which efficiency standard an argument is using."
       }
     ],
     "exercises": [
@@ -2984,42 +3107,51 @@ window.LESSONS['economics.w01'] = {
     "blocks": [
       {
         "t": "h2",
-        "text": "The question people actually face"
+        "text": "The question people actually face",
+        "say": "The question people actually face."
       },
       {
         "t": "p",
-        "text": "Should I run a bakery? Should the government fund healthcare? Should this airline fly? These are the questions that get asked in public, and they are almost never the questions anyone is really deciding."
+        "text": "Should I run a bakery? Should the government fund healthcare? Should this airline fly? These are the questions that get asked in public, and they are almost never the questions anyone is really deciding.",
+        "say": "Should I run a bakery? Should the government fund healthcare? Should this airline fly? Those are the questions that get asked in public, and they're almost never the questions anybody is really deciding."
       },
       {
         "t": "p",
-        "text": "The real decisions are: should I bake **a hundred more loaves** tomorrow? Should the health budget be **€40 million larger** next year? Should this flight go out **with eleven empty seats or take an extra passenger at €39**? Nobody chooses between healthcare and no healthcare. They choose between this much and slightly more."
+        "text": "The real decisions are: should I bake **a hundred more loaves** tomorrow? Should the health budget be **€40 million larger** next year? Should this flight go out **with eleven empty seats or take an extra passenger at €39**? Nobody chooses between healthcare and no healthcare. They choose between this much and slightly more.",
+        "say": "The real decisions are: should I bake a hundred more loaves tomorrow? Should the health budget be forty million euros larger next year? Should this flight go out with eleven empty seats, or take one more passenger at thirty-nine euros? Nobody chooses between healthcare and no healthcare. They choose between this much, and slightly more."
       },
       {
         "t": "write",
         "items": [
           "**Marginal** means: of one more unit.",
           "**Do more while the marginal benefit exceeds the marginal cost. Stop where they are equal.**"
-        ]
+        ],
+        "say": "Marginal means: of one more unit. And the rule is: do more while the marginal benefit exceeds the marginal cost. Stop where they're equal."
       },
       {
         "t": "p",
-        "text": "That rule is short enough to sound trivial, and it is the engine of most of microeconomics. Weeks 4 and 5 are, in a real sense, that sentence applied carefully to a consumer and to a firm."
+        "text": "That rule is short enough to sound trivial, and it is the engine of most of microeconomics. Weeks 4 and 5 are, in a real sense, that sentence applied carefully to a consumer and to a firm.",
+        "say": "That rule is short enough to sound trivial, and it's the engine of most of microeconomics. Weeks four and five are, in a real sense, that one sentence applied carefully to a consumer and to a firm."
       },
       {
         "t": "h2",
-        "text": "Why the average will mislead you"
+        "text": "Why the average will mislead you",
+        "say": "So why will the average mislead you?"
       },
       {
         "t": "p",
-        "text": "The commonest way this goes wrong in practice is that someone reaches for an average when they need a margin."
+        "text": "The commonest way this goes wrong in practice is that someone reaches for an average when they need a margin.",
+        "say": "The commonest way this goes wrong in practice is that somebody reaches for an average when they need a margin."
       },
       {
         "t": "p",
-        "text": "A bakery makes 500 loaves a day. Total costs — rent, ovens, staff, flour, electricity — are €1,000, so the **average cost** is €2.00 a loaf. A café asks for 100 extra loaves and offers €1.40 each. The manager says no: they cost €2.00 to make, so that is a loss of €0.60 each."
+        "text": "A bakery makes 500 loaves a day. Total costs — rent, ovens, staff, flour, electricity — are €1,000, so the **average cost** is €2.00 a loaf. A café asks for 100 extra loaves and offers €1.40 each. The manager says no: they cost €2.00 to make, so that is a loss of €0.60 each.",
+        "say": "A bakery makes five hundred loaves a day. Total costs — rent, ovens, staff, flour, electricity — come to a thousand euros. So the average cost is two euros a loaf. Now a café asks for a hundred extra loaves and offers one euro forty each. The manager says no. They cost two euros to make, so that's a loss of sixty cents each."
       },
       {
         "t": "p",
-        "text": "The manager has used the wrong number. The rent is already paid, the oven is already hot and the baker is already there. The only things that change are flour, a little electricity, and packaging — say €0.70 a loaf."
+        "text": "The manager has used the wrong number. The rent is already paid, the oven is already hot and the baker is already there. The only things that change are flour, a little electricity, and packaging — say €0.70 a loaf.",
+        "say": "And the manager has used the wrong number. The rent is already paid. The oven is already hot. The baker is already there. The only things that change are flour, a little electricity and packaging. Say seventy cents a loaf."
       },
       {
         "t": "math",
@@ -3054,19 +3186,23 @@ window.LESSONS['economics.w01'] = {
           }
         ],
         "use": "Use marginal cost whenever you are deciding whether to do one more of something: take an order, open an extra hour, hire one more person, run one more advert. Use average cost for describing the business as a whole and for long-run decisions about whether the whole thing is worth running.",
-        "why": "The rent does not change because of the extra hundred loaves, so it cannot be part of what those loaves cost. Sharing it across them is an accounting convention for reporting, not a fact about causation. And notice the honest catch: accepting €1.40 makes sense **only if** the regular customers cannot switch to the cheap price and the oven really had spare capacity. If either fails, the extra order has a much larger marginal cost than €0.70 — it costs you the margin on your ordinary sales."
+        "why": "The rent does not change because of the extra hundred loaves, so it cannot be part of what those loaves cost. Sharing it across them is an accounting convention for reporting, not a fact about causation. And notice the honest catch: accepting €1.40 makes sense **only if** the regular customers cannot switch to the cheap price and the oven really had spare capacity. If either fails, the extra order has a much larger marginal cost than €0.70 — it costs you the margin on your ordinary sales.",
+        "say": "So: average cost is total cost divided by total units. A thousand euros over five hundred loaves, two euros each. Marginal cost is the change in total cost divided by the change in units. Seventy euros over a hundred loaves, seventy cents each. So on the extra order at one euro forty: one forty minus seventy is seventy cents of extra profit per loaf. A hundred loaves, seventy euros more profit for the day. Accept it. Use marginal cost whenever you're deciding whether to do one more of something. Take an order, open an extra hour, hire one more person, run one more advert. Use average cost for describing the business as a whole. Why does it work? Because the rent doesn't change because of the extra hundred loaves, so it can't be part of what those loaves cost. Sharing it across them is an accounting convention for reporting, not a fact about causation. And here's the honest catch. Accepting one euro forty makes sense only if your regular customers can't switch to the cheap price, and the oven really did have spare capacity. If either of those fails, the extra order costs you far more than seventy cents — it costs you the margin on your ordinary sales."
       },
       {
         "t": "p",
-        "text": "The same arithmetic explains something you have seen your whole life. An aircraft is leaving with an empty seat. The average cost per seat on that flight might be €180 once the aircraft, the crew, the fuel and the airport charges are shared out. The **marginal** cost of one more passenger is a meal, a little fuel and a booking fee — a few euros. That is why a seat can be sold for €39 the day before departure and the airline is still better off, and it is also why airlines are so dangerous to be in: when every competitor's marginal cost is near zero and the product perishes at take-off, the price of the last seat is driven brutally low. Week 5 makes this precise."
+        "text": "The same arithmetic explains something you have seen your whole life. An aircraft is leaving with an empty seat. The average cost per seat on that flight might be €180 once the aircraft, the crew, the fuel and the airport charges are shared out. The **marginal** cost of one more passenger is a meal, a little fuel and a booking fee — a few euros. That is why a seat can be sold for €39 the day before departure and the airline is still better off, and it is also why airlines are so dangerous to be in: when every competitor's marginal cost is near zero and the product perishes at take-off, the price of the last seat is driven brutally low. Week 5 makes this precise.",
+        "say": "The same arithmetic explains something you've seen your whole life. An aircraft is leaving with an empty seat. The average cost per seat on that flight might be a hundred and eighty euros, once the aircraft, the crew, the fuel and the airport charges are shared out. But the marginal cost of one more passenger is a meal, a little fuel and a booking fee. A few euros. Which is why a seat can be sold for thirty-nine euros the day before departure and the airline is still better off. And it's also why airlines are such a dangerous business to be in. When every competitor's marginal cost is near zero and the product perishes at take-off, the price of the last seat gets driven brutally low."
       },
       {
         "t": "h2",
-        "text": "Where to stop"
+        "text": "Where to stop",
+        "say": "Where to stop."
       },
       {
         "t": "p",
-        "text": "The rule has a second half that is easy to skip: **stop where marginal benefit equals marginal cost**. Not where total benefit is highest, not where average cost is lowest — where the next unit stops paying for itself."
+        "text": "The rule has a second half that is easy to skip: **stop where marginal benefit equals marginal cost**. Not where total benefit is highest, not where average cost is lowest — where the next unit stops paying for itself.",
+        "say": "The rule has a second half that's easy to skip. Stop where marginal benefit equals marginal cost. Not where total benefit is highest. Not where average cost is lowest. Where the next unit stops paying for itself."
       },
       {
         "t": "table",
@@ -3102,34 +3238,41 @@ window.LESSONS['economics.w01'] = {
             "**No** — €15 worse off"
           ]
         ],
-        "cap": "The shop should close at 21:00. Note that the 20:00–21:00 hour is worth opening even though it is nearly worthless, and that total revenue keeps rising right through the last hour — which is exactly why revenue is the wrong thing to watch."
+        "cap": "The shop should close at 21:00. Note that the 20:00–21:00 hour is worth opening even though it is nearly worthless, and that total revenue keeps rising right through the last hour — which is exactly why revenue is the wrong thing to watch.",
+        "say": "Take a shop deciding its opening hours. Six to seven in the evening brings in a hundred and twenty euros and costs forty-five. Do it — seventy-five euros better off. Seven to eight brings seventy and costs forty-five. Do it — twenty-five better off. Eight to nine brings forty-eight and costs forty-five. Yes, barely. Three euros. And nine to ten brings thirty and costs forty-five. No. Fifteen euros worse off. So the shop should close at nine."
       },
       {
         "t": "p",
-        "text": "That last point catches people constantly. Staying open until 22:00 **increases total revenue** by €30. A manager watching the revenue line sees it going up and concludes the hour is working. The hour is losing €15, and only the marginal comparison reveals it."
+        "text": "That last point catches people constantly. Staying open until 22:00 **increases total revenue** by €30. A manager watching the revenue line sees it going up and concludes the hour is working. The hour is losing €15, and only the marginal comparison reveals it.",
+        "say": "And that last point catches people constantly. Staying open until ten increases total revenue by thirty euros. A manager watching the revenue line sees it going up and concludes the hour is working. The hour is losing fifteen euros. Only the marginal comparison reveals it."
       },
       {
         "t": "h2",
-        "text": "The money that should not be in the room"
+        "text": "The money that should not be in the room",
+        "say": "Now, the money that shouldn't be in the room."
       },
       {
         "t": "p",
-        "text": "Now the second half of the lecture, which follows directly from the first. If only the change matters, then anything that does not change is irrelevant — including everything already spent."
+        "text": "Now the second half of the lecture, which follows directly from the first. If only the change matters, then anything that does not change is irrelevant — including everything already spent.",
+        "say": "Here's the second half of the lecture, and it follows directly from the first. If only the change matters, then anything that doesn't change is irrelevant. Including everything already spent."
       },
       {
         "t": "write",
         "items": [
           "**A sunk cost is money, time or effort already spent that cannot be recovered whatever you now decide.**",
           "It is therefore not a cost of any future decision, and it should not appear in one."
-        ]
+        ],
+        "say": "A sunk cost is money, time or effort already spent, that can't be recovered whatever you now decide. So it isn't a cost of any future decision, and it shouldn't appear in one."
       },
       {
         "t": "p",
-        "text": "This is straightforward to state and genuinely hard to do, because it runs against something strong in human psychology. The €40 you paid for a concert ticket is gone whether you attend or stay home. The correct question is only: given the weather, my mood and the alternative evening, do I want to go? If the honest answer is no, going anyway does not recover the €40. It spends an evening on top of it."
+        "text": "This is straightforward to state and genuinely hard to do, because it runs against something strong in human psychology. The €40 you paid for a concert ticket is gone whether you attend or stay home. The correct question is only: given the weather, my mood and the alternative evening, do I want to go? If the honest answer is no, going anyway does not recover the €40. It spends an evening on top of it.",
+        "say": "That's straightforward to state and genuinely hard to do, because it runs against something strong in human psychology. The forty euros you paid for a concert ticket is gone whether you attend or stay home. The only correct question is: given the weather, my mood and the alternative evening, do I want to go? If the honest answer is no, going anyway doesn't recover the forty euros. It spends an evening on top of it."
       },
       {
         "t": "p",
-        "text": "The same structure appears everywhere once you can see it: finishing a film you are not enjoying, staying in a course because of the years already put in, keeping a project alive because of what it has consumed. In each case the past spending is doing work it has no right to do."
+        "text": "The same structure appears everywhere once you can see it: finishing a film you are not enjoying, staying in a course because of the years already put in, keeping a project alive because of what it has consumed. In each case the past spending is doing work it has no right to do.",
+        "say": "And the same structure turns up everywhere once you can see it. Finishing a film you're not enjoying. Staying in a course because of the years already put in. Keeping a project alive because of what it's consumed. In every case the past spending is doing work it has no right to do."
       },
       {
         "t": "case",
@@ -3141,7 +3284,8 @@ window.LESSONS['economics.w01'] = {
           "So why did it continue? Partly because the treaty carried heavy penalties for withdrawal, which is a genuine future cost and belongs in the decision. But the arguments actually made in public were of a different kind: that so much had already been invested that stopping would waste it. That reasoning is precisely backwards, and it is made so often about this project that psychologists and economists named the error after it — the **Concorde fallacy**.",
           "Run the correct analysis. At any point during development, the question was never *have we spent a lot?* It was: **from today, will the remaining spending produce more value than the same money spent elsewhere?** The billion already gone is identical under both options, so it cannot distinguish between them. It is arithmetically incapable of favouring continuation.",
           "The uncomfortable part is that the fallacy is not stupidity. Continuing protects the reputations of the people who authorised the spending, and admitting the loss is personally expensive in a way that continuing is not. Sunk-cost reasoning usually survives because somebody's interests are served by it — which is why the defence is procedural rather than intellectual: the person deciding whether to continue should not be the person who has to be wrong for it to stop."
-        ]
+        ],
+        "say": "Which brings me to the fallacy that got named after an aeroplane. In November nineteen sixty-two the British and French governments signed a treaty to build a supersonic passenger aircraft. The programme cost was estimated at around seventy million pounds. It was not seventy million pounds. By the time Concorde entered service the development cost had risen to somewhere in the region of one point three billion, and some accounts put it higher still — up to around two billion, depending on the year the money is measured in and what counts as development. That range is worth pausing on. The figures genuinely differ between sources, and the honest way to report it is with the range and the reason for it, not with one confident number lifted from wherever you found it first. Whatever the exact total, the shape isn't in dispute. The final cost was on the order of twenty times the original estimate, and it was clear years before completion that the aircraft would never recover its development spending. So why did it continue? Partly because the treaty carried heavy penalties for withdrawal, and that's a genuine future cost which belongs in the decision. But the arguments actually made in public were of a different kind. That so much had already been invested that stopping would waste it. And that reasoning is precisely backwards. It's made so often about this project that psychologists and economists named the error after it. The Concorde fallacy. Run the correct analysis. At any point during development, the question was never have we spent a lot. It was: from today, will the remaining spending produce more value than the same money spent elsewhere? The billion already gone is identical under both options. So it cannot distinguish between them. It is arithmetically incapable of favouring continuation. And the uncomfortable part is that the fallacy isn't stupidity. Continuing protects the reputations of the people who authorised the spending, and admitting the loss is personally expensive in a way that continuing is not. Sunk-cost reasoning usually survives because somebody's interests are served by it. Which is why the defence is procedural rather than intellectual. The person deciding whether to continue should not be the person who has to be wrong for it to stop."
       },
       {
         "t": "warn",
@@ -3150,11 +3294,13 @@ window.LESSONS['economics.w01'] = {
           "It does not mean the past is uninformative. What a project has cost so far is often the best evidence you have about what the rest will cost, and revising a forecast upward because of an overrun is **correct** reasoning — that is learning, not the fallacy.",
           "It also does not mean commitments are worthless. A penalty for withdrawal, a contractual obligation, a reputation you would lose: those are real **future** costs and they belong in the decision. Concorde's withdrawal penalty was a legitimate factor; 'we have already spent so much' was not.",
           "The test is clean: does this number differ between the options in front of me? If it is the same whichever I choose, it cannot help me choose."
-        ]
+        ],
+        "say": "Now, what ignore sunk costs does not mean. It doesn't mean the past is uninformative. What a project has cost so far is often the best evidence you have about what the rest will cost, and revising a forecast upward because of an overrun is correct reasoning. That's learning, not the fallacy. And it doesn't mean commitments are worthless. A penalty for withdrawal, a contractual obligation, a reputation you'd lose — those are real future costs and they belong in the decision. Concorde's withdrawal penalty was a legitimate factor. We've already spent so much was not. The test is clean. Does this number differ between the options in front of me? If it's the same whichever I choose, it can't help me choose."
       },
       {
         "t": "h2",
-        "text": "Where marginal reasoning is the wrong tool"
+        "text": "Where marginal reasoning is the wrong tool",
+        "say": "And where is marginal reasoning the wrong tool?"
       },
       {
         "t": "ol",
@@ -3162,15 +3308,18 @@ window.LESSONS['economics.w01'] = {
           "**When the decision is lumpy.** You cannot buy a third of an aircraft or open half a branch. Marginal analysis assumes you can adjust in small steps; when the smallest available step is enormous, the relevant comparison is between whole options, not between units.",
           "**When the increments interact.** The rule assumes the next unit does not change everything before it. Accept the discounted loaves and your regular customers may demand the same price — at which point the true marginal cost includes the margin lost on all the other sales. Many apparently profitable marginal decisions fail for exactly this reason.",
           "**When the benefit cannot be measured at the margin.** What is the marginal benefit of the last euro of a hospital's budget, or of one more hour with your family? The reasoning still applies in principle, and in practice you are making a judgement rather than a computation — and pretending otherwise produces false precision, which is worse than acknowledged uncertainty."
-        ]
+        ],
+        "say": "One. When the decision is lumpy. You can't buy a third of an aircraft or open half a branch. Marginal analysis assumes you can adjust in small steps, and when the smallest available step is enormous, the relevant comparison is between whole options. Two. When the increments interact. The rule assumes the next unit doesn't change everything before it. Accept the discounted loaves and your regular customers may demand the same price — at which point the true marginal cost includes the margin lost on all the other sales. And three. When the benefit can't be measured at the margin. What's the marginal benefit of the last euro of a hospital's budget, or of one more hour with your family? The reasoning still applies in principle, and in practice you're making a judgement rather than a computation. Pretending otherwise produces false precision, which is worse than acknowledged uncertainty."
       },
       {
         "t": "p",
-        "text": "None of these is a reason to abandon the habit. They are reasons to know which situation you are in — which is the same discipline lecture 1.3 asked for about models: use the tool, and know its domain."
+        "text": "None of these is a reason to abandon the habit. They are reasons to know which situation you are in — which is the same discipline lecture 1.3 asked for about models: use the tool, and know its domain.",
+        "say": "None of those is a reason to abandon the habit. They're reasons to know which situation you're in. Which is the same discipline lecture one point three asked for about models. Use the tool, and know its domain."
       },
       {
         "t": "h2",
-        "text": "What you should be able to do now"
+        "text": "What you should be able to do now",
+        "say": "So what can you do now?"
       },
       {
         "t": "ul",
@@ -3181,7 +3330,8 @@ window.LESSONS['economics.w01'] = {
           "Strike sunk costs out of a decision and notice if the decision changes.",
           "Tell the sunk-cost fallacy apart from legitimate reasoning about withdrawal penalties and revised forecasts.",
           "Name two conditions under which marginal reasoning misleads."
-        ]
+        ],
+        "say": "Convert an all-or-nothing question into a one-more-unit question. Compute a marginal cost and say why an average cost would have given the wrong answer. Find the stopping point where marginal benefit meets marginal cost, and explain why rising total revenue is not a reason to continue. Strike sunk costs out of a decision and notice if the decision changes. Tell the sunk-cost fallacy apart from legitimate reasoning about withdrawal penalties. And name two conditions under which marginal reasoning misleads."
       }
     ],
     "exercises": [

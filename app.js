@@ -731,16 +731,30 @@
     blocks.forEach(function (b, bi) {
       var node = null, aid = 'b' + bi;
 
+      /* A block may carry `say`: what the lecturer actually says while this is
+         on screen. The page keeps its written prose; the voice gets spoken
+         English instead. When `say` is present it replaces the whole block's
+         narration, so a case study is told rather than read out paragraph by
+         paragraph. Figures and tables already use `say` as their only speech. */
+      var say = (typeof b.say === 'string' && b.t !== 'fig' && b.t !== 'table') ? b.say : null;
+      var saidIt = false;
+      function add(text, anchorId, hold) {
+        if (say == null) return addSpeech(text, anchorId, hold);
+        if (saidIt) return;
+        saidIt = true;
+        if (say.trim()) addSpeech(say, anchorId, hold);
+      }
+
       switch (b.t) {
         case 'h2':
           secN += 1;
           node = el('h2', 'spk', '<span class="sec-n">Section ' + secN + '</span>' + inline(b.text));
-          addSpeech(b.text, aid, 900);
+          add(b.text, aid, 900);
           break;
 
         case 'h3':
           node = el('h3', 'spk', inline(b.text));
-          addSpeech(b.text, aid, 650);
+          add(b.text, aid, 650);
           break;
 
         case 'p':
@@ -748,22 +762,22 @@
             splitForDisplay(b.text).map(function (sn, si) {
               return '<span class="sent" data-s="' + bi + '-' + si + '">' + inline(sn) + '</span>';
             }).join(' '));
-          addSpeech(b.say != null ? b.say : b.text, aid, 430);
+          add(b.say != null ? b.say : b.text, aid, 430);
           break;
 
         case 'ul':
         case 'ol':
           node = el(b.t === 'ul' ? 'ul' : 'ol', 'spk',
             b.items.map(function (x) { return '<li>' + inline(x) + '</li>'; }).join(''));
-          if (b.lead) addSpeech(b.lead, aid);
-          b.items.forEach(function (x) { addSpeech(x, aid); });
+          if (b.lead) add(b.lead, aid);
+          b.items.forEach(function (x) { add(x, aid); });
           break;
 
         case 'quote':
           node = el('blockquote', 'box box-case spk',
             '<div class="box-label">Quotation</div><p style="font-family:var(--font-display);font-size:17px">' +
             inline(b.text) + '</p><p style="color:var(--ink-3);font-size:12.5px;margin-top:8px">— ' + inline(b.who) + '</p>');
-          addSpeech(b.text + ' -- ' + b.who, aid, 800);
+          add(b.text + ' -- ' + b.who, aid, 800);
           break;
 
         case 'exercises':
@@ -773,7 +787,7 @@
                 (x && x.hint ? '<div class="ex-hint">' + inline(x.hint) + '</div>' : '') + '</li>';
             }).join(''));
           b.items.forEach(function (x, xi) {
-            addSpeech('Exercise ' + (xi + 1) + '. ' + (typeof x === 'string' ? x : x.task), aid);
+            add('Exercise ' + (xi + 1) + '. ' + (typeof x === 'string' ? x : x.task), aid);
           });
           break;
 
@@ -781,24 +795,24 @@
           node = el('div', 'box box-write spk',
             '<div class="box-label">Write this down</div><ol>' +
             b.items.map(function (x) { return '<li>' + inline(x) + '</li>'; }).join('') + '</ol>');
-          addSpeech('Write this down.', aid);
-          b.items.forEach(function (x) { addSpeech(x, aid); });
+          add('Write this down.', aid);
+          b.items.forEach(function (x) { add(x, aid); });
           break;
 
         case 'case':
           node = el('div', 'box box-case spk',
             '<div class="box-label">Worked example</div><h4>' + inline(b.title) + '</h4>' +
             b.ps.map(function (x) { return '<p>' + inline(x) + '</p>'; }).join(''));
-          addSpeech('Worked example. ' + b.title, aid);
-          b.ps.forEach(function (x) { addSpeech(x, aid); });
+          add('Worked example. ' + b.title, aid);
+          b.ps.forEach(function (x) { add(x, aid); });
           break;
 
         case 'warn':
           node = el('div', 'box box-warn spk',
             '<div class="box-label">' + inline(b.title || 'Common mistake') + '</div>' +
             b.ps.map(function (x) { return '<p>' + inline(x) + '</p>'; }).join(''));
-          addSpeech((b.title || 'Common mistake') + '.', aid);
-          b.ps.forEach(function (x) { addSpeech(x, aid); });
+          add((b.title || 'Common mistake') + '.', aid);
+          b.ps.forEach(function (x) { add(x, aid); });
           break;
 
         case 'math':
@@ -814,10 +828,10 @@
               : '') +
             (b.use ? '<div class="eq-use"><b>What it is for.</b> ' + inline(b.use) + '</div>' : '') +
             (b.ps || []).map(function (x) { return '<p style="font-family:var(--font-ui);font-size:13.5px">' + inline(x) + '</p>'; }).join(''));
-          if (b.say) addSpeech(b.say, aid);
-          (b.terms || []).forEach(function (t) { addSpeech(t.sym + ' means ' + t.means + '.', aid); });
-          if (b.use) addSpeech('What it is for. ' + b.use, aid);
-          (b.ps || []).forEach(function (x) { addSpeech(x, aid); });
+          if (b.say) add(b.say, aid);
+          (b.terms || []).forEach(function (t) { add(t.sym + ' means ' + t.means + '.', aid); });
+          if (b.use) add('What it is for. ' + b.use, aid);
+          (b.ps || []).forEach(function (x) { add(x, aid); });
           break;
 
         case 'fig':
@@ -829,7 +843,7 @@
             (b.sketch ? '<span class="sketch-flag">Sketch this</span>' : '') + '</div>' +
             '<div class="fig-frame">' + b.svg + '</div>' +
             (b.cap ? '<figcaption class="fig-cap">' + inline(b.cap) + '</figcaption>' : ''));
-          addSpeech('Figure ' + fnum + '. ' + b.title + '. ' + (b.say || b.cap || ''), aid);
+          add('Figure ' + fnum + '. ' + b.title + '. ' + (b.say || b.cap || ''), aid);
           break;
 
         case 'table':
@@ -843,12 +857,12 @@
               }).join('') + '</tr>';
             }).join('') + '</tbody></table>' +
             (b.cap ? '<p class="fig-cap">' + inline(b.cap) + '</p>' : ''));
-          if (b.say) addSpeech(b.say, aid);
+          if (b.say) add(b.say, aid);
           break;
 
         default:
           node = el('p', 'spk', inline(b.text || ''));
-          addSpeech(b.text || '', aid);
+          add(b.text || '', aid);
       }
 
       if (node) { node.id = aid; host.appendChild(node); }
@@ -1400,11 +1414,15 @@
         (b != null ? '<span class="pill good">Best ' + b + '%</span>' : '') +
       '</div>' +
       '<h1 class="lesson-title">' + esc(meta.title) + '</h1>' +
-      '<p class="lesson-standfirst">' + inline(L.standfirst || meta.blurb) + '</p>' +
-      '<div class="objectives"><h2>By the end of this lecture you can</h2><ol>' +
-      (L.objectives || []).map(function (o) { return '<li>' + inline(o) + '</li>'; }).join('') +
-      '</ol></div>';
+      '<p class="lesson-standfirst">' + inline(L.standfirst || meta.blurb) + '</p>';
     col.appendChild(head);
+
+    /* the objectives come AFTER the way in, so the first thing on the page is
+       the button that starts the lecture */
+    var aims = el('div', 'objectives lesson-aims',
+      '<h2>By the end of this lecture you can</h2><ol>' +
+      (L.objectives || []).map(function (o) { return '<li>' + inline(o) + '</li>'; }).join('') +
+      '</ol>');
 
     /* --- the thread: this lecture's place in the course's argument --- */
     if (L.thread) {
@@ -1446,7 +1464,12 @@
     }
     var built = T.renderBlocks(body, meta);
     var transport = buildTransport(built.units, meta, L);
-    col.appendChild(transport);
+    /* the way in goes directly under the title. Kaaleb could not find it when
+       it sat below the objectives and the thread, and he was right to complain. */
+    if (head.nextSibling) col.insertBefore(transport, head.nextSibling);
+    else col.appendChild(transport);
+    if (transport.nextSibling) col.insertBefore(aims, transport.nextSibling);
+    else col.appendChild(aims);
 
     /* --- body --- */
     col.appendChild(built.node);
@@ -2153,19 +2176,95 @@
   };
   T.Present = Present;
 
+  /* ----------------------------- watch -------------------------------
+     A rendered lecture: the slides and the voice as one file. Kaaleb asked
+     for exactly this — something to watch and listen to, with the written
+     page kept for going back over afterwards. If no video has been rendered
+     for a lecture, the read-aloud projector mode is still there.
+     -------------------------------------------------------------------- */
+  var Watch = {
+    root: null,
+
+    of: function (meta) {
+      var map = window.VIDEOS;
+      if (!map || !meta) return null;
+      return map[H.ACTIVE() + '.' + meta.id] || null;
+    },
+
+    open: function (meta, v) {
+      Watch.close();
+      Speaker.stop();
+      var r = el('div', 'watcher');
+      r.innerHTML =
+        '<div class="wa-bar">' +
+          '<span class="wa-title">' + esc(meta.title) + '</span>' +
+          '<span class="wa-note mono">' + v.mb + ' MB · first play needs a connection</span>' +
+          '<button class="wa-close" id="waClose" aria-label="Close the lecture">✕</button>' +
+        '</div>' +
+        '<div class="wa-stage">' +
+          '<video id="waVid" controls autoplay playsinline preload="metadata" src="' + esc(v.src) + '"></video>' +
+        '</div>' +
+        '<div class="wa-foot">Watch it through, then do the exercises and sit the test. ' +
+        'The written lecture is underneath this page if you want to go back over anything.</div>';
+      document.body.appendChild(r);
+      document.body.classList.add('watching');
+      Watch.root = r;
+      $('#waClose', r).onclick = Watch.close;
+      document.addEventListener('keydown', Watch.key, true);
+      var vid = $('#waVid', r);
+      /* remember where he stopped, per lecture */
+      var key = 'tms-vid-' + H.ACTIVE() + '-' + meta.id;
+      try {
+        var at = parseFloat(localStorage.getItem(key) || '0');
+        if (at > 20) vid.currentTime = at - 3;
+      } catch (e) {}
+      vid.addEventListener('timeupdate', function () {
+        try { if (Math.floor(vid.currentTime) % 5 === 0) localStorage.setItem(key, String(vid.currentTime)); } catch (e) {}
+      });
+      vid.addEventListener('ended', function () {
+        try { localStorage.removeItem(key); } catch (e) {}
+        markHeard(meta.id);
+      });
+    },
+
+    close: function () {
+      if (!Watch.root) return;
+      document.removeEventListener('keydown', Watch.key, true);
+      if (Watch.root.parentNode) Watch.root.parentNode.removeChild(Watch.root);
+      document.body.classList.remove('watching');
+      Watch.root = null;
+    },
+
+    key: function (e) {
+      if (e.key === 'Escape') { e.preventDefault(); Watch.close(); }
+    }
+  };
+  T.Watch = Watch;
+
   /* --------------------------- transport --------------------------- */
   function buildTransport(units, meta, L) {
     var wrap = el('div', 'transport');
+    var vid = Watch.of(meta);
     wrap.setAttribute('data-open', '0');
     wrap.innerHTML =
-      '<button class="start-lecture" id="startBtn">' +
-        '<span class="sl-icon">' + ICON.present + '</span>' +
-        '<span class="sl-body">' +
-          '<span class="sl-title">Start the lecture</span>' +
-          '<span class="sl-note">Full screen, slides and the voice together \u2014 sit back and take notes</span>' +
-        '</span>' +
-        '<span class="sl-go">' + ICON.play + '</span>' +
-      '</button>' +
+      (vid
+        ? '<button class="start-lecture" id="watchBtn">' +
+            '<span class="sl-icon">' + ICON.present + '</span>' +
+            '<span class="sl-body">' +
+              '<span class="sl-title">Watch the lecture</span>' +
+              '<span class="sl-note">Slides and voice as one video \u2014 sit back, watch, and take notes</span>' +
+            '</span>' +
+            '<span class="sl-go">' + ICON.play + '</span>' +
+          '</button>' +
+          '<button class="start-alt" id="startBtn">Or run the slides with your own device\u2019s voice</button>'
+        : '<button class="start-lecture" id="startBtn">' +
+            '<span class="sl-icon">' + ICON.present + '</span>' +
+            '<span class="sl-body">' +
+              '<span class="sl-title">Start the lecture</span>' +
+              '<span class="sl-note">Full screen, slides and the voice together \u2014 sit back and take notes</span>' +
+            '</span>' +
+            '<span class="sl-go">' + ICON.play + '</span>' +
+          '</button>') +
       '<div class="transport-main">' +
         '<button class="play-btn" id="playBtn" aria-label="Play lecture">' + ICON.play + '</button>' +
         '<div class="transport-mid">' +
@@ -2299,6 +2398,9 @@
       Store.save();
       if (Speaker.playing) Speaker.speakNow(Speaker.idx);
     };
+
+    var watchBtn = $('#watchBtn', wrap);
+    if (watchBtn) watchBtn.onclick = function () { Watch.open(meta, vid); };
 
     var startBtn = $('#startBtn', wrap);
     if (startBtn) startBtn.onclick = function () {

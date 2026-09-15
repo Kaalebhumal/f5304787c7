@@ -34,19 +34,23 @@ window.LESSONS['marketing.w02'] = {
     "blocks": [
       {
         "t": "h2",
-        "text": "A number that means nothing on its own"
+        "text": "A number that means nothing on its own",
+        "say": "Let's start with a number that means nothing on its own."
       },
       {
         "t": "p",
-        "text": "A bakery in Tartu tells you it has *twelve percent market share*. Before you are impressed, or unimpressed, you have to ask one question: twelve percent of what?"
+        "text": "A bakery in Tartu tells you it has *twelve percent market share*. Before you are impressed, or unimpressed, you have to ask one question: twelve percent of what?",
+        "say": "A bakery in Tartu tells you it has twelve percent market share. Before you're impressed, or unimpressed, you have to ask one question. Twelve percent of what?"
       },
       {
         "t": "p",
-        "text": "Twelve percent of sourdough loaves sold in the old town is a strong position. Twelve percent of all bread sold in Tartu, supermarkets included, would make it the largest bakery in the city by some distance. Twelve percent of everything Estonians eat for breakfast would make it a national institution. Same numerator, three wildly different businesses — and the only thing that changed was where somebody drew a line."
+        "text": "Twelve percent of sourdough loaves sold in the old town is a strong position. Twelve percent of all bread sold in Tartu, supermarkets included, would make it the largest bakery in the city by some distance. Twelve percent of everything Estonians eat for breakfast would make it a national institution. Same numerator, three wildly different businesses — and the only thing that changed was where somebody drew a line.",
+        "say": "Twelve percent of sourdough loaves sold in the old town is a strong position. Twelve percent of all bread sold in Tartu, supermarkets included, would be extraordinary. And twelve percent of everything Estonians eat for breakfast is a rounding error that somebody has dressed up."
       },
       {
         "t": "p",
-        "text": "This is not pedantry. The market definition you adopt decides, without ever being discussed, four things you will act on all year: **your share**, **who counts as a competitor**, **how fast the market is growing**, and **which threats are visible**. Get it wrong and every later analysis is precisely, confidently wrong."
+        "text": "This is not pedantry. The market definition you adopt decides, without ever being discussed, four things you will act on all year: **your share**, **who counts as a competitor**, **how fast the market is growing**, and **which threats are visible**. Get it wrong and every later analysis is precisely, confidently wrong.",
+        "say": "This isn't pedantry. The market definition you adopt decides, without ever being discussed, four things you'll act on all year. Your share. Who counts as a competitor. How fast the market is growing. And which threats you're even capable of noticing."
       },
       {
         "t": "warn",
@@ -54,15 +58,18 @@ window.LESSONS['marketing.w02'] = {
         "ps": [
           "**Too tight**, and you flatter yourself. Define your market as *organic sourdough sold in wood-fired bakeries within one postcode* and you are the market leader with ninety percent share — right up to the morning the supermarket two streets away starts baking in-store and your volumes halve. You never counted them, so you never watched them.",
           "**Too loose**, and you learn nothing. *We are in the €4 billion European baked goods market and we have 0.01% — look at all that headroom!* This is the single most common line in a bad business plan. It implies that growth is a matter of reaching for share that is sitting there unclaimed. It is not. Almost all of that four billion is unreachable to you at any cost, and treating it as addressable is how firms budget for growth that was never available."
-        ]
+        ],
+        "say": "And there are two opposite ways to get it wrong. Draw it too tight and you flatter yourself. Organic sourdough from wood-fired ovens in one postcode gives you ninety percent share and a competitor list of nobody. Then a supermarket two streets away starts baking in-store, and the volume loss arrives as a complete surprise, because that shop was never on the list. Draw it too wide and the number guides nothing. A four billion euro European baked goods market, and you have nought point nought one percent of it, which implies enormous headroom that you can't reach at any price."
       },
       {
         "t": "h2",
-        "text": "Four levels of competition"
+        "text": "Four levels of competition",
+        "say": "So: four levels of competition."
       },
       {
         "t": "p",
-        "text": "The cleanest way to think about the boundary is to notice that competition happens at four widening levels at once. You are always competing on all four; the question is which level you are *managing*."
+        "text": "The cleanest way to think about the boundary is to notice that competition happens at four widening levels at once. You are always competing on all four; the question is which level you are *managing*.",
+        "say": "The cleanest way to think about the boundary is to notice that competition happens at four widening levels at once. You're always competing on all four. You're usually only watching one."
       },
       {
         "t": "fig",
@@ -80,23 +87,28 @@ window.LESSONS['marketing.w02'] = {
           "**Product category.** All forms of the product, including ones you do not make. A premium coffee roastery competes with instant coffee whether it likes the comparison or not.",
           "**Generic competition.** Everything meeting the same underlying need by any means. This is week one’s myopia lesson given a number: it is where substitutes live.",
           "**Budget competition.** Everything competing for the same money at the same moment. Loosest, least actionable, but occasionally decisive — a recession does not move share *within* your category, it moves money *out* of it."
-        ]
+        ],
+        "say": "Product form. The narrowest. Rivals offering the same thing in the same configuration. That's what a share report almost always measures. Product category. Different form, same basic job. Generic. A completely different way of solving the same problem. And budget. Anything else the same money and the same hour could have gone to."
       },
       {
         "t": "p",
-        "text": "The practical rule: **manage at product form and category, monitor at generic, and know the budget level exists.** A firm that manages only at product form is blind by construction. A firm that tries to manage at budget level has no strategy, because everything is a competitor and therefore nothing is."
+        "text": "The practical rule: **manage at product form and category, monitor at generic, and know the budget level exists.** A firm that manages only at product form is blind by construction. A firm that tries to manage at budget level has no strategy, because everything is a competitor and therefore nothing is.",
+        "say": "The practical rule is this. Manage at product form and category. Monitor at generic. And know that the budget level exists. A firm that manages only at product form is the firm that gets surprised, and it gets surprised from a direction its reports don't cover."
       },
       {
         "t": "h2",
-        "text": "The test that settles arguments"
+        "text": "The test that settles arguments",
+        "say": "Now here's a test that actually settles arguments."
       },
       {
         "t": "p",
-        "text": "Competition authorities have to answer *is this one market or two?* for a living, because whether a merger is legal depends on the answer. They use a test you can borrow, and it is the only rigorous one available to you."
+        "text": "Competition authorities have to answer *is this one market or two?* for a living, because whether a merger is legal depends on the answer. They use a test you can borrow, and it is the only rigorous one available to you.",
+        "say": "Competition authorities have to answer is this one market or two, for a living, because whether a merger is legal depends on the answer. So they use a test, and you can borrow it."
       },
       {
         "t": "p",
-        "text": "It is called the **hypothetical monopolist test**, or the SSNIP test — a *small but significant, non-transitory increase in price*, conventionally five to ten percent."
+        "text": "It is called the **hypothetical monopolist test**, or the SSNIP test — a *small but significant, non-transitory increase in price*, conventionally five to ten percent.",
+        "say": "It's called the hypothetical monopolist test, or the SSNIP test. A small but significant, non-transitory increase in price. Conventionally five to ten percent."
       },
       {
         "t": "math",
@@ -110,7 +122,7 @@ window.LESSONS['marketing.w02'] = {
           "           boundary. That something is IN your market.",
           "           Widen the boundary and test again."
         ],
-        "say": "Suppose one firm owned every product in your candidate market. Could it raise price by five to ten percent and keep the increase? If yes, you have drawn a real market. If no, customers escape to something outside your boundary, which means that something belongs inside it.",
+        "say": "Here's how it runs. Imagine one single owner of everything inside your proposed boundary. Could that owner profitably raise the price five to ten percent and hold it there? If yes, you've found a real market. If no — because enough customers would leave for something outside the boundary — then the boundary is too narrow, and you widen it and test again. And then you stop at the narrowest boundary that passes, because that's the smallest set within which price competition is actually real.",
         "ps": [
           "You run the test in your head, iteratively, starting narrow and widening until the answer is yes. The boundary you stop at is your market."
         ]
@@ -124,15 +136,18 @@ window.LESSONS['marketing.w02'] = {
           "**Candidate three: all fitness activity including home equipment, running clubs, swimming pools and yoga studios.** The test would also pass here, but the boundary is now so wide it stops being useful for decisions — the yoga studio and the powerlifting gym do not meaningfully constrain each other’s pricing.",
           "**The rule is to stop at the narrowest boundary that passes.** Not the widest that passes: the narrowest. That is the set of firms whose behaviour actually constrains yours, and it is therefore the set worth watching every week.",
           "One caveat worth carrying. The test asks about *price*, so it defines markets from the seller’s side of the wallet. It will correctly tell you the four gyms are one market, and it will not tell you that the real reason members quit in February is the twenty-minute walk in the dark. Boundary-drawing and churn diagnosis are different jobs."
-        ]
+        ],
+        "say": "Try it on a city gym. Start narrow: our gym only. Raise the price nine percent and members walk to three gyms within a mile. So that fails, and the boundary widens. Try: all conventional gyms within three miles. Now a nine percent rise across all of them sends some people to home equipment and running apps, but not enough to make it unprofitable. That passes. So that's your market. And notice what you've learned. A yoga studio and a powerlifting gym don't discipline each other's pricing, so bundling all fitness activity together would give you a competitor list too big to watch and a share number too diluted to act on."
       },
       {
         "t": "h2",
-        "text": "Total, served, obtainable"
+        "text": "Total, served, obtainable",
+        "say": "Total, served, obtainable."
       },
       {
         "t": "p",
-        "text": "Three numbers, routinely confused, and a business plan that confuses them is asking for money on a false premise."
+        "text": "Three numbers, routinely confused, and a business plan that confuses them is asking for money on a false premise.",
+        "say": "Three numbers, routinely confused. And a business plan that confuses them is asking for money on a false premise."
       },
       {
         "t": "ul",
@@ -140,19 +155,23 @@ window.LESSONS['marketing.w02'] = {
           "**Total addressable market (TAM)** — everyone who could conceivably buy this kind of thing, everywhere, if all constraints vanished. An upper bound and nothing more.",
           "**Served available market (SAM)** — the portion your business model can actually reach: your geography, your channels, your segment, your languages, your price point.",
           "**Serviceable obtainable market (SOM)** — the portion you could realistically win in a defined period, given competitors who already hold it and will not be asleep."
-        ]
+        ],
+        "say": "Total addressable market. Everyone who could conceivably buy this kind of thing, anywhere, if every constraint vanished. It's an upper bound and almost never a useful one. Served addressable market. The part you could actually reach given where you operate, what languages you support, and what you're licensed to sell. And serviceable obtainable market. The part you could realistically win in the planning period, against the competitors who are actually there."
       },
       {
         "t": "p",
-        "text": "The discipline is to compute SAM and SOM **bottom-up**, from units and prices you can defend, rather than top-down as a percentage of TAM. *Three percent of a €4 billion market* is not a forecast; it is an aspiration with a decimal point in it. *Eleven hundred customers at €40 a month, of the nine thousand within our delivery radius* is a forecast, because every term can be argued with."
+        "text": "The discipline is to compute SAM and SOM **bottom-up**, from units and prices you can defend, rather than top-down as a percentage of TAM. *Three percent of a €4 billion market* is not a forecast; it is an aspiration with a decimal point in it. *Eleven hundred customers at €40 a month, of the nine thousand within our delivery radius* is a forecast, because every term can be argued with.",
+        "say": "The discipline is to compute the second and third bottom-up, from units and prices you can defend. Not top-down as a percentage of the first. Three percent of a big number is the most common sentence in a failed business plan."
       },
       {
         "t": "h2",
-        "text": "Share, and the denominator problem"
+        "text": "Share, and the denominator problem",
+        "say": "And now the arithmetic that makes all of this concrete."
       },
       {
         "t": "p",
-        "text": "Now the arithmetic that makes all of this concrete. One roastery, €180,000 of annual sales, three defensible definitions of its market."
+        "text": "Now the arithmetic that makes all of this concrete. One roastery, €180,000 of annual sales, three defensible definitions of its market.",
+        "say": "One coffee roastery. A hundred and eighty thousand euros of annual sales. Three defensible definitions of its market."
       },
       {
         "t": "table",
@@ -195,7 +214,8 @@ window.LESSONS['marketing.w02'] = {
       },
       {
         "t": "p",
-        "text": "Two further distinctions you will be asked about. **Volume share** counts units; **value share** counts money. A premium brand always looks better on value share, a budget brand on volume, and firms quote whichever flatters — so always ask which. And **share of the served market** is share of the segment you actually target, which is usually the honest operational number, while share of the total market is the one that gets into the annual report."
+        "text": "Two further distinctions you will be asked about. **Volume share** counts units; **value share** counts money. A premium brand always looks better on value share, a budget brand on volume, and firms quote whichever flatters — so always ask which. And **share of the served market** is share of the segment you actually target, which is usually the honest operational number, while share of the total market is the one that gets into the annual report.",
+        "say": "Two more distinctions you'll be asked about. Volume share counts units. Value share counts money. A premium brand always looks better on value share, and a discounter always looks better on volume, so anybody quoting one without the other has chosen. And relative market share is your share divided by the largest competitor's, which tells you something the raw number hides. Twenty percent against a leader on sixty is weak. Twenty percent against a leader on twenty-two is a fight."
       },
       {
         "t": "write",
@@ -206,7 +226,8 @@ window.LESSONS['marketing.w02'] = {
           "The hypothetical monopolist test: could one owner of everything inside the boundary raise price 5–10% and keep it? Stop at the NARROWEST boundary that passes.",
           "TAM > SAM > SOM. Compute SAM and SOM bottom-up, never as a percentage of TAM.",
           "Volume share counts units, value share counts money. Ask which."
-        ]
+        ],
+        "say": "So: market share is meaningless without its denominator. Always ask, share of what. Four levels of competition — product form, product category, generic, and budget. And the test: widen the boundary until a single owner could hold a five to ten percent price rise, then stop."
       },
       {
         "t": "case",
@@ -217,19 +238,23 @@ window.LESSONS['marketing.w02'] = {
           "Under the second boundary the answer changes completely. The CMA found competition concerns in **629 local areas**, covering a large share of both chains' supermarkets, and concluded in its final report of **April 2019** that the merger would substantially lessen competition both nationally and locally. It blocked the deal outright. The companies did not propose selling enough stores to fix 629 areas; the arithmetic of the remedy was the deal's death.",
           "Note what did the work. Nobody disagreed about the facts — the store locations, the prices, the shopper behaviour were common ground. The disagreement was entirely about **where the edge of the market is**. One boundary makes the deal ordinary; the other makes it illegal. That is the whole lesson of this lecture, tested in court with billions attached.",
           "The honest caveat: the CMA's local-market approach is not the only defensible one, and the companies' economists argued hard against it. Market definition is a judgement disciplined by evidence, not a measurement. What you are learning is how to make the judgement explicitly, so that everyone can see which boundary a number depends on."
-        ]
+        ],
+        "say": "Here's what that's worth in the real world. In twenty-eighteen two of Britain's four largest supermarkets, Sainsbury's and Asda, agreed to merge. They argued the market was national grocery retailing, where the combined firm would face Tesco, Morrisons, and the fast-growing discounters. Draw the boundary there and it's an ordinary deal. The competition authority drew it differently. It asked where a shopper can actually go. Most people do a weekly shop within a few miles of home, so the real market is local — a catchment around each store. Under that boundary the answer changes completely. The authority found competition concerns in six hundred and twenty-nine separate local areas, and in April twenty-nineteen it blocked the deal outright. Now notice what did the work. Nobody disagreed about the facts. The store locations, the prices, the shopper behaviour were all common ground. The entire disagreement was about where the edge of the market is. One boundary makes the deal ordinary. The other makes it illegal."
       },
       {
         "t": "h2",
-        "text": "What you should be able to do now"
+        "text": "What you should be able to do now",
+        "say": "So what can you do now?"
       },
       {
         "t": "p",
-        "text": "Given any claim about market share, you can ask the one question that determines whether it means anything. You can place a competitor at the right level and say whether it is yours to manage or merely to watch. You can run the monopolist test to settle a boundary argument with evidence rather than opinion. And you can recognise the €4-billion-market-and-we-only-need-one-percent slide for what it is."
+        "text": "Given any claim about market share, you can ask the one question that determines whether it means anything. You can place a competitor at the right level and say whether it is yours to manage or merely to watch. You can run the monopolist test to settle a boundary argument with evidence rather than opinion. And you can recognise the €4-billion-market-and-we-only-need-one-percent slide for what it is.",
+        "say": "Given any claim about market share, you can ask the one question that decides whether it means anything. You can place a competitor at the right level. You can run the hypothetical monopolist test. And you can size a market bottom-up instead of taking a percentage of something enormous."
       },
       {
         "t": "p",
-        "text": "Next lecture: having drawn the boundary, we look outside it — the six categories of external force, and how to use them without producing a list that nobody reads twice."
+        "text": "Next lecture: having drawn the boundary, we look outside it — the six categories of external force, and how to use them without producing a list that nobody reads twice.",
+        "say": "Next lecture. Having drawn the boundary, we look outside it. The six categories of external force, and how to use them without producing a list nobody reads twice."
       }
     ],
     "glossary": [
@@ -762,11 +787,13 @@ window.LESSONS['marketing.w02'] = {
     "blocks": [
       {
         "t": "h2",
-        "text": "The six categories"
+        "text": "The six categories",
+        "say": "The six categories."
       },
       {
         "t": "p",
-        "text": "The marketing mix covers what you control. PESTEL covers what you do not — the macro-environment, which acts on every firm in a market at once and which no single firm can move."
+        "text": "The marketing mix covers what you control. PESTEL covers what you do not — the macro-environment, which acts on every firm in a market at once and which no single firm can move.",
+        "say": "The marketing mix covers what you control. PESTEL covers what you don't. The macro-environment, which acts on every firm in a market at once, and which you can only respond to."
       },
       {
         "t": "table",
@@ -817,15 +844,18 @@ window.LESSONS['marketing.w02'] = {
           "Open almost any student marketing plan or agency deck and you will find a PESTEL that reads: *Political — Brexit and trade tensions create uncertainty. Economic — inflation affects consumer spending. Social — consumers are increasingly health-conscious.*",
           "Every sentence is true. Not one of them is about this firm, and not one of them implies an action. It is a list of things that are happening in the world, assembled to demonstrate that the author has read a newspaper, and it will be read once, by the person marking it.",
           "A PESTEL entry earns its place only if it passes three tests: is it **specific to this market**, is it **directional** (getting stronger or weaker, and by when), and does it have a **so what** — a decision it changes. An entry without all three is decoration."
-        ]
+        ],
+        "say": "And here's why most PESTEL analyses are worthless. The standard output is six headings with four bullet points under each, all of them true, all of them generic, and none of them changing a single decision. Ageing population. Rising energy costs. Increasing regulation. You could paste that into any industry in Europe and nobody would notice. An entry earns its place only if it passes three tests. Is it specific to this market. Does it say which way and roughly how fast. And does something change because of it."
       },
       {
         "t": "h2",
-        "text": "The column that makes it work"
+        "text": "The column that makes it work",
+        "say": "The column that makes it work."
       },
       {
         "t": "p",
-        "text": "The fix is mechanical. Add two columns to the right of every entry and refuse to accept any row where they are blank."
+        "text": "The fix is mechanical. Add two columns to the right of every entry and refuse to accept any row where they are blank.",
+        "say": "The fix is mechanical. Add two columns to the right of every entry and refuse to accept any row where they're blank."
       },
       {
         "t": "table",
@@ -861,11 +891,13 @@ window.LESSONS['marketing.w02'] = {
       },
       {
         "t": "h2",
-        "text": "Sorting by impact and uncertainty"
+        "text": "Sorting by impact and uncertainty",
+        "say": "Sorting by impact and uncertainty."
       },
       {
         "t": "p",
-        "text": "A good scan produces more forces than anyone can act on. The sorting tool is a two-by-two: how much would this matter to us, and how confident are we about what it will do? The quadrants demand genuinely different responses, and only one of them calls for hard thinking."
+        "text": "A good scan produces more forces than anyone can act on. The sorting tool is a two-by-two: how much would this matter to us, and how confident are we about what it will do? The quadrants demand genuinely different responses, and only one of them calls for hard thinking.",
+        "say": "A good scan produces more forces than anybody can act on. The sorting tool is a two-by-two. How much would this matter to us, and how confident are we that it happens?"
       },
       {
         "t": "fig",
@@ -877,11 +909,13 @@ window.LESSONS['marketing.w02'] = {
       },
       {
         "t": "h2",
-        "text": "Scanning, monitoring, forecasting"
+        "text": "Scanning, monitoring, forecasting",
+        "say": "Scanning, monitoring, forecasting."
       },
       {
         "t": "p",
-        "text": "Three activities, often run together and worth separating because they need different people and different rhythms."
+        "text": "Three activities, often run together and worth separating because they need different people and different rhythms.",
+        "say": "Three activities, usually run together, and worth separating because they need different people and different rhythms."
       },
       {
         "t": "ul",
@@ -889,27 +923,33 @@ window.LESSONS['marketing.w02'] = {
           "**Scanning** is undirected looking — reading widely to notice things you were not searching for. It is cheap, it feels unproductive, and it is the only activity that catches anything genuinely new. Protect it from being optimised away.",
           "**Monitoring** is directed and repeated — tracking a force you have already identified, on a schedule, with a named owner. This is where the quadrant grid sends most items.",
           "**Forecasting** is projecting a monitored trend forward and attaching numbers. It is the most confident-sounding and the least reliable, and it works only where the underlying mechanism is stable — demography forecasts well, consumer taste does not."
-        ]
+        ],
+        "say": "Scanning is undirected looking. Reading widely to notice things you weren't searching for. It's cheap, it feels unproductive, and it's the only one that finds anything genuinely new. Monitoring is narrow and continuous. Tracking something you've already decided matters. And forecasting is expensive, and only worth doing for forces you've already decided are both high impact and reducible to a number."
       },
       {
         "t": "p",
-        "text": "Most firms do far too much forecasting and far too little scanning, because forecasting produces a document and scanning produces a vague unease. The vague unease is worth more."
+        "text": "Most firms do far too much forecasting and far too little scanning, because forecasting produces a document and scanning produces a vague unease. The vague unease is worth more.",
+        "say": "Most firms do far too much forecasting and far too little scanning. And the reason is that forecasting produces a document, and scanning produces a vague unease. The vague unease is worth more."
       },
       {
         "t": "h2",
-        "text": "Weak signals"
+        "text": "Weak signals",
+        "say": "Weak signals."
       },
       {
         "t": "p",
-        "text": "The forces that end up mattering most rarely arrive labelled. They show up first as **weak signals** — small, ambiguous, easy to dismiss, and usually appearing at the edges of a market rather than in the middle of it."
+        "text": "The forces that end up mattering most rarely arrive labelled. They show up first as **weak signals** — small, ambiguous, easy to dismiss, and usually appearing at the edges of a market rather than in the middle of it.",
+        "say": "The forces that end up mattering most rarely arrive labelled. They show up first as weak signals. Small, ambiguous, easy to dismiss, and usually visible for years before anybody acts."
       },
       {
         "t": "p",
-        "text": "The characteristic error is not failing to see the signal. It is seeing it and having a good reason to discount it: the early version is genuinely bad, the adopters are genuinely unrepresentative, the volumes are genuinely trivial. Every one of those objections was true of the thing that eventually took the market, at the moment it was cheap to respond to."
+        "text": "The characteristic error is not failing to see the signal. It is seeing it and having a good reason to discount it: the early version is genuinely bad, the adopters are genuinely unrepresentative, the volumes are genuinely trivial. Every one of those objections was true of the thing that eventually took the market, at the moment it was cheap to respond to.",
+        "say": "And the characteristic error isn't failing to see the signal. It's seeing it and having a good reason to discount it. The early version is genuinely bad. The early adopters genuinely are strange. The volumes genuinely are trivial. Every one of those objections was true of the thing that eventually took the market, at precisely the moment when responding would have been cheap."
       },
       {
         "t": "p",
-        "text": "Three habits help. Watch **lead-user segments** — the customers with the most extreme version of the need, who improvise solutions before the market offers them. Watch **adjacent markets** for ideas that have already worked elsewhere and have not yet crossed. And when you dismiss something, **write down the condition under which you would change your mind**, so that the reassessment is triggered by evidence rather than by crisis."
+        "text": "Three habits help. Watch **lead-user segments** — the customers with the most extreme version of the need, who improvise solutions before the market offers them. Watch **adjacent markets** for ideas that have already worked elsewhere and have not yet crossed. And when you dismiss something, **write down the condition under which you would change your mind**, so that the reassessment is triggered by evidence rather than by crisis.",
+        "say": "Three habits help. Watch lead-user segments — the customers with the most extreme version of the need, who improvise solutions before the market offers any. Watch adjacent industries, because a technology usually arrives in yours second. And write down, at the moment you dismiss something, the specific condition that would change your mind. A volume, a price, a named customer. That turns the reassessment from something a crisis forces on you into a diary entry."
       },
       {
         "t": "case",
@@ -923,7 +963,8 @@ window.LESSONS['marketing.w02'] = {
           "**Environmental.** Fleet electrification: EV lessons are increasingly asked for, and an EV fleet changes both cost per lesson and what must be taught. Moderate impact, moderate uncertainty. So what: convert on the normal replacement cycle rather than early — no heroics, but stop buying diesel.",
           "**Political.** Municipal transport investment reduces the perceived necessity of a licence. Low direct impact, and already captured by the social trend. So what: nothing — and record that decision, so it is not raised again at every meeting.",
           "Six categories, six rows, one page. Two things go in the budget, one gets a pilot, two get a quarterly owner, one is explicitly dismissed. Compare that with *inflation affects consumer spending*."
-        ]
+        ],
+        "say": "Here's a real scan for a small business. A physiotherapy clinic in Tartu. Political: health insurance reimbursement rules, which decide whether a patient pays nothing or forty euros. Economic: disposable income in the catchment, because private physio is discretionary. Social: more desk work and more amateur running, which changes what walks through the door. Technological: video consultation and exercise apps, which take the follow-up appointments, not the first one. Environmental: the energy cost of the building, which is a real line for a small clinic. And legal: practitioner licensing and data protection on patient records. Six lines, one clinic, and every one of them specific enough to act on."
       },
       {
         "t": "write",
@@ -934,7 +975,8 @@ window.LESSONS['marketing.w02'] = {
           "The impact × uncertainty grid: plan for it / build scenarios / monitor cheaply / ignore on purpose. Draw it.",
           "Scanning is undirected, monitoring is directed and repeated, forecasting attaches numbers. Do more scanning.",
           "When you dismiss a weak signal, write down what would change your mind."
-        ]
+        ],
+        "say": "So: PESTEL is political, economic, social, technological, environmental, legal. Three tests for any entry — specific to this market, directional, and it changes something. Then sort by impact and uncertainty, and give the high-impact, high-uncertainty ones an option rather than a plan."
       },
       {
         "t": "case",
@@ -945,19 +987,23 @@ window.LESSONS['marketing.w02'] = {
           "Now read the footnote, because this is the habit that separates a marketer from someone quoting a press release. Those figures come only from the twenty brands belonging to the nine mandated banks — everyone else is excluded — and the user connections are **not deduplicated**, so one person using three apps is counted three times. The direction is unambiguous and large. The level is softer than it looks.",
           "The marketing consequence is what matters here. A regulatory **L** force handed every fintech in the country cheap access to the incumbent banks' single greatest asset: the account data and the payment initiation that used to be theirs alone. A budgeting app no longer had to persuade you to type in transactions. Distribution — the **place** lever from lecture 1.5 — was rewritten by a directive, not by a competitor.",
           "This is the shape of a PESTEL force that deserved the third column. In 2016 the right *so what* for an incumbent bank was not *monitor the situation*. It was: *assume our data moat disappears in three years; decide now whether we compete on the app, the advice or the balance sheet.* The banks that wrote that sentence in 2016 spent the next decade differently from the ones that did not."
-        ]
+        ],
+        "say": "Let me take one of those letters and follow it all the way to a number. In twenty-fifteen the European Union adopted the second Payment Services Directive, which required banks to let an authorised third party, with the customer's consent, see account data and start payments. The United Kingdom's competition regulator went further and ordered the nine largest banks to build a common standard. Neither the banks nor their customers asked for any of this. It was imposed. And here's what it did. By December twenty twenty-five there were sixteen and a half million user connections, up thirty-six percent in a year. Three hundred and fifty-one million payments went through the system during the year, up fifty-seven percent. Now read the footnote, because this is the habit that separates a marketer from somebody quoting a press release. Those figures come only from the twenty brands belonging to the nine mandated banks. Everybody else is excluded. And the connections are not deduplicated, so one person using three apps is counted three times. The direction is unambiguous. The level is softer than it looks. And the marketing consequence is the real point. A regulatory force handed every fintech in the country cheap access to the incumbent banks' single greatest asset. A budgeting app no longer had to persuade you to type in your transactions. Distribution was rewritten by a directive, not by a competitor."
       },
       {
         "t": "h2",
-        "text": "What you should be able to do now"
+        "text": "What you should be able to do now",
+        "say": "So what can you do now?"
       },
       {
         "t": "p",
-        "text": "You can produce a PESTEL that somebody would read twice: specific, directional, sorted by impact and uncertainty, and ending in decisions with owners and dates. You can tell the difference between a risk and a forecast, which is the distinction that decides whether something belongs in a scenario or in the budget. And you know why the trend that eventually kills a firm is almost always one that it saw early and had excellent reasons to ignore."
+        "text": "You can produce a PESTEL that somebody would read twice: specific, directional, sorted by impact and uncertainty, and ending in decisions with owners and dates. You can tell the difference between a risk and a forecast, which is the distinction that decides whether something belongs in a scenario or in the budget. And you know why the trend that eventually kills a firm is almost always one that it saw early and had excellent reasons to ignore.",
+        "say": "You can produce a PESTEL somebody would read twice. Specific, directional, sorted by impact and uncertainty, and ending in decisions with owners and dates."
       },
       {
         "t": "p",
-        "text": "Next lecture: from the environment to the industry. Porter's five forces, and the question of why some industries make money for everyone in them while others are a treadmill for all comers."
+        "text": "Next lecture: from the environment to the industry. Porter's five forces, and the question of why some industries make money for everyone in them while others are a treadmill for all comers.",
+        "say": "Next lecture. From the environment to the industry. Porter's five forces, and the question of why some industries make money for everybody in them while others are a treadmill."
       }
     ],
     "glossary": [
@@ -1566,15 +1612,18 @@ window.LESSONS['marketing.w02'] = {
     "blocks": [
       {
         "t": "h2",
-        "text": "Two industries, one question"
+        "text": "Two industries, one question",
+        "say": "Two industries. One question."
       },
       {
         "t": "p",
-        "text": "In 2025 the world's airlines carried a record number of people and earned, between them, about **$39.5 billion** on revenues of roughly **$1.008 trillion**. That is a net margin of **3.9%**, or about **$7.90 of profit per passenger** — less than the price of the sandwich sold on board. These are IATA's figures, and they are not a bad year. They are a good one."
+        "text": "In 2025 the world's airlines carried a record number of people and earned, between them, about **$39.5 billion** on revenues of roughly **$1.008 trillion**. That is a net margin of **3.9%**, or about **$7.90 of profit per passenger** — less than the price of the sandwich sold on board. These are IATA's figures, and they are not a bad year. They are a good one.",
+        "say": "In twenty twenty-five the world's airlines carried a record number of people and earned, between them, about thirty-nine and a half billion dollars on revenues of roughly one point oh oh eight trillion. That's a net margin of three point nine percent. Or about seven dollars ninety of profit per passenger. Less than the sandwich they sell you on board. And those are the industry's own figures, from a good year."
       },
       {
         "t": "p",
-        "text": "In the same year Visa, which moves the money that pays for those tickets, reported net revenue of **$40.0 billion** and GAAP net income of **$20.1 billion**. Just over **half of every dollar of revenue** became profit. Mastercard, in its own 2025 results, reported net revenue of **$32.8 billion** and net income of **$15.0 billion** — comfortably in the same territory."
+        "text": "In the same year Visa, which moves the money that pays for those tickets, reported net revenue of **$40.0 billion** and GAAP net income of **$20.1 billion**. Just over **half of every dollar of revenue** became profit. Mastercard, in its own 2025 results, reported net revenue of **$32.8 billion** and net income of **$15.0 billion** — comfortably in the same territory.",
+        "say": "In the same year Visa, which moves the money that pays for those tickets, reported net revenue of forty billion dollars and net income of twenty point one billion. Just over half of every dollar of revenue became profit. Mastercard, on its own numbers, was in the same territory."
       },
       {
         "t": "table",
@@ -1605,30 +1654,36 @@ window.LESSONS['marketing.w02'] = {
             "—"
           ]
         ],
-        "cap": "Airline figures: IATA industry outlook, December 2025. Visa: fiscal-year 2025 results as filed. The two are not directly comparable as businesses — that is exactly the point."
+        "cap": "Airline figures: IATA industry outlook, December 2025. Visa: fiscal-year 2025 results as filed. The two are not directly comparable as businesses — that is exactly the point.",
+        "say": "Airlines: a thousand billion dollars of revenue, forty billion of profit. Visa: forty billion of revenue, twenty billion of profit. One of them keeps four cents in the dollar. The other keeps fifty."
       },
       {
         "t": "p",
-        "text": "Now resist the obvious explanations. It is not that airline managers are worse; running an airline is one of the hardest operational jobs in commerce. It is not that airline marketing is weak; airlines are among the largest advertisers on earth. It is not even that flying is a bad business to be in — passengers keep coming, and volumes keep setting records."
+        "text": "Now resist the obvious explanations. It is not that airline managers are worse; running an airline is one of the hardest operational jobs in commerce. It is not that airline marketing is weak; airlines are among the largest advertisers on earth. It is not even that flying is a bad business to be in — passengers keep coming, and volumes keep setting records.",
+        "say": "Now resist the obvious explanations. It isn't that airline managers are worse. Running an airline is one of the hardest operational jobs in commerce. It isn't that airline marketing is weak — airlines are among the largest advertisers on earth. And it isn't that flying is a bad business to be in. Passengers keep coming and volumes keep setting records."
       },
       {
         "t": "write",
         "items": [
           "**The average profitability of an industry is set mainly by its structure, not by the effort of the firms inside it.**",
           "Structure means: how many rivals there are and how alike they are, how easy it is for a new one to appear, what else the customer could use instead, and how much leverage the firms up and down the chain have over you."
-        ]
+        ],
+        "say": "The average profitability of an industry is set mainly by its structure. Not by the effort of the firms inside it. Structure means how many rivals there are and how alike they are, how easy it is for a new one to appear, what else the customer could use instead, and how much leverage the firms above and below you have over you."
       },
       {
         "t": "p",
-        "text": "This matters to a marketer for a blunt reason. If you do not know which forces are pressing on your industry, you will write a plan that promises to beat them by trying harder — and trying harder is precisely what every rival is already doing."
+        "text": "This matters to a marketer for a blunt reason. If you do not know which forces are pressing on your industry, you will write a plan that promises to beat them by trying harder — and trying harder is precisely what every rival is already doing.",
+        "say": "And this matters to a marketer for a blunt reason. If you don't know which forces are pressing on your industry, you'll write a plan that promises to beat them by trying harder. And trying harder is precisely what every rival is already doing."
       },
       {
         "t": "h2",
-        "text": "The five forces"
+        "text": "The five forces",
+        "say": "So, the five forces."
       },
       {
         "t": "p",
-        "text": "Michael Porter set this out in *Harvard Business Review* in 1979, and it has survived nearly fifty years of attack because it asks a question nobody had put so plainly: of all the money that flows through an industry, who ends up keeping it? The answer is decided by five pressures."
+        "text": "Michael Porter set this out in *Harvard Business Review* in 1979, and it has survived nearly fifty years of attack because it asks a question nobody had put so plainly: of all the money that flows through an industry, who ends up keeping it? The answer is decided by five pressures.",
+        "say": "Michael Porter set this out in Harvard Business Review in nineteen seventy-nine, and it's survived nearly fifty years of attack because it asks a question nobody had put so plainly. Of all the money that flows through an industry, who ends up keeping it?"
       },
       {
         "t": "table",
@@ -1663,15 +1718,18 @@ window.LESSONS['marketing.w02'] = {
             "Can our customers dictate terms?",
             "Buyers are few or large, what you sell is undifferentiated, and they can compare prices instantly"
           ]
-        ]
+        ],
+        "say": "Rivalry. How hard do we fight each other. Threat of new entrants. How easily can somebody new appear. Threat of substitutes. What else could the customer use instead. Supplier power. Can the people we buy from dictate terms. And buyer power. Can our customers dictate terms."
       },
       {
         "t": "p",
-        "text": "Two of these — rivalry and entry — describe the crowd in the room. One, substitutes, describes the door the customer could leave by. The last two, supplier and buyer power, describe the squeeze along the chain you sit in. The profit that survives all five is yours."
+        "text": "Two of these — rivalry and entry — describe the crowd in the room. One, substitutes, describes the door the customer could leave by. The last two, supplier and buyer power, describe the squeeze along the chain you sit in. The profit that survives all five is yours.",
+        "say": "Two of those — rivalry and entry — describe the crowd in the room. One, substitutes, describes the door the customer could leave by. The last two describe the squeeze along the chain you sit in. Whatever survives all five is yours."
       },
       {
         "t": "h2",
-        "text": "The five, run on an airline"
+        "text": "The five, run on an airline",
+        "say": "So run the five on an airline."
       },
       {
         "t": "ul",
@@ -1681,11 +1739,13 @@ window.LESSONS['marketing.w02'] = {
           "**Substitutes: real and rising.** Rail on short routes; on business travel, a video call. A substitute does not have to be better to hurt you — it only has to be good enough to take the most profitable trips.",
           "**Supplier power: extreme.** Two manufacturers make nearly all large passenger aircraft. Airports are local monopolies. Air-traffic control is a state monopoly. Fuel is priced by a global market. Pilots are unionised and take years to train. Almost every input is controlled by someone with more leverage than the airline has.",
           "**Buyer power: high and getting higher.** Comparison sites put every rival's price on one screen, sorted cheapest first. For a large part of the market the product genuinely is a commodity, and the buyer treats it as one."
-        ]
+        ],
+        "say": "Rivalry: very high. On a popular route several carriers sell an identical experience at the same hour, and the seat is perishable. At take-off, an empty seat is worth nothing, forever. So the rational price for the last seat approaches zero, and every airline knows every other airline is thinking that. Entrants: moderate. You can lease an aircraft rather than buy it, which lowers the wall. Slots and licences raise it again. Substitutes: real and rising. Rail on short routes. And on business travel, a video call. Supplier power: extreme. Two manufacturers make nearly all large passenger aircraft. Airports are local monopolies. Air traffic control is a state monopoly. Fuel is priced globally. Pilots are unionised and take years to train. And buyer power: high, and getting higher. Comparison sites put every rival's price on one screen, sorted cheapest first."
       },
       {
         "t": "p",
-        "text": "Five forces, four of them pressed hard. A 3.9% margin is not a failure of management. It is the arithmetic of that list."
+        "text": "Five forces, four of them pressed hard. A 3.9% margin is not a failure of management. It is the arithmetic of that list.",
+        "say": "Five forces, four of them pressed hard. A three point nine percent margin isn't a failure of management. It's the arithmetic of that list."
       },
       {
         "t": "fig",
@@ -1697,11 +1757,13 @@ window.LESSONS['marketing.w02'] = {
       },
       {
         "t": "h2",
-        "text": "The same five, run on a card network"
+        "text": "The same five, run on a card network",
+        "say": "Now run the same five on a card network."
       },
       {
         "t": "p",
-        "text": "Now take Visa or Mastercard. They own no branches, lend no money and carry no credit risk. They operate the rails between the shop's bank and the cardholder's bank, and set the rules."
+        "text": "Now take Visa or Mastercard. They own no branches, lend no money and carry no credit risk. They operate the rails between the shop's bank and the cardholder's bank, and set the rules.",
+        "say": "Take Visa or Mastercard. They own no branches, lend no money, carry no credit risk. They operate the rails between the shop's bank and the cardholder's bank, and they set the rules."
       },
       {
         "t": "ul",
@@ -1711,15 +1773,18 @@ window.LESSONS['marketing.w02'] = {
           "**Substitutes: real, and the one force that genuinely moves.** Bank transfers, account-to-account payments under open banking, wallets, and in some countries state-built instant-payment systems. This is the force to watch, and it is the reason lecture 2.2 mattered.",
           "**Supplier power: low.** The main inputs are data centres and engineers. Both are bought in competitive markets.",
           "**Buyer power: split, which is the trick.** Shops hate the fees and say so loudly — but a shop that refuses cards loses sales, and cardholders feel no fee at all because the cost is buried in prices. The side that feels the pain cannot leave; the side that could leave feels no pain."
-        ]
+        ],
+        "say": "Rivalry: low and stable. Two networks dominate globally. They compete, but not by cutting the fee to zero, because there's no perishable seat forcing tonight's price to the floor. Entrants: very low. To compete you'd need every bank and every shop on earth to join at once, and neither side joins until the other has. That's the hardest wall in commerce, and the incumbents don't have to spend anything to hold it. Substitutes: real, and the one force that genuinely moves. Bank transfers, account-to-account payments under open banking, state-built instant payment systems. Supplier power: low. The main inputs are data centres and engineers, both bought in competitive markets. And buyer power: split, which is the trick. Shops hate the fees and say so loudly, but a shop that refuses cards loses sales. Cardholders feel no fee at all, because the cost is buried in prices. The side that feels the pain can't leave. The side that could leave feels no pain."
       },
       {
         "t": "p",
-        "text": "One force high, one moving, three weak. A 50% margin is not clever pricing. It is that list."
+        "text": "One force high, one moving, three weak. A 50% margin is not clever pricing. It is that list.",
+        "say": "One force high, one moving, three weak. A fifty percent margin isn't clever pricing. It's that list."
       },
       {
         "t": "h2",
-        "text": "Why structure lands in the margin"
+        "text": "Why structure lands in the margin",
+        "say": "So why does structure land in the margin?"
       },
       {
         "t": "math",
@@ -1756,15 +1821,18 @@ window.LESSONS['marketing.w02'] = {
           }
         ],
         "use": "Margin tells you how squeezed an industry is. ROIC against WACC tells you something worse: whether it is worth doing at all. IATA's own 2026 forecast puts airline ROIC at 6.8% against a cost of capital of 8.2% — the industry is expected to earn **less than the money it uses costs**, in a record year. An industry can be enormous, essential, growing, and still destroy value. Structure is why.",
-        "why": "The two ratios exist because profit alone means nothing until you ask *against what*. Against revenue it measures squeeze; against capital it measures whether the investors would have done better elsewhere. A force pressed hard shows up first in margin and finally in ROIC."
+        "why": "The two ratios exist because profit alone means nothing until you ask *against what*. Against revenue it measures squeeze; against capital it measures whether the investors would have done better elsewhere. A force pressed hard shows up first in margin and finally in ROIC.",
+        "say": "Net margin is net profit divided by revenue. World airlines: thirty-nine and a half billion over a thousand and eight billion, which is three point nine percent. Visa: twenty point one over forty, which is fifty point three percent. But there's a harder test underneath that one. Return on invested capital, against the weighted average cost of capital. Return on invested capital is profit as a share of the money tied up in the business. An airline has aircraft. Visa has software. And the cost of capital is what that money costs to rent. The industry's own forecast for twenty twenty-six puts airline return on capital at six point eight percent, against a cost of capital of eight point two. Which means the industry is expected to earn less than the money it uses costs, in a record year. An industry can be enormous, essential, growing, profitable in accounting terms, and still destroy value. Structure is why."
       },
       {
         "t": "h2",
-        "text": "Which force can you actually move?"
+        "text": "Which force can you actually move?",
+        "say": "So which force can you actually move?"
       },
       {
         "t": "p",
-        "text": "This is where the framework earns its place, and where most analyses stop one step too early. Scoring five forces is diagnosis. Strategy is the next sentence: which of them can this firm change, and at what cost?"
+        "text": "This is where the framework earns its place, and where most analyses stop one step too early. Scoring five forces is diagnosis. Strategy is the next sentence: which of them can this firm change, and at what cost?",
+        "say": "This is where the framework earns its place, and where most analyses stop one step too early. Scoring five forces is diagnosis. Strategy is the next sentence. Which of them can this firm change, and at what cost?"
       },
       {
         "t": "ol",
@@ -1774,7 +1842,8 @@ window.LESSONS['marketing.w02'] = {
           "**Entry** is moved by building something a newcomer must also build: scale, a network, a licence, a habit, a distinctive asset.",
           "**Substitutes** are rarely moved, only answered — usually by becoming the substitute yourself before someone else does.",
           "**Rivalry** is the hardest to move, because it is everyone else's behaviour. You can sometimes change what you compete *on*, which is a quieter way of leaving the fight."
-        ]
+        ],
+        "say": "Buyer power is the one a marketer moves most often, and the whole of weeks seven and eight is about how. If buyers can't compare you like for like, they can't squeeze you like for like. Differentiation isn't decoration — it's a direct attack on a force. Supplier power you move by finding or funding a second source. Entry you move by building something a newcomer has to build too. Substitutes are rarely moved, only answered, usually by becoming the substitute yourself before somebody else does. And rivalry is the hardest, because it's everybody else's behaviour."
       },
       {
         "t": "warn",
@@ -1782,7 +1851,8 @@ window.LESSONS['marketing.w02'] = {
         "ps": [
           "The standard corporate use is five paragraphs, one per force, each ending *therefore this force is moderate*. Nobody reads it twice and no decision changes.",
           "Two disciplines fix it. First, **score each force and cite one piece of evidence** — a number, a rule, a named rival — rather than describing it. Second, **rank the five** and say which single one, if it moved, would change the business most. An analysis that does not end in a ranking is a description, and descriptions are not decisions."
-        ]
+        ],
+        "say": "And here's how this framework usually gets wasted. Five paragraphs, one per force, each ending with therefore this force is moderate. Nobody reads it twice and no decision changes. Two disciplines fix it. Score each force and cite one piece of evidence — a number, a rule, a named rival — rather than describing it. Then rank the five, and say which single one, if it moved, would change the business most. An analysis that doesn't end in a ranking is a description."
       },
       {
         "t": "case",
@@ -1794,11 +1864,13 @@ window.LESSONS['marketing.w02'] = {
           "Now the part that teaches the lecture. **Who lost?** Chiefly the issuing banks, for whom interchange was straightforward revenue; they responded by trimming rewards and card perks. **Who gained?** Merchants, directly and immediately. **And the card networks themselves?** Interchange was never their revenue. Visa and Mastercard are paid scheme and processing fees, which the regulation did not cap. A decade later, in 2025, Visa's net margin was around 50%.",
           "The transferable lesson is precise: when pressure arrives — from a regulator, a rival or a technology — it lands on a particular link in the chain, and the most profitable link is often not the one being attacked. Before you assume a shock will hurt you, establish which force it actually touches and whether your revenue runs through it.",
           "The honest caveat: how much of the cap merchants passed through to shoppers is genuinely disputed, and the evidence differs by country and study. The distributional facts above are well established; 'and therefore prices in shops fell' is not one of them, and you should not repeat it as though it were."
-        ]
+        ],
+        "say": "Let me show you a regulator moving one force. Every card payment carries an interchange fee, which flows from the shop's bank to the cardholder's bank. For decades the card networks set it, and shops across Europe complained they had no way to refuse. They couldn't negotiate, and they couldn't stop taking cards. So in twenty-fifteen the European Union legislated. It capped interchange at nought point two percent of the transaction for consumer debit cards, and nought point three percent for consumer credit, from the ninth of December twenty-fifteen. Read that as a five forces event, because that's what it is. Buyer power — the shops' — was structurally weak, so the state supplied it by decree. Now the part that teaches the lecture. Who lost? Chiefly the issuing banks, because interchange was straightforward revenue for them, and they responded by trimming card rewards. Who gained? Merchants, directly. And the card networks themselves? Interchange was never their revenue. Visa and Mastercard are paid scheme and processing fees, which the regulation didn't cap. A decade later Visa's net margin was still around fifty percent. So the transferable lesson is precise. When pressure arrives, from a regulator or a rival or a technology, it lands on a particular link in the chain. And the most profitable link is often not the one being attacked."
       },
       {
         "t": "h2",
-        "text": "What the framework does not do"
+        "text": "What the framework does not do",
+        "say": "Now, what the framework does not do."
       },
       {
         "t": "ul",
@@ -1807,16 +1879,19 @@ window.LESSONS['marketing.w02'] = {
           "**It is a snapshot, not a film.** It describes the structure now. It does not tell you that entry barriers are quietly eroding, which is usually what you most need to know. Use it alongside the weak-signal habit from 2.2.",
           "**It is about the industry, not about you.** It explains why the average firm in an industry earns what it earns. It does not explain why one firm in that industry earns far more — that is week 7's question, and answering it with Five Forces is a category error.",
           "**It inherits 2.1's problem.** Every force is scored *within a market boundary*, so a badly drawn boundary produces a confident, wrong analysis. If you had defined the airline industry as 'transport', substitutes would have swallowed the page."
-        ]
+        ],
+        "say": "It says nothing about complements. Petrol makes cars valuable. Apps make a phone valuable. Merchants accepting cards make a card valuable. Porter's five won't find that for you, and in platform businesses it's often the whole story. It's a snapshot, not a film. It describes the structure now, and not that entry barriers are quietly eroding, which is usually what you most need to know. It's about the industry, not about you — it explains why the average firm earns what it earns, not why one firm beats that average. And it inherits the problem from two lectures ago. Every force is scored within a market boundary, so a badly drawn boundary gives you a confident, wrong analysis."
       },
       {
         "t": "quote",
         "text": "The essence of strategy formulation is coping with competition. Yet it is easy to view competition too narrowly and too pessimistically.",
-        "who": "Michael Porter, 1979"
+        "who": "Michael Porter, 1979",
+        "say": "Porter himself put it like this. The essence of strategy formulation is coping with competition. Yet it is easy to view competition too narrowly, and too pessimistically."
       },
       {
         "t": "h2",
-        "text": "What you should be able to do now"
+        "text": "What you should be able to do now",
+        "say": "So what can you do now?"
       },
       {
         "t": "ul",
@@ -1826,7 +1901,8 @@ window.LESSONS['marketing.w02'] = {
           "Say which forces are tight from a published margin, and check yourself against the evidence.",
           "Rank the five for one industry and name the one force worth attacking.",
           "State what the framework cannot tell you — complements, dynamics, and why *you* differ from the average."
-        ]
+        ],
+        "say": "You can name the five forces and put a fact under the right one without hesitating. You can explain a durable low margin structurally, rather than as a failure of effort. You can read a published margin and say which forces are probably tight. You can rank the five for one industry and name the one worth attacking. And you can say what the framework can't tell you."
       }
     ],
     "exercises": [
@@ -2372,50 +2448,61 @@ window.LESSONS['marketing.w02'] = {
     "blocks": [
       {
         "t": "h2",
-        "text": "The list that is always wrong"
+        "text": "The list that is always wrong",
+        "say": "Let's start with a list that's always wrong."
       },
       {
         "t": "p",
-        "text": "Ask any marketing team for its competitors and you will get a list of companies in the same industry classification: the other banks, the other airlines, the other gyms. That list is not useless. It is simply not the list that contains the company which will take the market."
+        "text": "Ask any marketing team for its competitors and you will get a list of companies in the same industry classification: the other banks, the other airlines, the other gyms. That list is not useless. It is simply not the list that contains the company which will take the market.",
+        "say": "Ask any marketing team for its competitors and you'll get a list of companies in the same industry classification. The other banks. The other airlines. The other gyms. That list isn't useless. It's just not the list containing the company that will take the market."
       },
       {
         "t": "p",
-        "text": "The reason is structural rather than careless. A competitive set is normally assembled from the supplier's side — who is in our trade association, who appears in our industry's market-share table, who we meet at the conference. The customer does not organise the world that way. The customer has a job to be done and considers everything that could do it, including several things that are not in your industry and one option that is not a purchase at all: carry on as they are."
+        "text": "The reason is structural rather than careless. A competitive set is normally assembled from the supplier's side — who is in our trade association, who appears in our industry's market-share table, who we meet at the conference. The customer does not organise the world that way. The customer has a job to be done and considers everything that could do it, including several things that are not in your industry and one option that is not a purchase at all: carry on as they are.",
+        "say": "And the reason is structural rather than careless. A competitive set normally gets assembled from the supplier's side. Who's in our trade association. Who appears in our industry's share table. Who we meet at the conference. The customer doesn't organise the world that way. The customer has a job to be done, and considers everything that could do it — including several things that aren't in your industry, and one option that isn't a purchase at all. Carry on as they are."
       },
       {
         "t": "write",
         "items": [
           "**Build the competitive set from the job, not from the category.**",
           "Categories are a supplier's filing system. Jobs are what the buyer is actually shopping for, and the rival that takes your market almost always arrives from outside the filing system."
-        ]
+        ],
+        "say": "So build the competitive set from the job, not from the category. Categories are a supplier's filing system. Jobs are what the buyer is actually shopping for."
       },
       {
         "t": "p",
-        "text": "Lecture 2.1 gave you the four levels of competition — product form, product category, generic, budget. Use them here as a search instruction rather than a taxonomy: for each level, name one real company or one real alternative. If level three and level four come back empty, you have not finished; you have simply listed your industry again."
+        "text": "Lecture 2.1 gave you the four levels of competition — product form, product category, generic, budget. Use them here as a search instruction rather than a taxonomy: for each level, name one real company or one real alternative. If level three and level four come back empty, you have not finished; you have simply listed your industry again.",
+        "say": "Lecture two point one gave you four levels of competition. Product form, product category, generic, budget. Use them here as a search instruction rather than a taxonomy. For each level, name one real company or one real alternative. If levels three and four come back empty, you haven't finished. You've just listed your industry again."
       },
       {
         "t": "h3",
-        "text": "The rival that is not a company"
+        "text": "The rival that is not a company",
+        "say": "And there's one rival that isn't a company at all."
       },
       {
         "t": "p",
-        "text": "One entry belongs on nearly every competitive set and is left off nearly every one: the customer carries on as they are. In the fitness market, in insurance, in software for small businesses, in almost anything sold to a person who is coping adequately without it, **non-consumption is the market leader** by a wide margin."
+        "text": "One entry belongs on nearly every competitive set and is left off nearly every one: the customer carries on as they are. In the fitness market, in insurance, in software for small businesses, in almost anything sold to a person who is coping adequately without it, **non-consumption is the market leader** by a wide margin.",
+        "say": "One entry belongs on nearly every competitive set and gets left off nearly every one. The customer carries on as they are. In fitness, in insurance, in software for small businesses — in almost anything sold to somebody who's coping adequately without it, non-consumption is the market leader by a wide margin."
       },
       {
         "t": "p",
-        "text": "This is not a rhetorical flourish. It changes what the marketing has to do. If your true rival is another firm, your job is comparison: be better on the things the customer is weighing. If your true rival is inertia, comparison is irrelevant — the customer is not weighing anything — and the job is to make the cost of the current situation visible, and the first step small enough to take. Those are different campaigns, different messages and different budgets, and a competitive set that omits *do nothing* will send you to fight the wrong one."
+        "text": "This is not a rhetorical flourish. It changes what the marketing has to do. If your true rival is another firm, your job is comparison: be better on the things the customer is weighing. If your true rival is inertia, comparison is irrelevant — the customer is not weighing anything — and the job is to make the cost of the current situation visible, and the first step small enough to take. Those are different campaigns, different messages and different budgets, and a competitive set that omits *do nothing* will send you to fight the wrong one.",
+        "say": "That isn't a rhetorical flourish. It changes what the marketing has to do. If your real rival is another firm, your job is comparison. Be better on the things the customer is weighing. If your real rival is inertia, comparison is irrelevant, because the customer isn't weighing anything. The job is to make the cost of the current situation visible, and the first step small enough to take. Those are different campaigns, different messages and different budgets."
       },
       {
         "t": "p",
-        "text": "A quick diagnostic: ask the sales team, or the support inbox, what a lost deal was lost *to*. If the honest answer is usually *nothing — they just did not go ahead*, then your competitive set has one entry and it is not on the list."
+        "text": "A quick diagnostic: ask the sales team, or the support inbox, what a lost deal was lost *to*. If the honest answer is usually *nothing — they just did not go ahead*, then your competitive set has one entry and it is not on the list.",
+        "say": "Here's a quick diagnostic. Ask the sales team, or look in the support inbox: what was a lost deal lost to? If the honest answer is usually nothing — they just didn't go ahead — then your competitive set has one entry and it isn't on the list."
       },
       {
         "t": "h3",
-        "text": "Three tiers, three review rhythms"
+        "text": "Three tiers, three review rhythms",
+        "say": "Three tiers, three rhythms."
       },
       {
         "t": "p",
-        "text": "A competitive set of twenty names is not watched; it is filed. Sort the list into three tiers and give each a different rhythm, and the watching actually happens."
+        "text": "A competitive set of twenty names is not watched; it is filed. Sort the list into three tiers and give each a different rhythm, and the watching actually happens.",
+        "say": "A competitive set of twenty names isn't watched. It's filed. Sort the list into three tiers and give each one a different rhythm, and the watching actually happens."
       },
       {
         "t": "table",
@@ -2444,19 +2531,23 @@ window.LESSONS['marketing.w02'] = {
             "One line each, plus the trigger that would promote them",
             "Twice a year, and never delete the list"
           ]
-        ]
+        ],
+        "say": "Direct: the two or three you lose deals to today. A full four-corner page each, with prices tracked over time. Glance monthly, rewrite quarterly. Adjacent: firms serving the same job from another category. Half a page each, quarterly. And potential: firms with the customers or the capability but not the intent. One line each, plus the trigger that would promote them. Twice a year, and never delete the list."
       },
       {
         "t": "p",
-        "text": "The third tier is the one this lecture is arguing for, and the trigger is what makes it useful. *A firm is promoted to direct when it launches in our largest city, or when it prices below €X, or when it hires a team in our specialism.* Written in advance, that sentence is a decision rule. Written after the fact, it is an excuse."
+        "text": "The third tier is the one this lecture is arguing for, and the trigger is what makes it useful. *A firm is promoted to direct when it launches in our largest city, or when it prices below €X, or when it hires a team in our specialism.* Written in advance, that sentence is a decision rule. Written after the fact, it is an excuse.",
+        "say": "The third tier is the one this lecture is arguing for, and the trigger is what makes it useful. A firm gets promoted to direct when it launches in our largest city, or prices below some number, or hires a team in our specialism. Written in advance, that sentence is a decision rule. Written afterwards, it's an excuse."
       },
       {
         "t": "h2",
-        "text": "Four corners of a rival"
+        "text": "Four corners of a rival",
+        "say": "Now, four corners of a rival."
       },
       {
         "t": "p",
-        "text": "Once the set is right, you need something to know about each name on it. Four things, and they are not equally easy or equally valuable."
+        "text": "Once the set is right, you need something to know about each name on it. Four things, and they are not equally easy or equally valuable.",
+        "say": "Once the set is right, you need something to know about each name on it. Four things, and they aren't equally easy or equally valuable."
       },
       {
         "t": "table",
@@ -2491,43 +2582,53 @@ window.LESSONS['marketing.w02'] = {
             "Interviews, conference talks, what they *do not* do, what they dismiss",
             "Hardest, most valuable, almost never written down"
           ]
-        ]
+        ],
+        "say": "Current strategy: what are they doing now? You get it from their website, prices, adverts and shops. Easy, and everybody already has it. Objectives: what are they trying to achieve? Annual reports, investor calls, interviews. Moderately easy, and it tells you how much loss they'll tolerate. Capabilities: what could they do if they chose? Job adverts, patents, acquisitions, headcount. Harder, and it tells you what's possible rather than what's planned. And assumptions: what do they believe about this market? That's the hardest, the most valuable, and almost never written down."
       },
       {
         "t": "p",
-        "text": "The fourth corner deserves its own paragraph. A rival's beliefs about the market — what customers want, what matters, what will never happen — determine what they will refuse to do even when they are able to do it. That refusal is the only durable opening a smaller competitor gets, because capability can be bought quickly and belief cannot."
+        "text": "The fourth corner deserves its own paragraph. A rival's beliefs about the market — what customers want, what matters, what will never happen — determine what they will refuse to do even when they are able to do it. That refusal is the only durable opening a smaller competitor gets, because capability can be bought quickly and belief cannot.",
+        "say": "The fourth corner deserves its own paragraph. A rival's beliefs about the market — what customers want, what matters, what will never happen — determine what they'll refuse to do even when they're perfectly able to do it. And that refusal is the only durable opening a smaller competitor ever gets. Because capability can be bought quickly, and belief cannot."
       },
       {
         "t": "p",
-        "text": "You find assumptions in the negative space. What does this firm consistently *not* do? What does it call a niche? What did an executive dismiss on stage? A rival that publicly explains why a segment is unattractive has handed you its assumption, and its assumption is its blind side."
+        "text": "You find assumptions in the negative space. What does this firm consistently *not* do? What does it call a niche? What did an executive dismiss on stage? A rival that publicly explains why a segment is unattractive has handed you its assumption, and its assumption is its blind side.",
+        "say": "You find assumptions in the negative space. What does this firm consistently not do? What does it call a niche? What did an executive dismiss on stage? A rival that publicly explains why a segment is unattractive has just handed you its assumption. And its assumption is its blind side."
       },
       {
         "t": "h3",
-        "text": "The same four corners, on a bank"
+        "text": "The same four corners, on a bank",
+        "say": "Let me run the same four corners on a bank."
       },
       {
         "t": "p",
-        "text": "The Nokia case is a technology story, which makes it easy to file away as something that happens to technology companies. Run the identical method on a retail bank and see that it is not."
+        "text": "The Nokia case is a technology story, which makes it easy to file away as something that happens to technology companies. Run the identical method on a retail bank and see that it is not.",
+        "say": "The Nokia case, which is coming, is a technology story, and that makes it easy to file away as something that happens to technology companies. So run the identical method on a retail bank and watch it not be."
       },
       {
         "t": "p",
-        "text": "**Current strategy** is on the website: which accounts, at which fees, through how many branches, with which app features. **Objectives** are in the annual report, and in regulated markets that report is long and obligatory — cost-to-income targets, deposit growth, which segments the bank says it is prioritising. **Capabilities** show in the hiring: a bank advertising for twenty engineers to work on instant payments is telling you something its marketing has not announced. None of this requires a single conversation."
+        "text": "**Current strategy** is on the website: which accounts, at which fees, through how many branches, with which app features. **Objectives** are in the annual report, and in regulated markets that report is long and obligatory — cost-to-income targets, deposit growth, which segments the bank says it is prioritising. **Capabilities** show in the hiring: a bank advertising for twenty engineers to work on instant payments is telling you something its marketing has not announced. None of this requires a single conversation.",
+        "say": "Current strategy is on the website. Which accounts, at which fees, through how many branches, with which app features. Objectives are in the annual report, and in a regulated market that report is long and obligatory. Cost-to-income targets, deposit growth, which segments the bank says it's prioritising. Capabilities show up in the hiring. A bank advertising for twenty engineers to work on instant payments is telling you something its marketing hasn't announced. None of that requires a single conversation."
       },
       {
         "t": "p",
-        "text": "**Assumptions** again live in the refusals. A bank that has no free tier believes price-sensitive customers are unprofitable. A bank that will not open accounts without a branch visit believes identity cannot be verified remotely, or believes regulators will not accept that it can. A bank whose app does nothing but show a balance believes the relationship happens elsewhere. Each of those beliefs was reasonable when it was formed, and each is a door somebody else can walk through."
+        "text": "**Assumptions** again live in the refusals. A bank that has no free tier believes price-sensitive customers are unprofitable. A bank that will not open accounts without a branch visit believes identity cannot be verified remotely, or believes regulators will not accept that it can. A bank whose app does nothing but show a balance believes the relationship happens elsewhere. Each of those beliefs was reasonable when it was formed, and each is a door somebody else can walk through.",
+        "say": "And assumptions, again, live in the refusals. A bank with no free tier believes price-sensitive customers are unprofitable. A bank that won't open an account without a branch visit believes identity can't be verified remotely — or believes the regulator won't accept that it can. A bank whose app does nothing but show a balance believes the relationship happens somewhere else. Every one of those beliefs was reasonable when it was formed. And every one of them is a door somebody else can walk through."
       },
       {
         "t": "p",
-        "text": "The transfer is the point of doing it twice. The method does not care what the industry sells. It cares that firms publish more than they realise, and that what they will not do is more informative than what they say."
+        "text": "The transfer is the point of doing it twice. The method does not care what the industry sells. It cares that firms publish more than they realise, and that what they will not do is more informative than what they say.",
+        "say": "The transfer is the point of doing it twice. The method doesn't care what the industry sells. It cares that firms publish more than they realise, and that what they won't do is more informative than what they say."
       },
       {
         "t": "h2",
-        "text": "How they will respond"
+        "text": "How they will respond",
+        "say": "So how will they respond?"
       },
       {
         "t": "p",
-        "text": "Predicting response is where competitive analysis becomes useful rather than interesting. Four broad profiles cover most firms:"
+        "text": "Predicting response is where competitive analysis becomes useful rather than interesting. Four broad profiles cover most firms:",
+        "say": "Predicting response is where competitive analysis becomes useful rather than just interesting. Four broad profiles cover most firms."
       },
       {
         "t": "ul",
@@ -2536,11 +2637,13 @@ window.LESSONS['marketing.w02'] = {
           "**The selective competitor** reacts fiercely to some moves and ignores others. This is the most common and the most useful, because the pattern is learnable: find out what they always defend, and what they have repeatedly let go.",
           "**The tiger** reacts to everything, hard and fast, and is signalling that any attack will be expensive. Attacking a tiger head-on requires deeper pockets than it has, which is rarely you.",
           "**The unpredictable competitor** has no discernible pattern, often because its decisions are driven by something you cannot see — an owner's preference, a parent company's quarter, a change of leadership."
-        ]
+        ],
+        "say": "The laid-back competitor doesn't react quickly. Usually because it believes its customers are loyal, or because it didn't notice. Don't mistake that for weakness — sometimes it's simply correct. The selective competitor reacts fiercely to some moves and ignores others. That's the most common and the most useful, because the pattern is learnable. Find out what they always defend, and what they've repeatedly let go. The tiger reacts to everything, hard and fast, and is signalling that any attack will be expensive. And the unpredictable competitor has no discernible pattern, usually because the decisions are driven by something you can't see."
       },
       {
         "t": "p",
-        "text": "The practical form is one sentence: *if we do X, we expect them to do Y, because Z.* The **because** is the part that makes it checkable, and next year it tells you whether your model of them was right."
+        "text": "The practical form is one sentence: *if we do X, we expect them to do Y, because Z.* The **because** is the part that makes it checkable, and next year it tells you whether your model of them was right.",
+        "say": "The practical form is one sentence. If we do X, we expect them to do Y, because Z. The because is the part that makes it checkable. And next year it tells you whether your model of them was right."
       },
       {
         "t": "fig",
@@ -2552,11 +2655,13 @@ window.LESSONS['marketing.w02'] = {
       },
       {
         "t": "h2",
-        "text": "Where the information legitimately comes from"
+        "text": "Where the information legitimately comes from",
+        "say": "So where does the information legitimately come from?"
       },
       {
         "t": "p",
-        "text": "Almost everything in the four corners is public. Competitive intelligence is mostly patience rather than cunning."
+        "text": "Almost everything in the four corners is public. Competitive intelligence is mostly patience rather than cunning.",
+        "say": "Almost everything in the four corners is public. Competitive intelligence is mostly patience rather than cunning."
       },
       {
         "t": "ul",
@@ -2567,7 +2672,8 @@ window.LESSONS['marketing.w02'] = {
           "**Patents and trademark filings** — public, dated, and specific.",
           "**Customer reviews and support forums** — where the actual weaknesses are described by the people who met them.",
           "**Their own words** — conference talks, investor calls, interviews. This is where assumptions leak."
-        ]
+        ],
+        "say": "Their published accounts. For listed companies, obligatory and detailed, and banks and insurers publish more than most because regulators require it. Job adverts, which are the single most underrated source — a firm hiring twelve engineers for a payments team has told you its roadmap a year before the launch. Prices and terms, published, and comparable over time if you keep a record, which almost nobody does. Patents and trademark filings, public and dated. Customer reviews and support forums, where the real weaknesses get described by the people who met them. And their own words. Conference talks, investor calls, interviews. That's where assumptions leak."
       },
       {
         "t": "warn",
@@ -2575,7 +2681,8 @@ window.LESSONS['marketing.w02'] = {
         "ps": [
           "Everything above is observation of things a firm chose to make public. The line is crossed the moment you obtain information by **deception**: pretending to be a customer or a job applicant in order to extract confidential material, paying an employee of a rival for internal documents, or using a former employee to hand over material they are bound to keep.",
           "This is not only an ethical matter. It is a legal one in most jurisdictions, and in regulated industries — finance above all — it will end a career rather than a campaign. The practical test: could you describe how you obtained this, in writing, to your own board and to the rival? If not, you already know."
-        ]
+        ],
+        "say": "And here's the line. Everything I just listed is observation of things a firm chose to make public. The line is crossed the moment you obtain information by deception. Pretending to be a customer or a job applicant to extract confidential material. Paying a rival's employee for internal documents. Using a former employee to hand over material they're bound to keep. That isn't only an ethical matter, it's a legal one in most countries, and in regulated industries — finance above all — it ends a career rather than a campaign. The practical test: could you describe how you got this, in writing, to your own board and to the rival? If not, you already know."
       },
       {
         "t": "case",
@@ -2587,15 +2694,18 @@ window.LESSONS['marketing.w02'] = {
           "The rivals who took the market were not in the competitive set, because they were not in the industry. One was a computer company that had never made a phone; the other was a search company that gave its operating system away. Both were competing on a different thing entirely — software and an ecosystem of applications — which Nokia's model treated as a peripheral feature of a handset.",
           "Notice that every corner except assumptions would have reassured Nokia. Current strategy: we lead the market. Objectives: hold share, defend margin. Capabilities: unmatched. Only the fourth corner — *what do we believe about this market, and what would have to be true for that belief to be wrong?* — would have raised the alarm, and it was the corner nobody was writing down.",
           "The honest complication: Nokia's story is contested, and serious accounts add internal politics, a fragmented software effort and fear inside the organisation as causes. Treat the assumptions reading as the strongest single thread rather than the whole explanation. What is not contested is the arithmetic: 49.4% to 3.5% in five years, against rivals that no competitor report listed in 2006."
-        ]
+        ],
+        "say": "Now the case. The rival who wasn't in the industry. For the full year two thousand and seven, Gartner put Nokia's share of the global smartphone market at forty-nine point four percent. Roughly half of every smartphone sold on earth. By the third quarter of twenty-twelve, the same measure was about three and a half percent. In twenty-thirteen the handset business was sold to Microsoft. Now start with what the explanation is not. Nokia wasn't lazy, or small, or short of money. It spent enormous sums on research, held vast patent portfolios, ran the world's most efficient handset manufacturing, and had touchscreen and internet-phone prototypes years before two thousand and seven. Capability was never the missing corner. The missing corner was assumptions. Nokia's competitive set was other handset makers, and its model of the industry was hardware, operators and scale. Win the carrier, win the manufacturing cost, win the market. On that model, a phone is a device you sell to an operator who sells it to a person. And the rivals who took the market weren't in the competitive set, because they weren't in the industry. One was a computer company that had never made a phone. The other was a search company that gave its operating system away. Both were competing on something else entirely — software, and an ecosystem of applications — which Nokia's model treated as a peripheral feature of a handset. Notice that every corner except assumptions would have reassured them. Current strategy: we lead the market. Objectives: hold share, defend margin. Capabilities: unmatched. Only the fourth corner would have raised the alarm, and it was the corner nobody was writing down."
       },
       {
         "t": "h2",
-        "text": "Why the blind spot is structural"
+        "text": "Why the blind spot is structural",
+        "say": "So why is the blind spot structural?"
       },
       {
         "t": "p",
-        "text": "It would be comforting to call this negligence, but the same pattern repeats in firms that are well run and well informed. The mechanism is consistent."
+        "text": "It would be comforting to call this negligence, but the same pattern repeats in firms that are well run and well informed. The mechanism is consistent.",
+        "say": "It would be comforting to call this negligence, but the same pattern repeats in firms that are well run and well informed. The mechanism is consistent."
       },
       {
         "t": "ol",
@@ -2604,15 +2714,18 @@ window.LESSONS['marketing.w02'] = {
           "The new rival is measured against that set, and looks bad on the industry's own criteria — early, worse, smaller, serving strange customers.",
           "Each dismissal is individually correct at the time. This is the weak-signal problem from lecture 2.2, arriving in a different costume.",
           "By the time the rival is good on the industry's criteria as well, it has the customers, and the criteria have quietly changed."
-        ]
+        ],
+        "say": "One. The competitive set is drawn from the industry, because that's where the data and the benchmarks are. Two. The new rival gets measured against that set, and looks bad on the industry's own criteria — early, worse, smaller, serving strange customers. Three. Each dismissal is individually correct at the time. And four. By the time the rival is good on the industry's criteria as well, it has the customers, and the criteria have quietly changed."
       },
       {
         "t": "p",
-        "text": "The countermeasure is procedural rather than clever: keep a standing list of **non-industry** rivals, review it as often as the normal list, and write down for each one the specific thing that would make you take it seriously. That converts the reassessment from a crisis into a diary entry — the same habit lecture 2.2 recommended for weak signals, applied to companies instead of trends."
+        "text": "The countermeasure is procedural rather than clever: keep a standing list of **non-industry** rivals, review it as often as the normal list, and write down for each one the specific thing that would make you take it seriously. That converts the reassessment from a crisis into a diary entry — the same habit lecture 2.2 recommended for weak signals, applied to companies instead of trends.",
+        "say": "The countermeasure is procedural rather than clever. Keep a standing list of non-industry rivals. Review it as often as the normal list. And write down, for each one, the specific thing that would make you take it seriously. That turns the reassessment from a crisis into a diary entry."
       },
       {
         "t": "h2",
-        "text": "What you should be able to do now"
+        "text": "What you should be able to do now",
+        "say": "So what can you do now?"
       },
       {
         "t": "ul",
@@ -2623,7 +2736,8 @@ window.LESSONS['marketing.w02'] = {
           "State a reaction prediction in the form *if we do X they will do Y because Z*.",
           "List six legitimate intelligence sources and describe the line you will not cross.",
           "Explain why good firms miss the rival that beats them, and name the habit that reduces it."
-        ]
+        ],
+        "say": "You can build a competitive set from the customer's job, with a real name at each of the four levels. You can fill in the four corners for a named rival and say which corner you're guessing at. You can find a rival's assumptions in what it refuses to do. You can state a reaction prediction in the form: if we do X they'll do Y because Z. You can list the legitimate intelligence sources and describe the line you won't cross. And you can explain why good firms miss the rival that beats them."
       }
     ],
     "exercises": [
@@ -3183,30 +3297,36 @@ window.LESSONS['marketing.w02'] = {
     "blocks": [
       {
         "t": "h2",
-        "text": "Why this tool has a bad reputation"
+        "text": "Why this tool has a bad reputation",
+        "say": "Why does this tool have such a bad reputation?"
       },
       {
         "t": "p",
-        "text": "SWOT — strengths, weaknesses, opportunities, threats — is the best known framework in management and the most reliably wasted. The standard version is produced in a workshop, contains between forty and sixty bullet points, is agreed by everyone because nothing in it costs anything, and is never opened again."
+        "text": "SWOT — strengths, weaknesses, opportunities, threats — is the best known framework in management and the most reliably wasted. The standard version is produced in a workshop, contains between forty and sixty bullet points, is agreed by everyone because nothing in it costs anything, and is never opened again.",
+        "say": "SWOT — strengths, weaknesses, opportunities, threats — is the best known framework in management and the most reliably wasted. The standard version gets produced in a workshop, contains between forty and sixty bullet points, is agreed by everybody because nothing in it costs anything, and is never opened again."
       },
       {
         "t": "p",
-        "text": "It is worth rescuing rather than discarding, for one reason: it is the only common framework that forces the outside analysis and the inside audit onto the same page. Everything from 2.1 to 2.4 is external. A firm can understand its market perfectly and still have no idea what it is capable of doing about it."
+        "text": "It is worth rescuing rather than discarding, for one reason: it is the only common framework that forces the outside analysis and the inside audit onto the same page. Everything from 2.1 to 2.4 is external. A firm can understand its market perfectly and still have no idea what it is capable of doing about it.",
+        "say": "It's worth rescuing rather than discarding, for one reason. It's the only common framework that forces the outside analysis and the inside audit onto the same page. Everything from the last four lectures is external. A firm can understand its market perfectly and still have no idea what it's capable of doing about it."
       },
       {
         "t": "write",
         "items": [
           "**A SWOT line earns its place only if it would change a decision.**",
           "Everything else is a description of the company, and a description of the company is not a strategy."
-        ]
+        ],
+        "say": "So here's the rule. A SWOT line earns its place only if it would change a decision. Everything else is a description of the company, and a description of the company is not a strategy."
       },
       {
         "t": "h2",
-        "text": "The two axes"
+        "text": "The two axes",
+        "say": "The two axes."
       },
       {
         "t": "p",
-        "text": "The four boxes are made by crossing two questions: is this **inside** the firm or **outside** it, and is it **helpful** or **harmful**?"
+        "text": "The four boxes are made by crossing two questions: is this **inside** the firm or **outside** it, and is it **helpful** or **harmful**?",
+        "say": "The four boxes come from crossing two questions. Is this inside the firm or outside it? And is it helpful or harmful?"
       },
       {
         "t": "table",
@@ -3227,11 +3347,13 @@ window.LESSONS['marketing.w02'] = {
             "**Threats**"
           ]
         ],
-        "cap": "The internal row is an audit; the external row is the analysis you have been building since 2.1."
+        "cap": "The internal row is an audit; the external row is the analysis you have been building since 2.1.",
+        "say": "Internal and helpful: strengths. Internal and harmful: weaknesses. External and helpful: opportunities. External and harmful: threats. The internal row is an audit. The external row is the analysis you've been building since lecture two point one."
       },
       {
         "t": "p",
-        "text": "The commonest structural error is putting an external force in the internal row. *A growing market* is not a strength — your rivals have the same growing market. *Rising interest rates* is not a weakness — it is a condition. The test is simple: if the sentence would still be true after your company disappeared, it is external."
+        "text": "The commonest structural error is putting an external force in the internal row. *A growing market* is not a strength — your rivals have the same growing market. *Rising interest rates* is not a weakness — it is a condition. The test is simple: if the sentence would still be true after your company disappeared, it is external.",
+        "say": "And the commonest structural error is putting an external force in the internal row. A growing market is not a strength — your rivals have exactly the same growing market. Rising interest rates is not a weakness — it's a condition. The test is simple. If the sentence would still be true after your company disappeared, it's external."
       },
       {
         "t": "warn",
@@ -3239,11 +3361,13 @@ window.LESSONS['marketing.w02'] = {
         "ps": [
           "**Wishes in the opportunities box.** *Expand into Germany* is not an opportunity; it is a plan. An opportunity is something the world has done — a rule changed, a habit shifted, a rival withdrew — that you could exploit. If nobody else could have written the same line, you have written a plan and mislabelled it.",
           "**Adjectives instead of evidence.** *Strong brand*, *great team*, *good customer service* are the three most common strengths in the world and none of them is checkable. The rule below fixes this."
-        ]
+        ],
+        "say": "Two mistakes account for most bad SWOTs. First, wishes in the opportunities box. Expand into Germany is not an opportunity. It's a plan. An opportunity is something the world has done — a rule changed, a habit shifted, a rival withdrew — that you could exploit. If nobody else could have written the same line, you've written a plan and mislabelled it. Second, adjectives instead of evidence. Strong brand, great team, good customer service. Those are the three most common strengths in the world and not one of them is checkable."
       },
       {
         "t": "h2",
-        "text": "Three rules for admission"
+        "text": "Three rules for admission",
+        "say": "So, three rules for admission."
       },
       {
         "t": "ol",
@@ -3251,31 +3375,38 @@ window.LESSONS['marketing.w02'] = {
           "**Evidence.** Every line carries one specific fact: a number, a date, a named customer, a published figure. *Strong brand* becomes *unaided awareness 34% against the category leader's 51%*. If the evidence does not exist, mark the line **unknown** rather than deleting it — the gaps are a finding of their own, and they are the research brief for week 6.",
           "**A named rival.** Strengths and weaknesses have no meaning in isolation. Fast delivery compared to whom? The correct form is always *relative to [named rival]*, and the answer changes as you change the name: a bank's branch network is a strength against a fintech and a weakness against another bank with fewer, better-placed branches.",
           "**A decision that would change.** For each line, write what you would do differently if it were true. If nothing changes, cross it out. This rule alone removes most of a typical forty-line SWOT, and what survives is the analysis."
-        ]
+        ],
+        "say": "One: evidence. Every line carries one specific fact. A number, a date, a named customer, a published figure. Strong brand becomes unaided awareness thirty-four percent against the category leader's fifty-one. If the evidence doesn't exist, mark the line unknown rather than deleting it — the gaps are a finding of their own. Two: a named rival. Strengths and weaknesses have no meaning in isolation. Fast delivery compared to whom? A bank's branch network is a strength against a fintech and a weakness against another bank with fewer, better-placed branches. And three: a decision that would change. For each line, write what you'd do differently if it were true. If nothing changes, cross it out."
       },
       {
         "t": "p",
-        "text": "Four to six lines per box, each with evidence and a named comparison, beats sixty bullets by a distance that is hard to overstate. The discipline is subtraction."
+        "text": "Four to six lines per box, each with evidence and a named comparison, beats sixty bullets by a distance that is hard to overstate. The discipline is subtraction.",
+        "say": "Four to six lines per box, each with evidence and a named comparison, beats sixty bullets by a distance that's hard to overstate. The discipline is subtraction."
       },
       {
         "t": "h3",
-        "text": "Parity is not advantage"
+        "text": "Parity is not advantage",
+        "say": "Parity is not advantage."
       },
       {
         "t": "p",
-        "text": "The third rule has a sharp corollary. Many things listed as strengths are simply the price of being allowed to compete: a working app, a licence, staff who answer the phone, compliance with the rules. If every serious rival also has it, it is **parity** — necessary and worth protecting, but it will not win you a customer and it must not appear in a strengths box that is supposed to guide investment."
+        "text": "The third rule has a sharp corollary. Many things listed as strengths are simply the price of being allowed to compete: a working app, a licence, staff who answer the phone, compliance with the rules. If every serious rival also has it, it is **parity** — necessary and worth protecting, but it will not win you a customer and it must not appear in a strengths box that is supposed to guide investment.",
+        "say": "The third rule has a sharp corollary. A lot of things listed as strengths are simply the price of being allowed to compete. A working app, a licence, staff who answer the phone, compliance with the rules. If every serious rival also has it, that's parity. Necessary, worth protecting, and it won't win you a single customer."
       },
       {
         "t": "p",
-        "text": "The useful question is not *are we good at this?* but *are we distinguishably better at this, and does anyone notice?* The second half matters: a strength customers cannot perceive is, for marketing purposes, not yet a strength. It is a project."
+        "text": "The useful question is not *are we good at this?* but *are we distinguishably better at this, and does anyone notice?* The second half matters: a strength customers cannot perceive is, for marketing purposes, not yet a strength. It is a project.",
+        "say": "So the useful question isn't are we good at this. It's are we distinguishably better at this, and does anybody notice? The second half matters. A strength customers can't perceive is, for marketing purposes, not yet a strength. It's a project."
       },
       {
         "t": "h3",
-        "text": "One line, rewritten four times"
+        "text": "One line, rewritten four times",
+        "say": "Let me take one line and rewrite it four times."
       },
       {
         "t": "p",
-        "text": "The rules are easier to state than to apply, so here is a single line moving from useless to usable. A small bank's workshop produces:"
+        "text": "The rules are easier to state than to apply, so here is a single line moving from useless to usable. A small bank's workshop produces:",
+        "say": "The rules are easier to state than to apply. So here's a single line moving from useless to usable. A small bank's workshop produces:"
       },
       {
         "t": "ol",
@@ -3284,19 +3415,23 @@ window.LESSONS['marketing.w02'] = {
           "*Customer service rated 4.6 out of 5.* — Now it has evidence, but still no comparison. Rated against what? Every bank in the country may sit between 4.4 and 4.7, in which case you have measured the industry, not yourself.",
           "*Customer service 4.6 against [named rival]'s 4.1 on the same public review site, n over 2,000 each.* — Evidence and a named comparison. It can now be checked by someone who disagrees with you, which is the property that makes a line worth writing down.",
           "*…and complaint resolution averages 1.2 days against their 4.0, which is the gap customers mention in reviews.* — Now it changes a decision: it tells you what to advertise, what to protect when cutting costs, and what to measure next quarter."
-        ]
+        ],
+        "say": "Strong customer service. That fails all three rules. No evidence, no comparison, no decision. And that's the form about half of all real SWOT lines take. Version two: customer service rated four point six out of five. Now it has evidence, but still no comparison. Rated against what? Every bank in the country might sit between four point four and four point seven, in which case you've measured the industry, not yourself. Version three: four point six against a named rival's four point one, on the same public review site, with over two thousand reviews each. Now it can be checked by somebody who disagrees with you, and that's the property that makes a line worth writing down. And version four: and complaint resolution averages one point two days against their four point oh, which is the gap customers actually mention in reviews. Now it changes a decision. It tells you what to advertise, what to protect when costs get cut, and what to measure next quarter."
       },
       {
         "t": "p",
-        "text": "Four versions of one thought. The first is a feeling, the second is a number, the third is an argument, and only the fourth is an input to a decision. When you are reviewing someone else's SWOT, this ladder is the fastest way to say what is missing without simply saying *make it better*."
+        "text": "Four versions of one thought. The first is a feeling, the second is a number, the third is an argument, and only the fourth is an input to a decision. When you are reviewing someone else's SWOT, this ladder is the fastest way to say what is missing without simply saying *make it better*.",
+        "say": "Four versions of one thought. The first is a feeling. The second is a number. The third is an argument. And only the fourth is an input to a decision."
       },
       {
         "t": "h3",
-        "text": "Who is in the room, and why it matters"
+        "text": "Who is in the room, and why it matters",
+        "say": "Now, who's in the room, and why that matters."
       },
       {
         "t": "p",
-        "text": "SWOT has a political failure mode that no amount of method fixes. If the head of each function is present, the strengths box fills with each function's own work and the weaknesses box empties — because a weakness, stated in a room, is an accusation about somebody sitting in it."
+        "text": "SWOT has a political failure mode that no amount of method fixes. If the head of each function is present, the strengths box fills with each function's own work and the weaknesses box empties — because a weakness, stated in a room, is an accusation about somebody sitting in it.",
+        "say": "SWOT has a political failure mode that no amount of method fixes. If the head of each function is present, the strengths box fills up with each function's own work and the weaknesses box empties. Because a weakness, stated in a room, is an accusation about somebody sitting in it."
       },
       {
         "t": "ul",
@@ -3305,31 +3440,38 @@ window.LESSONS['marketing.w02'] = {
           "**Attribute weaknesses to the situation, not to people.** *Onboarding takes eleven days* is a fact about a process. *Operations is slow* is a fight, and the fight will be won by whoever is more senior rather than by whoever is right.",
           "**Let someone argue the other side.** Give one person the explicit job of making the case that each strength is actually parity. If nobody has that job, nobody does it.",
           "**Ask the people who meet the customer.** Frontline staff and the support inbox hold most of the real weaknesses, and are almost never invited to the workshop where the weaknesses are listed."
-        ]
+        ],
+        "say": "Four things help. Write it alone first, then meet — independent drafts produce a wider and more honest range than a room converging politely in real time. Attribute weaknesses to the situation, not to people. Onboarding takes eleven days is a fact about a process. Operations is slow is a fight, and the fight gets won by whoever is more senior rather than whoever is right. Give one person the explicit job of arguing that each strength is really parity, because if nobody has that job, nobody does it. And ask the people who meet the customer. Frontline staff and the support inbox hold most of the real weaknesses, and they're almost never invited to the workshop where the weaknesses get listed."
       },
       {
         "t": "h3",
-        "text": "A SWOT has a date on it"
+        "text": "A SWOT has a date on it",
+        "say": "And a SWOT has a date on it."
       },
       {
         "t": "p",
-        "text": "Strengths decay, usually because rivals copy them. Anything visible from outside — a feature, a price, a delivery promise, an app screen — can be copied within a year or two, which means it is on a timer from the day it becomes an advantage."
+        "text": "Strengths decay, usually because rivals copy them. Anything visible from outside — a feature, a price, a delivery promise, an app screen — can be copied within a year or two, which means it is on a timer from the day it becomes an advantage.",
+        "say": "Strengths decay, usually because rivals copy them. Anything visible from outside — a feature, a price, a delivery promise, an app screen — can be copied within a year or two. Which means it's on a timer from the day it becomes an advantage."
       },
       {
         "t": "p",
-        "text": "What decays slowly is what is hard to copy quickly: a distribution network, a licence, a habit in the customer's head, an accumulation of data, a distinctive asset people recognise at a glance. So annotate each strength with an honest estimate of how long it has, and treat the short-lived ones as what they are — a window in which to build something slower to copy, rather than a position to defend."
+        "text": "What decays slowly is what is hard to copy quickly: a distribution network, a licence, a habit in the customer's head, an accumulation of data, a distinctive asset people recognise at a glance. So annotate each strength with an honest estimate of how long it has, and treat the short-lived ones as what they are — a window in which to build something slower to copy, rather than a position to defend.",
+        "say": "What decays slowly is what's hard to copy quickly. A distribution network, a licence, a habit in the customer's head, an accumulation of data, a distinctive asset people recognise at a glance. So annotate each strength with an honest estimate of how long it's got, and treat the short-lived ones as what they are — a window in which to build something slower to copy. Not a position to defend."
       },
       {
         "t": "p",
-        "text": "The practical consequence: **put the date on the document.** A SWOT with no date will be quoted three years later by someone who was not in the room, describing a company that no longer exists, and it will be believed because it is written down."
+        "text": "The practical consequence: **put the date on the document.** A SWOT with no date will be quoted three years later by someone who was not in the room, describing a company that no longer exists, and it will be believed because it is written down.",
+        "say": "And the practical consequence: put the date on the document. A SWOT with no date will be quoted three years later by somebody who wasn't in the room, describing a company that no longer exists. And it'll be believed, because it's written down."
       },
       {
         "t": "h2",
-        "text": "TOWS: the step almost nobody takes"
+        "text": "TOWS: the step almost nobody takes",
+        "say": "Now TOWS. The step almost nobody takes."
       },
       {
         "t": "p",
-        "text": "A SWOT produces four lists. TOWS produces four **strategies**, by pairing each internal factor with each external one and asking what that pairing implies. This is the step that converts analysis into decision, and it is the reason to bother with the exercise at all."
+        "text": "A SWOT produces four lists. TOWS produces four **strategies**, by pairing each internal factor with each external one and asking what that pairing implies. This is the step that converts analysis into decision, and it is the reason to bother with the exercise at all.",
+        "say": "A SWOT produces four lists. TOWS produces four strategies, by pairing each internal factor with each external one and asking what that pairing implies. This is the step that converts analysis into decision, and it's the reason to bother with the exercise at all."
       },
       {
         "t": "table",
@@ -3349,7 +3491,8 @@ window.LESSONS['marketing.w02'] = {
             "**WO — build or borrow.** An opportunity we cannot currently take. Fix the weakness, partner, or buy the capability — or decide honestly to let it go.",
             "**WT — retreat or protect.** Exposed and unable to respond. This quadrant produces exits, insurance and hard conversations, and it is the one firms skip."
           ]
-        ]
+        ],
+        "say": "Strength plus opportunity gives you S-O. Attack. Use what we have to take what's available. That's the most fundable quadrant and the first one to fill. Strength plus threat gives you S-T. Defend. Turn an existing asset into a shield. Weakness plus opportunity gives you W-O. Build or borrow. There's an opportunity we can't currently take, so fix the weakness, partner, buy the capability — or decide honestly to let it go. And weakness plus threat gives you W-T. Retreat or protect. Exposed, and unable to respond. That quadrant produces exits, insurance and hard conversations, and it's the one firms skip."
       },
       {
         "t": "fig",
@@ -3361,7 +3504,8 @@ window.LESSONS['marketing.w02'] = {
       },
       {
         "t": "p",
-        "text": "Then choose. Four strategies are not a plan either; a plan says which one gets funded this year, which one gets a person but no budget, and which two are merely watched. If the exercise cannot survive that question, the lines were not specific enough and you should go back to rule three."
+        "text": "Then choose. Four strategies are not a plan either; a plan says which one gets funded this year, which one gets a person but no budget, and which two are merely watched. If the exercise cannot survive that question, the lines were not specific enough and you should go back to rule three.",
+        "say": "And then choose. Four strategies aren't a plan either. A plan says which one gets funded this year, which one gets a person but no budget, and which two you'll merely watch. If the exercise can't survive that question, the lines weren't specific enough."
       },
       {
         "t": "case",
@@ -3374,11 +3518,13 @@ window.LESSONS['marketing.w02'] = {
           "That is the lesson this lecture is really about. A strength is a commitment. It comes with a cost structure, a sales force, a set of expectations from investors and a story the firm tells about itself — and all of those resist the very move the analysis recommends. The SWOT was not wrong. The conversion was refused.",
           "The honest complication: the tidy 'Kodak ignored digital' version is wrong, and serious accounts argue Kodak did invest substantially in digital and was beaten by the economics — digital photography simply supports far fewer profitable companies than film did. Use the case for what it reliably shows: strengths are relative to a world, and when the world changes they can become liabilities without anyone doing anything careless.",
           "The transferable question, and it is worth asking of your own employer: **which of our strengths would we have to give up to take the opportunity we say we want?** If the answer is none, either the opportunity is small or the SWOT is flattering you."
-        ]
+        ],
+        "say": "Let me finish with the case where the strength was the trap. In nineteen seventy-six Kodak held about ninety percent of film sales and eighty-five percent of camera sales in the United States. By nineteen eighty-eight it employed more than a hundred and forty-five thousand people worldwide. In January twenty-twelve it filed for bankruptcy protection. Now write its SWOT as it would honestly have been written in the nineteen eighties. Strengths: overwhelming share. A brand recognised almost everywhere on earth. A distribution network reaching every chemist and supermarket. Unmatched chemical research. And extraordinarily profitable film — because the money was never in cameras, it was in the film and the processing that people bought forever afterwards. Every one of those lines passes all three rules. They were real, they were evidenced, and they were better than any named rival's. Threats: digital imaging. And here's the detail that makes this case worth your time rather than a fable. Kodak was not ignorant of it. A Kodak engineer, Steven Sasson, built a working digital camera in nineteen seventy-five. The company held digital imaging patents and understood the technology early. So run TOWS on that page. The strength-threat cell — use a strength to blunt a threat — is where a firm with that brand, that distribution and that research should have been unbeatable. What blocked it was the strength itself. Digital destroyed the recurring film and processing revenue that every one of those strengths existed to serve. To take the opportunity, Kodak had to cannibalise the most profitable business in its own history, deliberately, years before it had to. And that's what this lecture is really about. A strength is a commitment. It comes with a cost structure, a sales force, a set of expectations from investors, and a story the firm tells about itself — and all of those resist the very move the analysis recommends. The SWOT wasn't wrong. The conversion was refused. So here's the question worth asking of your own employer. Which of our strengths would we have to give up, to take the opportunity we say we want? If the answer is none, either the opportunity is small, or the SWOT is flattering you."
       },
       {
         "t": "h2",
-        "text": "What you should be able to do now"
+        "text": "What you should be able to do now",
+        "say": "So what can you do now?"
       },
       {
         "t": "ul",
@@ -3389,7 +3535,8 @@ window.LESSONS['marketing.w02'] = {
           "Build the four TOWS cells and rank them: fund one, staff one, watch two.",
           "Ask which strength would have to be given up for the opportunity to be taken.",
           "Explain why a correct SWOT can still fail — because conversion is a decision, not an analysis."
-        ]
+        ],
+        "say": "You can sort any item onto the right axis, and reject wishes disguised as opportunities. You can insist on evidence and a named rival for every internal line. You can tell parity from advantage, and say whether the customer can even perceive the difference. You can build the four TOWS cells and rank them — fund one, staff one, watch two. And you can ask which strength would have to be given up for the opportunity to be taken. Next week we turn to the person on the other side. How somebody notices, remembers and decides."
       }
     ],
     "exercises": [

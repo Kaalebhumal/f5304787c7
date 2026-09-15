@@ -126,15 +126,18 @@ window.LESSONS['economics.w02'] = {
     "blocks": [
       {
         "t": "h2",
-        "text": "Almost every macroeconomic number is an estimate"
+        "text": "Almost every macroeconomic number is an estimate",
+        "say": "Almost every macroeconomic number is an estimate."
       },
       {
         "t": "p",
-        "text": "People treat published economic statistics the way they treat the time: as a reading taken from an instrument. They are not. Nearly every one is an **estimate**, assembled from partial information according to rules somebody chose, and revised repeatedly afterwards."
+        "text": "People treat published economic statistics the way they treat the time: as a reading taken from an instrument. They are not. Nearly every one is an **estimate**, assembled from partial information according to rules somebody chose, and revised repeatedly afterwards.",
+        "say": "People treat published economic statistics the way they treat the time. As a reading taken from an instrument. They're not. Nearly every one is an estimate, assembled from partial information, according to rules somebody chose, and revised repeatedly afterwards."
       },
       {
         "t": "p",
-        "text": "That is not a scandal. Counting an economy is genuinely hard: it has no edges you can see, much of it is not recorded anywhere, and what counts as 'output' has to be decided rather than observed. But it does mean that knowing the conventions is not pedantry — it is most of the skill."
+        "text": "That is not a scandal. Counting an economy is genuinely hard: it has no edges you can see, much of it is not recorded anywhere, and what counts as 'output' has to be decided rather than observed. But it does mean that knowing the conventions is not pedantry — it is most of the skill.",
+        "say": "That isn't a scandal. Counting an economy is genuinely hard. It has no edges you can see, much of it isn't recorded anywhere, and what counts as output has to be decided rather than observed. But it does mean that knowing the conventions isn't pedantry. It's most of the skill."
       },
       {
         "t": "table",
@@ -159,19 +162,23 @@ window.LESSONS['economics.w02'] = {
             "Fill gaps with assumptions and imputation",
             "The output inherits every assumption, and the assumptions are rarely in the headline."
           ]
-        ]
+        ],
+        "say": "Data comes from three places. Surveys — ask a sample of households or firms, then scale up. Their characteristic weakness is that the people who don't answer aren't like the people who do, and response rates have been falling for decades. Administrative records — reusing data collected for tax, customs or benefits. There you only see what the rule required somebody to report, and behaviour adapts to the rule. And estimates and models, which fill the gaps with assumptions. Those inherit every assumption, and the assumptions are rarely in the headline."
       },
       {
         "t": "p",
-        "text": "Each weakness is predictable, and that is the useful part. If a survey shows something surprising about a group that rarely responds, be careful. If a tax-based number changes just after the tax rule changed, suspect the rule. Knowing which of the three you are holding tells you what it is likely to get wrong."
+        "text": "Each weakness is predictable, and that is the useful part. If a survey shows something surprising about a group that rarely responds, be careful. If a tax-based number changes just after the tax rule changed, suspect the rule. Knowing which of the three you are holding tells you what it is likely to get wrong.",
+        "say": "Each weakness is predictable, and that's the useful part. If a survey shows something surprising about a group that rarely responds, be careful. If a tax-based number changes just after the tax rule changed, suspect the rule. Knowing which of the three you're holding tells you what it's likely to get wrong."
       },
       {
         "t": "h2",
-        "text": "What GDP is, and what it is not"
+        "text": "What GDP is, and what it is not",
+        "say": "What GDP is, and what it isn't."
       },
       {
         "t": "p",
-        "text": "**Gross domestic product** is the market value of all final goods and services produced within a country in a period. Each word in that sentence is a decision."
+        "text": "**Gross domestic product** is the market value of all final goods and services produced within a country in a period. Each word in that sentence is a decision.",
+        "say": "Gross domestic product is the market value of all final goods and services produced within a country in a period. And every word in that sentence is a decision."
       },
       {
         "t": "ul",
@@ -181,11 +188,13 @@ window.LESSONS['economics.w02'] = {
           "**Produced** — not sold, and not consumed. Output that goes into a warehouse still counts.",
           "**Within a country** — and this is the word that produces the case study below. It is about geography, not ownership: output made in Estonia by a foreign-owned firm is Estonian GDP.",
           "**In a period** — so GDP is a flow per unit of time, never a stock. A country's GDP is not its wealth, any more than your salary is your savings."
-        ]
+        ],
+        "say": "Market value — so things without a price are hard to include. Unpaid housework and childcare are enormous economic activity and appear nowhere. A country where more care is done for pay has a higher GDP than an identical one where it's done for free. Final — intermediate goods are excluded, so the flour in the bread isn't counted separately from the bread. Produced — not sold and not consumed, so output sitting in a warehouse still counts. Within a country — and this is the word that produces the case study in a moment. It's about geography, not ownership. And in a period — so GDP is a flow, never a stock. A country's GDP is not its wealth, any more than your salary is your savings."
       },
       {
         "t": "p",
-        "text": "Two exclusions matter more than the rest. GDP says nothing about **distribution** — a country can double its GDP with all the increase going to a hundred people. And it counts activity regardless of whether the activity is good: repairing storm damage raises GDP, and so does a long commute. That is a criticism of using GDP as a measure of welfare, which it was never designed to be, rather than of GDP itself."
+        "text": "Two exclusions matter more than the rest. GDP says nothing about **distribution** — a country can double its GDP with all the increase going to a hundred people. And it counts activity regardless of whether the activity is good: repairing storm damage raises GDP, and so does a long commute. That is a criticism of using GDP as a measure of welfare, which it was never designed to be, rather than of GDP itself.",
+        "say": "Two exclusions matter more than the rest. GDP says nothing about distribution — a country can double its GDP with all of the increase going to a hundred people. And it counts activity regardless of whether the activity is good. Repairing storm damage raises GDP. So does a long commute. That's a criticism of using GDP as a measure of welfare, which it was never designed to be."
       },
       {
         "t": "case",
@@ -197,19 +206,23 @@ window.LESSONS['economics.w02'] = {
           "The CSO had not made an error. It had applied the agreed international rules correctly to an unusual event, and those rules were written for an economy of factories and farms rather than one where a company can relocate the legal home of a patent portfolio in an afternoon.",
           "What happened next is the part worth learning from. Rather than defending the number, the CSO built a new one: **modified gross national income**, written **GNI\\***, which strips out the profits of redomiciled companies and the depreciation of foreign-owned intellectual property and leased aircraft. Ireland now has a headline measure for international comparison and a second measure for understanding its own economy, and Irish policy discussion largely uses the second.",
           "Three lessons, and they generalise well beyond Ireland. **One:** a number can be correct and useless simultaneously, and 'is it accurate?' is therefore the wrong first question. **Two:** conventions written for one kind of economy misfire when the economy changes — and intangible, mobile capital breaks measurement rules designed for physical things. **Three:** the right response to a broken measure is usually a second measure with a stated purpose, not an argument about the first."
-        ]
+        ],
+        "say": "So here's what that produces. In July twenty sixteen Ireland's Central Statistics Office revised its figure for twenty fifteen growth to twenty-six point three percent. For comparison, a fast-growing developed economy manages four or five. The economist Paul Krugman called it leprechaun economics, and the name stuck because nobody could do better in a sentence. Nothing in Ireland matched it. Employment, wages, consumption and tax receipts all moved at ordinary rates. The Irish people did not become a quarter richer, and they knew it. The cause was that word, within. A small number of multinational corporations restructured, moving ownership of very large intangible assets — patents and intellectual property — onto Irish balance sheets, and relocating aircraft-leasing activity. Under the international rules for national accounts, output attributed to assets held by firms resident in Ireland is Irish output. The assets moved. The measured output followed. The actual production and the actual people did not move at all. And the statistical office had not made an error. It applied the agreed international rules correctly to an unusual event, and those rules were written for an economy of factories and farms — not for one where a company can relocate the legal home of a patent portfolio in an afternoon. What happened next is the part worth learning from. Rather than defending the number, they built a new one. Modified gross national income, written G-N-I star, which strips out the profits of redomiciled companies and the depreciation of foreign-owned intellectual property and leased aircraft. Ireland now has a headline measure for international comparison, and a second measure for understanding its own economy. And Irish policy discussion largely uses the second. Three lessons, and they travel well beyond Ireland. One: a number can be correct and useless at the same time, so is it accurate is the wrong first question. Two: conventions written for one kind of economy misfire when the economy changes. And three: the right response to a broken measure is usually a second measure with a stated purpose, not an argument about the first."
       },
       {
         "t": "h2",
-        "text": "Inflation, and the basket somebody chose"
+        "text": "Inflation, and the basket somebody chose",
+        "say": "Inflation, and the basket somebody chose."
       },
       {
         "t": "p",
-        "text": "The same lesson appears in the other number everyone quotes. A **consumer price index** tracks the cost of a fixed basket of goods and services over time. Inflation is the rate at which that basket's cost rises."
+        "text": "The same lesson appears in the other number everyone quotes. A **consumer price index** tracks the cost of a fixed basket of goods and services over time. Inflation is the rate at which that basket's cost rises.",
+        "say": "The same lesson turns up in the other number everybody quotes. A consumer price index tracks the cost of a fixed basket of goods and services over time. Inflation is the rate at which that basket's cost rises."
       },
       {
         "t": "p",
-        "text": "Everything therefore depends on the basket, and the basket is a set of choices."
+        "text": "Everything therefore depends on the basket, and the basket is a set of choices.",
+        "say": "So everything depends on the basket. And the basket is a set of choices."
       },
       {
         "t": "ol",
@@ -218,19 +231,23 @@ window.LESSONS['economics.w02'] = {
           "**How often it is updated.** If the basket is fixed for too long it measures the cost of a lifestyle nobody leads any more. If it changes constantly, the index is no longer comparing like with like over time.",
           "**How quality changes are handled.** A phone costing the same as five years ago is a much better phone. Statisticians adjust for this, and the adjustment is a judgement that measurably affects the published inflation rate.",
           "**Whose basket.** The index describes an average household that may not exist. A pensioner who heats a home and does not drive, and a commuter with a mortgage, experience genuinely different inflation rates from the same published figure."
-        ]
+        ],
+        "say": "What goes in — statistical offices survey household spending and include what people actually buy, in proportion to how much they spend on it. Those proportions are the weights. How often it's updated — fix the basket for too long and you're measuring the cost of a lifestyle nobody leads any more; change it constantly and you're no longer comparing like with like over time. How quality changes are handled — a phone costing the same as five years ago is a much better phone, and the adjustment for that is a judgement which measurably affects the published rate. And whose basket — the index describes an average household that may not exist. A pensioner who heats a home and doesn't drive, and a commuter with a mortgage, experience genuinely different inflation from the same published figure."
       },
       {
         "t": "p",
-        "text": "None of this makes the number fake. It makes it a **measurement of a defined thing**, and the definition is available to read. The practical consequence is that 'inflation is 4%' and 'my costs rose 9%' can both be true, which is worth knowing before you conclude that somebody is lying to you."
+        "text": "None of this makes the number fake. It makes it a **measurement of a defined thing**, and the definition is available to read. The practical consequence is that 'inflation is 4%' and 'my costs rose 9%' can both be true, which is worth knowing before you conclude that somebody is lying to you.",
+        "say": "None of that makes the number fake. It makes it a measurement of a defined thing, and the definition is published. The practical consequence is that inflation is four percent and my costs rose nine percent can both be true. Which is worth knowing before you conclude that somebody is lying to you."
       },
       {
         "t": "h2",
-        "text": "The four questions"
+        "text": "The four questions",
+        "say": "So here are the four questions."
       },
       {
         "t": "p",
-        "text": "Here is the routine to run on any economic statistic. It takes about thirty seconds and prevents most of the harm."
+        "text": "Here is the routine to run on any economic statistic. It takes about thirty seconds and prevents most of the harm.",
+        "say": "This is the routine to run on any economic statistic. It takes about thirty seconds and it prevents most of the harm."
       },
       {
         "t": "table",
@@ -260,19 +277,23 @@ window.LESSONS['economics.w02'] = {
             "First estimates of GDP are routinely revised by meaningful amounts, sometimes changing the sign",
             "The release calendar and the vintage label on the series"
           ]
-        ]
+        ],
+        "say": "One. Who produced it, and why? A statistical office, a central bank, a trade association and a campaign group have different incentives, and only some publish their method. Look at the bottom of the page. Two. What exactly is counted? Unemployment can mean claiming benefits, or looking for work, or wanting more hours, and the three move differently. Look at the definitions section. Three. What's excluded? Ireland's GDP excluded nothing it should have included — the problem was what it included. Both directions matter. And four. Is it provisional? First estimates of GDP get revised by meaningful amounts, sometimes changing the sign."
       },
       {
         "t": "p",
-        "text": "You have already seen what happens when nobody asks the third one: the open banking figures in another course's material, the airline margins, the wage medians in lecture 1.1 — every one of them carries a coverage note that changes how the headline should be read."
+        "text": "You have already seen what happens when nobody asks the third one: the open banking figures in another course's material, the airline margins, the wage medians in lecture 1.1 — every one of them carries a coverage note that changes how the headline should be read.",
+        "say": "You have already seen what happens when nobody asks that third question. Every figure quoted in this course so far — the open banking numbers, the airline margins, the wage medians — carries a coverage note that changes how the headline should be read."
       },
       {
         "t": "h3",
-        "text": "One word, three numbers: unemployment"
+        "text": "One word, three numbers: unemployment",
+        "say": "One word, three numbers. Unemployment."
       },
       {
         "t": "p",
-        "text": "The fourth question — *what exactly is counted?* — is easiest to feel with a word everyone thinks they understand. There is no single unemployment rate; there are several, and they move differently."
+        "text": "The fourth question — *what exactly is counted?* — is easiest to feel with a word everyone thinks they understand. There is no single unemployment rate; there are several, and they move differently.",
+        "say": "That fourth question — what exactly is counted — is easiest to feel with a word everybody thinks they understand. There's no single unemployment rate. There are several, and they move differently."
       },
       {
         "t": "ul",
@@ -280,27 +301,33 @@ window.LESSONS['economics.w02'] = {
           "**Registered unemployment** counts people signed up with the state employment service, often tied to benefit eligibility. Change the benefit rules and this number moves without a single job appearing or disappearing.",
           "**Survey unemployment**, the internationally comparable measure, counts people who are without work, **available** to start, and have **actively looked** in a recent period. All three conditions must hold, and the third excludes people who have given up.",
           "**Broader measures** add the discouraged — those who want work but have stopped searching — and the underemployed, who have a job but want more hours."
-        ]
+        ],
+        "say": "Registered unemployment counts people signed up with the state employment service, often tied to benefit eligibility. Change the benefit rules and this number moves without a single job appearing or disappearing. Survey unemployment, the internationally comparable measure, counts people who are without work, available to start, and have actively looked in a recent period. All three conditions have to hold, and the third one excludes people who've given up. And broader measures add the discouraged, and the underemployed who have a job but want more hours."
       },
       {
         "t": "p",
-        "text": "In a bad downturn these diverge sharply, and in a predictable direction: as the search becomes hopeless, people stop looking, leave the survey measure, and the headline unemployment rate **falls**. Nothing improved. The definition simply stopped counting them."
+        "text": "In a bad downturn these diverge sharply, and in a predictable direction: as the search becomes hopeless, people stop looking, leave the survey measure, and the headline unemployment rate **falls**. Nothing improved. The definition simply stopped counting them.",
+        "say": "In a bad downturn those diverge sharply, and in a predictable direction. As the search becomes hopeless, people stop looking, leave the survey measure — and the headline unemployment rate falls. Nothing improved. The definition simply stopped counting them."
       },
       {
         "t": "p",
-        "text": "This is why a competent reader asks which measure before interpreting a movement, and why serious analysis quotes the **employment rate** — the share of working-age people who have a job — alongside unemployment. That one cannot be improved by people giving up."
+        "text": "This is why a competent reader asks which measure before interpreting a movement, and why serious analysis quotes the **employment rate** — the share of working-age people who have a job — alongside unemployment. That one cannot be improved by people giving up.",
+        "say": "Which is why a competent reader asks which measure before interpreting a movement. And why serious analysis quotes the employment rate — the share of working-age people who have a job — alongside unemployment. That one can't be improved by people giving up."
       },
       {
         "t": "h2",
-        "text": "Revisions are not errors"
+        "text": "Revisions are not errors",
+        "say": "Revisions are not errors."
       },
       {
         "t": "p",
-        "text": "A first GDP estimate is published within weeks of the quarter ending, using partial returns. Better data arrives for months afterwards, and the figure is updated. Journalists sometimes report this as the statisticians having got it wrong. They did not; they published the best estimate available at the time and then improved it, which is what you would want."
+        "text": "A first GDP estimate is published within weeks of the quarter ending, using partial returns. Better data arrives for months afterwards, and the figure is updated. Journalists sometimes report this as the statisticians having got it wrong. They did not; they published the best estimate available at the time and then improved it, which is what you would want.",
+        "say": "A first GDP estimate gets published within weeks of the quarter ending, using partial returns. Better data arrives for months afterwards, and the figure is updated. Journalists sometimes report that as the statisticians having got it wrong. They didn't. They published the best estimate available at the time and then improved it, which is what you'd want."
       },
       {
         "t": "p",
-        "text": "The practical consequences are concrete. Do not build an argument on a single provisional quarter. Expect the direction of a revision to be systematic rather than random — early estimates often miss turning points, because the information that reveals a turning point arrives late. And when comparing across years, check you are comparing the same **vintage** of the data rather than an old published figure against a revised one."
+        "text": "The practical consequences are concrete. Do not build an argument on a single provisional quarter. Expect the direction of a revision to be systematic rather than random — early estimates often miss turning points, because the information that reveals a turning point arrives late. And when comparing across years, check you are comparing the same **vintage** of the data rather than an old published figure against a revised one.",
+        "say": "The practical consequences are concrete. Don't build an argument on a single provisional quarter. Expect the direction of a revision to be systematic rather than random — early estimates often miss turning points, because the information that reveals a turning point arrives late. And when comparing across years, check you're comparing the same vintage of the data, rather than an old published figure against a revised one."
       },
       {
         "t": "warn",
@@ -308,11 +335,13 @@ window.LESSONS['economics.w02'] = {
         "ps": [
           "A number appears. It is striking. It gets explained — in a newspaper, in a meeting, in your own head — with a story about the world. The story is fluent and might be entirely fictional, because the number moved for a reason inside the measurement rather than out in the economy.",
           "The habit that prevents it: **before explaining a number, establish what it measures.** If a change in the counting rules alone could have produced the movement, find out whether it did. Ireland's 26.3% had a dozen confident explanations in the press within a week, and the correct one was an accounting rule."
-        ]
+        ],
+        "say": "And here's the failure this lecture is trying to prevent. A number appears. It's striking. It gets explained — in a newspaper, in a meeting, in your own head — with a story about the world. The story is fluent, and it might be entirely fictional, because the number moved for a reason inside the measurement rather than out in the economy. The habit that prevents it: before explaining a number, establish what it measures. If a change in the counting rules alone could have produced the movement, find out whether it did. Ireland's twenty-six point three percent had a dozen confident explanations in the press within a week, and the correct one was an accounting rule."
       },
       {
         "t": "h2",
-        "text": "What you should be able to do now"
+        "text": "What you should be able to do now",
+        "say": "So what can you do now?"
       },
       {
         "t": "ul",
@@ -323,7 +352,8 @@ window.LESSONS['economics.w02'] = {
           "Say why a published inflation rate and your own experience can differ without anyone lying.",
           "Run the four questions before quoting a number.",
           "Treat provisional data as provisional, and check the vintage before comparing across years."
-        ]
+        ],
+        "say": "Say which of the three sources a statistic came from, and what that source tends to get wrong. State what GDP counts and the two exclusions that matter most. Explain the Irish case without calling it a mistake or a fraud. Say why a published inflation rate and your own experience can differ without anybody lying. Run the four questions before quoting a number. And treat provisional data as provisional."
       }
     ],
     "exercises": [
@@ -852,41 +882,49 @@ window.LESSONS['economics.w02'] = {
     "blocks": [
       {
         "t": "h2",
-        "text": "Two different questions"
+        "text": "Two different questions",
+        "say": "Two different questions."
       },
       {
         "t": "p",
-        "text": "Consider a fact that is not in dispute: people with more years of education earn more. In every country, in every decade, measured every way anyone has tried, the relationship is strong and positive."
+        "text": "Consider a fact that is not in dispute: people with more years of education earn more. In every country, in every decade, measured every way anyone has tried, the relationship is strong and positive.",
+        "say": "Consider a fact that isn't in dispute. People with more years of education earn more. In every country, in every decade, measured every way anybody has tried, the relationship is strong and positive."
       },
       {
         "t": "p",
-        "text": "Now notice that two completely different questions live inside it."
+        "text": "Now notice that two completely different questions live inside it.",
+        "say": "Now notice that two completely different questions live inside it."
       },
       {
         "t": "ol",
         "items": [
           "**Descriptive:** how much more do the more-educated earn? This is a measurement, and 2.1 told you how to interrogate it.",
           "**Causal:** if a particular person got one more year of education, how much more would *they* earn? This is a question about a world that does not exist, and no amount of data about the world that does exist answers it directly."
-        ]
+        ],
+        "say": "Descriptive: how much more do the more-educated earn? That's a measurement, and last lecture told you how to interrogate it. Causal: if a particular person got one more year of education, how much more would they earn? That's a question about a world that doesn't exist, and no amount of data about the world that does exist answers it directly."
       },
       {
         "t": "p",
-        "text": "Almost every question people actually care about is the second kind. Does this policy work? Would this campaign pay for itself? Should I take this course? Each asks about the difference between what happened and what would otherwise have happened — and that second half is the problem."
+        "text": "Almost every question people actually care about is the second kind. Does this policy work? Would this campaign pay for itself? Should I take this course? Each asks about the difference between what happened and what would otherwise have happened — and that second half is the problem.",
+        "say": "And almost every question people actually care about is the second kind. Does this policy work? Would this campaign pay for itself? Should I take this course? Each one asks about the difference between what happened and what would otherwise have happened. And that second half is the problem."
       },
       {
         "t": "write",
         "items": [
           "**The fundamental problem of causal inference:** you can never observe the same unit both treated and untreated at the same moment.",
           "You see one branch. The other branch — the **counterfactual** — has to be constructed from somebody else, and the whole craft is in choosing who."
-        ]
+        ],
+        "say": "The fundamental problem of causal inference: you can never observe the same unit both treated and untreated at the same moment. You see one branch. The other branch — the counterfactual — has to be constructed from somebody else. And the whole craft is in choosing who."
       },
       {
         "t": "h2",
-        "text": "Four rival explanations for any correlation"
+        "text": "Four rival explanations for any correlation",
+        "say": "Four rival explanations for any correlation."
       },
       {
         "t": "p",
-        "text": "When two things move together, at least four explanations compete. Ruling them out one at a time is the discipline."
+        "text": "When two things move together, at least four explanations compete. Ruling them out one at a time is the discipline.",
+        "say": "When two things move together, at least four explanations compete. And ruling them out one at a time is the discipline."
       },
       {
         "t": "table",
@@ -916,35 +954,43 @@ window.LESSONS['economics.w02'] = {
             "Nothing causes anything; the pattern is noise",
             "Weak here — the relationship is enormous, replicated everywhere, across decades"
           ]
-        ]
+        ],
+        "say": "Causation: X causes Y. For education, that's schooling teaching skills that raise productivity. Reverse causation: Y causes X — weak here, though expected earnings can affect how long you stay. Confounding: some third thing causes both — and here that's strong, because ability, family resources and motivation raise both schooling and earnings independently. And chance: nothing causes anything, the pattern is noise — weak here, because the relationship is enormous and replicated everywhere across decades."
       },
       {
         "t": "p",
-        "text": "For education, the serious rival is **confounding**, and it has a name: **ability bias**. People who complete more schooling differ in ways that would have raised their earnings anyway — persistence, family circumstances, prior attainment, connections. Compare graduates with non-graduates and you are comparing two groups that differed before anyone entered a classroom."
+        "text": "For education, the serious rival is **confounding**, and it has a name: **ability bias**. People who complete more schooling differ in ways that would have raised their earnings anyway — persistence, family circumstances, prior attainment, connections. Compare graduates with non-graduates and you are comparing two groups that differed before anyone entered a classroom.",
+        "say": "So for education, the serious rival is confounding. And it has a name. Ability bias. People who complete more schooling differ in ways that would have raised their earnings anyway — persistence, family circumstances, prior attainment, connections. Compare graduates with non-graduates and you're comparing two groups that differed before anybody entered a classroom."
       },
       {
         "t": "p",
-        "text": "The size of the problem is not a detail. If the whole earnings gap were ability, an extra year of schooling would raise nobody's pay, and public spending on education would be buying a sorting mechanism rather than a skill. If none of it were, the gap is the return. The truth is in between, and locating it is why lecture 2.3 exists."
+        "text": "The size of the problem is not a detail. If the whole earnings gap were ability, an extra year of schooling would raise nobody's pay, and public spending on education would be buying a sorting mechanism rather than a skill. If none of it were, the gap is the return. The truth is in between, and locating it is why lecture 2.3 exists.",
+        "say": "And the size of that problem isn't a detail. If the whole earnings gap were ability, an extra year of schooling would raise nobody's pay, and public spending on education would be buying a sorting mechanism rather than a skill. If none of it were, the gap is the return. The truth is in between, and locating it is why the next lecture exists."
       },
       {
         "t": "h3",
-        "text": "The same problem in a different field"
+        "text": "The same problem in a different field",
+        "say": "Let me test the same problem in a different field."
       },
       {
         "t": "p",
-        "text": "Test the reasoning somewhere else, because a method you can only run on one example is a memory rather than a skill."
+        "text": "Test the reasoning somewhere else, because a method you can only run on one example is a memory rather than a skill.",
+        "say": "Because a method you can only run on one example is a memory, not a skill."
       },
       {
         "t": "p",
-        "text": "Firms that advertise more sell more. Does advertising cause sales? The correlation is strong, and the **reverse** explanation is unusually powerful here: advertising budgets are typically set as a percentage of expected or previous sales. A firm expecting a strong year advertises more *because* of what it expects, so high advertising and high sales appear together with the causation running from the expectation to both."
+        "text": "Firms that advertise more sell more. Does advertising cause sales? The correlation is strong, and the **reverse** explanation is unusually powerful here: advertising budgets are typically set as a percentage of expected or previous sales. A firm expecting a strong year advertises more *because* of what it expects, so high advertising and high sales appear together with the causation running from the expectation to both.",
+        "say": "Firms that advertise more sell more. Does advertising cause sales? The correlation is strong, and the reverse explanation is unusually powerful here. Advertising budgets are typically set as a percentage of expected or previous sales. A firm expecting a strong year advertises more because of what it expects. So high advertising and high sales appear together, with the causation running from the expectation to both."
       },
       {
         "t": "p",
-        "text": "There is also a confounder ready to hand: a genuinely good product raises sales and justifies a bigger budget. And selection: firms that advertise heavily are not a random sample of firms — they are the ones with money, confidence and something worth advertising."
+        "text": "There is also a confounder ready to hand: a genuinely good product raises sales and justifies a bigger budget. And selection: firms that advertise heavily are not a random sample of firms — they are the ones with money, confidence and something worth advertising.",
+        "say": "There's a confounder ready to hand too: a genuinely good product raises sales and justifies a bigger budget. And selection: firms that advertise heavily aren't a random sample of firms. They're the ones with money, confidence, and something worth advertising."
       },
       {
         "t": "p",
-        "text": "Notice what changed and what did not. The rival that mattered most switched from confounding to reverse causation, and the field switched from labour economics to marketing. The four questions were identical. That is the sign that you have the tool rather than the example."
+        "text": "Notice what changed and what did not. The rival that mattered most switched from confounding to reverse causation, and the field switched from labour economics to marketing. The four questions were identical. That is the sign that you have the tool rather than the example.",
+        "say": "Notice what changed and what didn't. The rival that mattered most switched from confounding to reverse causation, and the field switched from labour economics to marketing. The four questions were identical. That's the sign you've got the tool rather than the example."
       },
       {
         "t": "fig",
@@ -956,19 +1002,23 @@ window.LESSONS['economics.w02'] = {
       },
       {
         "t": "h2",
-        "text": "Selection: the rival that looks like evidence"
+        "text": "Selection: the rival that looks like evidence",
+        "say": "Selection. The rival that looks like evidence."
       },
       {
         "t": "p",
-        "text": "One form of confounding deserves its own name because it produces conclusions that are not merely wrong but backwards."
+        "text": "One form of confounding deserves its own name because it produces conclusions that are not merely wrong but backwards.",
+        "say": "One form of confounding deserves its own name, because it produces conclusions that aren't merely wrong but backwards."
       },
       {
         "t": "p",
-        "text": "People who go to hospital are far more likely to die in the following year than people who do not. Nobody concludes that hospitals cause death, because the selection is obvious: you go to hospital *because* you are ill, and the illness drives both the visit and the outcome."
+        "text": "People who go to hospital are far more likely to die in the following year than people who do not. Nobody concludes that hospitals cause death, because the selection is obvious: you go to hospital *because* you are ill, and the illness drives both the visit and the outcome.",
+        "say": "People who go to hospital are far more likely to die in the following year than people who don't. Nobody concludes that hospitals cause death, because the selection is obvious. You go to hospital because you're ill, and the illness drives both the visit and the outcome."
       },
       {
         "t": "p",
-        "text": "The obviousness is entirely a function of familiarity. The identical structure appears constantly in settings where it is invisible:"
+        "text": "The obviousness is entirely a function of familiarity. The identical structure appears constantly in settings where it is invisible:",
+        "say": "And that obviousness is entirely a function of familiarity. The identical structure turns up constantly in settings where it's invisible."
       },
       {
         "t": "ul",
@@ -977,19 +1027,23 @@ window.LESSONS['economics.w02'] = {
           "Regions receiving development aid grow more slowly than regions that do not — because aid goes where growth is weak.",
           "Customers who contact support are less satisfied than those who do not — because dissatisfaction causes the contact.",
           "Students who attend extra classes score below those who do not — because the classes are offered to those who are behind."
-        ]
+        ],
+        "say": "Firms that take business advice perform worse than firms that don't — because struggling firms seek advice. Regions receiving development aid grow more slowly — because aid goes where growth is weak. Customers who contact support are less satisfied than those who don't — because dissatisfaction causes the contact. And students who attend extra classes score below those who don't — because the classes are offered to the ones who are behind."
       },
       {
         "t": "p",
-        "text": "In each case a naïve comparison shows the intervention making things worse, and in each case the reason is that the treated group was already different. This is why the question *why is this person in this group?* is worth asking before any comparison at all."
+        "text": "In each case a naïve comparison shows the intervention making things worse, and in each case the reason is that the treated group was already different. This is why the question *why is this person in this group?* is worth asking before any comparison at all.",
+        "say": "In every case a naive comparison shows the intervention making things worse. And in every case the reason is that the treated group was already different. Which is why the question why is this unit in this group is worth asking before any comparison at all."
       },
       {
         "t": "h3",
-        "text": "Say which way the bias runs"
+        "text": "Say which way the bias runs",
+        "say": "And here's a step beyond noticing. Say which way the bias runs."
       },
       {
         "t": "p",
-        "text": "Noticing a confounder is the beginner's move. The useful move, one step further, is to say **which direction** it pushes the estimate — because that often tells you what you can still conclude."
+        "text": "Noticing a confounder is the beginner's move. The useful move, one step further, is to say **which direction** it pushes the estimate — because that often tells you what you can still conclude.",
+        "say": "Noticing a confounder is the beginner's move. The useful move, one step further, is to say which direction it pushes the estimate. Because that often tells you what you can still conclude."
       },
       {
         "t": "table",
@@ -1014,50 +1068,61 @@ window.LESSONS['economics.w02'] = {
             "unbiased on that count",
             "Nothing to adjust for here"
           ]
-        ]
+        ],
+        "say": "If the confounder raises both the treatment and the outcome, the naive estimate is too large — so the true effect is smaller than reported, possibly zero. If it raises the treatment and lowers the outcome, the naive estimate is too small — so what you have is a lower bound. And if it's unrelated to the outcome, there's nothing to adjust for on that count."
       },
       {
         "t": "p",
-        "text": "Work it on education. Ability raises both schooling and earnings, so the naïve graduate-versus-non-graduate gap is **too large** as an estimate of what schooling does. That is a real conclusion: it means the observed gap is an **upper bound**, and anyone claiming schooling causes the whole of it is overstating."
+        "text": "Work it on education. Ability raises both schooling and earnings, so the naïve graduate-versus-non-graduate gap is **too large** as an estimate of what schooling does. That is a real conclusion: it means the observed gap is an **upper bound**, and anyone claiming schooling causes the whole of it is overstating.",
+        "say": "Work it on education. Ability raises both schooling and earnings, so the naive graduate-versus-non-graduate gap is too large as an estimate of what schooling does. And that's a real conclusion. It means the observed gap is an upper bound, and anybody claiming schooling causes all of it is overstating."
       },
       {
         "t": "p",
-        "text": "Now the reverse, which is more interesting. Suppose a firm targets its retention campaign at customers it believes are about to leave. Those customers were more likely to leave anyway, so the confounder raises the treatment and lowers the outcome. The naïve comparison makes the campaign look **worse** than it is — and if it still looks good in that comparison, you have learned something despite the bias."
+        "text": "Now the reverse, which is more interesting. Suppose a firm targets its retention campaign at customers it believes are about to leave. Those customers were more likely to leave anyway, so the confounder raises the treatment and lowers the outcome. The naïve comparison makes the campaign look **worse** than it is — and if it still looks good in that comparison, you have learned something despite the bias.",
+        "say": "Now the reverse, which is more interesting. Suppose a firm targets its retention campaign at customers it believes are about to leave. Those customers were more likely to leave anyway, so the confounder raises the treatment and lowers the outcome. The naive comparison makes the campaign look worse than it is. And if it still looks good in that comparison, you've learned something despite the bias."
       },
       {
         "t": "p",
-        "text": "This is the habit worth building: a biased estimate is not a useless one if you know which way the bias runs. *The true effect is smaller than this* and *the true effect is at least this* are both real findings, and both are available without solving the identification problem."
+        "text": "This is the habit worth building: a biased estimate is not a useless one if you know which way the bias runs. *The true effect is smaller than this* and *the true effect is at least this* are both real findings, and both are available without solving the identification problem.",
+        "say": "So this is the habit worth building. A biased estimate isn't a useless one if you know which way the bias runs. The true effect is smaller than this, and the true effect is at least this, are both real findings. And both are available without solving the identification problem."
       },
       {
         "t": "h2",
-        "text": "Identification"
+        "text": "Identification",
+        "say": "Identification."
       },
       {
         "t": "p",
-        "text": "The word economists use for the solution is **identification**, and it is worth being precise about it because it sounds like a statistical technique and is not."
+        "text": "The word economists use for the solution is **identification**, and it is worth being precise about it because it sounds like a statistical technique and is not.",
+        "say": "The word economists use for the solution is identification. And it's worth being precise about it, because it sounds like a statistical technique and it isn't."
       },
       {
         "t": "write",
         "items": [
           "**An identification strategy is an argument that a particular comparison is a good stand-in for the missing counterfactual.**",
           "It is made in words, defended with evidence, and attacked by other economists. The statistics come afterwards and cannot rescue a bad one."
-        ]
+        ],
+        "say": "An identification strategy is an argument that a particular comparison is a good stand-in for the missing counterfactual. It's made in words, defended with evidence, and attacked by other economists. The statistics come afterwards, and they can't rescue a bad one."
       },
       {
         "t": "p",
-        "text": "That is why empirical papers spend most of their length on design rather than on results, and why a single question can take decades to settle: what is being argued about is whether the comparison group is a credible version of what would have happened."
+        "text": "That is why empirical papers spend most of their length on design rather than on results, and why a single question can take decades to settle: what is being argued about is whether the comparison group is a credible version of what would have happened.",
+        "say": "Which is why empirical papers spend most of their length on design rather than on results. And why a single question can take decades to settle. What's being argued about is whether the comparison group is a credible version of what would have happened."
       },
       {
         "t": "p",
-        "text": "Return to the minimum-wage study from lecture 1.4 and read it as an identification argument. Card and Krueger's claim was not 'employment rose in New Jersey'. It was: **eastern Pennsylvania is a credible stand-in for what New Jersey would have done without the wage rise** — same regional economy, same weather, same customers, same fast-food chains, no wage change. Every objection to that study was an attack on that claim or on the data behind it, and that is what a serious empirical dispute looks like."
+        "text": "Return to the minimum-wage study from lecture 1.4 and read it as an identification argument. Card and Krueger's claim was not 'employment rose in New Jersey'. It was: **eastern Pennsylvania is a credible stand-in for what New Jersey would have done without the wage rise** — same regional economy, same weather, same customers, same fast-food chains, no wage change. Every objection to that study was an attack on that claim or on the data behind it, and that is what a serious empirical dispute looks like.",
+        "say": "Go back to the minimum-wage study and read it as an identification argument. Card and Krueger's claim was not employment rose in New Jersey. It was: eastern Pennsylvania is a credible stand-in for what New Jersey would have done without the wage rise. Same regional economy, same weather, same customers, same fast-food chains, and no wage change. Every objection to that study was an attack on that claim, or on the data behind it. And that's what a serious empirical dispute looks like."
       },
       {
         "t": "h2",
-        "text": "Why 'we controlled for that' is not an answer"
+        "text": "Why 'we controlled for that' is not an answer",
+        "say": "So why is we controlled for that not an answer?"
       },
       {
         "t": "p",
-        "text": "The most common response to a confounding objection is that the analysis controlled for the variable. Sometimes that is enough. Often it is not, for three reasons worth knowing in order."
+        "text": "The most common response to a confounding objection is that the analysis controlled for the variable. Sometimes that is enough. Often it is not, for three reasons worth knowing in order.",
+        "say": "The most common response to a confounding objection is that the analysis controlled for the variable. Sometimes that's enough. Often it isn't, for three reasons worth knowing in order."
       },
       {
         "t": "ol",
@@ -1065,7 +1130,8 @@ window.LESSONS['economics.w02'] = {
           "**You can only control for what you measure.** Ability, motivation and family support are the confounders that matter for education, and they are exactly the ones with no clean measure. Controlling for the observable part of a confounder removes the observable part of the bias.",
           "**Controlling for the wrong variable makes things worse.** If a variable sits *on the path* between cause and effect — occupation, between education and earnings — controlling for it removes part of the very effect you are trying to measure. More controls is not automatically better, and this error is common.",
           "**Selection can survive every control.** If people chose their group for reasons connected to the outcome, adjusting for measured characteristics leaves the unmeasured reasons in place, and those were the reasons they chose."
-        ]
+        ],
+        "say": "One. You can only control for what you measure. Ability, motivation and family support are the confounders that matter for education, and they're exactly the ones with no clean measure. Controlling for the observable part of a confounder removes the observable part of the bias. Two. Controlling for the wrong variable makes things worse. If a variable sits on the path between cause and effect — occupation, between education and earnings — controlling for it removes part of the very effect you're trying to measure. More controls is not automatically better. And three. Selection can survive every control. If people chose their group for reasons connected to the outcome, adjusting for measured characteristics leaves the unmeasured reasons in place. And those were the reasons they chose."
       },
       {
         "t": "warn",
@@ -1073,15 +1139,18 @@ window.LESSONS['economics.w02'] = {
         "ps": [
           "*'After controlling for a wide range of factors, we find that X causes Y.'* A long list of controls signals effort, not identification, and readers routinely mistake the first for the second.",
           "The question to ask is not how many variables were included but: **what makes the treated and untreated groups comparable?** If the answer is 'we adjusted for the ways we could see them differing', the unmeasured differences are still there — and the ones that drove people into the groups are precisely the ones that tend to be unmeasured."
-        ]
+        ],
+        "say": "So here's the sentence to be suspicious of. After controlling for a wide range of factors, we find that X causes Y. A long list of controls signals effort, not identification, and readers routinely mistake the first for the second. The question to ask isn't how many variables were included. It's what makes the treated and untreated groups comparable? If the answer is we adjusted for the ways we could see them differing, then the unmeasured differences are still there. And the ones that drove people into the groups tend to be exactly the unmeasured ones."
       },
       {
         "t": "p",
-        "text": "None of this means observational work is worthless. It means the burden sits on the design. The next lecture is about designs that carry it — comparisons where something outside the participants' control decided who was treated."
+        "text": "None of this means observational work is worthless. It means the burden sits on the design. The next lecture is about designs that carry it — comparisons where something outside the participants' control decided who was treated.",
+        "say": "None of that means observational work is worthless. It means the burden sits on the design. And the next lecture is about designs that carry it. Comparisons where something outside the participants' control decided who was treated."
       },
       {
         "t": "h2",
-        "text": "What you should be able to do now"
+        "text": "What you should be able to do now",
+        "say": "So what can you do now?"
       },
       {
         "t": "ul",
@@ -1092,7 +1161,8 @@ window.LESSONS['economics.w02'] = {
           "Recognise selection when it is disguised, and ask why a unit is in its group.",
           "Define identification as an argument about comparability, not a technique.",
           "Explain why more controls can leave bias untouched or make it worse."
-        ]
+        ],
+        "say": "Separate a descriptive question from a causal one inside the same finding. State the fundamental problem of causal inference, and what a counterfactual is. Run the four rivals against a claim and say which is the serious one. Recognise selection when it's disguised. Define identification as an argument about comparability, not a technique. And explain why more controls can leave bias untouched, or make it worse."
       }
     ],
     "exercises": [
@@ -1605,30 +1675,36 @@ window.LESSONS['economics.w02'] = {
     "blocks": [
       {
         "t": "h2",
-        "text": "What a coin toss does that statistics cannot"
+        "text": "What a coin toss does that statistics cannot",
+        "say": "What a coin toss does that statistics cannot."
       },
       {
         "t": "p",
-        "text": "Lecture 2.2 ended at an impasse: groups differ before treatment, and adjusting for the differences you can measure leaves the ones you cannot. There is exactly one procedure that solves this cleanly, and it is startlingly simple."
+        "text": "Lecture 2.2 ended at an impasse: groups differ before treatment, and adjusting for the differences you can measure leaves the ones you cannot. There is exactly one procedure that solves this cleanly, and it is startlingly simple.",
+        "say": "Last lecture ended at an impasse. Groups differ before treatment, and adjusting for the differences you can measure leaves the ones you can't. There's exactly one procedure that solves this cleanly, and it's startlingly simple."
       },
       {
         "t": "write",
         "items": [
           "**Randomly assign who gets the treatment.**",
           "Then the two groups differ only by chance — on everything, including every characteristic nobody thought of, nobody can measure, and nobody knows exists."
-        ]
+        ],
+        "say": "Randomly assign who gets the treatment. Then the two groups differ only by chance. On everything — including every characteristic nobody thought of, nobody can measure, and nobody knows exists."
       },
       {
         "t": "p",
-        "text": "That last clause is the whole value, and it is worth dwelling on because it is easy to read past. A control variable protects you from a confounder you named. Randomisation protects you from confounders you never named, because the coin does not know what it is balancing. No amount of statistical sophistication reproduces this."
+        "text": "That last clause is the whole value, and it is worth dwelling on because it is easy to read past. A control variable protects you from a confounder you named. Randomisation protects you from confounders you never named, because the coin does not know what it is balancing. No amount of statistical sophistication reproduces this.",
+        "say": "That last clause is the whole value, and it's easy to read straight past. A control variable protects you from a confounder you named. Randomisation protects you from confounders you never named, because the coin doesn't know what it's balancing. No amount of statistical sophistication reproduces that."
       },
       {
         "t": "p",
-        "text": "Two honest qualifications. It works **in expectation** — in any one trial the groups can differ by luck, which is why sample size still matters and why good studies report baseline characteristics so you can see whether the randomisation worked. And it establishes the effect **of what was actually assigned**, which may differ from what people did."
+        "text": "Two honest qualifications. It works **in expectation** — in any one trial the groups can differ by luck, which is why sample size still matters and why good studies report baseline characteristics so you can see whether the randomisation worked. And it establishes the effect **of what was actually assigned**, which may differ from what people did.",
+        "say": "Two honest qualifications. It works in expectation — in any one trial the groups can differ by luck, which is why sample size still matters, and why good studies report baseline characteristics so you can check that the randomisation worked. And it establishes the effect of what was actually assigned, which may differ from what people did."
       },
       {
         "t": "h2",
-        "text": "Why economists usually cannot do this"
+        "text": "Why economists usually cannot do this",
+        "say": "So why can't economists usually do this?"
       },
       {
         "t": "ul",
@@ -1637,19 +1713,23 @@ window.LESSONS['economics.w02'] = {
           "**Scale.** Many questions are about whole economies. There is one of each, and no control group.",
           "**Politics.** Governments rarely agree to give a benefit to half a population by lottery and withhold it from the rest, even when that is the only way to learn whether it works.",
           "**Time.** The interesting effects of education or institutions take decades, and few trials survive that long."
-        ]
+        ],
+        "say": "Ethics. You can't randomly assign children to a worse school, workers to unemployment, or countries to a currency crisis. Scale. Many questions are about whole economies, and there's one of each, with no control group. Politics. Governments rarely agree to give a benefit to half a population by lottery and withhold it from the rest, even when that's the only way to learn whether it works. And time. The interesting effects of education or institutions take decades, and few trials survive that long."
       },
       {
         "t": "p",
-        "text": "So the discipline did something clever. If you cannot run an experiment, look for places where the **world ran one for you** — where something outside participants' control decided who was treated. These are **natural experiments**, and finding them is now a central professional skill. Three designs dominate."
+        "text": "So the discipline did something clever. If you cannot run an experiment, look for places where the **world ran one for you** — where something outside participants' control decided who was treated. These are **natural experiments**, and finding them is now a central professional skill. Three designs dominate.",
+        "say": "So the discipline did something clever. If you can't run an experiment, look for places where the world ran one for you. Where something outside the participants' control decided who got treated. Those are natural experiments, and finding them is now a central professional skill. Three designs dominate."
       },
       {
         "t": "h2",
-        "text": "One: difference-in-differences"
+        "text": "One: difference-in-differences",
+        "say": "One. Difference-in-differences."
       },
       {
         "t": "p",
-        "text": "You met this in lecture 1.4 without the name. A policy changes in one place and not in another. Compare not the levels but the **changes**."
+        "text": "You met this in lecture 1.4 without the name. A policy changes in one place and not in another. Compare not the levels but the **changes**.",
+        "say": "You met this in lecture one point four without the name. A policy changes in one place and not in another. So compare not the levels, but the changes."
       },
       {
         "t": "math",
@@ -1684,11 +1764,13 @@ window.LESSONS['economics.w02'] = {
           }
         ],
         "use": "Use it whenever a change hits some units and not others, and you can observe both before and after: a tax in one country, a rule in some regions, a system rolled out to some branches first.",
-        "why": "The second subtraction removes every influence common to both groups, which is why it is so much stronger than a simple before-and-after. What it cannot remove is an influence that hit **only** the treated group at the same time — which is exactly what the parallel-trends assumption asserts did not happen. That assumption is the design's soft spot, and the standard way to support it is to show the two groups moving in parallel for several periods **before** the policy."
+        "why": "The second subtraction removes every influence common to both groups, which is why it is so much stronger than a simple before-and-after. What it cannot remove is an influence that hit **only** the treated group at the same time — which is exactly what the parallel-trends assumption asserts did not happen. That assumption is the design's soft spot, and the standard way to support it is to show the two groups moving in parallel for several periods **before** the policy.",
+        "say": "Here's how it runs on New Jersey. The first difference is New Jersey after, minus New Jersey before. The second difference is Pennsylvania after, minus Pennsylvania before. And the estimated effect is the first minus the second. Why two differences and not one? Because New Jersey after minus before contains the policy, and everything else that happened in nineteen ninety-two. Pennsylvania after minus before contains only everything else. Subtract, and what's left is the policy. And the assumption that makes it work is called parallel trends. It says that without the policy, the two groups would have moved together. Not that they were at the same level — that their paths would have been parallel. That's the design's soft spot, and the standard way to support it is to show the two groups moving in parallel for several periods before the policy."
       },
       {
         "t": "p",
-        "text": "Note what the assumption does and does not require. The two groups may be at completely different levels: Pennsylvania restaurants could employ more or fewer people than New Jersey's and the method is untroubled. What must hold is that the **gap between them** would have stayed roughly constant. Levels are allowed to differ; paths are not."
+        "text": "Note what the assumption does and does not require. The two groups may be at completely different levels: Pennsylvania restaurants could employ more or fewer people than New Jersey's and the method is untroubled. What must hold is that the **gap between them** would have stayed roughly constant. Levels are allowed to differ; paths are not.",
+        "say": "Note what the assumption does and doesn't require. The two groups may be at completely different levels. Pennsylvania restaurants could employ more or fewer people than New Jersey's and the method is untroubled. What has to hold is that the gap between them would have stayed roughly constant. Levels are allowed to differ. Paths are not."
       },
       {
         "t": "fig",
@@ -1700,15 +1782,18 @@ window.LESSONS['economics.w02'] = {
       },
       {
         "t": "h2",
-        "text": "Two: instrumental variables"
+        "text": "Two: instrumental variables",
+        "say": "Two. Instrumental variables."
       },
       {
         "t": "p",
-        "text": "Sometimes nothing changes in one place and not another, but something pushes *some* people toward the treatment for reasons unrelated to the outcome. That something is an **instrument**, and the logic is indirect enough to be worth stating slowly."
+        "text": "Sometimes nothing changes in one place and not another, but something pushes *some* people toward the treatment for reasons unrelated to the outcome. That something is an **instrument**, and the logic is indirect enough to be worth stating slowly.",
+        "say": "Sometimes nothing changes in one place and not another, but something pushes some people toward the treatment for reasons unrelated to the outcome. That something is an instrument, and the logic is indirect enough to be worth taking slowly."
       },
       {
         "t": "p",
-        "text": "The classic example: does an extra year of schooling raise earnings? You cannot randomise schooling. But compulsory-schooling laws let children leave at a given age, and children born in different months of the year reach that age having completed different amounts of school — so **date of birth** nudges some people into an extra year, for a reason that has nothing to do with their ability or ambition."
+        "text": "The classic example: does an extra year of schooling raise earnings? You cannot randomise schooling. But compulsory-schooling laws let children leave at a given age, and children born in different months of the year reach that age having completed different amounts of school — so **date of birth** nudges some people into an extra year, for a reason that has nothing to do with their ability or ambition.",
+        "say": "The classic example. Does an extra year of schooling raise earnings? You can't randomise schooling. But compulsory-schooling laws let children leave at a given age, and children born in different months reach that age having completed different amounts of school. So date of birth nudges some people into an extra year, for a reason that has nothing to do with their ability or their ambition."
       },
       {
         "t": "table",
@@ -1733,19 +1818,23 @@ window.LESSONS['economics.w02'] = {
             "It affects earnings *only* through schooling",
             "**Arguable, and this is where the fight is** — birth month may affect school starting age, health, or relative age in class"
           ]
-        ]
+        ],
+        "say": "An instrument has to satisfy three things. It has to be relevant — it really does shift the treatment, and that's testable in the data. It has to be as good as random — not related to the kind of person you are, which for birth month is plausible, since nobody chooses their birth month to affect their career. And it has to have no other route to the outcome — it affects earnings only through schooling. That third one is arguable, and it's where the fight is. Birth month may affect school starting age, or health, or how old you are relative to your classmates."
       },
       {
         "t": "p",
-        "text": "The third condition is the one that kills most instruments, and it deserves emphasis: **it cannot be proved from the data.** It is an argument about the world, defended in words, exactly as lecture 2.2 said identification always is. When you read that a study 'used an instrumental variable', the question is never whether the statistics were done properly. It is whether that third claim is believable."
+        "text": "The third condition is the one that kills most instruments, and it deserves emphasis: **it cannot be proved from the data.** It is an argument about the world, defended in words, exactly as lecture 2.2 said identification always is. When you read that a study 'used an instrumental variable', the question is never whether the statistics were done properly. It is whether that third claim is believable.",
+        "say": "And that third condition is the one that kills most instruments, so it deserves emphasis. It cannot be proved from the data. It's an argument about the world, defended in words, exactly as identification always is. So when you read that a study used an instrumental variable, the question is never whether the statistics were done properly. It's whether that third claim is believable."
       },
       {
         "t": "h2",
-        "text": "Three: regression discontinuity"
+        "text": "Three: regression discontinuity",
+        "say": "Three. Regression discontinuity."
       },
       {
         "t": "p",
-        "text": "The most intuitive of the three. Wherever a **rule with a cut-off** decides who gets something, the people just above and just below the line are nearly identical — but one group is treated and the other is not."
+        "text": "The most intuitive of the three. Wherever a **rule with a cut-off** decides who gets something, the people just above and just below the line are nearly identical — but one group is treated and the other is not.",
+        "say": "The most intuitive of the three. Wherever a rule with a cut-off decides who gets something, the people just above and just below the line are nearly identical — but one group is treated and the other isn't."
       },
       {
         "t": "ul",
@@ -1754,11 +1843,13 @@ window.LESSONS['economics.w02'] = {
           "A grant for municipalities below a population threshold. Just-above and just-below towns are comparable.",
           "A benefit that starts at a given age, or an income limit for a subsidy.",
           "A credit rule: loans approved above a score and refused below it."
-        ]
+        ],
+        "say": "A scholarship for students scoring sixty or more. The student with fifty-nine and the student with sixty are alike in everything that matters, and a single mark decided the treatment. A grant for municipalities below a population threshold. A benefit that starts at a given age. A credit rule where loans are approved above a score and refused below it."
       },
       {
         "t": "p",
-        "text": "Near the threshold, the rule is doing something close to random assignment. Comparing across it gives a credible causal estimate — and comes with an equally clear limitation: it tells you about people **near the cut-off**. It says much less about the student who scored 90, or the town twice the threshold size."
+        "text": "Near the threshold, the rule is doing something close to random assignment. Comparing across it gives a credible causal estimate — and comes with an equally clear limitation: it tells you about people **near the cut-off**. It says much less about the student who scored 90, or the town twice the threshold size.",
+        "say": "Near the threshold, the rule is doing something close to random assignment. So comparing across it gives a credible causal estimate. And it comes with an equally clear limitation. It tells you about people near the cut-off. It says much less about the student who scored ninety, or the town twice the threshold size."
       },
       {
         "t": "case",
@@ -1769,11 +1860,13 @@ window.LESSONS['economics.w02'] = {
           "In **October 2021** the Nobel Memorial Prize recognised it. **David Card** received one half for his empirical contributions to labour economics — the minimum-wage work you met in lecture 1.4 among them. **Joshua Angrist** and **Guido Imbens** shared the other half for their methodological contributions to the analysis of causal relationships: the work that established precisely **what quantity** these designs estimate, which turned out to be the subtle part.",
           "Two years earlier, in 2019, the prize had gone to **Abhijit Banerjee, Esther Duflo and Michael Kremer** for an experimental approach to alleviating global poverty — running actual randomised trials in development, on textbooks, deworming, microcredit and teacher incentives. Two prizes in three years for the same underlying commitment: build the study around how treatment was assigned.",
           "The honest complication, which the field argues about openly: the emphasis on credible identification pushes researchers toward questions where a natural experiment happens to exist, and those are not always the most important questions. A discipline can become very good at answering what it can answer cleanly. That criticism is taken seriously by the people who led the revolution, and it is worth carrying with you."
-        ]
+        ],
+        "say": "Now, what the profession decided about all of this. These designs weren't always mainstream. Through the nineteen seventies and eighties, empirical economics leaned heavily on large models with many assumptions, and the arguments were about the assumptions. From the late eighties a group of labour economists changed the emphasis. Find a situation where assignment was effectively out of the participants' hands, and build the study around that. The change is usually called the credibility revolution, and by the two thousands it had reorganised applied economics, and spread into political science, education research and public health. In October twenty twenty-one the Nobel prize recognised it. David Card received one half, for his empirical contributions to labour economics — the minimum-wage work among them. Joshua Angrist and Guido Imbens shared the other half, for their methodological contributions to the analysis of causal relationships. The work that established precisely what quantity these designs estimate, which turned out to be the subtle part. And two years earlier, in twenty nineteen, the prize went to Abhijit Banerjee, Esther Duflo and Michael Kremer, for an experimental approach to alleviating global poverty. Running actual randomised trials in development — on textbooks, deworming, microcredit and teacher incentives. Two prizes in three years, for the same underlying commitment. Build the study around how treatment was assigned. And the honest complication, which the field argues about openly: the emphasis on credible identification pushes researchers toward questions where a natural experiment happens to exist. And those aren't always the most important questions. A discipline can become very good at answering what it can answer cleanly."
       },
       {
         "t": "h2",
-        "text": "What even a good experiment cannot tell you"
+        "text": "What even a good experiment cannot tell you",
+        "say": "So what can even a good experiment not tell you?"
       },
       {
         "t": "ol",
@@ -1782,7 +1875,8 @@ window.LESSONS['economics.w02'] = {
           "**Whether it travels.** A programme that worked in one country, at one time, at one scale may fail elsewhere. This is **external validity**, and it is why 'it worked in a randomised trial' is the beginning of the argument about adopting something, not the end.",
           "**What happens at scale.** A trial gives free textbooks to a hundred schools. Give them to every school and prices, teacher behaviour and government budgets all respond. Effects measured small frequently shrink or reverse when the thing becomes general.",
           "**Whether it should be done.** Nothing in this lecture is a normative claim. An effect being real says nothing about whether the trade is worth making — that is lecture 1.4's boundary, and no design crosses it."
-        ]
+        ],
+        "say": "One. Whom the answer is about. An instrument estimates the effect on compliers — the people whose treatment actually changed because of it. And the people pushed into extra schooling by a leaving-age law aren't a random slice of the population. Two. Whether it travels. A programme that worked in one country, at one time, at one scale, may fail elsewhere. That's external validity, and it's why it worked in a randomised trial is the beginning of the argument about adopting something, not the end. Three. What happens at scale. A trial gives free textbooks to a hundred schools. Give them to every school and prices, teacher behaviour and government budgets all respond. And four. Whether it should be done. Nothing here is a normative claim. An effect being real says nothing about whether the trade is worth making."
       },
       {
         "t": "warn",
@@ -1790,11 +1884,13 @@ window.LESSONS['economics.w02'] = {
         "ps": [
           "Find the design first. Randomised, difference-in-differences, instrument, or discontinuity? If none of them — if it is a comparison between people who chose differently, adjusted for measured characteristics — then the identification argument is weak, whatever the statistics look like.",
           "Then find the assumption the design rests on and ask whether it is defended: parallel pre-trends for difference-in-differences, no other route for an instrument, no manipulation of the cut-off for a discontinuity. Good papers state theirs explicitly and spend pages defending it. A paper that does not mention its assumption has not stopped depending on it."
-        ]
+        ],
+        "say": "And here's how to read a study in ninety seconds. Find the design first. Randomised, difference-in-differences, instrument, or discontinuity? If it's none of them — if it's a comparison between people who chose differently, adjusted for measured characteristics — then the identification argument is weak, whatever the statistics look like. Then find the assumption the design rests on, and ask whether it's defended. Parallel pre-trends for difference-in-differences. No other route for an instrument. No manipulation of the cut-off for a discontinuity. Good papers state theirs explicitly and spend pages defending it. A paper that doesn't mention its assumption hasn't stopped depending on it."
       },
       {
         "t": "h2",
-        "text": "What you should be able to do now"
+        "text": "What you should be able to do now",
+        "say": "So what can you do now?"
       },
       {
         "t": "ul",
@@ -1805,7 +1901,8 @@ window.LESSONS['economics.w02'] = {
           "Test a proposed instrument against all three conditions and say which one usually fails.",
           "Explain why a cut-off creates a credible comparison, and whom the estimate describes.",
           "Name the compliers problem, external validity, and the scale problem."
-        ]
+        ],
+        "say": "Say what randomisation balances that a control variable cannot. Give four reasons economists often can't randomise. Run a difference-in-differences and state the parallel-trends assumption correctly — paths, not levels. Test a proposed instrument against all three conditions. Explain why a cut-off creates a credible comparison, and whom the estimate describes. And name the compliers problem, external validity, and the scale problem."
       }
     ],
     "exercises": [
@@ -2325,34 +2422,41 @@ window.LESSONS['economics.w02'] = {
     "blocks": [
       {
         "t": "h2",
-        "text": "What a regression is doing"
+        "text": "What a regression is doing",
+        "say": "What a regression is doing."
       },
       {
         "t": "p",
-        "text": "A regression fits a line — or a plane, with several variables — through a cloud of data, chosen to make the misses as small as possible. Everything it reports is a description of that line and of how confidently it was placed."
+        "text": "A regression fits a line — or a plane, with several variables — through a cloud of data, chosen to make the misses as small as possible. Everything it reports is a description of that line and of how confidently it was placed.",
+        "say": "A regression fits a line — or a plane, if there are several variables — through a cloud of data, chosen to make the misses as small as possible. Everything it reports is a description of that line, and of how confidently it was placed."
       },
       {
         "t": "p",
-        "text": "The headline output is the **coefficient**: one number per variable, answering a single question."
+        "text": "The headline output is the **coefficient**: one number per variable, answering a single question.",
+        "say": "The headline output is the coefficient. One number per variable, answering a single question."
       },
       {
         "t": "write",
         "items": [
           "**A coefficient says: when this variable is one unit higher, the outcome is on average this much higher — among observations that are alike on the other variables included.**",
           "Three parts matter: **one unit**, **on average**, and **the other variables included**. Drop any of them and you will misread the number."
-        ]
+        ],
+        "say": "A coefficient says: when this variable is one unit higher, the outcome is on average this much higher — among observations that are alike on the other variables included. Three parts matter. One unit. On average. And the other variables included. Drop any of them and you'll misread the number."
       },
       {
         "t": "p",
-        "text": "Notice the word **included**. A regression holds fixed the variables in the model and nothing else. Everything left out is free to vary, which is the whole content of lecture 2.2's warning: the coefficient is a causal effect only if the design makes it one, and the regression itself cannot tell you whether it does."
+        "text": "Notice the word **included**. A regression holds fixed the variables in the model and nothing else. Everything left out is free to vary, which is the whole content of lecture 2.2's warning: the coefficient is a causal effect only if the design makes it one, and the regression itself cannot tell you whether it does.",
+        "say": "Notice the word included. A regression holds fixed the variables in the model and nothing else. Everything left out is free to vary, which is the whole content of last lecture's warning. The coefficient is a causal effect only if the design makes it one, and the regression itself can't tell you whether it does."
       },
       {
         "t": "h2",
-        "text": "Units, or the number means nothing"
+        "text": "Units, or the number means nothing",
+        "say": "Units. Or the number means nothing."
       },
       {
         "t": "p",
-        "text": "A bare coefficient is unreadable. Suppose a study of earnings reports a coefficient of **0.08** on years of education. Eight what?"
+        "text": "A bare coefficient is unreadable. Suppose a study of earnings reports a coefficient of **0.08** on years of education. Eight what?",
+        "say": "A bare coefficient is unreadable. Suppose a study of earnings reports a coefficient of nought point oh eight on years of education. Eight what?"
       },
       {
         "t": "ul",
@@ -2360,11 +2464,13 @@ window.LESSONS['economics.w02'] = {
           "If earnings are measured in euros per month, it means €0.08 a month per extra year of education — an absurdity, and a sign you have misread the table.",
           "If earnings are measured as the **logarithm** of monthly pay, which is standard, it means roughly **8% higher pay per extra year** — a large and famous number.",
           "If education is measured in *decades* rather than years, the same 0.08 means something ten times smaller per year."
-        ]
+        ],
+        "say": "If earnings are measured in euros per month, it means eight cents a month per extra year of education. Which is absurd, and a sign you've misread the table. If earnings are measured as the logarithm of monthly pay, which is standard, it means roughly eight percent higher pay per extra year — a large and famous number. And if education is measured in decades rather than years, the same nought point oh eight means something ten times smaller per year."
       },
       {
         "t": "p",
-        "text": "Economists use logarithms so often precisely because the coefficient then reads as a percentage, which makes results comparable across countries and currencies. The practical rule: **find the units before you read anything else.** A published table states them, usually in a note underneath that nobody reads."
+        "text": "Economists use logarithms so often precisely because the coefficient then reads as a percentage, which makes results comparable across countries and currencies. The practical rule: **find the units before you read anything else.** A published table states them, usually in a note underneath that nobody reads.",
+        "say": "Economists use logarithms so often precisely because the coefficient then reads as a percentage, which makes results comparable across countries and currencies. So the practical rule is: find the units before you read anything else. A published table states them, usually in a note underneath that nobody reads."
       },
       {
         "t": "table",
@@ -2394,23 +2500,28 @@ window.LESSONS['economics.w02'] = {
             "€0.08 more for the 'yes' group",
             "Check the units — this one is nearly always a misreading too"
           ]
-        ]
+        ],
+        "say": "So, with a coefficient of nought point oh eight: if Y is in euros and X in years, that's eight cents — almost certainly a misreading. If it's log Y against years, it's about eight percent more per extra year. If it's log Y against log X, it's an elasticity — a one percent rise in X goes with a nought point oh eight percent rise in Y. The specification decides how you read it."
       },
       {
         "t": "h2",
-        "text": "How confident: standard errors and intervals"
+        "text": "How confident: standard errors and intervals",
+        "say": "How confident? Standard errors and intervals."
       },
       {
         "t": "p",
-        "text": "The coefficient is an estimate from one sample. Draw a different sample and you would get a slightly different number. The **standard error** measures how much it would bounce around."
+        "text": "The coefficient is an estimate from one sample. Draw a different sample and you would get a slightly different number. The **standard error** measures how much it would bounce around.",
+        "say": "The coefficient is an estimate from one sample. Draw a different sample and you'd get a slightly different number. The standard error measures how much it would bounce around."
       },
       {
         "t": "p",
-        "text": "From it comes the **confidence interval**, usually reported as the estimate plus and minus about two standard errors. If a coefficient is 0.08 with a standard error of 0.02, the interval runs roughly from **0.04 to 0.12** — the data is broadly consistent with an effect anywhere in that range."
+        "text": "From it comes the **confidence interval**, usually reported as the estimate plus and minus about two standard errors. If a coefficient is 0.08 with a standard error of 0.02, the interval runs roughly from **0.04 to 0.12** — the data is broadly consistent with an effect anywhere in that range.",
+        "say": "And from that comes the confidence interval, usually reported as the estimate plus and minus about two standard errors. So if a coefficient is nought point oh eight with a standard error of nought point oh two, the interval runs roughly from nought point oh four to nought point one two. The data is broadly consistent with an effect anywhere in that range."
       },
       {
         "t": "p",
-        "text": "Now the sentence that matters more than anything else in this lecture."
+        "text": "Now the sentence that matters more than anything else in this lecture.",
+        "say": "Now the sentence that matters more than anything else in this lecture."
       },
       {
         "t": "warn",
@@ -2419,19 +2530,23 @@ window.LESSONS['economics.w02'] = {
           "It measures **sampling variability only** — the luck of which observations you happened to draw. It assumes the study is otherwise correctly designed.",
           "It says nothing about a badly chosen comparison group, a mismeasured variable, a confounder left out, or a wrong specification. Those are **bias**, and bias does not shrink as the sample grows. A study with a million observations and a broken identification strategy produces a very tight confidence interval around the wrong number.",
           "So a narrow interval means precise, not correct. The design questions from 2.2 and 2.3 are asked first; the standard error is only meaningful once they have been answered."
-        ]
+        ],
+        "say": "The standard error measures sampling variability only. The luck of which observations you happened to draw. It assumes the study is otherwise correctly designed. It says nothing about a badly chosen comparison group, a mismeasured variable, a confounder left out, or a wrong specification. Those are bias. And bias does not shrink as the sample grows. A study with a million observations and a broken identification strategy produces a very tight confidence interval around the wrong number. So a narrow interval means precise. Not correct."
       },
       {
         "t": "h2",
-        "text": "The p-value, and what it is not"
+        "text": "The p-value, and what it is not",
+        "say": "The p-value, and what it is not."
       },
       {
         "t": "p",
-        "text": "A **p-value** answers one narrow question: if the true effect were exactly zero, how often would a sample produce an estimate at least as large as this one? Below 0.05 — under one time in twenty — the result is conventionally called **statistically significant**."
+        "text": "A **p-value** answers one narrow question: if the true effect were exactly zero, how often would a sample produce an estimate at least as large as this one? Below 0.05 — under one time in twenty — the result is conventionally called **statistically significant**.",
+        "say": "A p-value answers one narrow question. If the true effect were exactly zero, how often would a sample produce an estimate at least as large as this one? Below nought point oh five — under one time in twenty — the result is conventionally called statistically significant."
       },
       {
         "t": "p",
-        "text": "The threshold is a convention, not a law of nature, and the phrase misleads almost everyone who is not trained in it. Here is what it does not mean:"
+        "text": "The threshold is a convention, not a law of nature, and the phrase misleads almost everyone who is not trained in it. Here is what it does not mean:",
+        "say": "That threshold is a convention, not a law of nature. And the phrase misleads almost everybody who isn't trained in it. So here's what it does not mean."
       },
       {
         "t": "ol",
@@ -2440,19 +2555,23 @@ window.LESSONS['economics.w02'] = {
           "**Not** that the effect is large. It can be minuscule and highly significant, given enough data.",
           "**Not** that the finding will replicate. Lecture 2.5 is about how often it does not.",
           "**Not** that a non-significant result means no effect. It may mean the study was too small to detect one — *absence of evidence is not evidence of absence*, and this error is committed constantly."
-        ]
+        ],
+        "say": "Not that there's a ninety-five percent chance the effect is real. The p-value is computed assuming the effect is zero, so it can't also tell you the probability that that assumption is false. Not that the effect is large — it can be minuscule and highly significant, given enough data. Not that the finding will replicate; next lecture is about how often it doesn't. And not that a non-significant result means no effect. It may mean the study was too small to detect one. Absence of evidence is not evidence of absence, and that error gets committed constantly."
       },
       {
         "t": "p",
-        "text": "There is a further problem with the 0.05 line that is structural rather than conceptual. Because journals have historically preferred significant results, a threshold creates an incentive to arrive just under it. That is the subject of the next lecture, and it is the reason many economists now report confidence intervals and de-emphasise the star next to the number."
+        "text": "There is a further problem with the 0.05 line that is structural rather than conceptual. Because journals have historically preferred significant results, a threshold creates an incentive to arrive just under it. That is the subject of the next lecture, and it is the reason many economists now report confidence intervals and de-emphasise the star next to the number.",
+        "say": "There's a further problem with the nought point oh five line that's structural rather than conceptual. Because journals have historically preferred significant results, a threshold creates an incentive to arrive just under it. That's the subject of the next lecture, and it's why many economists now report confidence intervals and de-emphasise the star next to the number."
       },
       {
         "t": "h2",
-        "text": "Significant and important are different words"
+        "text": "Significant and important are different words",
+        "say": "Significant and important are different words."
       },
       {
         "t": "p",
-        "text": "This confusion does more practical damage than all the others combined, because the statistical word has an everyday meaning that is nearly its opposite."
+        "text": "This confusion does more practical damage than all the others combined, because the statistical word has an everyday meaning that is nearly its opposite.",
+        "say": "This confusion does more practical damage than all the others combined, because the statistical word has an everyday meaning that's nearly its opposite."
       },
       {
         "t": "table",
@@ -2472,23 +2591,28 @@ window.LESSONS['economics.w02'] = {
             "Common in large datasets. Real, and possibly irrelevant",
             "Nothing here"
           ]
-        ]
+        ],
+        "say": "Take the four combinations. A large effect that's statistically significant is the useful case — real, and worth acting on. A large effect that isn't significant is suggestive; the study was probably too small, so it's worth more data rather than dismissal. A tiny effect that is significant is common in large datasets — real, and possibly irrelevant. And a tiny effect that isn't significant is nothing at all."
       },
       {
         "t": "p",
-        "text": "The bottom-left cell is where most modern data work goes wrong. With millions of observations, almost any difference becomes significant, and a paper can report a genuine, precisely estimated, thoroughly trivial effect. The corrective is to ask the question significance never answers: **is it big enough to change a decision?**"
+        "text": "The bottom-left cell is where most modern data work goes wrong. With millions of observations, almost any difference becomes significant, and a paper can report a genuine, precisely estimated, thoroughly trivial effect. The corrective is to ask the question significance never answers: **is it big enough to change a decision?**",
+        "say": "The tiny-but-significant cell is where most modern data work goes wrong. With millions of observations, almost any difference becomes significant, and a paper can report a genuine, precisely estimated, thoroughly trivial effect. The corrective is to ask the question significance never answers. Is it big enough to change a decision?"
       },
       {
         "t": "p",
-        "text": "The top-right cell is the mirror error. A study of forty firms fails to find a significant effect, and somebody reports that the policy does not work. With forty firms, an effect would have to be enormous to be detectable. The honest conclusion is that the study could not tell."
+        "text": "The top-right cell is the mirror error. A study of forty firms fails to find a significant effect, and somebody reports that the policy does not work. With forty firms, an effect would have to be enormous to be detectable. The honest conclusion is that the study could not tell.",
+        "say": "And the large-but-not-significant cell is the mirror error. A study of forty firms fails to find a significant effect, and somebody reports that the policy doesn't work. With forty firms, an effect would have to be enormous to be detectable. The honest conclusion is that the study couldn't tell."
       },
       {
         "t": "h2",
-        "text": "R-squared"
+        "text": "R-squared",
+        "say": "R-squared."
       },
       {
         "t": "p",
-        "text": "**R-squared** is the share of the variation in the outcome that the model accounts for — 0 for none, 1 for all. It is quoted constantly and misunderstood in both directions."
+        "text": "**R-squared** is the share of the variation in the outcome that the model accounts for — 0 for none, 1 for all. It is quoted constantly and misunderstood in both directions.",
+        "say": "R-squared is the share of the variation in the outcome that the model accounts for. Zero for none, one for all. It gets quoted constantly and misunderstood in both directions."
       },
       {
         "t": "ul",
@@ -2497,19 +2621,23 @@ window.LESSONS['economics.w02'] = {
           "**A low R-squared does not mean the finding is worthless.** Human behaviour is enormously variable, so a model of individual earnings may account for a modest share of the variation while still identifying a real and important effect of education. The R-squared is about prediction; the coefficient is about the relationship.",
           "**Adding variables always raises it.** You can raise R-squared toward 1 by adding noise. This is why adjusted measures exist, and why R-squared is a poor way to choose between models.",
           "**It says nothing about whether the effect matters.** That is the coefficient's job, read in its units."
-        ]
+        ],
+        "say": "A high R-squared doesn't mean causation. Predicting today's temperature from yesterday's gives a very high R-squared and explains nothing about why the weather is what it is. A low R-squared doesn't mean the finding is worthless — human behaviour is enormously variable, so a model of individual earnings can account for a modest share and still identify a real and important effect. Adding variables always raises it; you can push R-squared toward one by adding noise. And it says nothing about whether the effect matters. That's the coefficient's job, read in its units."
       },
       {
         "t": "p",
-        "text": "The single-sentence version: R-squared tells you how well the model predicts, and the design tells you whether the coefficient means anything. They are independent, and confusing them lets a well-fitting model launder a bad identification argument."
+        "text": "The single-sentence version: R-squared tells you how well the model predicts, and the design tells you whether the coefficient means anything. They are independent, and confusing them lets a well-fitting model launder a bad identification argument.",
+        "say": "So the single-sentence version. R-squared tells you how well the model predicts. The design tells you whether the coefficient means anything. They're independent, and confusing them lets a well-fitting model launder a bad identification argument."
       },
       {
         "t": "h3",
-        "text": "A whole table, read line by line"
+        "text": "A whole table, read line by line",
+        "say": "Let me read a whole table, line by line."
       },
       {
         "t": "p",
-        "text": "Here is a small, realistic results table of the kind you will actually meet. Read it before reading the commentary underneath."
+        "text": "Here is a small, realistic results table of the kind you will actually meet. Read it before reading the commentary underneath.",
+        "say": "Here's a small, realistic results table of the kind you'll actually meet."
       },
       {
         "t": "table",
@@ -2557,7 +2685,8 @@ window.LESSONS['economics.w02'] = {
             "The model accounts for 31% of the variation in log pay"
           ]
         ],
-        "cap": "Illustrative figures in the standard format: outcome is log monthly pay, so every coefficient reads as a percentage."
+        "cap": "Illustrative figures in the standard format: outcome is log monthly pay, so every coefficient reads as a percentage.",
+        "say": "Years of schooling: coefficient nought point oh seven nine, standard error nought point oh two one. Experience: nought point oh one eight, standard error nought point oh oh four. Female: minus nought point one one two, standard error nought point oh three eight. Urban: nought point oh four one, standard error nought point oh four nine. Four thousand eight hundred and twelve observations, and an R-squared of nought point three one. The outcome is log monthly pay, so every coefficient reads as a percentage."
       },
       {
         "t": "ol",
@@ -2567,19 +2696,23 @@ window.LESSONS['economics.w02'] = {
           "**Female.** Read it exactly: about 11% lower pay *among people alike on the variables in this model*. It is not the raw gap, and it is not 'the unexplained gap' either — it is the gap remaining after adjusting for these particular variables and no others. Adding or removing controls changes it, which is why this coefficient is argued about so fiercely.",
           "**Urban.** The point estimate is 4%, and the interval runs from about −5.7% to +13.9%. It contains zero, so the honest statement is that this study cannot distinguish the urban effect from nothing — not that there is no urban effect.",
           "**R-squared.** 31% of the variation accounted for. This is normal and healthy for individual-level data, where most variation is personal and idiosyncratic, and it implies nothing whatever about whether the schooling coefficient is causal."
-        ]
+        ],
+        "say": "Schooling is the headline. Nought point oh seven nine on a log outcome is about eight percent per year, and the interval runs from roughly three point seven to twelve point one percent. Quote the range, not the point. Experience is smaller but far more precisely estimated — the standard error is a fifth of the coefficient, so the interval is tight. Notice that precision and size are separate properties. Female: read it exactly. About eleven percent lower pay among people alike on the variables in this model. It isn't the raw gap, and it isn't the unexplained gap either. It's the gap remaining after adjusting for these particular variables and no others — which is why this coefficient gets argued about so fiercely. Urban: the point estimate is four percent, and the interval runs from about minus five point seven to plus thirteen point nine. It contains zero, so the honest statement is that this study can't distinguish the urban effect from nothing. Not that there is no urban effect. And R-squared of thirty-one percent is normal and healthy for individual-level data, where most variation is personal and idiosyncratic. It implies nothing whatever about whether the schooling coefficient is causal."
       },
       {
         "t": "p",
-        "text": "One more thing that is **not** in the table and matters more than everything in it: how were these people assigned to their years of schooling? The table cannot tell you, and without an answer every row is an association. That is the whole of lectures 2.2 and 2.3 arriving as a single question you ask of every table you ever read."
+        "text": "One more thing that is **not** in the table and matters more than everything in it: how were these people assigned to their years of schooling? The table cannot tell you, and without an answer every row is an association. That is the whole of lectures 2.2 and 2.3 arriving as a single question you ask of every table you ever read.",
+        "say": "And one more thing that isn't in the table, and matters more than everything in it. How were these people assigned to their years of schooling? The table can't tell you. And without an answer, every row is an association. That's the whole of the last two lectures, arriving as a single question you ask of every table you ever read."
       },
       {
         "t": "h2",
-        "text": "The four sentences you are entitled to"
+        "text": "The four sentences you are entitled to",
+        "say": "So here are the four sentences you're entitled to."
       },
       {
         "t": "p",
-        "text": "Given a coefficient of 0.08, a standard error of 0.02 and a credible design, here is the full extent of what you may say — and it is a good template for writing up any result of your own:"
+        "text": "Given a coefficient of 0.08, a standard error of 0.02 and a credible design, here is the full extent of what you may say — and it is a good template for writing up any result of your own:",
+        "say": "Given a coefficient of nought point oh eight, a standard error of nought point oh two, and a credible design, this is the full extent of what you may say. And it's a good template for writing up any result of your own."
       },
       {
         "t": "ol",
@@ -2588,15 +2721,18 @@ window.LESSONS['economics.w02'] = {
           "**The uncertainty.** 'The data is consistent with anything from roughly 4% to 12%.'",
           "**The design.** 'This is a causal estimate if the identification strategy holds — here, that [the instrument has no other route / the trends were parallel].'",
           "**The importance.** 'An 8% return per year is large: over three additional years it compounds to roughly a quarter more pay.'"
-        ]
+        ],
+        "say": "One, the estimate. An extra year of schooling is associated with about eight percent higher earnings, among people alike on the other included variables. Two, the uncertainty. The data is consistent with anything from roughly four to twelve percent. Three, the design. This is a causal estimate if the identification strategy holds — and here's what that strategy is. And four, the importance. An eight percent return per year is large; over three additional years it compounds to roughly a quarter more pay."
       },
       {
         "t": "p",
-        "text": "Anything beyond those four is an addition of your own. In particular, 'this proves' is never one of them: a well-identified, precisely estimated result raises confidence in a claim, and no single study settles a question. That is what the next lecture is about."
+        "text": "Anything beyond those four is an addition of your own. In particular, 'this proves' is never one of them: a well-identified, precisely estimated result raises confidence in a claim, and no single study settles a question. That is what the next lecture is about.",
+        "say": "Anything beyond those four is an addition of your own. In particular, this proves is never one of them. A well-identified, precisely estimated result raises confidence in a claim. No single study settles a question. And that's what the next lecture is about."
       },
       {
         "t": "h2",
-        "text": "What you should be able to do now"
+        "text": "What you should be able to do now",
+        "say": "So what can you do now?"
       },
       {
         "t": "ul",
@@ -2607,7 +2743,8 @@ window.LESSONS['economics.w02'] = {
           "Explain what a standard error excludes, and why a narrow interval is not reassurance about bias.",
           "State what a p-value below 0.05 does and does not establish, in four specific negations.",
           "Read an R-squared without drawing any conclusion about causation or importance."
-        ]
+        ],
+        "say": "Say a coefficient aloud as a full sentence, with units and the holding-fixed clause. Recognise a log specification and read the coefficient as a percentage. Build a confidence interval from an estimate and a standard error. Explain what a standard error excludes. State what a p-value below nought point oh five does and doesn't establish. And read an R-squared without drawing any conclusion about causation."
       }
     ],
     "exercises": [
@@ -3120,15 +3257,18 @@ window.LESSONS['economics.w02'] = {
     "blocks": [
       {
         "t": "h2",
-        "text": "The study nobody had checked"
+        "text": "The study nobody had checked",
+        "say": "The study nobody had checked."
       },
       {
         "t": "p",
-        "text": "Science is supposed to be self-correcting through replication: someone else repeats the work and sees whether the same answer appears. In economics, until recently, this happened rarely. There was no career reward for it, journals did not want it, and the data and code were often not available to try."
+        "text": "Science is supposed to be self-correcting through replication: someone else repeats the work and sees whether the same answer appears. In economics, until recently, this happened rarely. There was no career reward for it, journals did not want it, and the data and code were often not available to try.",
+        "say": "Science is supposed to be self-correcting through replication. Somebody else repeats the work and sees whether the same answer appears. In economics, until recently, that happened rarely. There was no career reward for it, journals didn't want it, and the data and code were often not available to try."
       },
       {
         "t": "p",
-        "text": "So results entered the world, were cited, shaped policy, and were almost never independently checked. What follows is what happened when one of the most influential results of its decade finally was."
+        "text": "So results entered the world, were cited, shaped policy, and were almost never independently checked. What follows is what happened when one of the most influential results of its decade finally was.",
+        "say": "So results entered the world, were cited, shaped policy, and were almost never independently checked. What follows is what happened when one of the most influential results of its decade finally was."
       },
       {
         "t": "case",
@@ -3141,54 +3281,66 @@ window.LESSONS['economics.w02'] = {
           "Correct all three and the headline changes completely. Average growth in the above-90% group is not **−0.1%** but **+2.2%** — lower than in less indebted groups, but positive, gradual, and with no cliff at 90%. The threshold, which was the whole political force of the paper, dissolved.",
           "Be careful about what this does and does not show. It does **not** show that debt is harmless, and a negative association between high debt and growth survives in much of the literature. What it shows is that the **specific dramatic claim** — a threshold at 90%, beyond which growth turns negative — was an artefact of three defensible-looking choices in a spreadsheet nobody outside the authors had ever seen.",
           "Two further honest points. First, the direction of causation was never established even in the original: slow growth raises debt ratios at least as readily as debt slows growth, which is lecture 2.2's reverse-causality problem sitting in plain sight in a paper that shaped a continent's policy. Second, Reinhart and Rogoff acknowledged the coding error while defending their broader conclusions, and the substantive debate about debt and growth continues. The lesson here is not that these two economists were careless. It is that **nobody checked for three years**, while the number was doing enormous work."
-        ]
+        ],
+        "say": "In twenty ten Carmen Reinhart and Kenneth Rogoff — both Harvard economists of the first rank, and authors of a celebrated history of financial crises — published a short paper examining public debt and economic growth across many countries and many decades. And its headline finding was stark. In country-years where public debt exceeded ninety percent of GDP, average real growth was minus nought point one percent. Below that threshold, growth was clearly positive. The timing could not have been more consequential. Europe was in a debt crisis, and governments were choosing between cutting deficits fast and supporting demand. A specific number attached to a specific threshold is unusually powerful in political argument, and the ninety percent figure was quoted repeatedly by ministers and commissioners as evidence for austerity. Then in twenty thirteen Thomas Herndon, a graduate student at the University of Massachusetts Amherst, was set the exercise of replicating a published paper. He chose this one, and he couldn't reproduce the result. After some correspondence, Reinhart and Rogoff did something to their credit and not universal in the profession. They sent him the actual spreadsheet. Herndon, with his supervisors Michael Ash and Robert Pollin, found three problems. A coding error: the spreadsheet formula averaged only a subset of the rows, omitting several countries. Selective exclusion: some available country-years were left out of the analysis. And unconventional weighting: each country counted equally regardless of how many years it contributed, so one country's single bad year could weigh as heavily as another's two decades. Correct all three, and the headline changes completely. Average growth in the above-ninety group is not minus nought point one percent. It's plus two point two. Lower than in less indebted groups, but positive, gradual, and with no cliff at ninety. The threshold, which was the entire political force of the paper, dissolved. Now be careful about what that does and doesn't show. It does not show that debt is harmless, and a negative association between high debt and growth survives in much of the literature. What it shows is that the specific dramatic claim — a threshold at ninety percent, beyond which growth turns negative — was an artefact of three defensible-looking choices in a spreadsheet nobody outside the authors had ever seen. Two further honest points. The direction of causation was never established even in the original. Slow growth raises debt ratios at least as readily as debt slows growth, which is last-week's reverse-causality problem sitting in plain sight in a paper that shaped a continent's policy. And Reinhart and Rogoff acknowledged the coding error while defending their broader conclusions, and the substantive debate continues. So the lesson isn't that these two economists were careless. It's that nobody checked for three years, while the number was doing enormous work."
       },
       {
         "t": "h2",
-        "text": "Publication bias"
+        "text": "Publication bias",
+        "say": "Publication bias."
       },
       {
         "t": "p",
-        "text": "The second problem is larger than any single paper, because it distorts what an entire literature looks like."
+        "text": "The second problem is larger than any single paper, because it distorts what an entire literature looks like.",
+        "say": "The second problem is larger than any single paper, because it distorts what an entire literature looks like."
       },
       {
         "t": "write",
         "items": [
           "**Journals have historically preferred results that find something. Studies finding nothing are harder to publish, and often never written up at all.**",
           "The unpublished nulls sit in the **file drawer** — and because they are invisible, the published record looks far more conclusive than the research actually was."
-        ]
+        ],
+        "say": "Journals have historically preferred results that find something. Studies finding nothing are harder to publish, and often never written up at all. The unpublished nulls sit in the file drawer. And because they're invisible, the published record looks far more conclusive than the research actually was."
       },
       {
         "t": "p",
-        "text": "Work on it. Suppose twenty teams independently test a treatment that truly has no effect. By chance, about one will produce a significant result at the conventional 5% threshold. If that one is published and the nineteen are not, the literature contains a single striking finding and no contradiction — and a reader doing everything right concludes that the effect is real."
+        "text": "Work on it. Suppose twenty teams independently test a treatment that truly has no effect. By chance, about one will produce a significant result at the conventional 5% threshold. If that one is published and the nineteen are not, the literature contains a single striking finding and no contradiction — and a reader doing everything right concludes that the effect is real.",
+        "say": "Work it through. Suppose twenty teams independently test a treatment that truly has no effect. By chance, about one will produce a significant result at the conventional five percent threshold. If that one gets published and the nineteen don't, the literature contains a single striking finding and no contradiction. And a reader doing everything right concludes the effect is real."
       },
       {
         "t": "p",
-        "text": "This is not a hypothetical. Across several fields, studies checking the distribution of published results have found a conspicuous bunching of findings **just past** the significance threshold and a shortage just short of it — a pattern that no honest data-generating process produces, and a strong signature of selection on the way to publication."
+        "text": "This is not a hypothetical. Across several fields, studies checking the distribution of published results have found a conspicuous bunching of findings **just past** the significance threshold and a shortage just short of it — a pattern that no honest data-generating process produces, and a strong signature of selection on the way to publication.",
+        "say": "And this isn't hypothetical. Across several fields, studies checking the distribution of published results have found a conspicuous bunching of findings just past the significance threshold, and a shortage just short of it. A pattern no honest data-generating process produces, and a strong signature of selection on the way to publication."
       },
       {
         "t": "h2",
-        "text": "Researcher degrees of freedom"
+        "text": "Researcher degrees of freedom",
+        "say": "Researcher degrees of freedom."
       },
       {
         "t": "p",
-        "text": "The third problem is the subtlest, and the one that does not require anybody to behave badly."
+        "text": "The third problem is the subtlest, and the one that does not require anybody to behave badly.",
+        "say": "The third problem is the subtlest, and the one that doesn't require anybody to behave badly."
       },
       {
         "t": "p",
-        "text": "Between a dataset and a published result lie dozens of defensible choices: which years, which countries, which outliers to drop, which controls to include, which functional form, which of several sensible outcome measures. Each is arguable. Together they define a large space of possible answers, and it is entirely possible to walk through that space honestly — trying things, keeping what looks sensible — and arrive at a significant result that would not survive a different route."
+        "text": "Between a dataset and a published result lie dozens of defensible choices: which years, which countries, which outliers to drop, which controls to include, which functional form, which of several sensible outcome measures. Each is arguable. Together they define a large space of possible answers, and it is entirely possible to walk through that space honestly — trying things, keeping what looks sensible — and arrive at a significant result that would not survive a different route.",
+        "say": "Between a dataset and a published result lie dozens of defensible choices. Which years. Which countries. Which outliers to drop. Which controls to include. Which functional form. Which of several sensible outcome measures. Each one is arguable. Together they define a large space of possible answers. And it's entirely possible to walk through that space honestly — trying things, keeping what looks sensible — and arrive at a significant result that wouldn't survive a different route."
       },
       {
         "t": "p",
-        "text": "The term for the space is **researcher degrees of freedom**, and the reason it is so dangerous is that no individual step feels like cheating. Dropping an obviously anomalous observation is good practice. Adding a control that clearly belongs is good practice. The problem is that the decisions were taken **after seeing what they did to the result**, and once that is true the reported p-value no longer means what it claims."
+        "text": "The term for the space is **researcher degrees of freedom**, and the reason it is so dangerous is that no individual step feels like cheating. Dropping an obviously anomalous observation is good practice. Adding a control that clearly belongs is good practice. The problem is that the decisions were taken **after seeing what they did to the result**, and once that is true the reported p-value no longer means what it claims.",
+        "say": "The term for that space is researcher degrees of freedom. And the reason it's so dangerous is that no individual step feels like cheating. Dropping an obviously anomalous observation is good practice. Adding a control that clearly belongs is good practice. The problem is that the decisions were taken after seeing what they did to the result. And once that's true, the reported p-value no longer means what it claims."
       },
       {
         "t": "p",
-        "text": "Reinhart and Rogoff's weighting choice is a mild example: it is arguable, it was not signalled, and it mattered enormously to the answer."
+        "text": "Reinhart and Rogoff's weighting choice is a mild example: it is arguable, it was not signalled, and it mattered enormously to the answer.",
+        "say": "Reinhart and Rogoff's weighting choice is a mild example. It's arguable, it wasn't signalled, and it mattered enormously to the answer."
       },
       {
         "t": "h2",
-        "text": "What the profession changed"
+        "text": "What the profession changed",
+        "say": "So what did the profession change?"
       },
       {
         "t": "table",
@@ -3223,19 +3375,23 @@ window.LESSONS['economics.w02'] = {
             "Emphasis on effect sizes and confidence intervals",
             "Reduces the pull of the 0.05 threshold"
           ]
-        ]
+        ],
+        "say": "Data and code archives: journals now require the materials to reproduce every published result. That makes checking possible at all — remember Herndon needed three years and a personal request. Pre-registration: researchers state the hypothesis and analysis before seeing the data, which removes researcher degrees of freedom by fixing the choices in advance. Registered reports: journals accept a study on its design, before the results exist, which removes publication bias because the null gets published too. Replication policies and journals, which make checking a career-compatible activity. And reporting intervals rather than stars, which reduces the pull of the nought point oh five threshold."
       },
       {
         "t": "p",
-        "text": "These are real changes and they are unevenly adopted. Pre-registration is now normal for randomised trials and rare for work on existing data, which is most of economics. Data archives are common at the best journals and patchy elsewhere. The situation is better than it was in 2010 and it is not solved."
+        "text": "These are real changes and they are unevenly adopted. Pre-registration is now normal for randomised trials and rare for work on existing data, which is most of economics. Data archives are common at the best journals and patchy elsewhere. The situation is better than it was in 2010 and it is not solved.",
+        "say": "Those are real changes and they're unevenly adopted. Pre-registration is now normal for randomised trials and rare for work on existing data, which is most of economics. Data archives are common at the best journals and patchy elsewhere. The situation is better than it was in twenty ten, and it isn't solved."
       },
       {
         "t": "h3",
-        "text": "Two literatures, side by side"
+        "text": "Two literatures, side by side",
+        "say": "Let me put two literatures side by side."
       },
       {
         "t": "p",
-        "text": "Confidence calibration sounds abstract until you apply it to two real bodies of evidence at once."
+        "text": "Confidence calibration sounds abstract until you apply it to two real bodies of evidence at once.",
+        "say": "Confidence calibration sounds abstract until you apply it to two real bodies of evidence at once."
       },
       {
         "t": "table",
@@ -3275,23 +3431,28 @@ window.LESSONS['economics.w02'] = {
             "**Level three to four** — different designs broadly agreeing, having survived hostile scrutiny",
             "**Level one** — a single study, and it did not survive"
           ]
-        ]
+        ],
+        "say": "Minimum wage and employment: hundreds of studies, over thirty years, using many different designs — border comparisons, policy changes, administrative data, several countries. Independently checked, adversarially, by people who disagreed. Data and code increasingly available, and the disputes conducted in public. Causal direction largely established through the designs from last lecture. Now debt above ninety percent and negative growth: one influential paper, widely quoted. One design — cross-country averages. Not independently checked for three years. Data not available until requested personally. And causal direction left open."
       },
       {
         "t": "p",
-        "text": "Both were quoted by politicians as established fact in the same decade. The difference between them was not visible from the confidence of the quoting — it was visible only from the questions in this lecture, and each of those questions could have been asked by a non-economist in about ten minutes."
+        "text": "Both were quoted by politicians as established fact in the same decade. The difference between them was not visible from the confidence of the quoting — it was visible only from the questions in this lecture, and each of those questions could have been asked by a non-economist in about ten minutes.",
+        "say": "Both of those were quoted by politicians as established fact in the same decade. And the difference between them was not visible from the confidence of the quoting. It was visible only from the questions in this lecture. Every one of which a non-economist could have asked in about ten minutes."
       },
       {
         "t": "p",
-        "text": "That is the practical payoff of week 2, and it is why the week exists before any of the economics proper. You are not going to run these studies. You are going to be handed their conclusions, for the rest of your life, by people with an interest in what you do with them."
+        "text": "That is the practical payoff of week 2, and it is why the week exists before any of the economics proper. You are not going to run these studies. You are going to be handed their conclusions, for the rest of your life, by people with an interest in what you do with them.",
+        "say": "That's the practical payoff of week two, and it's why the week exists before any of the economics proper. You're not going to run these studies. You're going to be handed their conclusions, for the rest of your life, by people with an interest in what you do with them."
       },
       {
         "t": "h2",
-        "text": "How firmly to hold a claim"
+        "text": "How firmly to hold a claim",
+        "say": "So how firmly should you hold a claim?"
       },
       {
         "t": "p",
-        "text": "The risk of a lecture like this is that it produces a shrug: if findings can be wrong, believe nothing. That conclusion is both lazy and false, and it disarms you exactly where you need to be sharpest. The alternative is to grade confidence deliberately."
+        "text": "The risk of a lecture like this is that it produces a shrug: if findings can be wrong, believe nothing. That conclusion is both lazy and false, and it disarms you exactly where you need to be sharpest. The alternative is to grade confidence deliberately.",
+        "say": "The risk of a lecture like this one is that it produces a shrug. If findings can be wrong, believe nothing. That conclusion is both lazy and false, and it disarms you exactly where you need to be sharpest. The alternative is to grade your confidence deliberately."
       },
       {
         "t": "ol",
@@ -3300,11 +3461,13 @@ window.LESSONS['economics.w02'] = {
           "**Several studies, same design, same kind of data.** Stronger, and still exposed to a shared blind spot — if every study uses the same flawed comparison, agreement means nothing.",
           "**Several studies, different designs, different data, agreeing.** Now you have a finding. Different designs fail in different ways, so agreement across them is evidence in a way agreement within one design is not.",
           "**A result that has survived deliberate attempts to break it.** Somebody with an incentive to find it wrong tried, and failed. This is as good as empirical economics gets, and it is what the minimum-wage literature approached through thirty years of argument."
-        ]
+        ],
+        "say": "One study, one dataset, one team: a hypothesis worth taking seriously. Not a fact. Report it with the word suggests. Several studies, same design, same kind of data: stronger, and still exposed to a shared blind spot — if every study uses the same flawed comparison, agreement means nothing. Several studies, different designs, different data, agreeing: now you have a finding, because different designs fail in different ways. And a result that has survived deliberate attempts to break it — somebody with an incentive to find it wrong tried, and failed. That's as good as empirical economics gets."
       },
       {
         "t": "p",
-        "text": "And the things worth saying out loud when you report anything: which level you are at, what would change your mind, and what the strongest contrary evidence is. That is not hedging. It is the difference between telling somebody what is known and telling them what you would like to be true."
+        "text": "And the things worth saying out loud when you report anything: which level you are at, what would change your mind, and what the strongest contrary evidence is. That is not hedging. It is the difference between telling somebody what is known and telling them what you would like to be true.",
+        "say": "And there are things worth saying out loud whenever you report anything. Which level you're at. What would change your mind. And what the strongest contrary evidence is. That isn't hedging. It's the difference between telling somebody what's known, and telling them what you'd like to be true."
       },
       {
         "t": "warn",
@@ -3313,11 +3476,13 @@ window.LESSONS['economics.w02'] = {
           "It is not saying economics knows nothing. Plenty is well established: demand curves slope down, comparative advantage raises total output, hyperinflation is caused by monetary expansion, and the effects of trade adjustment are concentrated and long-lasting. These survived hostile scrutiny.",
           "It is also not saying that a corrected result means the authors were dishonest. Every finding in this course could in principle be revised, and the appropriate response is calibrated confidence, not cynicism.",
           "Cynicism is comfortable because it requires no work. Calibration requires you to hold different claims at different strengths and to update when evidence arrives, which is harder and is the entire point of week 2."
-        ]
+        ],
+        "say": "Now let me be clear about what this lecture is not saying. It is not saying economics knows nothing. Plenty is well established. Demand curves slope down. Comparative advantage raises total output. Hyperinflation is caused by monetary expansion. The effects of trade adjustment are concentrated and long-lasting. Those survived hostile scrutiny. It's also not saying that a corrected result means the authors were dishonest. Every finding in this course could in principle be revised, and the appropriate response is calibrated confidence, not cynicism. Cynicism is comfortable because it requires no work. Calibration requires you to hold different claims at different strengths, and to update when evidence arrives. Which is harder, and it's the entire point of this week."
       },
       {
         "t": "h2",
-        "text": "What you should be able to do now"
+        "text": "What you should be able to do now",
+        "say": "So what can you do now?"
       },
       {
         "t": "ul",
@@ -3328,7 +3493,8 @@ window.LESSONS['economics.w02'] = {
           "Explain researcher degrees of freedom without accusing anyone of dishonesty.",
           "Name four reforms and say which problem each addresses.",
           "Place any claim on the four-level confidence ladder, and report it accordingly."
-        ]
+        ],
+        "say": "Say what replication is, and why economics did so little of it. Describe the three errors in the debt-and-growth paper, and what correcting them did. Explain publication bias with the twenty-teams example. Explain researcher degrees of freedom without accusing anybody of dishonesty. Name four reforms and say which problem each one addresses. And place any claim on the four-level confidence ladder."
       }
     ],
     "exercises": [
