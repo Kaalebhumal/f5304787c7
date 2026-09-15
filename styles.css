@@ -1912,3 +1912,51 @@ body.presenting { overflow: hidden; }
 .pr-zone.left { left: 0; }
 .pr-zone.right { right: 0; }
 .pr-zone:focus-visible { outline: 2px solid var(--accent); outline-offset: -4px; }
+
+/* ---- the one button that starts a lecture ---- */
+.start-lecture {
+  display: flex; align-items: center; gap: 14px; width: 100%;
+  margin: 0 0 14px; padding: 15px 18px; text-align: left; cursor: pointer;
+  border: 1px solid var(--accent); border-radius: 10px;
+  background: var(--accent); color: var(--on-accent);
+  box-shadow: var(--shadow-lift); font: inherit;
+}
+.start-lecture:hover { filter: brightness(1.07); }
+.start-lecture:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.start-lecture .sl-icon svg, .start-lecture .sl-go svg { width: 24px; height: 24px; display: block; fill: currentColor; }
+.start-lecture .sl-icon svg { fill: none; stroke: currentColor; }
+.start-lecture .sl-body { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.start-lecture .sl-title { font-family: var(--font-display); font-size: 19px; font-weight: 600; line-height: 1.15; }
+.start-lecture .sl-note { font-size: 12.5px; opacity: .85; line-height: 1.35; }
+.start-lecture .sl-go { flex: 0 0 auto; opacity: .9; }
+@media (max-width: 480px) {
+  .start-lecture .sl-note { display: none; }
+  .start-lecture { padding: 13px 15px; }
+}
+
+/* ---- slide content: points, not the script ---- */
+.pr-points { list-style: none; margin: 0; padding: 0; }
+.pr-points li {
+  position: relative; padding-left: 1.15em; margin: .62em 0;
+  line-height: 1.34; font-weight: 500;
+}
+.pr-points li::before {
+  content: ""; position: absolute; left: 0; top: .52em;
+  width: .42em; height: .42em; border-radius: 50%; background: var(--accent);
+}
+.pr-points.claim li {
+  padding-left: 0; font-family: var(--font-display); font-weight: 600;
+  line-height: 1.2; margin: .5em 0; color: var(--accent-ink);
+}
+.pr-points.claim li::before { display: none; }
+.pr-points.claim li + li { font-family: inherit; font-weight: 400; font-size: .74em; color: var(--ink-2); }
+
+.pr-nums {
+  display: flex; flex-wrap: wrap; gap: .5em .7em; margin-top: 1.3em;
+  font-family: var(--font-mono, ui-monospace, monospace);
+}
+.pr-nums span {
+  padding: .28em .62em; border-radius: 5px;
+  background: var(--accent-soft); color: var(--accent-ink);
+  font-size: .72em; font-weight: 500; letter-spacing: .01em;
+}

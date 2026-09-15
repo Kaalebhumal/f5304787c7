@@ -647,7 +647,7 @@
       u.rate = clamp(Store.state.prefs.rate || 1, 0.5, 2);
       u.pitch = Store.state.prefs.pitch || 1;
       var gap = Speaker.units[Speaker.idx].gap;
-      if (gap == null) gap = /[.!?\u2026]$/.test(Speaker.units[Speaker.idx].text) ? 300 : 170;
+      if (gap == null) gap = /[.!?\u2026]$/.test(Speaker.units[Speaker.idx].text) ? 420 : 220;
       u.onend = function () {
         if (!Speaker.playing) return;
         Speaker.idx += 1;
@@ -1452,7 +1452,7 @@
     col.appendChild(built.node);
 
     /* slides for the projector, built from the very nodes just rendered */
-    try { T.Present.build(built.node, meta, L); } catch (e) {}
+    try { T.Present.build(built.node, meta, L, body); } catch (e) {}
 
     /* --- the end of the lecture: say plainly what to do next --- */
     var nx = el('div', 'end-card');
@@ -1797,73 +1797,171 @@
     on: false, slides: [], i: -1, root: null, stage: null, sub: null,
     meta: null, wake: null, manual: 0,
 
-    build: function (hostNode, meta, L) {
-      Present.meta = meta;
+    /* --- turning a lecture into slides ---------------------------------
+       A slide is NOT the script. A lecturer talks in full sentences while a
+       few words, a number or a diagram stand behind them. So the spoken text
+       stays the lecture prose, and the slide keeps only what a slide should:
+       the bolded claims, the lead-in of each list item, the figures, and the
+       numbers. Everything else is carried by the voice. */
+
+    isFigure: function (t) {
+      return /^[\u20ac$\u00a3]?\s?[\d][\d.,]*\s*(?:%|bn|tn|m|k|trillion|billion|million|thousand|euros?|dollars?|pounds?)?$/i.test(String(t).trim());
+    },
+
+    boldsIn: function (str) {
+      var out = [], m, re = /\*\*([^*]+)\*\*/g;
+      while ((m = re.exec(String(str || '')))) {
+        var t = m[1].replace(/[`*]/g, '').trim().replace(/[.,;:]+$/, '');
+        /* a bare number belongs in the figure row, not in the bullets */
+        if (Present.isFigure(t)) continue;
+        if (t.length > 1 && t.length <= 96 && out.indexOf(t) < 0) out.push(t);
+      }
+      return out;
+    },
+
+    shorten: function (str, max) {
+      var t = H.plain(str).replace(/\s+/g, " ").trim();
+      var stop = t.search(/[.;:]\s/);
+      if (stop > 24) t = t.slice(0, stop);
+      if (t.length > max) {
+        var cut = t.lastIndexOf(' ', max);
+        t = t.slice(0, cut > max * 0.5 ? cut : max).replace(/[,;:]$/, '') + '…';
+      }
+      return t;
+    },
+
+    /* a few figures from a block, for the chip row under the points */
+    numbersIn: function (str) {
+      var out = [], m;
+      var re = /(?:[€$£]\s?[\d][\d.,]*(?:\s?(?:bn|tn|m|k|trillion|billion|million|thousand))?|[\d][\d.,]*\s?%|[\d][\d.,]*\s?(?:billion|million|trillion))/g;
+      while ((m = re.exec(String(str || '')))) {
+        var t = m[0].replace(/\s+/g, ' ').trim();
+        if (out.indexOf(t) < 0) out.push(t);
+      }
+      return out;
+    },
+
+    /* what should appear on the slide for one source block */
+    points: function (b) {
+      var P = Present, pts = [], n = [];
+      var txt = b.text || '';
+      switch (b.t) {
+        case 'p':
+          pts = P.boldsIn(txt);
+          n = P.numbersIn(txt);
+          break;
+        case 'ul':
+        case 'ol':
+          pts = (b.items || []).map(function (it) {
+            var bb = P.boldsIn(it);
+            return bb.length ? bb[0] : P.shorten(it, 64);
+          }).filter(Boolean).slice(0, 6);
+          (b.items || []).forEach(function (it) { n = n.concat(P.numbersIn(it)); });
+          break;
+        case 'write':
+          pts = (b.items || []).map(function (it) { return H.plain(it).replace(/\s+/g, ' ').trim(); });
+          break;
+        case 'case':
+        case 'warn':
+          (b.ps || []).forEach(function (x) {
+            pts = pts.concat(P.boldsIn(x));
+            n = n.concat(P.numbersIn(x));
+          });
+          if (!pts.length) pts = (b.ps || []).slice(0, 3).map(function (x) { return P.shorten(x, 90); });
+          pts = pts.slice(0, 5);
+          break;
+        case 'exercises':
+          pts = (b.items || []).map(function (x) {
+            var bb = P.boldsIn(x.task || '');
+            return bb.length ? bb[0] : P.shorten(x.task || '', 64);
+          }).slice(0, 6);
+          break;
+        default:
+          pts = P.boldsIn(txt);
+      }
+      return { points: pts, nums: n.slice(0, 4) };
+    },
+
+    build: function (hostNode, meta, L, blocks) {
+      var P = Present;
+      P.meta = meta;
       var slides = [], cur = null, eyebrow = '';
       var pos = {};
       Speaker.units.forEach(function (u, k) { if (pos[u.anchor] == null) pos[u.anchor] = k; });
 
+      var nodeOf = {};
+      Array.prototype.slice.call(hostNode.children).forEach(function (n) { if (n.id) nodeOf[n.id] = n; });
+
       function push(kind, title) {
-        cur = { kind: kind, title: title || '', eyebrow: eyebrow, nodes: [], anchors: [], len: 0 };
+        cur = { kind: kind, title: title || '', eyebrow: eyebrow, nodes: [], points: [], nums: [], anchors: [] };
         slides.push(cur);
         return cur;
       }
 
-      /* opening slide: what this lecture is and what it is for */
       var open = push('title', meta.title);
       open.lead = L.standfirst || '';
-      open.list = (L.objectives || []).slice(0, 6);
+      open.list = (L.objectives || []).slice(0, 5);
       open.kicker = 'Week ' + meta.week + ' · Lecture ' + meta.idx;
       cur = null;
 
-      Array.prototype.slice.call(hostNode.children).forEach(function (n) {
-        var tag = n.tagName, cl = n.className || '';
-        var solo = /\bfig\b|\btable-wrap\b|\bbox-math\b|\bbox-case\b|\bbox-warn\b|\bbox-write\b|\bexercise-list\b/.test(cl);
+      (blocks || []).forEach(function (b, bi) {
+        var id = 'b' + bi, node = nodeOf[id];
+        if (!node) return;
+        var cl = node.className || '';
+        var visual = /\bfig\b|\btable-wrap\b|\bbox-math\b/.test(cl) || b.t === 'quote';
 
-        if (tag === 'H2') {
-          /* the rendered heading carries a "Section N" chip; keep the two apart */
-          var chip = n.querySelector('.sec-n');
+        if (b.t === 'h2') {
+          var chip = node.querySelector('.sec-n');
           var num = chip ? chip.textContent.trim() : '';
-          var text = (n.textContent || '').slice(num.length).trim() || n.textContent;
+          var text = (node.textContent || '').slice(num.length).trim() || b.text;
           eyebrow = '';
           var sec = push('section', text);
           sec.kicker = num;
-          sec.anchors.push(n.id);
+          sec.anchors.push(id);
           cur = null;
           eyebrow = text;
           return;
         }
-        if (tag === 'H3') {
-          var sub = push('sub', n.textContent);
-          sub.anchors.push(n.id);
+        if (b.t === 'h3') {
+          var sub = push('sub', b.text);
+          sub.anchors.push(id);
+          sub.openForPoints = true;
           return;
         }
-        if (solo) {
-          /* a panel the voice never reads would be skipped in auto-play, so it
-             rides with the paragraph that introduces it, the way a lecturer
-             puts a table up while still talking about it */
-          if (pos[n.id] == null && cur && cur.kind === 'content') {
-            cur.nodes.push(n); cur.anchors.push(n.id); cur.len += 260;
-            return;
-          }
+        if (visual) {
+          /* a figure, table or formula IS the slide — show it whole */
           var one = push(/\bbox-math\b/.test(cl) ? 'math' : /\bfig\b/.test(cl) ? 'fig' : 'panel', '');
-          one.nodes.push(n);
-          one.anchors.push(n.id);
+          one.nodes.push(node);
+          one.anchors.push(id);
           cur = null;
           return;
         }
-        /* running prose: accumulate, then break before it overflows a screen */
-        var txt = (n.textContent || '').length;
-        if (!cur || cur.kind === 'section' || cur.len + txt > 620 || cur.nodes.length >= 3) {
+
+        var got = P.points(b);
+        var wantsOwn = (b.t === 'case' || b.t === 'warn' || b.t === 'write' || b.t === 'exercises');
+
+        if (wantsOwn) {
+          var own = push(b.t === 'write' ? 'claim' : 'panel', b.title || '');
+          own.points = got.points;
+          own.nums = got.nums;
+          own.anchors.push(id);
+          cur = null;
+          return;
+        }
+
+        /* running prose: the slide collects only the points, and breaks when
+           it has as many as a slide should carry */
+        if (!cur || cur.kind === 'section' || (cur.points.length + got.points.length) > 5) {
           var c = push('content', '');
+          if (cur && cur.openForPoints) c.title = '';
           c.cont = true;
         }
-        cur.nodes.push(n);
-        cur.anchors.push(n.id);
-        cur.len += txt;
+        cur.anchors.push(id);
+        cur.points = cur.points.concat(got.points).slice(0, 6);
+        cur.nums = cur.nums.concat(got.nums).slice(0, 4);
+
       });
 
-      /* closing slide */
       eyebrow = '';
       var end = push('end', 'End of the lecture');
       end.list = [
@@ -1871,34 +1969,32 @@
         (L.quiz || []).length + ' test questions, plus a few carried forward'
       ];
 
-      /* every slide needs the first speech unit it contains, so that moving a
-         slide by hand can move the voice with it */
+      /* fold away anything with nothing to show, keeping its anchors so the
+         voice carries on over the slide already up */
+      var keep = [];
+      slides.forEach(function (sl) {
+        var empty = !sl.points.length && !sl.nodes.length && !sl.nums.length && !sl.list && (sl.kind === 'content' || sl.kind === 'sub');
+        if (empty && keep.length) { keep[keep.length - 1].anchors = keep[keep.length - 1].anchors.concat(sl.anchors); return; }
+        keep.push(sl);
+      });
+      slides = keep;
+
       slides.forEach(function (sl) {
         sl.first = null;
         sl.anchors.forEach(function (a) {
           if (pos[a] != null && (sl.first == null || pos[a] < sl.first)) sl.first = pos[a];
         });
       });
-      /* anchor -> slide index, for syncing */
-      Present.byAnchor = {};
-      slides.forEach(function (sl, k) { sl.anchors.forEach(function (a) { Present.byAnchor[a] = k; }); });
+      P.byAnchor = {};
+      slides.forEach(function (sl, k) { sl.anchors.forEach(function (a) { P.byAnchor[a] = k; }); });
 
-      Present.slides = slides;
-      Present.i = -1;
+      P.slides = slides;
+      P.i = -1;
       return slides.length;
     },
 
     render: function (sl) {
-      var head = '';
-      if (sl.kind === 'section' && sl.kicker) head += '<div class="pr-kicker">' + esc(sl.kicker) + '</div>';
-      if (sl.eyebrow && sl.kind !== 'section' && sl.kind !== 'title') {
-        head += '<div class="pr-eyebrow">' + esc(sl.eyebrow) + '</div>';
-      }
-      if (sl.title && !sl.cont) {
-        head += '<h2 class="pr-title' + (sl.kind === 'section' ? ' big' : '') + '">' + esc(sl.title) + '</h2>';
-      }
       var wrap = el('div', 'pr-body');
-      wrap.innerHTML = head;
 
       if (sl.kind === 'title') {
         wrap.innerHTML = '<div class="pr-kicker">' + esc(sl.kicker) + '</div>' +
@@ -1906,12 +2002,30 @@
           (sl.lead ? '<p class="pr-lead">' + inline(sl.lead) + '</p>' : '') +
           (sl.list.length ? '<ul class="pr-list">' + sl.list.map(function (x) {
             return '<li>' + inline(x) + '</li>'; }).join('') + '</ul>' : '');
-      } else if (sl.kind === 'end') {
+        wrap.setAttribute('data-density', 'roomy');
+        return wrap;
+      }
+      if (sl.kind === 'end') {
         wrap.innerHTML = '<div class="pr-kicker">Done listening</div>' +
           '<h1 class="pr-h1">' + esc(sl.title) + '</h1>' +
           '<ul class="pr-list">' + sl.list.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' +
-          '<p class="pr-lead">Press Esc to leave the projector and go to the exercises.</p>';
-      } else {
+          '<p class="pr-lead">Esc to leave the projector and go to the exercises.</p>';
+        wrap.setAttribute('data-density', 'roomy');
+        return wrap;
+      }
+      if (sl.kind === 'section') {
+        wrap.innerHTML = (sl.kicker ? '<div class="pr-kicker">' + esc(sl.kicker) + '</div>' : '') +
+          '<h2 class="pr-title big">' + esc(sl.title) + '</h2>';
+        wrap.setAttribute('data-density', 'roomy');
+        return wrap;
+      }
+
+      var html = '';
+      if (sl.eyebrow) html += '<div class="pr-eyebrow">' + esc(sl.eyebrow) + '</div>';
+      if (sl.title && !sl.cont) html += '<h2 class="pr-title">' + esc(sl.title) + '</h2>';
+      wrap.innerHTML = html;
+
+      if (sl.nodes.length) {
         sl.nodes.forEach(function (n) {
           var c = n.cloneNode(true);
           c.removeAttribute('id');
@@ -1920,10 +2034,18 @@
           wrap.appendChild(c);
         });
       }
+      if (sl.points && sl.points.length) {
+        var cls = sl.kind === 'claim' ? 'pr-points claim' : 'pr-points';
+        wrap.innerHTML += '<ul class="' + cls + '">' +
+          sl.points.map(function (x) { return '<li>' + inline(x) + '</li>'; }).join('') + '</ul>';
+      }
+      if (sl.nums && sl.nums.length && !sl.nodes.length) {
+        wrap.innerHTML += '<div class="pr-nums">' +
+          sl.nums.map(function (x) { return '<span>' + esc(x) + '</span>'; }).join('') + '</div>';
+      }
 
-      /* shrink type when a slide is heavy, so nothing is cut off on a projector */
       var chars = (wrap.textContent || '').length;
-      wrap.setAttribute('data-density', chars > 900 ? 'dense' : chars > 480 ? 'normal' : 'roomy');
+      wrap.setAttribute('data-density', chars > 900 ? 'dense' : chars > 430 ? 'normal' : 'roomy');
       return wrap;
     },
 
@@ -2036,6 +2158,14 @@
     var wrap = el('div', 'transport');
     wrap.setAttribute('data-open', '0');
     wrap.innerHTML =
+      '<button class="start-lecture" id="startBtn">' +
+        '<span class="sl-icon">' + ICON.present + '</span>' +
+        '<span class="sl-body">' +
+          '<span class="sl-title">Start the lecture</span>' +
+          '<span class="sl-note">Full screen, slides and the voice together \u2014 sit back and take notes</span>' +
+        '</span>' +
+        '<span class="sl-go">' + ICON.play + '</span>' +
+      '</button>' +
       '<div class="transport-main">' +
         '<button class="play-btn" id="playBtn" aria-label="Play lecture">' + ICON.play + '</button>' +
         '<div class="transport-mid">' +
@@ -2168,6 +2298,13 @@
       rateVal.textContent = parseFloat(rate.value).toFixed(2) + '×';
       Store.save();
       if (Speaker.playing) Speaker.speakNow(Speaker.idx);
+    };
+
+    var startBtn = $('#startBtn', wrap);
+    if (startBtn) startBtn.onclick = function () {
+      if (!Present.slides.length) return;
+      Present.enter();
+      if (!Speaker.playing) Speaker.speakNow(Speaker.idx);
     };
 
     var prBtn = $('#prBtn', wrap);
