@@ -18,6 +18,6 @@ window.COURSES = [
     subtitle: "16 weeks · 80 lectures",
     blurb: "Micro, macro and the methods underneath both. Scarcity and choice, firms and markets, money and output, growth and crisis — and how economists know what they claim to know.",
     accent: "#1f6f52",
-    status: "syllabus"
+    status: "open"
   }
 ];

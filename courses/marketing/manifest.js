@@ -1,3 +1,3 @@
 /* Weeks whose lectures, figures and tests are written and published. */
 window.COURSE_WEEKS = window.COURSE_WEEKS || {};
-window.COURSE_WEEKS.marketing = [1];
+window.COURSE_WEEKS.marketing = [1, 2];

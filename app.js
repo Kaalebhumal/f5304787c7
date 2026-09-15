@@ -100,28 +100,72 @@
 
   var ABBR = { 'e.g': 1, 'i.e': 1, 'etc': 1, 'vs': 1, 'Mr': 1, 'Mrs': 1, 'Ms': 1, 'Dr': 1, 'Prof': 1, 'St': 1, 'No': 1, 'approx': 1, 'Inc': 1, 'Ltd': 1, 'Co': 1 };
 
-  /* expand things that read badly aloud */
+  /* Expand things that read badly aloud. This does more for how human the
+     lecture sounds than any voice setting: a synthesiser handed "$39.5bn"
+     says "bee-en"; handed "39.5 billion dollars" it sounds like a person. */
+  var SPELL = ('GDP GNI CPI ROIC WACC SSNIP CMA IATA PSD RCT DiD RDD API CEO CFO ' +
+               'EU UK US USA NJ PA CAC LTV SOV ROI KPI FMCG B2B B2C PR TV AI IP ' +
+               'NBER AER OBL ESA UMass').split(' ');
+  var MAG = 'trillion|billion|million|thousand';
+
   function speakify(s) {
-    return s
+    var t = String(s == null ? '' : s);
+
+    /* ranges: 1861-1957 -> "1861 to 1957" */
+    t = t.replace(/(\d)\s*[–—-]\s*(\d)/g, '$1 to $2');
+
+    /* magnitudes, while the currency symbol is still attached */
+    t = t.replace(/([€$£])\s?([\d.,]+)\s*(?:tn|trillion)\b/gi, '$2 trillion $1')
+         .replace(/([€$£])\s?([\d.,]+)\s*(?:bn|billion)\b/gi, '$2 billion $1')
+         .replace(/([€$£])\s?([\d.,]+)\s*(?:m|million)\b/gi, '$2 million $1')
+         .replace(/([€$£])\s?([\d.,]+)\s*(?:k|thousand)\b/gi, '$2 thousand $1')
+         .replace(/\b([\d.,]+)\s*bn\b/gi, '$1 billion')
+         .replace(/\b([\d.,]+)\s*(?:m)\b(?!\w)/g, '$1 million');
+
+    /* the symbol comes before the number and is spoken after it */
+    t = t.replace(new RegExp('([\\d.,]+)\\s+(' + MAG + ')\\s+€', 'g'), '$1 $2 euros')
+         .replace(new RegExp('([\\d.,]+)\\s+(' + MAG + ')\\s+\\$', 'g'), '$1 $2 dollars')
+         .replace(new RegExp('([\\d.,]+)\\s+(' + MAG + ')\\s+£', 'g'), '$1 $2 pounds')
+         .replace(/€\s?([\d.,]+)/g, '$1 euros')
+         .replace(/\$\s?([\d.,]+)/g, '$1 dollars')
+         .replace(/£\s?([\d.,]+)/g, '$1 pounds');
+
+    t = t.replace(/\b1 euros\b/g, '1 euro').replace(/\b1 dollars\b/g, '1 dollar').replace(/\b1 pounds\b/g, '1 pound');
+
+    t = t
       .replace(/\be\.g\./gi, 'for example')
       .replace(/\bi\.e\./gi, 'that is')
       .replace(/\betc\./gi, 'et cetera')
       .replace(/\bvs\.?\b/gi, 'versus')
+      .replace(/\bcf\.\b/gi, 'compare')
       .replace(/\b4Ps\b/g, 'four Ps').replace(/\b7Ps\b/g, 'seven Ps').replace(/\b4Cs\b/g, 'four Cs')
-      .replace(/\bB2B\b/g, 'B-to-B').replace(/\bB2C\b/g, 'B-to-C')
-      .replace(/\bCAC\b/g, 'C-A-C').replace(/\bLTV\b/g, 'L-T-V').replace(/\bSOV\b/g, 'S-O-V')
       .replace(/\bR&D\b/g, 'R and D')
+      .replace(/\bR-squared\b/gi, 'R squared')
+      .replace(/\bp-values?\b/gi, 'P values')
+      .replace(/\b1:1\b/g, 'one to one')
       .replace(/(\d)\s*%/g, '$1 percent')
-      .replace(/%/g, ' percent')
-      .replace(/€\s?(\d[\d.,]*)/g, '$1 euros')
-      .replace(/\$\s?(\d[\d.,]*)/g, '$1 dollars')
-      .replace(/£\s?(\d[\d.,]*)/g, '$1 pounds')
+      .replace(/%/g, ' percent');
+
+    /* acronyms that must be spelled out letter by letter */
+    SPELL.forEach(function (a) {
+      t = t.replace(new RegExp('\\b' + a + '\\b', 'g'), a.split('').join('-'));
+    });
+
+    t = t
       .replace(/≈/g, 'about ')
       .replace(/×/g, ' times ')
+      .replace(/÷/g, ' divided by ')
       .replace(/→/g, ' leads to ')
+      .replace(/≡/g, ' is the same as ')
+      .replace(/≤/g, ' is at most ')
+      .replace(/≥/g, ' is at least ')
       .replace(/[–—]/g, ', ')
+      .replace(/\*/g, '')
       .replace(/\s{2,}/g, ' ')
       .trim();
+
+    /* a sentence ending in a comma reads as an unfinished thought */
+    return t.replace(/,\s*$/, '.');
   }
 
   /* split into speakable sentences; keeps each chunk short enough that
@@ -533,12 +577,15 @@
     score: function (v) {
       var n = (v.name || '') + ' ' + (v.voiceURI || '');
       var sc = 0;
+      if (/multilingual/i.test(n)) sc += 70;                      /* newest Microsoft neural */
       if (/premium|enhanced|neural|natural/i.test(n)) sc += 60;   /* Apple premium, MS Natural */
       if (/siri/i.test(n)) sc += 55;
       if (/\bonline\b/i.test(n)) sc += 25;                        /* Edge network voices */
       if (v.localService === false) sc += 20;                     /* network voices beat compact */
       if (/google/i.test(n)) sc += 18;
       if (/compact|espeak|pico/i.test(n)) sc -= 40;
+      if (/desktop/i.test(n)) sc -= 30;                           /* old Windows SAPI voices */
+      if (/novelty|whisper|bells|organ|zarvox|trinoids|bubbles|boing|jester/i.test(n)) sc -= 90;
       if (/^en-GB/i.test(v.lang)) sc += 6;
       if (/^en/i.test(v.lang)) sc += 10;
       return sc;
@@ -843,7 +890,8 @@
     menu: '<svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
     sun: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>',
     arrow: '<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
-    check: '<svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>'
+    check: '<svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>',
+    present: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/></svg>'
   };
 
   /* =========================================================
@@ -1403,6 +1451,9 @@
     /* --- body --- */
     col.appendChild(built.node);
 
+    /* slides for the projector, built from the very nodes just rendered */
+    try { T.Present.build(built.node, meta, L); } catch (e) {}
+
     /* --- the end of the lecture: say plainly what to do next --- */
     var nx = el('div', 'end-card');
     var exN = (L.exercises || []).length;
@@ -1735,6 +1786,251 @@
     }
   }
 
+  /* ------------------------- presentation mode -------------------------
+     Kaaleb studies the way he would at a lecture: the page goes on a
+     projector, the voice reads, and the slides move themselves. He sits with
+     a notebook. Slides are built from the SAME rendered nodes as the page, so
+     a figure on the slide is the figure from the lecture, and each slide
+     knows which speech anchors belong to it — that is what keeps them in step.
+     --------------------------------------------------------------------- */
+  var Present = {
+    on: false, slides: [], i: -1, root: null, stage: null, sub: null,
+    meta: null, wake: null, manual: 0,
+
+    build: function (hostNode, meta, L) {
+      Present.meta = meta;
+      var slides = [], cur = null, eyebrow = '';
+      var pos = {};
+      Speaker.units.forEach(function (u, k) { if (pos[u.anchor] == null) pos[u.anchor] = k; });
+
+      function push(kind, title) {
+        cur = { kind: kind, title: title || '', eyebrow: eyebrow, nodes: [], anchors: [], len: 0 };
+        slides.push(cur);
+        return cur;
+      }
+
+      /* opening slide: what this lecture is and what it is for */
+      var open = push('title', meta.title);
+      open.lead = L.standfirst || '';
+      open.list = (L.objectives || []).slice(0, 6);
+      open.kicker = 'Week ' + meta.week + ' · Lecture ' + meta.idx;
+      cur = null;
+
+      Array.prototype.slice.call(hostNode.children).forEach(function (n) {
+        var tag = n.tagName, cl = n.className || '';
+        var solo = /\bfig\b|\btable-wrap\b|\bbox-math\b|\bbox-case\b|\bbox-warn\b|\bbox-write\b|\bexercise-list\b/.test(cl);
+
+        if (tag === 'H2') {
+          /* the rendered heading carries a "Section N" chip; keep the two apart */
+          var chip = n.querySelector('.sec-n');
+          var num = chip ? chip.textContent.trim() : '';
+          var text = (n.textContent || '').slice(num.length).trim() || n.textContent;
+          eyebrow = '';
+          var sec = push('section', text);
+          sec.kicker = num;
+          sec.anchors.push(n.id);
+          cur = null;
+          eyebrow = text;
+          return;
+        }
+        if (tag === 'H3') {
+          var sub = push('sub', n.textContent);
+          sub.anchors.push(n.id);
+          return;
+        }
+        if (solo) {
+          /* a panel the voice never reads would be skipped in auto-play, so it
+             rides with the paragraph that introduces it, the way a lecturer
+             puts a table up while still talking about it */
+          if (pos[n.id] == null && cur && cur.kind === 'content') {
+            cur.nodes.push(n); cur.anchors.push(n.id); cur.len += 260;
+            return;
+          }
+          var one = push(/\bbox-math\b/.test(cl) ? 'math' : /\bfig\b/.test(cl) ? 'fig' : 'panel', '');
+          one.nodes.push(n);
+          one.anchors.push(n.id);
+          cur = null;
+          return;
+        }
+        /* running prose: accumulate, then break before it overflows a screen */
+        var txt = (n.textContent || '').length;
+        if (!cur || cur.kind === 'section' || cur.len + txt > 620 || cur.nodes.length >= 3) {
+          var c = push('content', '');
+          c.cont = true;
+        }
+        cur.nodes.push(n);
+        cur.anchors.push(n.id);
+        cur.len += txt;
+      });
+
+      /* closing slide */
+      eyebrow = '';
+      var end = push('end', 'End of the lecture');
+      end.list = [
+        (L.exercises || []).length + ' exercises — on paper, applied to your own case',
+        (L.quiz || []).length + ' test questions, plus a few carried forward'
+      ];
+
+      /* every slide needs the first speech unit it contains, so that moving a
+         slide by hand can move the voice with it */
+      slides.forEach(function (sl) {
+        sl.first = null;
+        sl.anchors.forEach(function (a) {
+          if (pos[a] != null && (sl.first == null || pos[a] < sl.first)) sl.first = pos[a];
+        });
+      });
+      /* anchor -> slide index, for syncing */
+      Present.byAnchor = {};
+      slides.forEach(function (sl, k) { sl.anchors.forEach(function (a) { Present.byAnchor[a] = k; }); });
+
+      Present.slides = slides;
+      Present.i = -1;
+      return slides.length;
+    },
+
+    render: function (sl) {
+      var head = '';
+      if (sl.kind === 'section' && sl.kicker) head += '<div class="pr-kicker">' + esc(sl.kicker) + '</div>';
+      if (sl.eyebrow && sl.kind !== 'section' && sl.kind !== 'title') {
+        head += '<div class="pr-eyebrow">' + esc(sl.eyebrow) + '</div>';
+      }
+      if (sl.title && !sl.cont) {
+        head += '<h2 class="pr-title' + (sl.kind === 'section' ? ' big' : '') + '">' + esc(sl.title) + '</h2>';
+      }
+      var wrap = el('div', 'pr-body');
+      wrap.innerHTML = head;
+
+      if (sl.kind === 'title') {
+        wrap.innerHTML = '<div class="pr-kicker">' + esc(sl.kicker) + '</div>' +
+          '<h1 class="pr-h1">' + esc(sl.title) + '</h1>' +
+          (sl.lead ? '<p class="pr-lead">' + inline(sl.lead) + '</p>' : '') +
+          (sl.list.length ? '<ul class="pr-list">' + sl.list.map(function (x) {
+            return '<li>' + inline(x) + '</li>'; }).join('') + '</ul>' : '');
+      } else if (sl.kind === 'end') {
+        wrap.innerHTML = '<div class="pr-kicker">Done listening</div>' +
+          '<h1 class="pr-h1">' + esc(sl.title) + '</h1>' +
+          '<ul class="pr-list">' + sl.list.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' +
+          '<p class="pr-lead">Press Esc to leave the projector and go to the exercises.</p>';
+      } else {
+        sl.nodes.forEach(function (n) {
+          var c = n.cloneNode(true);
+          c.removeAttribute('id');
+          c.classList.remove('spk', 'active');
+          $$('[id]', c).forEach(function (x) { x.removeAttribute('id'); });
+          wrap.appendChild(c);
+        });
+      }
+
+      /* shrink type when a slide is heavy, so nothing is cut off on a projector */
+      var chars = (wrap.textContent || '').length;
+      wrap.setAttribute('data-density', chars > 900 ? 'dense' : chars > 480 ? 'normal' : 'roomy');
+      return wrap;
+    },
+
+    show: function (n, moveVoice) {
+      if (!Present.on || !Present.slides.length) return;
+      n = clamp(n, 0, Present.slides.length - 1);
+      if (n === Present.i) return;
+      Present.i = n;
+      var sl = Present.slides[n];
+      Present.stage.innerHTML = '';
+      Present.stage.appendChild(Present.render(sl));
+      var bar = $('#prBar', Present.root), cnt = $('#prCount', Present.root);
+      if (bar) bar.style.width = ((n + 1) / Present.slides.length * 100) + '%';
+      if (cnt) cnt.textContent = (n + 1) + ' / ' + Present.slides.length;
+      if (moveVoice && sl.first != null) {
+        if (Speaker.playing) Speaker.speakNow(sl.first);
+        else { Speaker.idx = sl.first; Speaker.tick(); }
+      }
+    },
+
+    /* called from the transport on every tick: follow the voice */
+    sync: function (anchor, text) {
+      if (!Present.on) return;
+      if (Present.sub) Present.sub.textContent = text || '';
+      if (Present.manual && Date.now() < Present.manual) return;   /* he just moved by hand */
+      if (Speaker.idx >= Speaker.units.length - 1) { Present.show(Present.slides.length - 1, false); return; }
+      var k = Present.byAnchor ? Present.byAnchor[anchor] : null;
+      if (k != null) Present.show(k, false);
+    },
+
+    move: function (d) {
+      Present.manual = Date.now() + 1200;
+      Present.show(Present.i + d, true);
+    },
+
+    enter: function () {
+      if (!Present.slides.length) return;
+      Present.on = true;
+      var r = el('div', 'presenter');
+      r.innerHTML =
+        '<div class="pr-stage" id="prStage"></div>' +
+        '<div class="pr-foot">' +
+          '<span class="pr-where">' + esc(Present.meta.title) + '</span>' +
+          '<span class="pr-sub" id="prSub"></span>' +
+          '<span class="pr-count mono" id="prCount"></span>' +
+        '</div>' +
+        '<div class="pr-track"><i id="prBar"></i></div>' +
+        '<div class="pr-keys">space play · ← → slide · F full screen · Esc leave</div>' +
+        '<button class="pr-close" id="prClose" aria-label="Leave the projector">✕</button>' +
+        '<button class="pr-zone left" aria-label="Previous slide"></button>' +
+        '<button class="pr-zone right" aria-label="Next slide"></button>';
+      document.body.appendChild(r);
+      document.body.classList.add('presenting');
+      $('#prClose', r).onclick = Present.exit;
+      $('.pr-zone.left', r).onclick = function () { Present.move(-1); };
+      $('.pr-zone.right', r).onclick = function () { Present.move(1); };
+      Present.root = r;
+      Present.stage = $('#prStage', r);
+      Present.sub = $('#prSub', r);
+      Present.i = -1;
+      var here = Speaker.idx > 0 ? Speaker.units[Speaker.idx] : null;
+      Present.show(here && Present.byAnchor[here.anchor] != null ? Present.byAnchor[here.anchor] : 0, false);
+      /* let the opening slide stand for a moment before the voice takes over */
+      if (!here) Present.manual = Date.now() + 2600;
+      document.addEventListener('keydown', Present.key, true);
+      try {
+        if (navigator.wakeLock && navigator.wakeLock.request) {
+          navigator.wakeLock.request('screen').then(function (w) { Present.wake = w; }, function () {});
+        }
+      } catch (e) {}
+      try { if (r.requestFullscreen) r.requestFullscreen(); } catch (e) {}
+    },
+
+    exit: function () {
+      if (!Present.on) return;
+      Present.on = false;
+      document.removeEventListener('keydown', Present.key, true);
+      if (Present.root && Present.root.parentNode) Present.root.parentNode.removeChild(Present.root);
+      document.body.classList.remove('presenting');
+      Present.root = Present.stage = Present.sub = null;
+      try { if (Present.wake && Present.wake.release) Present.wake.release(); } catch (e) {}
+      Present.wake = null;
+      try { if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen(); } catch (e) {}
+    },
+
+    key: function (e) {
+      if (!Present.on) return;
+      var k = e.key;
+      if (k === 'Escape') { e.preventDefault(); Present.exit(); return; }
+      if (k === 'ArrowRight' || k === 'PageDown' || k === 'ArrowDown') { e.preventDefault(); Present.move(1); return; }
+      if (k === 'ArrowLeft' || k === 'PageUp' || k === 'ArrowUp') { e.preventDefault(); Present.move(-1); return; }
+      if (k === ' ' || k === 'Spacebar') {
+        e.preventDefault();
+        if (Speaker.playing) Speaker.pause(); else Speaker.speakNow(Speaker.idx);
+        return;
+      }
+      if (k === 'f' || k === 'F') {
+        e.preventDefault();
+        try {
+          if (document.fullscreenElement) document.exitFullscreen();
+          else if (Present.root.requestFullscreen) Present.root.requestFullscreen();
+        } catch (err) {}
+      }
+    }
+  };
+  T.Present = Present;
+
   /* --------------------------- transport --------------------------- */
   function buildTransport(units, meta, L) {
     var wrap = el('div', 'transport');
@@ -1751,6 +2047,7 @@
           '<button class="icon-btn" id="prevBtn" aria-label="Back one sentence">' + ICON.prev + '</button>' +
           '<button class="icon-btn" id="nextBtn" aria-label="Forward one sentence">' + ICON.next + '</button>' +
           '<button class="icon-btn" id="setBtn" aria-label="Playback settings">' + ICON.gear + '</button>' +
+          '<button class="icon-btn" id="prBtn" aria-label="Present on a screen" title="Present — slides that follow the voice">' + ICON.present + '</button>' +
         '</div>' +
       '</div>' +
       '<div class="transport-extra">' +
@@ -1783,6 +2080,7 @@
       posLine.textContent = Speaker.idx + ' / ' + Speaker.units.length;
       if (u) {
         nowLine.textContent = u.text.slice(0, 110);
+        if (Present.on) Present.sync(u.anchor, u.text);
         if (u.anchor !== lastAnchor) {
           lastAnchor = u.anchor;
           $$('.spk.active').forEach(function (n) { n.classList.remove('active'); });
@@ -1872,6 +2170,13 @@
       if (Speaker.playing) Speaker.speakNow(Speaker.idx);
     };
 
+    var prBtn = $('#prBtn', wrap);
+    if (prBtn) prBtn.onclick = function () {
+      if (!Present.slides.length) return;
+      Present.enter();
+      if (!Speaker.playing) Speaker.speakNow(Speaker.idx);
+    };
+
     var sel = $('#voiceSel', wrap);
     var LABEL = { natural: 'natural', good: 'decent', basic: 'robotic' };
     function fillVoices() {
@@ -1887,7 +2192,21 @@
       /* if nothing good is installed, say how to get one — this is the single
          biggest improvement available and it is free */
       if (help) {
-        if (Speaker.hasNatural()) { help.hidden = true; return; }
+        if (Speaker.hasNatural()) {
+          /* something good is installed — but Edge's free neural voices are
+             better than almost anything else available at no cost, so say so
+             once, quietly, when they are not the ones being used */
+          var best = list[0] || null;
+          var neural = best && /natural|multilingual/i.test(best.name || '');
+          if (neural) { help.hidden = true; return; }
+          help.hidden = false;
+          help.innerHTML = '<b>There is a more human voice available, free.</b> Open this page in ' +
+            '<b>Microsoft Edge</b> and pick a voice whose name contains <b>Natural</b> or ' +
+            '<b>Multilingual</b> — those are neural voices, and they are the closest thing to a ' +
+            'real speaker you can get without paying. Nothing to install; Edge streams them.' +
+            '<br><span style="color:var(--ink-3)">Everything else on this page works the same there.</span>';
+          return;
+        }
         var ios = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
                   (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
         var mac = /Macintosh|Mac OS X/.test(navigator.userAgent) && !ios;
