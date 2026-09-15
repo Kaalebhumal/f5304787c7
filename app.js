@@ -157,6 +157,29 @@
     return out.filter(function (x) { return x && /[a-zA-Z0-9]/.test(x); });
   }
 
+  /* Split for the PAGE (not for speech): keeps markup, protects glosses and
+     abbreviations, so each sentence can be wrapped and translated on its own. */
+  function splitForDisplay(text) {
+    var held = [];
+    var t = String(text).replace(/\[\[[^\]]+\]\]/g, function (m) {
+      held.push(m); return '\u0001' + (held.length - 1) + '\u0001';
+    });
+    var raw = t.split(/(?<=[.!?\u2026][)"\u201d]?)\s+(?=[A-Z\u201c"(\[*])/);
+    var out = [], buf = '';
+    for (var i = 0; i < raw.length; i++) {
+      var piece = raw[i];
+      var tail = piece.replace(/[.!?\u2026)"\u201d]+$/, '');
+      var last = tail.split(/[\s(]/).pop().replace(/[*_`]/g, '');
+      buf = buf ? buf + ' ' + piece : piece;
+      if ((ABBR[last] === 1 || /^[A-Z]$/.test(last)) && i < raw.length - 1) continue;
+      out.push(buf); buf = '';
+    }
+    if (buf) out.push(buf);
+    return out.map(function (x) {
+      return x.replace(/\u0001(\d+)\u0001/g, function (m, n) { return held[+n]; });
+    });
+  }
+
   /* ---------------------------------------------------------
      Store — db capability when present, localStorage always
      --------------------------------------------------------- */
@@ -674,7 +697,10 @@
           break;
 
         case 'p':
-          node = el('p', 'spk', inline(b.text));
+          node = el('p', 'spk',
+            splitForDisplay(b.text).map(function (sn, si) {
+              return '<span class="sent" data-s="' + bi + '-' + si + '">' + inline(sn) + '</span>';
+            }).join(' '));
           addSpeech(b.say != null ? b.say : b.text, aid, 430);
           break;
 
@@ -1344,8 +1370,10 @@
     col.appendChild(built.node);
 
     /* --- hard words --- */
+    glossInText(built.node, L.vocab, L.glossary);
+    wireGloss();
+    wireSentences(built.node);
     if (L.vocab && L.vocab.length) {
-      glossInText(built.node, L.vocab);
       var vh = el('div', 'block-head');
       vh.innerHTML = '<h2>Words in this lecture</h2><span class="hint">Marked in the text the first time each appears</span>';
       col.appendChild(vh);
@@ -1418,52 +1446,218 @@
     Speaker.onEnd = function () { markHeard(meta.id); };
   }
 
-  /* Underline each hard word the first time it appears, with its meaning on
-     hover. Only plain text inside paragraphs is touched, so existing markup —
-     term chips, bold, links — is never broken. */
-  function glossInText(root, vocab) {
-    var pending = {};
-    vocab.forEach(function (v) { pending[v.word.toLowerCase()] = v; });
+  /* Underline EVERY word the reader might not know, every time it appears.
+     We walk the words in the text and look each one up — so the dictionary can
+     grow without this code changing, and nothing is missed. */
+  var STEM = [
+    [/ies$/, 'y'], [/ied$/, 'y'], [/ying$/, 'ie'], [/([^aeiou])ed$/, '$1'],
+    [/([^aeiou])ing$/, '$1'], [/ing$/, 'e'], [/ed$/, 'e'], [/es$/, ''], [/s$/, ''],
+    [/ly$/, ''], [/ally$/, 'al'], [/ment$/, ''], [/ion$/, 'e'], [/ions$/, 'e'],
+    [/ing$/, ''], [/ed$/, '']
+  ];
 
-    var paras = $$('p.spk, li', root);
-    for (var i = 0; i < paras.length; i++) {
-      var left = Object.keys(pending);
-      if (!left.length) break;
-      walk(paras[i]);
+  function lookup(word, extra) {
+    var w = word.toLowerCase();
+    var dict = window.VOCAB || {};
+    if (extra && extra[w]) return extra[w];
+    if (dict[w]) return dict[w];
+    for (var i = 0; i < STEM.length; i++) {
+      if (!STEM[i][0].test(w)) continue;
+      var base = w.replace(STEM[i][0], STEM[i][1]);
+      if (base.length < 4) continue;
+      if (extra && extra[base]) return extra[base];
+      if (dict[base]) return dict[base];
     }
+    return null;
+  }
+
+  function glossInText(root, lessonVocab, glossary) {
+    var extra = {};
+    (lessonVocab || []).forEach(function (v) {
+      extra[v.word.toLowerCase()] = { et: v.et || '', en: v.plain, key: true };
+    });
+    (glossary || []).forEach(function (g) {
+      var k = String(g.term).toLowerCase().replace(/\s*\(.*$/, '');
+      if (!extra[k]) extra[k] = { et: '', en: H.plain(g.def), key: true };
+    });
+
+    var SKIP = { CODE: 1, SCRIPT: 1, STYLE: 1, SVG: 1 };
+    walk(root);
 
     function walk(node) {
       var kids = Array.prototype.slice.call(node.childNodes);
-      for (var j = 0; j < kids.length; j++) {
-        var n = kids[j];
-        if (n.nodeType === 3) tryText(n);
-        else if (n.nodeType === 1 && !/^(CODE|SPAN)$/.test(n.tagName)) walk(n);
+      for (var i = 0; i < kids.length; i++) {
+        var n = kids[i];
+        if (n.nodeType === 3) glossNode(n, extra);
+        else if (n.nodeType === 1 && !SKIP[n.tagName] && !n.classList.contains('word-gloss')) walk(n);
       }
     }
+  }
 
-    function tryText(textNode) {
-      var txt = textNode.nodeValue;
-      var words = Object.keys(pending);
-      for (var k = 0; k < words.length; k++) {
-        var v = pending[words[k]];
-        var re = new RegExp('\\b(' + v.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')\\b', 'i');
-        var m = txt.match(re);
-        if (!m) continue;
-        var before = txt.slice(0, m.index);
-        var after = txt.slice(m.index + m[0].length);
-        var span = document.createElement('span');
-        span.className = 'word-gloss';
-        span.title = v.plain + (v.et ? '  —  ' + v.et : '');
-        span.textContent = m[0];
-        var parent = textNode.parentNode;
-        parent.insertBefore(document.createTextNode(before), textNode);
-        parent.insertBefore(span, textNode);
-        textNode.nodeValue = after;
-        delete pending[words[k]];
-        tryText(textNode);
-        return;
-      }
+  function glossNode(textNode, extra) {
+    var txt = textNode.nodeValue;
+    if (!txt || txt.length < 4 || !/[a-zA-Z]{4}/.test(txt)) return;
+    var re = /[A-Za-z][A-Za-z'-]{3,}/g, m, last = 0, frag = null;
+    while ((m = re.exec(txt)) !== null) {
+      var hit = lookup(m[0], extra);
+      if (!hit) continue;
+      if (!frag) frag = document.createDocumentFragment();
+      if (m.index > last) frag.appendChild(document.createTextNode(txt.slice(last, m.index)));
+      var span = document.createElement('span');
+      span.className = 'word-gloss' + (hit.key ? ' key' : '');
+      span.setAttribute('data-et', hit.et || '');
+      span.setAttribute('data-en', hit.en || '');
+      span.setAttribute('tabindex', '0');
+      span.textContent = m[0];
+      frag.appendChild(span);
+      last = m.index + m[0].length;
     }
+    if (!frag) return;
+    if (last < txt.length) frag.appendChild(document.createTextNode(txt.slice(last)));
+    textNode.parentNode.replaceChild(frag, textNode);
+  }
+
+  /* one popover for the whole page: hover on a mouse, tap on a phone */
+  var Pop = {
+    el: null,
+    show: function (target) {
+      if (!Pop.el) {
+        Pop.el = el('div', 'gloss-pop');
+        Pop.el.hidden = true;
+        document.body.appendChild(Pop.el);
+      }
+      var et = target.getAttribute('data-et'), en = target.getAttribute('data-en');
+      Pop.el.innerHTML =
+        '<div class="gp-word">' + esc(target.textContent) + '</div>' +
+        (et ? '<div class="gp-et">' + esc(et) + '</div>' : '') +
+        (en ? '<div class="gp-en">' + esc(en) + '</div>' : '');
+      Pop.el.hidden = false;
+      var r = target.getBoundingClientRect();
+      var w = Pop.el.offsetWidth, h = Pop.el.offsetHeight;
+      var left = clamp(r.left + r.width / 2 - w / 2, 10, window.innerWidth - w - 10);
+      var top = r.top - h - 9;
+      if (top < 8) top = r.bottom + 9;
+      Pop.el.style.left = left + 'px';
+      Pop.el.style.top = (top + window.scrollY) + 'px';
+    },
+    hide: function () { if (Pop.el) Pop.el.hidden = true; }
+  };
+
+  function wireGloss() {
+    if (wireGloss.done) return;
+    wireGloss.done = true;
+    document.addEventListener('mouseover', function (e) {
+      var t = e.target.closest && e.target.closest('.word-gloss');
+      if (t) Pop.show(t);
+    });
+    document.addEventListener('mouseout', function (e) {
+      if (e.target.closest && e.target.closest('.word-gloss')) Pop.hide();
+    });
+    document.addEventListener('click', function (e) {
+      var t = e.target.closest && e.target.closest('.word-gloss');
+      if (t) { e.preventDefault(); Pop.show(t); } else Pop.hide();
+    });
+    document.addEventListener('focusin', function (e) {
+      var t = e.target.closest && e.target.closest('.word-gloss');
+      if (t) Pop.show(t);
+    });
+    window.addEventListener('scroll', Pop.hide, { passive: true });
+  }
+
+  /* ---------------------------------------------------------
+     Estonian on demand — a sentence at a time, written once
+     --------------------------------------------------------- */
+  var Translate = {
+    sample: undefined,          /* undefined = not asked yet, null = unavailable */
+    mem: {},
+
+    key: function (text) {
+      var h = 5381, i;
+      for (i = 0; i < text.length; i++) h = ((h << 5) + h + text.charCodeAt(i)) >>> 0;
+      return 'tr' + h.toString(36) + '-' + text.length;
+    },
+
+    ready: function () {
+      if (Translate.sample !== undefined) return Promise.resolve(Translate.sample);
+      if (!window.claude || !window.claude.use) { Translate.sample = null; return Promise.resolve(null); }
+      return window.claude.use('sample').then(function (fn) {
+        Translate.sample = fn || null;
+        return Translate.sample;
+      }).catch(function () { Translate.sample = null; return null; });
+    },
+
+    cached: function (k) {
+      if (Translate.mem[k]) return Translate.mem[k];
+      try {
+        var v = localStorage.getItem('tms.' + k);
+        if (v) { Translate.mem[k] = v; return v; }
+      } catch (e) {}
+      return null;
+    },
+
+    store: function (k, v) {
+      Translate.mem[k] = v;
+      try { localStorage.setItem('tms.' + k, v); } catch (e) {}
+      if (Store.db) {
+        try { Store.db.doc('translations/' + k).set({ et: v, at: new Date().toISOString() }).catch(function () {}); } catch (e) {}
+      }
+    },
+
+    /* local first, then the shared store, then ask Claude once */
+    get: function (text) {
+      var k = Translate.key(text);
+      var hit = Translate.cached(k);
+      if (hit) return Promise.resolve(hit);
+
+      var fromDb = (Store.db)
+        ? Store.db.doc('translations/' + k).get().then(function (sn) {
+            return sn.exists ? (sn.data().et || null) : null;
+          }).catch(function () { return null; })
+        : Promise.resolve(null);
+
+      return fromDb.then(function (v) {
+        if (v) { Translate.mem[k] = v; try { localStorage.setItem('tms.' + k, v); } catch (e) {} return v; }
+        return Translate.ready().then(function (fn) {
+          if (!fn) return null;
+          return fn('Translate this sentence from an English university marketing lecture into natural, ' +
+            'clear Estonian. Keep established English marketing terms in English where an Estonian student ' +
+            'would meet them in English, and put the Estonian in brackets after. Reply with the Estonian ' +
+            'translation only — no preamble, no quotation marks.\n\n' + text,
+            { modelTier: 'quick', cache: { gcTime: 86400000 } })
+            .then(function (r) {
+              var out = (r.text || '').trim();
+              if (out) Translate.store(k, out);
+              return out || null;
+            });
+        });
+      });
+    }
+  };
+
+  function wireSentences(root) {
+    $$('.sent', root).forEach(function (sn) {
+      sn.addEventListener('click', function (e) {
+        if (!document.body.classList.contains('et-mode')) return;
+        if (window.getSelection && String(window.getSelection()).length > 2) return;
+        e.stopPropagation();
+        var existing = sn.previousElementSibling;
+        if (existing && existing.classList && existing.classList.contains('sent-et')) {
+          existing.remove(); return;
+        }
+        var box = el('span', 'sent-et', '<span class="se-wait">tõlgin…</span>');
+        sn.parentNode.insertBefore(box, sn);
+        Translate.get(sn.textContent.trim()).then(function (et) {
+          if (!et) {
+            box.innerHTML = '<span class="se-off">Eestikeelne tõlge töötab ainult Claude’i versioonis. ' +
+              'Sõnade tähendused töötavad igal pool.</span>';
+            return;
+          }
+          box.textContent = et;
+        }).catch(function () {
+          box.innerHTML = '<span class="se-off">Tõlge ei õnnestunud. Proovi uuesti.</span>';
+        });
+      });
+    });
   }
 
   function markHeard(id) {
@@ -1499,6 +1693,8 @@
         '<label>Voice <select id="voiceSel"></select></label>' +
         '<label>Speed <input type="range" id="rateSel" min="0.6" max="1.6" step="0.05" value="' + (Store.state.prefs.rate || 1) + '"><span class="mono" id="rateVal" style="font-size:11px">' + (Store.state.prefs.rate || 1).toFixed(2) + '×</span></label>' +
         '<button class="btn btn-sm" id="readBtn">Read silently</button>' +
+        '<button class="btn btn-sm" id="etBtn" aria-pressed="false">ET — klõpsa lauset</button>' +
+        '<label class="look">Sõna?<input type="text" id="lookIn" placeholder="type any word" autocapitalize="off" spellcheck="false"><span class="look-out" id="lookOut"></span></label>' +
         '<span class="mono" style="font-size:10.5px;color:var(--ink-3)" id="syncNote">Saved on this device</span>' +
         '<div class="voice-help" id="voiceHelp" hidden></div>' +
       '</div>';
@@ -1549,6 +1745,44 @@
     $('#setBtn', wrap).onclick = function () {
       wrap.setAttribute('data-open', wrap.getAttribute('data-open') === '1' ? '0' : '1');
     };
+    var etBtn = $('#etBtn', wrap);
+    if (!document.body.classList.contains('et-mode')) etBtn.setAttribute('aria-pressed', 'false');
+    else etBtn.setAttribute('aria-pressed', 'true');
+    etBtn.onclick = function () {
+      var on = !document.body.classList.contains('et-mode');
+      document.body.classList.toggle('et-mode', on);
+      etBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      try { localStorage.setItem('tms.et', on ? '1' : '0'); } catch (e) {}
+      if (on && !$('.sent-et')) {
+        var first = $('.prose .sent');
+        if (first) first.click();
+      }
+    };
+
+    var lookIn = $('#lookIn', wrap), lookOut = $('#lookOut', wrap), lookT = null;
+    lookIn.oninput = function () {
+      if (lookT) clearTimeout(lookT);
+      var q = lookIn.value.trim();
+      if (!q) { lookOut.textContent = ''; lookOut.className = 'look-out'; return; }
+      lookT = setTimeout(function () {
+        var hit = lookup(q, null);
+        if (hit) {
+          lookOut.className = 'look-out hit';
+          lookOut.innerHTML = (hit.et ? '<b>' + esc(hit.et) + '</b> — ' : '') + esc(hit.en);
+          return;
+        }
+        lookOut.className = 'look-out';
+        lookOut.textContent = 'otsin…';
+        Translate.ready().then(function (fn) {
+          if (!fn) { lookOut.textContent = 'ei ole sõnastikus'; return; }
+          return fn('Give the Estonian meaning of the English word "' + q + '" as used in business and ' +
+            'economics, then a short plain-English definition. Reply as: estonian — definition. Nothing else.',
+            { modelTier: 'quick', cache: { gcTime: 86400000 } })
+            .then(function (r) { lookOut.className = 'look-out hit'; lookOut.textContent = (r.text || '').trim(); });
+        }).catch(function () { lookOut.textContent = 'ei leitud'; });
+      }, 350);
+    };
+
     $('#readBtn', wrap).onclick = function () {
       Speaker.pause(); markHeard(meta.id);
       $('.prose').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -2634,6 +2868,8 @@
   function boot() {
     Store.loadLocal();
     Speaker.init();
+
+    try { if (localStorage.getItem('tms.et') === '1') document.body.classList.add('et-mode'); } catch (e) {}
 
     /* theme toggle */
     var savedTheme = null;
