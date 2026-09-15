@@ -1,6 +1,6 @@
 /* Week 1 — What marketing actually is */
 window.LESSONS = window.LESSONS || {};
-window.LESSONS.w01 = {
+window.LESSONS['marketing.w01'] = {
 
 /* ============================================================
    1.1  The exchange at the centre of everything

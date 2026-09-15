@@ -1,12 +1,17 @@
 /* ============================================================
-   The Marketing Semester — application
+   A course player — lectures read aloud, tests, spaced review.
+   Holds any number of courses; courses/registry.js lists them.
    ============================================================ */
 (function () {
   'use strict';
 
-  var C = window.CURRICULUM;
-  var LESSON_BY_ID = {};
-  C.flat.forEach(function (l) { LESSON_BY_ID[l.id] = l; });
+  var T = window.__TMS = window.__TMS || {};
+
+  /* The active course. Null until Courses.activate() has run, so every
+     reader goes through CUR() rather than capturing it at load time. */
+  function CUR() { return T.C; }
+  function LBI() { return T.LESSON_BY_ID || {}; }
+  function ACTIVE() { return T.ACTIVE; }
 
   /* ---------------------------------------------------------
      small helpers
@@ -41,10 +46,10 @@
     return x;
   }
   function startDay() {
-    var s = Store.state.progress.startDate;
+    var s = P().startDate;
     if (s) { var d = new Date(s + 'T00:00:00'); if (!isNaN(d)) return rollToWeekday(d); }
     var t = rollToWeekday(new Date());        /* first open: the clock starts now */
-    Store.state.progress.startDate = isoLocal(t);
+    P().startDate = isoLocal(t);
     Store.save();
     return t;
   }
@@ -155,18 +160,37 @@
   /* ---------------------------------------------------------
      Store — db capability when present, localStorage always
      --------------------------------------------------------- */
-  var LS_KEY = 'tms.v1';
+  var LS_KEY = 'tms.v2', LS_OLD = 'tms.v1';
+
+  function blankSlot() {
+    return {
+      progress: { lessons: {}, lastLessonId: null, days: [], scores: [], startedAt: null, startDate: null },
+      mastery: { concepts: {} },
+      notes: {}
+    };
+  }
+
   var Store = {
     db: null,
     ready: false,
     storageOk: true,
     state: {
-      progress: { lessons: {}, lastLessonId: null, days: [], startedAt: null },
-      mastery: { concepts: {} },
-      prefs: { rate: 1, voiceURI: '', pitch: 1 },
-      notes: {}
+      prefs: { rate: 1, voiceURI: '', pitch: 1, lastCourse: null },
+      byCourse: {}
     },
     _timer: null,
+    _loadedCourses: {},
+
+    /* everything a course records, created on first touch */
+    slot: function (id) {
+      var b = Store.state.byCourse;
+      if (!b[id]) b[id] = blankSlot();
+      var sl = b[id];
+      if (!sl.progress.scores) sl.progress.scores = [];
+      if (!sl.progress.days) sl.progress.days = [];
+      if (!sl.progress.startedAt) sl.progress.startedAt = today();
+      return sl;
+    },
 
     loadLocal: function () {
       try {
@@ -174,16 +198,26 @@
         if (raw) {
           var o = JSON.parse(raw);
           if (o && typeof o === 'object') {
-            ['progress', 'mastery', 'prefs', 'notes'].forEach(function (k) {
-              if (o[k]) Store.state[k] = Object.assign(Store.state[k], o[k]);
-            });
+            if (o.prefs) Store.state.prefs = Object.assign(Store.state.prefs, o.prefs);
+            if (o.byCourse) Store.state.byCourse = o.byCourse;
+          }
+        } else {
+          /* carry a single-course record from before courses existed */
+          var old = localStorage.getItem(LS_OLD);
+          if (old) {
+            var v1 = JSON.parse(old);
+            if (v1 && v1.progress) {
+              Store.state.byCourse.marketing = {
+                progress: v1.progress, mastery: v1.mastery || { concepts: {} }, notes: v1.notes || {}
+              };
+            }
+            if (v1 && v1.prefs) Store.state.prefs = Object.assign(Store.state.prefs, v1.prefs);
           }
         }
         Store.storageOk = true;
       } catch (e) { Store.storageOk = false; }
       try { localStorage.setItem(LS_KEY + '.probe', '1'); localStorage.removeItem(LS_KEY + '.probe'); }
       catch (e) { Store.storageOk = false; }
-      if (!Store.state.progress.startedAt) Store.state.progress.startedAt = today();
     },
 
     saveLocal: function () {
@@ -195,30 +229,40 @@
       window.claude.use('db').then(function (db) {
         if (!db) return;
         Store.db = db;
-        return Promise.all([
-          db.doc('progress/state').get(),
-          db.doc('mastery/state').get(),
-          db.doc('prefs/state').get()
-        ]).then(function (snaps) {
-          var any = false;
-          if (snaps[0].exists) { Store.state.progress = Object.assign(Store.state.progress, snaps[0].data()); any = true; }
-          if (snaps[1].exists) { Store.state.mastery = Object.assign(Store.state.mastery, snaps[1].data()); any = true; }
-          if (snaps[2].exists) { Store.state.prefs = Object.assign(Store.state.prefs, snaps[2].data()); any = true; }
+        return db.doc('prefs/state').get().then(function (snap) {
+          if (snap.exists) Store.state.prefs = Object.assign(Store.state.prefs, snap.data());
           Store.ready = true;
-          if (any) { Store.saveLocal(); Router.rerender(); }
-          else { Store.push(); }
           var b = $('#syncNote'); if (b) b.textContent = 'Synced across your devices';
+          return ACTIVE() ? Store.loadCourse(ACTIVE()) : null;
         });
       }).catch(function () { /* stay local */ });
     },
 
+    /* pull one course's record down; called when a course is opened */
+    loadCourse: function (id) {
+      if (!Store.db || Store._loadedCourses[id]) return Promise.resolve();
+      Store._loadedCourses[id] = true;
+      var db = Store.db;
+      return Promise.all([db.doc('progress/' + id).get(), db.doc('mastery/' + id).get()])
+        .then(function (snaps) {
+          var any = false, sl = Store.slot(id);
+          if (snaps[0].exists) { sl.progress = Object.assign(sl.progress, snaps[0].data()); any = true; }
+          if (snaps[1].exists) { sl.mastery = Object.assign(sl.mastery, snaps[1].data()); any = true; }
+          if (any) { Store.saveLocal(); Router.rerender(); } else { Store.push(); }
+        }).catch(function () {});
+    },
+
     push: function () {
       if (!Store.db) return Promise.resolve();
-      var db = Store.db;
-      return db.doc('progress/state').set(JSON.parse(JSON.stringify(Store.state.progress)))
-        .then(function () { return db.doc('mastery/state').set(JSON.parse(JSON.stringify(Store.state.mastery))); })
-        .then(function () { return db.doc('prefs/state').set(JSON.parse(JSON.stringify(Store.state.prefs))); })
-        .catch(function () {});
+      var db = Store.db, id = ACTIVE();
+      var chain = db.doc('prefs/state').set(JSON.parse(JSON.stringify(Store.state.prefs)));
+      if (id) {
+        var sl = Store.slot(id);
+        chain = chain
+          .then(function () { return db.doc('progress/' + id).set(JSON.parse(JSON.stringify(sl.progress))); })
+          .then(function () { return db.doc('mastery/' + id).set(JSON.parse(JSON.stringify(sl.mastery))); });
+      }
+      return chain.catch(function () {});
     },
 
     /* coalesce a burst of changes into one write */
@@ -230,9 +274,9 @@
 
     markDay: function () {
       var d = today();
-      if (Store.state.progress.days.indexOf(d) < 0) {
-        Store.state.progress.days.push(d);
-        Store.state.progress.days = Store.state.progress.days.slice(-400);
+      if (P().days.indexOf(d) < 0) {
+        P().days.push(d);
+        P().days = P().days.slice(-400);
       }
     },
 
@@ -244,32 +288,41 @@
     },
 
     saveNote: function (lessonId, text) {
-      Store.state.notes[lessonId] = text;
+      NT()[lessonId] = text;
       Store.save();
       if (Store.db) {
-        try { Store.db.doc('notes/' + lessonId).set({ text: text, at: new Date().toISOString() }).catch(function () {}); } catch (e) {}
+        try {
+          Store.db.doc('notes/' + ACTIVE() + '__' + lessonId)
+            .set({ course: ACTIVE(), lesson: lessonId, text: text, at: new Date().toISOString() })
+            .catch(function () {});
+        } catch (e) {}
       }
     }
   };
 
+  /* the active course's three records */
+  function P()  { return Store.slot(ACTIVE()).progress; }
+  function M()  { return Store.slot(ACTIVE()).mastery; }
+  function NT() { return Store.slot(ACTIVE()).notes; }
+
   /* progress helpers */
-  function lessonState(id) { return Store.state.progress.lessons[id] || null; }
+  function lessonState(id) { return P().lessons[id] || null; }
   function isDone(id) { var s = lessonState(id); return !!(s && s.testedAt && s.best >= 70); }
   function isHeard(id) { var s = lessonState(id); return !!(s && s.listened); }
   function bestScore(id) { var s = lessonState(id); return s && typeof s.best === 'number' ? s.best : null; }
 
-  function countDone() { return C.flat.filter(function (l) { return isDone(l.id); }).length; }
+  function countDone() { return CUR().flat.filter(function (l) { return isDone(l.id); }).length; }
 
   function nextLesson() {
-    for (var i = 0; i < C.flat.length; i++) {
-      if (!isDone(C.flat[i].id)) return C.flat[i];
+    for (var i = 0; i < CUR().flat.length; i++) {
+      if (!isDone(CUR().flat[i].id)) return CUR().flat[i];
     }
-    return C.flat[C.flat.length - 1];
+    return CUR().flat[CUR().flat.length - 1];
   }
 
   function streak() {
     var set = {};
-    (Store.state.progress.days || []).forEach(function (d) { set[d] = 1; });
+    (P().days || []).forEach(function (d) { set[d] = 1; });
     function back(x) { do { x.setDate(x.getDate() - 1); } while (isWeekend(x)); return x; }
 
     var probe = new Date(); probe.setHours(0, 0, 0, 0);
@@ -286,7 +339,7 @@
   /* mastery */
   var ALPHA = 0.45;
   function recordConcept(cid, name, score, qid) {
-    var m = Store.state.mastery.concepts;
+    var m = M().concepts;
     var c = m[cid] || (m[cid] = { name: name, ema: score, seen: 0, correct: 0, missed: [], lastAt: null });
     c.name = name || c.name;
     c.seen += 1;
@@ -301,7 +354,7 @@
     }
   }
   function weakConcepts(limit) {
-    var m = Store.state.mastery.concepts, out = [];
+    var m = M().concepts, out = [];
     Object.keys(m).forEach(function (k) {
       var c = m[k];
       if (c.seen >= 1 && c.ema < 0.75) out.push(Object.assign({ id: k }, c));
@@ -314,25 +367,111 @@
      Lesson loading — week files are fetched on demand
      --------------------------------------------------------- */
   window.LESSONS = window.LESSONS || {};
+
+  function inject(src) {
+    return new Promise(function (resolve) {
+      var el = document.createElement('script');
+      el.src = src;
+      el.onload = function () { resolve(true); };
+      el.onerror = function () { resolve(false); };
+      document.head.appendChild(el);
+    });
+  }
+
+  /* ---------------------------------------------------------
+     Courses — the registry, and opening one
+     --------------------------------------------------------- */
+  var Courses = {
+    all: function () { return window.COURSES || []; },
+    meta: function (id) {
+      var hit = null;
+      Courses.all().forEach(function (c) { if (c.id === id) hit = c; });
+      return hit;
+    },
+    _data: {},
+
+    /* build the flat lecture index a course needs to be navigable */
+    index: function (data) {
+      var out = [], i = 0;
+      data.weeks.forEach(function (w) {
+        var partId = '';
+        data.parts.forEach(function (pt) { if (pt.weeks.indexOf(w.n) >= 0) partId = pt.id; });
+        w.part = partId;
+        w.lessons.forEach(function (l, j) {
+          i += 1;
+          l.week = w.n; l.idx = i; l.nInWeek = j + 1; l.weekTitle = w.title; l.part = partId;
+          out.push(l);
+        });
+      });
+      data.flat = out;
+      return data;
+    },
+
+    load: function (id) {
+      if (Courses._data[id]) return Promise.resolve(Courses._data[id]);
+      if (!Courses.meta(id)) return Promise.resolve(null);
+      /* a single-file build has everything inlined already */
+      var pre = (window.COURSE_DATA || {})[id];
+      if (pre && pre.weeks) { Courses._data[id] = Courses.index(pre); return Promise.resolve(Courses._data[id]); }
+      return Promise.all([
+        inject('courses/' + id + '/course.js'),
+        inject('courses/' + id + '/manifest.js')
+      ]).then(function () {
+        var d = (window.COURSE_DATA || {})[id];
+        if (!d) return null;
+        Courses._data[id] = Courses.index(d);
+        return d;
+      });
+    },
+
+    /* make a course the one the app is showing */
+    activate: function (id) {
+      return Courses.load(id).then(function (d) {
+        if (!d) return null;
+        T.ACTIVE = id;
+        T.C = d;
+        T.LESSON_BY_ID = {};
+        d.flat.forEach(function (l) { T.LESSON_BY_ID[l.id] = l; });
+        T.WRITTEN = (window.COURSE_WEEKS || {})[id] || [];
+        Store.state.prefs.lastCourse = id;
+        Store.slot(id);
+        Store.save();
+        return Store.loadCourse(id) || d;
+      }).then(function () { return T.C; });
+    },
+
+    /* every course's manifest is tiny — load them all so the picker can
+       say truthfully how much of each course is ready */
+    loadManifests: function () {
+      return Promise.all(Courses.all().map(function (c) {
+        if ((window.COURSE_WEEKS || {})[c.id]) return Promise.resolve();
+        return inject('courses/' + c.id + '/manifest.js');
+      })).catch(function () {});
+    },
+
+    writtenWeeks: function (id) {
+      return (window.COURSE_WEEKS || {})[id] || [];
+    }
+  };
+
+  /* ---------------------------------------------------------
+     Lesson files, per course, fetched on demand
+     --------------------------------------------------------- */
   var Lessons = {
     pending: {},
     key: function (n) { return 'w' + (n < 10 ? '0' + n : n); },
-    have: function (n) { return !!window.LESSONS[Lessons.key(n)]; },
+    full: function (n) { return ACTIVE() + '.' + Lessons.key(n); },
+    have: function (n) { return !!window.LESSONS[Lessons.full(n)]; },
     load: function (n) {
-      var k = Lessons.key(n);
+      var k = Lessons.full(n);
       if (window.LESSONS[k]) return Promise.resolve(window.LESSONS[k]);
       if (Lessons.pending[k]) return Lessons.pending[k];
-      Lessons.pending[k] = new Promise(function (resolve) {
-        var s = document.createElement('script');
-        s.src = 'lessons/' + k + '.js';
-        s.onload = function () { resolve(window.LESSONS[k] || null); };
-        s.onerror = function () { resolve(null); };
-        document.head.appendChild(s);
-      });
+      Lessons.pending[k] = inject('courses/' + ACTIVE() + '/lessons/' + Lessons.key(n) + '.js')
+        .then(function () { return window.LESSONS[k] || null; });
       return Lessons.pending[k];
     },
     get: function (id) {
-      var meta = LESSON_BY_ID[id];
+      var meta = LBI()[id];
       if (!meta) return Promise.resolve(null);
       return Lessons.load(meta.week).then(function (wk) {
         return wk && wk[id] ? wk[id] : null;
@@ -590,14 +729,15 @@
     return { node: host, units: units };
   }
 
-  window.__TMS = { Store: Store, Speaker: Speaker, Lessons: Lessons, renderBlocks: renderBlocks,
-                   helpers: { $: $, $$: $$, el: el, esc: esc, inline: inline, plain: plain, clamp: clamp,
+  T.Store = Store; T.Speaker = Speaker; T.Lessons = Lessons; T.Courses = Courses;
+  T.renderBlocks = renderBlocks;
+  Object.assign(T, { helpers: { $: $, $$: $$, el: el, esc: esc, inline: inline, plain: plain, clamp: clamp,
                               pct: pct, today: today, lessonState: lessonState, isDone: isDone,
                               isHeard: isHeard, bestScore: bestScore, countDone: countDone,
                               nextLesson: nextLesson, streak: streak, recordConcept: recordConcept,
-                              weakConcepts: weakConcepts, LESSON_BY_ID: LESSON_BY_ID,
+                              weakConcepts: weakConcepts, CUR: CUR, LBI: LBI, ACTIVE: ACTIVE, P: P, M: M, NT: NT,
                               isoLocal: isoLocal, isWeekend: isWeekend,                               startDay: startDay, rollToWeekday: rollToWeekday, beforeStart: beforeStart, dateForIdx: dateForIdx, scheduledIdx: scheduledIdx,
-                              DAY_NAME: DAY_NAME, fmtDate: fmtDate } };
+                              DAY_NAME: DAY_NAME, fmtDate: fmtDate } });
 })();
 
 /* ============================================================
@@ -608,9 +748,10 @@
 
   var T = window.__TMS, H = T.helpers;
   var $ = H.$, $$ = H.$$, el = H.el, esc = H.esc, inline = H.inline, clamp = H.clamp;
-  var Store = T.Store, Speaker = T.Speaker, Lessons = T.Lessons;
-  var C = window.CURRICULUM;
-  var LESSON_BY_ID = H.LESSON_BY_ID;
+  var Store = T.Store, Speaker = T.Speaker, Lessons = T.Lessons, Courses = T.Courses;
+  var P = H.P, M = H.M, NT = H.NT;
+  function C() { return H.CUR(); }
+  function LESSON_BY_ID(id) { return H.LBI()[id]; }
 
   var ICON = {
     play: '<svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg>',
@@ -631,15 +772,26 @@
     var rail = $('#syllabus');
     if (!rail) return;
     rail.innerHTML = '';
+
+    var meta = Courses.meta(H.ACTIVE());
+    var wm = $('#wordmark');
+    if (wm) {
+      wm.innerHTML = meta
+        ? esc(meta.title) + '<span class="sub">' + esc(meta.subtitle) + '</span>'
+        : 'Your courses<span class="sub">Pick one to begin</span>';
+    }
+    var sw = $('#courseSwitch');
+    if (sw) sw.hidden = !meta || Courses.all().length < 2;
+    if (!meta || !T.C) { $('#railBar').style.width = '0%'; return; }
     var openWeek = null;
-    var m = (location.hash || '').match(/#\/(?:lesson|test)\/(w(\d\d)l\d\d)/);
+    var m = (location.hash || '').match(/#\/[^/]+\/(?:lesson|test)\/(w(\d\d)l\d\d)/);
     if (m) openWeek = parseInt(m[2], 10);
     else openWeek = H.nextLesson().week;
 
-    C.parts.forEach(function (part) {
+    C().parts.forEach(function (part) {
       rail.appendChild(el('div', 'part-label', 'Part ' + part.id + ' · ' + esc(part.name)));
       part.weeks.forEach(function (wn) {
-        var w = C.weeks[wn - 1];
+        var w = C().weeks[wn - 1];
         var wrap = el('div', 'week');
         wrap.setAttribute('data-open', wn === openWeek ? '1' : '0');
 
@@ -681,12 +833,30 @@
 
     var done = H.countDone();
     var bar = $('#railBar');
-    if (bar) bar.style.width = (done / C.flat.length * 100) + '%';
-    var meta = $('#railMeta');
-    if (meta) meta.innerHTML = '<span>' + done + ' / ' + C.flat.length + ' lessons</span><span>' + H.pct(done / C.flat.length) + '%</span>';
+    if (bar) bar.style.width = (done / C().flat.length * 100) + '%';
+    var mt = $('#railMeta');
+    if (mt) mt.innerHTML = '<span>' + done + ' / ' + C().flat.length + ' lectures</span><span>' + H.pct(done / C().flat.length) + '%</span>';
+  }
+
+  /* a course-relative hash such as "#/plan" becomes "#/marketing/plan" */
+  function withCourse(h) {
+    if (!h || h.indexOf('#/') !== 0) return h;
+    var rest = h.slice(2), first = rest.split('/')[0];
+    if (first === 'courses' || Courses.meta(first)) return h;
+    return '#/' + (H.ACTIVE() || 'marketing') + '/' + rest;
+  }
+
+  function written() { return T.WRITTEN || []; }
+  function isWritten(n) { return written().indexOf(n) >= 0; }
+  function writtenNote() {
+    var w = written();
+    if (!w.length) return 'None of this course\u2019s lectures are written yet — the syllabus is fixed first.';
+    if (w.length === 1) return 'Week ' + w[0] + ' is ready now.';
+    return 'Weeks ' + w.slice(0, -1).join(', ') + ' and ' + w[w.length - 1] + ' are ready now.';
   }
 
   function go(hash) {
+    hash = withCourse(hash);
     if (location.hash === hash) Router.render();
     else location.hash = hash;
     document.body.setAttribute('data-rail', 'closed');
@@ -695,23 +865,79 @@
   function crumb(text) { var c = $('#crumb'); if (c) c.textContent = text; }
 
   /* =========================================================
+     COURSES — the picker
+     ========================================================= */
+  function viewCourses(main) {
+    crumb('Courses');
+    var col = el('div', 'col col-wide');
+    col.innerHTML =
+      '<div class="lesson-head">' +
+        '<div class="kicker"><span class="tagline">Your library</span></div>' +
+        '<h1 class="lesson-title">Courses</h1>' +
+        '<p class="lesson-standfirst">Each course is a full sixteen-week programme with its own lectures, ' +
+        'tests and record of what you have mastered. Progress is kept separately for each, so studying two ' +
+        'at once costs you nothing.</p>' +
+      '</div>';
+
+    var grid = el('div', 'course-grid');
+    Courses.all().forEach(function (c) {
+      var wk = Courses.writtenWeeks(c.id);
+      var sl = Store.state.byCourse[c.id];
+      var done = 0, best = [];
+      if (sl && sl.progress && sl.progress.lessons) {
+        Object.keys(sl.progress.lessons).forEach(function (k) {
+          var st = sl.progress.lessons[k];
+          if (st && st.testedAt && st.best >= 70) { done += 1; best.push(st.best); }
+        });
+      }
+      var mean = best.length ? Math.round(best.reduce(function (a, b) { return a + b; }, 0) / best.length) : null;
+      var open = c.status === 'open' && wk.length;
+
+      var card = el('button', 'course-card');
+      card.style.setProperty('--card-accent', c.accent || 'var(--accent)');
+      card.innerHTML =
+        '<span class="cc-top">' +
+          '<span class="cc-field">' + esc(c.field) + '</span>' +
+          (open ? '<span class="cc-badge open">' + wk.length + ' week' + (wk.length === 1 ? '' : 's') + ' ready</span>'
+                : '<span class="cc-badge soon">Syllabus only</span>') +
+        '</span>' +
+        '<span class="cc-title">' + esc(c.title) + '</span>' +
+        '<span class="cc-blurb">' + esc(c.blurb) + '</span>' +
+        '<span class="cc-foot">' +
+          '<span class="cc-sub mono">' + esc(c.subtitle) + '</span>' +
+          (done ? '<span class="cc-sub mono">' + done + ' passed' + (mean ? ' · mean ' + mean + '%' : '') + '</span>' : '') +
+        '</span>';
+      card.onclick = function () { location.hash = '#/' + c.id + '/today'; };
+      grid.appendChild(card);
+    });
+    col.appendChild(grid);
+
+    var note = el('div', 'banner');
+    note.innerHTML = '<b>Want a field that is not here?</b> Say so and a syllabus for it gets written into the ' +
+      'app — same structure, same player, same tests. The course list is data, not code.';
+    col.appendChild(note);
+
+    main.appendChild(col);
+  }
+
+  /* =========================================================
      TODAY
      ========================================================= */
   function viewToday(main) {
     var next = H.nextLesson();
     var done = H.countDone();
     var weak = H.weakConcepts(5);
-    var hours = (C.flat.reduce(function (a, b) { return a + b.mins; }, 0) / 60);
+    var hours = (C().flat.reduce(function (a, b) { return a + b.mins; }, 0) / 60);
     crumb('Today');
 
     var col = el('div', 'col');
-    var greet = done === 0 ? 'Start here' : (done >= C.flat.length ? 'Course complete' : 'Today’s session');
+    var greet = done === 0 ? 'Start here' : (done >= C().flat.length ? 'Course complete' : 'Today’s session');
 
     col.innerHTML =
       '<div class="lesson-head" style="border-bottom:0;padding-bottom:6px">' +
         '<div class="kicker"><span class="tagline">' + esc(greet) + '</span>' +
         '<span class="pill">One hour</span></div>' +
-        '<h1 class="lesson-title">' + esc(C.title) + '</h1>' +
+        '<h1 class="lesson-title">' + esc(C().title) + '</h1>' +
         '<p class="lesson-standfirst">Sixteen weeks, eighty lessons, ' + hours.toFixed(0) + ' hours of lectures. ' +
         'Listen, write in your notebook, then sit the test. The course watches what you get wrong and brings it back.</p>' +
       '</div>';
@@ -727,7 +953,7 @@
     }
     var stats = el('div', 'stat-row');
     stats.innerHTML =
-      '<div class="stat"><span class="v">' + done + '<span style="font-size:15px;color:var(--ink-3)">/' + C.flat.length + '</span></span><span class="l">Lessons passed</span></div>' +
+      '<div class="stat"><span class="v">' + done + '<span style="font-size:15px;color:var(--ink-3)">/' + C().flat.length + '</span></span><span class="l">Lessons passed</span></div>' +
       '<div class="stat"><span class="v">' + H.streak() + '</span><span class="l">Weekday streak</span></div>' +
       '<div class="stat"><span class="v">' + (avgScore() == null ? '—' : avgScore() + '%') + '</span><span class="l">Average test score</span></div>' +
       '<div class="stat"><span class="v">' + weak.length + '</span><span class="l">Concepts to shore up</span></div>';
@@ -781,7 +1007,7 @@
 
     /* next lesson card */
     var card = el('div', 'card');
-    var avail = next.week <= LAST_WRITTEN_WEEK;
+    var avail = isWritten(next.week);
     card.innerHTML =
       '<div class="eyebrow" style="margin-bottom:9px">Next lecture</div>' +
       '<div class="today-lesson"><div class="tl-body">' +
@@ -845,8 +1071,8 @@
 
   function avgScore() {
     var xs = [];
-    Object.keys(Store.state.progress.lessons).forEach(function (k) {
-      var s = Store.state.progress.lessons[k];
+    Object.keys(P().lessons).forEach(function (k) {
+      var s = P().lessons[k];
       if (s && typeof s.best === 'number') xs.push(s.best);
     });
     if (!xs.length) return null;
@@ -873,14 +1099,14 @@
         'foundations, then people and markets, then strategy, then the mix, then data, then command.</p>' +
       '</div>';
 
-    C.parts.forEach(function (part) {
+    C().parts.forEach(function (part) {
       var ph = el('div', 'block-head');
       ph.innerHTML = '<h2>Part ' + part.id + ' · ' + esc(part.name) + '</h2>' +
         '<span class="hint mono">Weeks ' + part.weeks[0] + '–' + part.weeks[part.weeks.length - 1] + '</span>';
       col.appendChild(ph);
 
       part.weeks.forEach(function (wn) {
-        var w = C.weeks[wn - 1];
+        var w = C().weeks[wn - 1];
         var sec = el('section', 'syl-week');
         sec.innerHTML = '<h3><span class="wn">Week ' + wn + '</span><span class="wt">' + esc(w.title) + '</span></h3>';
         var grid = el('div', 'syl-grid');
@@ -888,7 +1114,7 @@
           var b = H.bestScore(l.id);
           var st = H.isDone(l.id)
             ? '<span class="ss" style="color:var(--good)">' + b + '%</span>'
-            : (wn <= LAST_WRITTEN_WEEK ? '<span class="ss" style="color:var(--ink-3)">' + l.mins + ' min</span>'
+            : (isWritten(wn) ? '<span class="ss" style="color:var(--ink-3)">' + l.mins + ' min</span>'
                                        : '<span class="ss" style="color:var(--gold-ink)">soon</span>');
           var row = el('button', 'syl-row',
             '<span class="sn">' + (l.idx < 10 ? '0' + l.idx : l.idx) + '</span>' +
@@ -907,10 +1133,9 @@
   /* =========================================================
      LESSON
      ========================================================= */
-  var LAST_WRITTEN_WEEK = 0;   /* recalculated at boot from what loads */
 
   function viewLesson(main, id) {
-    var meta = LESSON_BY_ID[id];
+    var meta = LESSON_BY_ID(id);
     if (!meta) { go('#/today'); return; }
     crumb('Week ' + meta.week + ' · Lesson ' + meta.idx);
 
@@ -929,7 +1154,7 @@
           '<p class="lesson-standfirst">' + esc(meta.blurb) + '</p></div>' +
           '<div class="banner"><b>This lecture is still being written.</b> The syllabus is fixed and this lesson’s ' +
           'place in it is settled — the lecture text, figures and test are added week by week. ' +
-          'Everything up to week ' + LAST_WRITTEN_WEEK + ' is ready now.</div>' +
+          writtenNote() + '</div>' +
           '<div class="lesson-foot"><button class="btn btn-primary" data-go="#/today">Back to today</button>' +
           '<button class="btn" data-go="#/syllabus">Syllabus</button></div>';
         wireGo(col);
@@ -997,7 +1222,7 @@
     var ta = el('textarea', 'notes-area');
     ta.id = 'notes-' + meta.id;
     ta.placeholder = 'Anything you want to keep with the lesson — a question to chase, a company it reminded you of…';
-    ta.value = Store.state.notes[meta.id] || '';
+    ta.value = NT()[meta.id] || '';
     var noteTimer = null;
     ta.oninput = function () {
       if (noteTimer) clearTimeout(noteTimer);
@@ -1011,7 +1236,7 @@
 
     /* --- footer --- */
     var foot = el('div', 'lesson-foot');
-    var prev = C.flat[meta.idx - 2], next = C.flat[meta.idx];
+    var prev = C().flat[meta.idx - 2], next = C().flat[meta.idx];
     foot.innerHTML =
       '<button class="btn btn-gold" data-go="#/test/' + meta.id + '">Sit the test ' + ICON.arrow + '</button>' +
       (prev ? '<button class="btn" data-go="#/lesson/' + prev.id + '">← Previous</button>' : '') +
@@ -1024,7 +1249,7 @@
   }
 
   function markHeard(id) {
-    var p = Store.state.progress.lessons[id] || (Store.state.progress.lessons[id] = {});
+    var p = P().lessons[id] || (P().lessons[id] = {});
     if (!p.listened) {
       p.listened = true;
       p.listenedAt = new Date().toISOString();
@@ -1272,7 +1497,7 @@
       var nIdx = H.scheduledIdx(nd);
       strip.innerHTML = '<span class="sd-date">' + H.DAY_NAME[now.getDay()] + ' — day off</span>' +
         '<span style="flex:1;min-width:200px">No lecture scheduled. Back on ' + H.DAY_NAME[nd.getDay()] + ' with ' +
-        (nIdx ? 'lecture ' + nIdx + ', <b>' + esc(C.flat[nIdx - 1].title) + '</b>.' : 'the next lecture.') + '</span>';
+        (nIdx ? 'lecture ' + nIdx + ', <b>' + esc(C().flat[nIdx - 1].title) + '</b>.' : 'the next lecture.') + '</span>';
     } else {
       var behind = next.idx < todayIdx;
       if (behind) strip.className = 'sched-strip behind';
@@ -1282,7 +1507,7 @@
         (behind
           ? 'The plan says lecture <b>' + todayIdx + '</b> today, but you are still on lecture <b>' + next.idx +
             '</b> — ' + (todayIdx - next.idx) + ' behind. Catch up, or move the plan so today is where you actually are.'
-          : 'Today: lecture <b>' + todayIdx + '</b>, ' + esc(C.flat[todayIdx - 1].title) + '.') +
+          : 'Today: lecture <b>' + todayIdx + '</b>, ' + esc(C().flat[todayIdx - 1].title) + '.') +
         '</span>' +
         (behind ? '<button class="btn btn-sm" id="shiftBtn">Shift the plan to today</button>' : '');
     }
@@ -1305,7 +1530,7 @@
       '<span><i style="background:var(--gold)"></i>scheduled day has passed, not done</span>' +
       '<span><i style="background:var(--rule-strong)"></i>still to come</span>'));
 
-    C.weeks.forEach(function (w) {
+    C().weeks.forEach(function (w) {
       var wrap = el('section', 'plan-week');
       var d0 = H.dateForIdx((w.n - 1) * 5 + 1), d4 = H.dateForIdx((w.n - 1) * 5 + 5);
       var past = d4 < now;
@@ -1342,13 +1567,13 @@
       /* put today's date on the lesson you are actually up to */
       var base = H.rollToWeekday(new Date()), back = next.idx - 1;
       while (back > 0) { base.setDate(base.getDate() - 1); if (!H.isWeekend(base)) back -= 1; }
-      Store.state.progress.startDate = H.isoLocal(base);
+      P().startDate = H.isoLocal(base);
       Store.save();
       go('#/plan');
     };
     $('#startDate', ctl).onchange = function (e) {
       if (!e.target.value) return;
-      Store.state.progress.startDate = H.isoLocal(H.rollToWeekday(new Date(e.target.value + 'T00:00:00')));
+      P().startDate = H.isoLocal(H.rollToWeekday(new Date(e.target.value + 'T00:00:00')));
       Store.save();
       go('#/plan');
     };
@@ -1357,8 +1582,7 @@
   window.__TMS.views = { renderRail: renderRail, go: go, viewToday: viewToday,
                          viewSyllabus: viewSyllabus, viewLesson: viewLesson, viewPlan: viewPlan,
                          wireGo: wireGo, crumb: crumb, ICON: ICON, avgScore: avgScore,
-                         setLastWritten: function (n) { LAST_WRITTEN_WEEK = n; },
-                         getLastWritten: function () { return LAST_WRITTEN_WEEK; } };
+                         viewCourses: viewCourses, isWritten: isWritten, withCourse: withCourse };
 })();
 
 /* ============================================================
@@ -1370,7 +1594,10 @@
   var T = window.__TMS, H = T.helpers, V = T.views;
   var $ = H.$, $$ = H.$$, el = H.el, esc = H.esc, inline = H.inline, clamp = H.clamp;
   var Store = T.Store, Speaker = T.Speaker, Lessons = T.Lessons;
-  var C = window.CURRICULUM, LESSON_BY_ID = H.LESSON_BY_ID;
+  var Courses = T.Courses;
+  var P = H.P, M = H.M, NT = H.NT;
+  function C() { return H.CUR(); }
+  function LESSON_BY_ID(id) { return H.LBI()[id]; }
   var PASS = 70;
 
   /* ---------------------------------------------------------
@@ -1552,7 +1779,7 @@
      TEST VIEW
      --------------------------------------------------------- */
   function viewTest(main, id) {
-    var meta = LESSON_BY_ID[id];
+    var meta = LESSON_BY_ID(id);
     if (!meta) { V.go('#/today'); return; }
     V.crumb('Test · Lesson ' + meta.idx);
     Speaker.pause();
@@ -1613,16 +1840,16 @@
         sp.node.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
         /* persist */
-        var p = Store.state.progress.lessons[id] || (Store.state.progress.lessons[id] = {});
+        var p = P().lessons[id] || (P().lessons[id] = {});
         p.testedAt = new Date().toISOString();
         p.attempts = (p.attempts || 0) + 1;
         p.best = Math.max(p.best || 0, sp.pct);
         p.last = sp.pct;
         p.listened = true;
-        if (!Store.state.progress.scores) Store.state.progress.scores = [];
-        Store.state.progress.scores.push({ id: id, idx: meta.idx, at: H.today(), pct: sp.pct });
-        Store.state.progress.scores = Store.state.progress.scores.slice(-200);
-        Store.state.progress.lastLessonId = id;
+        if (!P().scores) P().scores = [];
+        P().scores.push({ id: id, idx: meta.idx, at: H.today(), pct: sp.pct });
+        P().scores = P().scores.slice(-200);
+        P().lastLessonId = id;
         Store.markDay();
         results.forEach(function (r) {
           H.recordConcept(r.q.concept, r.q.conceptName, r.score, r.q.id);
@@ -1637,7 +1864,7 @@
         });
         V.renderRail();
 
-        var next = C.flat[meta.idx];
+        var next = C().flat[meta.idx];
         foot.innerHTML =
           (sp.pct >= PASS && next ? '<button class="btn btn-primary" data-go="#/lesson/' + next.id + '">Next lecture ' + V.ICON.arrow + '</button>' : '') +
           (sp.pct < PASS ? '<button class="btn btn-gold" data-go="#/lesson/' + id + '">Re-listen to this lecture</button>' : '') +
@@ -1754,8 +1981,8 @@
     var col = el('div', 'col col-wide');
     var done = H.countDone();
     var all = H.weakConcepts(999);
-    var mastered = Object.keys(Store.state.mastery.concepts).filter(function (k) {
-      return Store.state.mastery.concepts[k].ema >= 0.75;
+    var mastered = Object.keys(M().concepts).filter(function (k) {
+      return M().concepts[k].ema >= 0.75;
     }).length;
 
     col.innerHTML =
@@ -1776,7 +2003,7 @@
 
     /* the semester grid */
     var gcard = el('div', 'card');
-    var rows = C.weeks.map(function (w) {
+    var rows = C().weeks.map(function (w) {
       var cells = w.lessons.map(function (l) {
         var st = H.isDone(l.id) ? 'done' : (H.isHeard(l.id) ? 'heard' : 'todo');
         var fillc = st === 'done' ? 'var(--accent)' : st === 'heard' ? 'var(--gold)' : 'var(--surface-3)';
@@ -1806,7 +2033,7 @@
     V.wireGo(gcard);
 
     /* score history */
-    var scores = (Store.state.progress.scores || []).slice(-40);
+    var scores = (P().scores || []).slice(-40);
     if (scores.length >= 2) {
       var sc = el('div', 'card');
       sc.innerHTML = '<div class="eyebrow" style="margin-bottom:12px">Test scores, in order taken</div>' +
@@ -1816,8 +2043,8 @@
 
     /* concept mastery */
     var mc = el('div', 'card');
-    var allC = Object.keys(Store.state.mastery.concepts).map(function (k) {
-      return Object.assign({ id: k }, Store.state.mastery.concepts[k]);
+    var allC = Object.keys(M().concepts).map(function (k) {
+      return Object.assign({ id: k }, M().concepts[k]);
     }).sort(function (a, b) { return a.ema - b.ema; });
 
     if (!allC.length) {
@@ -1862,7 +2089,7 @@
 
     $('#expBtn', card).onclick = function () {
       box.hidden = false; act.hidden = true;
-      box.value = JSON.stringify({ v: 1, progress: Store.state.progress, mastery: Store.state.mastery, notes: Store.state.notes });
+      box.value = JSON.stringify({ v: 1, progress: Store.state.progress, mastery: Store.state.mastery, notes: NT() });
       box.readOnly = true;
       box.select();
       msg.textContent = 'Selected — copy it, then open your other copy and choose “Paste one in”.';
@@ -1880,6 +2107,10 @@
         var d;
         try { d = JSON.parse(box.value); } catch (e) { msg.textContent = 'That is not a valid progress code. Copy the whole thing, including the outer braces.'; return; }
         if (!d || !d.progress) { msg.textContent = 'That code has no progress in it.'; return; }
+        if (d.course && d.course !== H.ACTIVE()) {
+          msg.textContent = 'That code is from the ' + esc(d.course) + ' course. Open that course first, then paste it there.';
+          return;
+        }
         var added = mergeState(d);
         Store.save();
         msg.textContent = 'Merged. ' + added + ' lesson result' + (added === 1 ? '' : 's') + ' and your concept mastery are now up to date here.';
@@ -1891,7 +2122,7 @@
 
   function mergeState(d) {
     var changed = 0;
-    var mine = Store.state.progress.lessons, theirs = (d.progress && d.progress.lessons) || {};
+    var mine = P().lessons, theirs = (d.progress && d.progress.lessons) || {};
     Object.keys(theirs).forEach(function (k) {
       var t = theirs[k], m = mine[k];
       if (!m) { mine[k] = t; changed++; return; }
@@ -1903,20 +2134,20 @@
       if ((m.best || 0) !== before) changed++;
     });
 
-    var days = Store.state.progress.days || [];
+    var days = P().days || [];
     ((d.progress && d.progress.days) || []).forEach(function (x) { if (days.indexOf(x) < 0) days.push(x); });
-    Store.state.progress.days = days.sort().slice(-400);
+    P().days = days.sort().slice(-400);
 
-    var scores = Store.state.progress.scores || [];
+    var scores = P().scores || [];
     var seen = {};
     scores.forEach(function (s) { seen[s.id + s.at + s.pct] = 1; });
     ((d.progress && d.progress.scores) || []).forEach(function (s) {
       if (!seen[s.id + s.at + s.pct]) scores.push(s);
     });
-    Store.state.progress.scores = scores.sort(function (a, b) { return (a.at + '').localeCompare(b.at + ''); }).slice(-200);
+    P().scores = scores.sort(function (a, b) { return (a.at + '').localeCompare(b.at + ''); }).slice(-200);
 
     /* mastery: the more recently exercised record wins, missed questions union */
-    var mc = Store.state.mastery.concepts, tc = (d.mastery && d.mastery.concepts) || {};
+    var mc = M().concepts, tc = (d.mastery && d.mastery.concepts) || {};
     Object.keys(tc).forEach(function (k) {
       var t = tc[k], m = mc[k];
       if (!m) { mc[k] = t; return; }
@@ -1928,8 +2159,8 @@
     });
 
     Object.keys(d.notes || {}).forEach(function (k) {
-      if (!Store.state.notes[k]) Store.state.notes[k] = d.notes[k];
-      else if (d.notes[k] && d.notes[k].length > Store.state.notes[k].length) Store.state.notes[k] = d.notes[k];
+      if (!NT()[k]) NT()[k] = d.notes[k];
+      else if (d.notes[k] && d.notes[k].length > NT()[k].length) NT()[k] = d.notes[k];
     });
     return changed;
   }
@@ -1966,6 +2197,22 @@
      ROUTER
      --------------------------------------------------------- */
   var Router = {
+    _paint: function (main, rest) {
+      var m;
+      if ((m = rest.match(/^lesson\/(\w+)/))) V.viewLesson(main, m[1]);
+      else if ((m = rest.match(/^test\/(\w+)/))) viewTest(main, m[1]);
+      else if (rest.indexOf('plan') === 0) V.viewPlan(main);
+      else if (rest.indexOf('syllabus') === 0) V.viewSyllabus(main);
+      else if (rest.indexOf('progress') === 0) viewProgress(main);
+      else if (rest.indexOf('review') === 0) viewReview(main);
+      else V.viewToday(main);
+      V.renderRail();
+      $$('#railNav button').forEach(function (b) {
+        var want = (b.getAttribute('data-route') || '').replace('#/', '');
+        b.setAttribute('aria-selected', rest.indexOf(want) === 0 ? 'true' : 'false');
+      });
+    },
+
     render: function () {
       var main = $('#view');
       if (!main) return;
@@ -1974,23 +2221,37 @@
       Speaker.stop();
       Speaker.onEnd = null;
 
-      var h = location.hash || '#/today';
-      var m;
-      if ((m = h.match(/^#\/lesson\/(\w+)/))) V.viewLesson(main, m[1]);
-      else if ((m = h.match(/^#\/test\/(\w+)/))) viewTest(main, m[1]);
-      else if (h.indexOf('#/plan') === 0) V.viewPlan(main);
-      else if (h.indexOf('#/syllabus') === 0) V.viewSyllabus(main);
-      else if (h.indexOf('#/progress') === 0) viewProgress(main);
-      else if (h.indexOf('#/review') === 0) viewReview(main);
-      else V.viewToday(main);
+      var h = location.hash || '';
 
-      V.renderRail();
-      $$('#railNav button').forEach(function (b) {
-        b.setAttribute('aria-selected', h.indexOf(b.getAttribute('data-route')) === 0 ? 'true' : 'false');
+      if (h.indexOf('#/courses') === 0) {
+        document.body.setAttribute('data-nocourse', '1');
+        V.viewCourses(main);
+        V.renderRail();
+        return;
+      }
+
+      var m = h.match(/^#\/([A-Za-z0-9_-]+)(?:\/(.*))?$/);
+      var id = m && m[1];
+      if (!id || !Courses.meta(id)) {
+        var last = Store.state.prefs.lastCourse;
+        location.replace('#' + (last && Courses.meta(last) ? '/' + last + '/today' : '/courses'));
+        return;
+      }
+
+      document.body.removeAttribute('data-nocourse');
+      var rest = (m[2] || 'today');
+      if (H.ACTIVE() === id && T.C) { Router._paint(main, rest); return; }
+
+      main.innerHTML = '<div class="col"><div class="empty" style="margin-top:60px">Opening the course\u2026</div></div>';
+      Courses.activate(id).then(function (c) {
+        if (!c) { location.replace('#/courses'); return; }
+        main.innerHTML = '';
+        Router._paint(main, rest);
       });
     },
     rerender: function () { Router.render(); }
   };
+
   window.Router = Router;
 
   /* ---------------------------------------------------------
@@ -1999,9 +2260,6 @@
   function boot() {
     Store.loadLocal();
     Speaker.init();
-
-    var wks = window.LESSON_MANIFEST || [];
-    V.setLastWritten(wks.length ? Math.max.apply(null, wks) : 0);
 
     /* theme toggle */
     var savedTheme = null;
@@ -2033,7 +2291,21 @@
       if (e.key === ' ' && Speaker.units.length) { e.preventDefault(); Speaker.toggle(); }
     });
 
+    var cs = $('#courseSwitch');
+    if (cs) cs.onclick = function () { location.hash = '#/courses'; };
+
     window.addEventListener('hashchange', Router.render);
+
+    T.Courses.loadManifests().then(function () {
+      if ((location.hash || '').indexOf('#/courses') === 0) Router.render();
+    });
+
+    if (!location.hash || location.hash === '#' || location.hash === '#/') {
+      var last = Store.state.prefs.lastCourse;
+      var only = (window.COURSES || []).length === 1 ? window.COURSES[0].id : null;
+      var start = (last && T.Courses.meta(last)) ? last : only;
+      location.replace('#' + (start ? '/' + start + '/today' : '/courses'));
+    }
     Router.render();
     Store.connect();
   }

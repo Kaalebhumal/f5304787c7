@@ -35,10 +35,14 @@ img { max-width: 100%; }
 <div id="app">
   <aside id="rail" aria-label="Course navigation">
     <div class="rail-head">
-      <h1 class="wordmark">The Marketing Semester<span class="sub">16 weeks · 80 lectures</span></h1>
+      <h1 class="wordmark" id="wordmark">The Marketing Semester<span class="sub">16 weeks · 80 lectures</span></h1>
+      <button class="course-switch" id="courseSwitch" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h11M4 12h16M4 17h8"/></svg>
+        Change course
+      </button>
       <div class="rail-progress">
         <div class="bar"><i id="railBar" style="width:0%"></i></div>
-        <div class="meta" id="railMeta"><span>0 / 80 lessons</span><span>0%</span></div>
+        <div class="meta" id="railMeta"><span>0 / 80 lectures</span><span>0%</span></div>
       </div>
     </div>
     <div class="rail-nav" id="railNav" role="tablist">
@@ -67,8 +71,7 @@ img { max-width: 100%; }
 <div id="scrim"></div>
 <script>window.TMS_SITE = true; window.TMS_GATE = '7f84aa9d2c63f16b7827d82dbb10b7cbfd14b9c539204f15ceef4d217aafb2bf';</script>
 <script src="gate.js"></script>
-<script src="curriculum.js"></script>
-<script src="lessons/manifest.js"></script>
+<script src="courses/registry.js"></script>
 <script src="app.js"></script>
 <script>
 if ('serviceWorker' in navigator) {

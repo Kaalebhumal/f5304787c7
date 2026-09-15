@@ -1,6 +1,7 @@
 /* The Marketing Semester — course map.
-   Metadata only; lesson bodies live in lessons/wNN.js and load on demand. */
-window.CURRICULUM = {
+   Metadata only; lecture bodies live in lessons/wNN.js and load on demand. */
+window.COURSE_DATA = window.COURSE_DATA || {};
+window.COURSE_DATA.marketing = {
   title: "The Marketing Semester",
   subtitle: "A sixteen-week course",
   parts: [
@@ -126,19 +127,3 @@ window.CURRICULUM = {
     ]}
   ]
 };
-
-/* flat index */
-window.CURRICULUM.flat = (function () {
-  var out = [], i = 0;
-  window.CURRICULUM.weeks.forEach(function (w) {
-    var partId = "";
-    window.CURRICULUM.parts.forEach(function (p) { if (p.weeks.indexOf(w.n) >= 0) partId = p.id; });
-    w.part = partId;
-    w.lessons.forEach(function (l, j) {
-      i += 1;
-      l.week = w.n; l.idx = i; l.nInWeek = j + 1; l.weekTitle = w.title; l.part = partId;
-      out.push(l);
-    });
-  });
-  return out;
-})();
