@@ -212,13 +212,13 @@ window.LESSONS['marketing.w01'] = {
     { t: "p", text: "Next lecture: the five beliefs a company can hold about its customers, why most companies hold an out-of-date one without knowing, and how to tell which one you are dealing with from the outside in about ten minutes." }
   ],
   exercises: [
-    { task: "**Walk the six activities.** For your running case, write one line under each of the six: research, product, price, place, promotion, service. Then mark the ones where you genuinely do not know the answer.",
-      hint: "The blanks are the point. Most organisations can fill product and promotion and go quiet at research and service. Those gaps are your syllabus for the next sixteen weeks." },
-    { task: "**Find the exchange.** Write down exactly what your case gives, and exactly what it gets back. Then write what the other party gives up besides money — time, effort, risk, having to admit they need it.",
-      hint: "If the only thing you can name on the second list is money, look harder. The non-money costs are usually where the business is actually being lost." },
-    { task: "**Diagnose a stalled deal.** Think of one customer or supporter who did not say yes. Walk all five conditions and name the one that failed. Write one sentence on what would actually fix it.",
-      hint: "If you conclude it was condition two — no value — be suspicious. That is the comfortable answer. Condition five, trust, fails far more often and fails silently." },
-    { task: "**Who uses, who chooses, who pays?** For your case, name all three. If they are the same person, find a situation where they would not be — a gift, a company purchase, a child.",
+    { task: "**Walk the six activities.** For the company you are watching, write one line under each of the six: research, product, price, place, promotion, service. Everything you need is visible from outside — what they sell, what they charge, where you can get it, how they tell you, what happens when something goes wrong. Mark the ones you cannot answer.",
+      hint: "The blanks are the point, and they are not failures. Research is nearly always invisible from outside; service you can test by asking them a question and timing the reply." },
+    { task: "**Find the exchange.** Write down exactly what your company gives, and exactly what it gets back. Then write what the customer gives up *besides* money — time, effort, risk, the discomfort of admitting they need it.",
+      hint: "If the only thing on the second list is money, look harder. The non-money costs are usually where the business is actually being lost, and they are the cheapest thing to fix." },
+    { task: "**Diagnose a deal that did not happen — your own.** Think of something you nearly bought in the last month and did not. A subscription, a course, an appointment, a product in a shop. Walk all five conditions and name the one that actually stopped you. Write one sentence on what the seller could have changed.",
+      hint: "Be honest rather than flattering to yourself. \u2018Too expensive\u2019 is usually condition two in disguise — the value was not clear enough to justify the price — and sometimes it is condition five: you did not quite trust them." },
+    { task: "**Who uses, who chooses, who pays?** For your company, name all three. If they are the same person, find a situation where they would not be — a gift, a company account, a parent paying for a child, an employer paying for staff.",
       hint: "Then write the single sentence you would say to each of the three. If the three sentences are the same, one of them is wrong." },
     { task: "**Find marketing where you did not expect it.** Find one real campaign by a government, hospital or charity — a poster, a letter, a broadcast. Write which of the six demand states it is trying to move, and in which direction.",
       hint: "Estonian public-health and road-safety campaigns are the easiest to find and are usually trying to destroy demand, not create it." }
@@ -252,6 +252,7 @@ window.LESSONS['marketing.w01'] = {
 
     { id: "w01l01q13", concept: "six-activities", type: "short",
       q: "A marketing plan you are handed covers the product, the price and the advertising in detail. Which two of the six activities are most likely missing, and why does it matter?",
+      must: [{"point": "place is missing", "any": ["place", "distribut", "channel", "availab"]}, {"point": "service is missing", "any": ["service", "after the sale", "support", "return", "complaint"]}, {"point": "the gaps are invisible because the plan looks complete", "any": ["invisible", "looks complete", "nothing announces", "does not show", "seems finished", "no sign"]}],
       answer: "Almost certainly **place** and **service**. Place is missing because it feels like logistics rather than marketing, so it gets delegated to operations — but if the customer cannot easily obtain the thing, every other decision in the plan is wasted; availability is a growth lever, not a back-office matter. Service is missing because it happens after the sale, when the plan is considered finished — but it decides whether the customer ever returns, and repeat purchase is where the profit in most businesses actually sits. The reason it matters is that both gaps are invisible in the plan itself: the document looks complete and detailed, and nothing in it announces the two quarters of the job that were never considered.",
       explain: "This is the practical use of the six-activity list: it is a completeness check. Walk it against any plan and the blanks are the finding." },
 
@@ -324,6 +325,7 @@ window.LESSONS['marketing.w01'] = {
 
     { id: "w01l01q5", concept: "cust-roles", type: "short",
       q: "A company sells software that schedules shifts for hospital nurses. Identify the user, the buyer and the payer, and state one way the argument you make to each must differ.",
+      must: [{"point": "user = the nurse who operates it", "any": ["nurse", "ward", "staff who use", "shift manager", "user is"]}, {"point": "buyer = the director or committee that selects", "any": ["director", "committee", "manager who", "procurement", "chooses", "selects"]}, {"point": "payer = the hospital or health authority budget", "any": ["hospital", "authority", "budget", "trust", "employer pays", "health service"]}, {"point": "the arguments differ per role", "any": ["different argument", "differ", "not the same argument", "each needs", "three different"]}],
       answer: "The **user** is the ward nurse or shift manager who operates it daily; the **buyer** is typically a nursing director or IT committee that evaluates and selects; the **payer** is the hospital or health authority whose budget is charged. The arguments differ in currency: the user cares about time saved and fewer arguments over rotas; the buyer cares about implementation risk, staff resistance and integration with existing systems; the payer cares about cost per bed, overtime reduction and contract terms. A pitch that offers the payer’s cost argument to a nurse will fall flat, and a pitch that offers the nurse’s convenience argument to a finance committee will not get funded.",
       explain: "The three-role split is the most reliably useful idea in the lecture. Whenever a campaign fails for reasons nobody can name, check first whether it addressed one role with another role’s argument." },
 
@@ -352,6 +354,7 @@ window.LESSONS['marketing.w01'] = {
 
     { id: "w01l01q9", concept: "def-marketing", type: "short",
       q: "Explain, in your own words, why the phrase “and society at large” was added to the AMA definition of marketing, and give one consequence of taking it seriously.",
+      must: [{"point": "it widens who counts beyond buyer and seller", "any": ["third part", "society", "not party", "outside the transaction", "wider", "everyone else"]}, {"point": "effects on non-buyers count (pollution, addiction, misleading)", "any": ["pollution", "addiction", "harm", "externalit", "misleading", "non-buyer"]}, {"point": "profitable and satisfying can still be bad marketing", "any": ["still bad", "even if profitable", "can be a failure", "satisfied customer", "not enough"]}],
       answer: "It widens the set of parties whose value counts beyond the buyer and the selling firm, so that effects on people who are not party to the transaction — pollution, addiction, misleading claims, congestion — are treated as part of the marketer’s responsibility rather than as someone else’s externality. A consequence of taking it seriously is that a marketing decision can be judged a failure even when it is profitable and the customer is satisfied: a highly effective campaign for a product that harms non-buyers is, on this definition, bad marketing and not merely unethical marketing.",
       explain: "This clause is the bridge to week sixteen. It is also the clause that lets you argue that countermarketing and demarketing are core marketing activity rather than an awkward exception." },
 
@@ -1268,15 +1271,15 @@ window.LESSONS['marketing.w01'] = {
     { t: "p", text: "Next lecture closes week one with the marketing mix: the four Ps, the three that services added, the four Cs that turned the whole thing around to face the customer, and the question of whether a mnemonic from 1960 is still the right way to organise the work." }
   ],
   exercises: [
-    { task: "**Decompose your own growth.** Take any organisation whose numbers you can see — an employer, a family business, a club. Split last year's revenue or membership growth into three parts: how much came from the population or market growing, how much from customers spending more, and how much from anything the organisation actually did. Write the three numbers down.",
-      hint: "If you cannot find market growth figures, national or municipal statistics offices publish population and real income series free. An estimate you can defend beats a precise number you cannot." },
-    { task: "**Run the crossover arithmetic.** A category you know holds 90 units; a substitute holds 10 and is growing 25% a year while the category shrinks 1% a year. Compute the crossover year using `n = ln(share ratio) / ln(growth ratio)`. Then redo it with the substitute growing at 15% instead of 25%, and note how much the answer moved.",
-      hint: "The second calculation is the important one. It shows you how sensitive the conclusion is to the estimate you are least sure about — which tells you whether the estimate is worth refining." },
-    { task: "**Define one business three ways.** Pick an organisation and write its business as (a) a product definition, (b) a function definition, (c) a hyperopic definition so broad it forbids nothing. For (b), list at least four competitors that (a) cannot see.",
+    { task: "**Decompose somebody else's growth.** Pick any listed company — a bank is a good choice, since they all publish detailed annual reports — and find revenue for two years five years apart. Then find how much the population or the market grew over the same period. Split the growth into: market got bigger, customers spent more, and the residual the company itself caused. Write the three numbers.",
+      hint: "Annual reports are free on any listed company's investor-relations page, and Statistics Estonia publishes population and income series. You are not guessing — you are reading two public documents." },
+    { task: "**Run the crossover arithmetic.** A category holds 90 units; a substitute holds 10 and grows 25% a year while the category shrinks 1% a year. Compute the crossover year with `n = ln(share ratio) / ln(growth ratio)`. Then redo it with the substitute growing at 15%, and note how far the answer moved.",
+      hint: "The second calculation is the important one. It shows how sensitive the conclusion is to the estimate you are least sure about — which tells you whether refining that estimate is worth any effort." },
+    { task: "**Define one business three ways.** Take the company you are watching and write its business as (a) a product definition, (b) a function definition — the job the customer is hiring it for, (c) a hyperopic definition so broad it forbids nothing. For (b), list at least four competitors that (a) cannot see.",
       hint: "If you cannot write a convincing (c), you have not made (b) narrow enough to be safe from it." },
-    { task: "**Find the anchor.** Place a firm you know on Abell's three axes, then answer: if it had to abandon one axis to survive, which would it defend? Write the answer and one sentence of evidence — something the firm has actually done, not something it says.",
-      hint: "Evidence lives in where money goes: capital spending, hiring, and which department's head sits closest to the chief executive." },
-    { task: "**Argue the other side.** In no more than 200 words, make the strongest case that a specific firm should *not* redefine itself along customer-function lines — that its distinctive capability is tied to its current technology and abandoning it would be value-destroying.",
+    { task: "**Find the anchor.** Place your company on Abell's three axes — who it serves, what job it does, by what means. Then answer: if it had to give up one axis to survive, which would it defend? Support it with one thing the company has actually *done*, not something it says.",
+      hint: "Evidence you can see from outside: what it has opened or closed, what it advertises hardest, what it has stopped selling, who it has hired (job adverts are public and unusually honest)." },
+    { task: "**Argue the other side.** In no more than 200 words, make the strongest case that your company should *not* redefine itself along customer-function lines — that its distinctive capability is tied to how it does things today, and abandoning that would destroy value.",
       hint: "This is the resource-based view in practice. If you cannot make this argument, you will over-apply Levitt, which is the more expensive of the two errors." }
   ],
   reading: [
@@ -1347,6 +1350,7 @@ window.LESSONS['marketing.w01'] = {
 
     { id: "w01l04q5", concept: "substitutes", type: "short",
       q: "A company manufactures physical padlocks for bicycles. Run steps 2 and 3 of the myopia test: state the function definition and list at least four substitutes from outside the padlock category.",
+      must: [{"point": "function = confidence the bike will still be there", "any": ["not lost", "still be there", "theft", "secure", "confidence", "protect"]}, {"point": "trackers or recovery services", "any": ["track", "gps", "recover"]}, {"point": "insurance", "any": ["insur"]}, {"point": "secure parking or infrastructure", "any": ["parking", "cage", "locker", "rack", "storage", "garage"]}, {"point": "bike sharing removes ownership altogether", "any": ["shar", "rental", "rent", "hire", "subscription bike", "do not own"]}],
       answer: "**Function:** we let a cyclist leave a bicycle unattended without losing it — that is, we supply confidence against theft, not metal. **Substitutes outside the category:** GPS trackers and recovery services; insurance policies that make theft a financial rather than a practical problem; secure parking infrastructure — locked cages, staffed racks, station lockers; bicycle-sharing schemes, which remove the need to own and therefore to secure a bicycle at all; frame-integrated electronic immobilisers; component design that makes a stolen bicycle hard to resell, such as serialised registration databases. Each of these performs the function without a padlock, and none would appear in a padlock manufacturer’s market-share report.",
       explain: "Note that bicycle-sharing is the most dangerous item on the list, because it removes the customer rather than the sale — and it is the one least likely to be noticed by a firm that monitors padlock competitors." },
 
@@ -1395,6 +1399,30 @@ window.LESSONS['marketing.w01'] = {
       answer: 2,
       explain: "Most executives can name the substitute — myopia is rarely a failure of imagination. It is the failure to treat an already-visible trend as real, because the firm’s structure, incentives and sunk assets all argue for discounting it. Step five converts a risk into a forecast, and that is the step that gets skipped." },
 
+    { id: "w01l04q15", concept: "substitutes", type: "short",
+      q: "Explain what each part of `n = ln(share ratio) / ln(growth ratio)` means, and say why a logarithm has to appear at all.",
+      must: [{"point":"n is the number of years until they overtake you","any":["year","how long","time until","n is"]},
+             {"point":"share ratio = how many times bigger you are today","any":["how many times bigger","your units divided","ratio of size","divide","times larger"]},
+             {"point":"growth ratio = their growth factor divided by yours","any":["growth factor","divided by","their growth over","rate divided"]},
+             {"point":"a growth factor is 1 + the rate (1.40, 0.98)","any":["1 +","one plus","1.4","0.98","factor of"]},
+             {"point":"the log is needed because the unknown is an exponent","any":["exponent","power","compound","multipl","raised to","brings it down"]}],
+      answer: "**n** is the answer: the number of years until the substitute overtakes you. The **share ratio** is how many times bigger you are than them right now — your units divided by theirs, so 97 against 3 gives 32.3. The **growth ratio** is how much faster they grow than you each year: their growth factor divided by yours. A **growth factor** is one plus the growth rate, so growing 40% a year is a factor of 1.40 and shrinking 2% a year is 0.98 — you multiply by the factor once per year. **ln** is the natural logarithm, the `ln` button on any calculator. It has to appear because growth **compounds**: each year multiplies rather than adds, so the unknown — the number of years — sits up in the exponent, and no amount of ordinary arithmetic will get it down. The logarithm is exactly the tool that brings an exponent down to where you can solve for it.",
+      explain: "You do not need to understand how logarithms are built to use one correctly, but you do need to know *why* it is the right tool here: whenever the unknown is an exponent, a logarithm is how you get at it. That single sentence covers compound interest, loan repayment and population growth as well." },
+
+    { id: "w01l04q16", concept: "substitutes", type: "mcq",
+      q: "A competitor is shrinking 4% a year. What is its growth factor?",
+      options: ["−4", "0.04", "0.96", "1.04"],
+      answer: 2,
+      explain: "A growth factor is **1 + the rate**, so −4% gives 1 − 0.04 = **0.96**. You multiply by it once per year: after three years the size is the original × 0.96³ = 0.885, a fall of about 11.5%. Getting this one wrong is the single most common arithmetic slip in the whole calculation, because the minus sign tempts you to subtract instead of multiply." },
+
+    { id: "w01l04q17", concept: "myopia", type: "short",
+      q: "Define marketing myopia in your own words, without using the words “narrow” or “short-sighted”. Then say what the firm loses the ability to do.",
+      must: [{"point":"defining the business by the product it makes","any":["product","what it makes","what they make","what it sells","the thing it produces"]},
+             {"point":"rather than by the customer need or job","any":["need","job","function","what the customer wants","problem the customer"]},
+             {"point":"it loses the ability to see substitutes from outside the category","any":["substitut","outside","different","other way","other categor","cannot see","invisible","does not notice"]}],
+      answer: "Marketing myopia is defining your business by **the product you make** instead of by **the job the customer is hiring you to do**. A firm that understands itself as a maker of a particular thing can only recognise competitors who make that same thing. What it loses is the ability to **see substitutes arriving from outside its own category** — a different technology, a different industry, a way of meeting the same need that its market-share reports do not contain. It does not lose a fight for those customers; it never registers that there was one, until the market has already moved.",
+      explain: "Being forced off the obvious words is the point: it is easy to repeat “too narrow” without knowing what is narrow about what. The definition has to name what is being substituted for what — product for customer function." },
+
     { id: "w01l04q11", concept: "growth-fallacy", type: "mcq",
       q: "Levitt wrote that “there is no such thing as a growth industry”. What is the operational consequence of taking that seriously?",
       options: [
@@ -1425,11 +1453,13 @@ window.LESSONS['marketing.w01'] = {
 
     { id: "w01l04q14", concept: "capability", type: "short",
       q: "State the synthesis between Levitt's customer-function view and the resource-based view, and give the failure mode of each taken alone.",
+      must: [{"point": "synthesis = the intersection of function and capability", "any": ["intersect", "both", "overlap", "and have", "combination", "where they meet"]}, {"point": "Levitt alone chases needs it cannot serve", "any": ["cannot serve", "no advantage", "chasing", "cannot meet", "no capability", "destroy"]}, {"point": "capability alone leaves you excellent in a dying market", "any": ["dying", "disappear", "typewriter", "shrink", "obsolete", "no longer want"]}],
       answer: "**The synthesis:** define the business as the customer function you serve *and* have a distinctive capability to serve — the intersection of the two, which is narrow enough to rule options out and wide enough to survive a technology turning over. **Levitt alone** reasons from the customer inward and produces a firm chasing needs it has no ability to meet: the definition licenses entry into markets where it holds no advantage, and capital is destroyed. **The resource-based view alone** reasons from the firm outward and produces superb capabilities aimed at a disappearing market — the company making the world's finest mechanical typewriter. The two failures are mirror images, which is why holding only one of the frameworks is worse than holding both loosely.",
       explain: "Examiners reward the mirror-image structure. The commonest weak answer states the synthesis and then describes only Levitt's failure mode, because the resource-based failure is less famous — but it is the one that afflicts technically excellent firms, which are the ones most likely to employ you." },
 
     { id: "w01l04q10", concept: "hyperopia", type: "short",
       q: "Give the one-line test for whether a business definition is usable, and apply it to “we are in the transportation business” as a definition for a regional railway.",
+      must: [{"point": "the test is whether it rules anything out", "any": ["rule", "forbid", "exclude", "rules out", "excludes", "says no"]}, {"point": "transportation is too broad for a regional railway", "any": ["too broad", "too wide", "admits airline", "anything", "vague"]}, {"point": "a usable narrower version, e.g. over land in this region", "any": ["over land", "by land", "region", "ground", "rail and road", "lorr", "coach"]}],
       answer: "The test: **does the definition rule anything out?** A definition that forbids nothing decides nothing. Applied to “we are in the transportation business”, the answer is barely — it admits airlines, shipping, ride-hailing and freight forwarding, in none of which a regional railway has any advantage, so it licenses value-destroying entry. A usable version narrows it until the firm’s actual capabilities still bind: *we move people and goods reliably over land in this region*. That still rules out running an airline, still admits coaches and lorries as both substitutes and possible extensions, and is therefore both wide enough to see the threat and narrow enough to direct investment.",
       explain: "This question is the corrective to the usual teaching of Levitt, which stops at “define yourself broadly” and produces exactly the hyperopic definitions that destroyed conglomerates in the 1970s." }
   ]

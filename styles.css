@@ -1741,3 +1741,42 @@ body.et-mode .prose .sent:hover { background: var(--accent-soft); }
   .end-step { grid-template-columns: 28px 1fr; }
   .es-arrow { display: none; }
 }
+
+/* ---------- marked short answers ---------- */
+.mark-panel {
+  margin-top: 13px;
+  padding: 13px 15px;
+  border-radius: 5px;
+  background: var(--surface-2);
+  border-left: 3px solid var(--ink-3);
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+.mark-panel.ok   { border-left-color: var(--good); background: var(--good-soft); }
+.mark-panel.part { border-left-color: var(--gold); background: var(--gold-soft); }
+.mark-panel.no   { border-left-color: var(--bad);  background: var(--bad-soft); }
+.mk-wait { color: var(--ink-3); font-style: italic; }
+.mk-by {
+  margin-left: 9px;
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: .05em; color: var(--ink-3);
+}
+.mk-list { margin-top: 9px; }
+.mk-list b { font-weight: 600; }
+.mk-list.ok b { color: var(--good); }
+.mk-list.no b { color: var(--bad); }
+.mk-comment {
+  margin-top: 10px; padding-top: 9px;
+  border-top: 1px dashed var(--rule-strong);
+  color: var(--ink-2);
+}
+.mk-manual { margin: 0 0 10px; }
+.mk-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+.mk-dispute {
+  margin-top: 11px;
+  font-size: 11.5px !important;
+  padding: 4px 9px !important;
+  opacity: .7;
+}
+.mk-dispute:hover { opacity: 1; }

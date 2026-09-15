@@ -1167,20 +1167,24 @@
         '<h3>' + esc(sub.name) + '</h3>' +
         '<p class="card-sub">' + esc(sub.what) + (sub.who ? ' · for ' + esc(sub.who) : '') + '</p>' +
         '<p style="font-size:13px;color:var(--ink-2);line-height:1.6;margin:0 0 12px;max-width:56ch">' +
-        'Every exercise in the course applies to this. By week sixteen you will have written a complete ' +
-        'marketing plan for it, one piece at a time, without ever sitting down to write a plan.</p>' +
+        'Every exercise applies to this one, from the outside. By week sixteen you will have a complete ' +
+        'marketing analysis of a real company, built a piece at a time — the thing an employer asks you ' +
+        'to produce in a first interview task.</p>' +
         '<button class="btn btn-sm" id="subjEdit">Change it</button>';
     } else {
       card.innerHTML =
         '<div class="eyebrow" style="margin-bottom:8px">Before lecture one</div>' +
-        '<h3>Choose the thing you are going to work on</h3>' +
-        '<p style="font-size:14px;color:var(--ink-2);line-height:1.65;margin:0 0 14px;max-width:58ch">' +
-        'Pick one real organisation and keep it for the whole course. Your employer, a family business, ' +
-        'a club, a campaign, or something you want to start. It does not have to be yours and it does not ' +
-        'have to be big — it has to be <b>real</b>, so that when a lecture asks who your customer is, there ' +
-        'is a true answer rather than an invented one.<br><br>' +
-        'This is the difference between eighty lectures you listened to and one thing you built.</p>' +
-        '<button class="btn btn-primary btn-sm" id="subjSet">Choose it now</button>';
+        '<h3>Choose a company to watch</h3>' +
+        '<p style="font-size:14px;color:var(--ink-2);line-height:1.65;margin:0 0 12px;max-width:58ch">' +
+        '<b>You do not need to own it, work there, or have any inside information.</b> You need to be able ' +
+        'to observe it: walk in, use it, read its website, see its prices, notice who else is in the queue. ' +
+        'That is what a marketing analyst actually does, and every exercise in this course is written to be ' +
+        'answerable from the outside.</p>' +
+        '<p style="font-size:13.5px;color:var(--ink-2);line-height:1.6;margin:0 0 14px;max-width:58ch">' +
+        'Good choices: <b>your bank</b>, a café or shop you use every week, an app you pay for, a gym, ' +
+        'a bookshop, a club you belong to. Pick something you come across often — you will be looking at it ' +
+        'for sixteen weeks, and the more often you see it, the more you will notice.</p>' +
+        '<button class="btn btn-primary btn-sm" id="subjSet">Choose one</button>';
     }
     setTimeout(function () {
       var open = $('#subjSet', card) || $('#subjEdit', card);
@@ -1194,9 +1198,9 @@
     card.innerHTML =
       '<div class="eyebrow" style="margin-bottom:10px">Your running case</div>' +
       '<div class="subj-form">' +
-        '<label>What is it called?<input type="text" id="sjName" value="' + esc(sub.name) + '" placeholder="e.g. Pärnu Kohviröster"></label>' +
-        '<label>What does it do, in one line?<input type="text" id="sjWhat" value="' + esc(sub.what) + '" placeholder="e.g. roasts and sells coffee beans"></label>' +
-        '<label>Who does it serve? (your best guess for now)<input type="text" id="sjWho" value="' + esc(sub.who) + '" placeholder="e.g. people who brew coffee at home"></label>' +
+        '<label>What is it called?<input type="text" id="sjName" value="' + esc(sub.name) + '" placeholder="e.g. LHV, or the café on my street"></label>' +
+        '<label>What does it do, in one line?<input type="text" id="sjWhat" value="' + esc(sub.what) + '" placeholder="e.g. a bank for private customers and small firms"></label>' +
+        '<label>Who does it serve? (your best guess — you will correct it later)<input type="text" id="sjWho" value="' + esc(sub.who) + '" placeholder="e.g. people who want banking on a phone"></label>' +
       '</div>' +
       '<div style="display:flex;gap:9px;margin-top:14px"><button class="btn btn-primary btn-sm" id="sjSave">Save</button>' +
       '<button class="btn btn-sm" id="sjCancel">Cancel</button></div>';
@@ -2272,36 +2276,143 @@
       return results;
     }
 
-    /* short answers get self-marked before the rest is graded */
-    function selfMarkPhase(onDone) {
+    /* Short answers are marked for you. Claude marks the substance where it is
+       available; otherwise the answer is checked against the points the question
+       requires. Self-marking is the last resort, not the default. */
+    function markShortsPhase(onDone) {
       var shorts = questions.filter(function (q) { return q.type === 'short'; });
       if (!shorts.length) { onDone(); return; }
-      var pending = shorts.length;
+
       shorts.forEach(function (q) {
         var box = nodes[q.id];
         var ta = $('#' + q.id + '-in', box);
         ta.disabled = true;
-        var panel = el('div', 'explain');
-        panel.innerHTML = '<p><b>A good answer says:</b> ' + inline(q.answer) + '</p>' +
-          '<p style="margin-top:10px"><b>Mark yourself honestly.</b> Did your answer contain the substance above?</p>' +
-          '<div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">' +
-          '<button class="btn btn-sm" data-m="1">I had this</button>' +
-          '<button class="btn btn-sm" data-m="0.5">Partly</button>' +
-          '<button class="btn btn-sm" data-m="0">I missed it</button></div>';
+        var panel = el('div', 'mark-panel');
+        panel.innerHTML = '<span class="mk-wait">Marking your answer…</span>';
         box.insertBefore(panel, $('.explain', box));
-        $$('button[data-m]', panel).forEach(function (b) {
-          b.onclick = function () {
-            selfMarks[q.id] = parseFloat(b.getAttribute('data-m'));
-            panel.innerHTML = '<p>Marked: <b>' + (selfMarks[q.id] === 1 ? 'had it' : selfMarks[q.id] === 0.5 ? 'partly' : 'missed it') + '</b></p>';
-            pending -= 1;
-            if (pending === 0) onDone();
-          };
-        });
+        q._panel = panel;
       });
       shorts[0] && nodes[shorts[0].id].scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      aiMark(shorts, answers).then(function (marks) {
+        shorts.forEach(function (q) {
+          var m = marks && marks[q.id];
+          if (!m) m = keywordMark(q, answers[q.id]);
+          if (!m) { manualMark(q); return; }
+          selfMarks[q.id] = m.score;
+          renderMark(q, m);
+        });
+        if (shorts.every(function (q) { return selfMarks[q.id] != null; })) onDone();
+        else {
+          var left = shorts.filter(function (q) { return selfMarks[q.id] == null; }).length;
+          var check = setInterval(function () {
+            if (shorts.every(function (q) { return selfMarks[q.id] != null; })) { clearInterval(check); onDone(); }
+          }, 300);
+        }
+      });
     }
 
-    return { grade: grade, selfMarkPhase: selfMarkPhase, answers: answers, nodes: nodes };
+    function renderMark(q, m) {
+      var verdict = m.score >= 1 ? '<span class="verdict ok">Correct</span>'
+                  : m.score > 0 ? '<span class="verdict part">Partly right</span>'
+                                : '<span class="verdict no">Not right</span>';
+      q._panel.className = 'mark-panel ' + (m.score >= 1 ? 'ok' : m.score > 0 ? 'part' : 'no');
+      q._panel.innerHTML = verdict +
+        '<span class="mk-by">' + esc(m.by || '') + '</span>' +
+        (m.got && m.got.length
+          ? '<div class="mk-list ok"><b>You had:</b> ' + m.got.map(esc).join(' · ') + '</div>' : '') +
+        (m.missed && m.missed.length
+          ? '<div class="mk-list no"><b>You missed:</b> ' + m.missed.map(esc).join(' · ') + '</div>' : '') +
+        (m.comment ? '<div class="mk-comment">' + esc(m.comment) + '</div>' : '') +
+        '<button class="btn btn-sm mk-dispute" data-q="' + q.id + '">I think this marking is wrong</button>';
+      var dis = $('.mk-dispute', q._panel);
+      if (dis) dis.onclick = function () { manualMark(q, true); };
+    }
+
+    /* Claude marks the substance, not the spelling — one call for all of them */
+    function aiMark(shorts, ans) {
+      if (!window.claude || !window.claude.use) return Promise.resolve(null);
+      var payload = shorts.map(function (q, i) {
+        return '### ' + (i + 1) + ' (id: ' + q.id + ')\n' +
+          'QUESTION: ' + H.plain(q.q) + '\n' +
+          'A GOOD ANSWER CONTAINS: ' + H.plain(q.answer) + '\n' +
+          'THE STUDENT WROTE: ' + String(ans[q.id] || '(nothing)').slice(0, 1800);
+      }).join('\n\n');
+
+      return window.claude.use('sample').then(function (sample) {
+        if (!sample) return null;
+        return sample.json(
+          'You are marking short answers on a university marketing test. The student is Estonian and ' +
+          'writes English as a second language: mark the SUBSTANCE, never the grammar, spelling or style. ' +
+          'Credit a correct idea expressed in plain or clumsy words. Do not credit an answer that only ' +
+          'repeats the question, or that is vaguely on-topic without the specific point.\n\n' +
+          'Reply with ONLY a JSON array, one object per answer, in this exact shape:\n' +
+          '[{"id":"w01l04q5","score":1,"got":["short phrase","short phrase"],"missed":[],' +
+          '"comment":"one or two sentences to the student"}]\n' +
+          'score is 1 (the substance is there), 0.5 (part of it) or 0 (missing or wrong). ' +
+          '"got" and "missed" name specific points in at most six words each.\n\n' + payload,
+          { modelTier: 'default', cache: false }
+        ).then(function (arr) {
+          if (!Array.isArray(arr)) return null;
+          var out = {};
+          arr.forEach(function (r) {
+            if (!r || !r.id) return;
+            var sc = Number(r.score);
+            out[r.id] = {
+              score: (sc === 1 || sc === 0.5 || sc === 0) ? sc : (sc >= 0.75 ? 1 : sc >= 0.3 ? 0.5 : 0),
+              got: Array.isArray(r.got) ? r.got.slice(0, 6) : [],
+              missed: Array.isArray(r.missed) ? r.missed.slice(0, 6) : [],
+              comment: typeof r.comment === 'string' ? r.comment : '',
+              by: 'marked by Claude'
+            };
+          });
+          return Object.keys(out).length ? out : null;
+        }).catch(function () { return null; });
+      }).catch(function () { return null; });
+    }
+
+    /* No Claude: check the answer against the points the question requires */
+    function keywordMark(q, given) {
+      if (!q.must || !q.must.length) return null;
+      var text = String(given || '').toLowerCase();
+      var got = [], missed = [];
+      q.must.forEach(function (m) {
+        var hit = (m.any || []).some(function (k) { return text.indexOf(String(k).toLowerCase()) >= 0; });
+        (hit ? got : missed).push(m.point);
+      });
+      var ratio = got.length / q.must.length;
+      return {
+        score: ratio >= 0.75 ? 1 : ratio >= 0.4 ? 0.5 : 0,
+        got: got, missed: missed,
+        comment: missed.length
+          ? 'Checked against the points this question requires. Read the model answer for the ones you missed.'
+          : 'Every point this question requires is in your answer.',
+        by: 'checked against the required points'
+      };
+    }
+
+    function manualMark(q, redo) {
+      q._panel.className = 'mark-panel';
+      q._panel.innerHTML =
+        '<p class="mk-manual"><b>Mark it yourself, honestly.</b> Did your answer contain the substance of ' +
+        'the model answer below?</p>' +
+        '<div class="mk-buttons">' +
+        '<button class="btn btn-sm" data-m="1">I had this</button>' +
+        '<button class="btn btn-sm" data-m="0.5">Partly</button>' +
+        '<button class="btn btn-sm" data-m="0">I missed it</button></div>';
+      $$('button[data-m]', q._panel).forEach(function (b) {
+        b.onclick = function () {
+          selfMarks[q.id] = parseFloat(b.getAttribute('data-m'));
+          q._panel.className = 'mark-panel ' + (selfMarks[q.id] >= 1 ? 'ok' : selfMarks[q.id] > 0 ? 'part' : 'no');
+          q._panel.innerHTML = '<span class="verdict ' + (selfMarks[q.id] >= 1 ? 'ok' : selfMarks[q.id] > 0 ? 'part' : 'no') +
+            '">' + (selfMarks[q.id] === 1 ? 'Had it' : selfMarks[q.id] === 0.5 ? 'Partly' : 'Missed it') +
+            '</span><span class="mk-by">marked by you</span>';
+          if (redo) Router.rerenderScore && Router.rerenderScore();
+        };
+      });
+    }
+
+    return { grade: grade, selfMarkPhase: markShortsPhase, answers: answers, nodes: nodes };
   }
 
   function scorePanel(results, title, sub, carried) {
