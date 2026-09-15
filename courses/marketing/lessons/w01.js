@@ -831,142 +831,253 @@ window.LESSONS['marketing.w01'] = {
    1.4  Marketing myopia
    ============================================================ */
 "w01l04": {
-  standfirst: "In 1960 a Harvard professor published an article arguing that great industries do not die because demand disappeared or because a competitor out-fought them. They die because of the answer they gave to one deceptively simple question: **what business are we in?** Sixty-five years later it is still the most cited article the field has produced, and firms are still making the mistake.",
+  standfirst: "In July 1960 a Harvard lecturer published nine thousand words arguing that the great industries of the age were not being destroyed by competitors, by recession or by falling demand. They were being destroyed by the answer their own executives gave to one question: **what business are we in?** It became the most reprinted article Harvard Business Review has ever published, and firms are still making the mistake — usually with the article on the shelf behind them.",
   objectives: [
-    "State Levitt’s central argument and the four self-deceptions he identified.",
-    "Define a business in customer-need terms rather than product terms, and show why the difference changes decisions.",
-    "Use Abell’s three dimensions to define a business precisely enough to be useful.",
-    "Recognise the opposite error — a definition so broad it guides nothing.",
-    "Apply the myopia test to a firm and predict which substitute will take its market."
+    "State Levitt’s argument precisely, including the claim about growth industries that most summaries drop.",
+    "Unpack the four self-deceptions and recognise each one in a live firm.",
+    "Compute how long a dismissible substitute takes to overtake an incumbent, and read the answer honestly.",
+    "Define a business on Abell’s three dimensions, and test the definition by what it rules out.",
+    "Argue the case against Levitt — hyperopia and the resource-based view — and state the synthesis.",
+    "Run the five-step myopia test on a real organisation and produce a competitor list its own reports do not contain."
   ],
   concepts: [
     { id: "myopia",        name: "Marketing myopia" },
+    { id: "growth-fallacy",name: "The growth-industry fallacy" },
     { id: "biz-definition",name: "Defining the business" },
     { id: "abell",         name: "Abell’s three dimensions" },
     { id: "hyperopia",     name: "Over-broad definition" },
-    { id: "substitutes",   name: "Substitutes and competitive sets" }
+    { id: "substitutes",   name: "Substitution arithmetic" },
+    { id: "capability",    name: "Capability and the counter-argument" }
   ],
   blocks: [
     { t: "h2", text: "The railroads did not run out of passengers" },
-    { t: "p", text: "Theodore Levitt opened his 1960 article with the American railroads, which had been among the largest and most powerful enterprises on earth and had, within a few decades, become marginal. The conventional explanation was that cars, lorries and aeroplanes had taken their business." },
-    { t: "p", text: "Levitt's argument was that this explanation is backwards. Demand for moving people and goods did not fall — it grew enormously. The railroads lost that growth to others because, in his words, they assumed themselves to be in the *railroad business* rather than the *transportation business*. They were product-oriented rather than customer-oriented." },
-    { t: "quote", text: "The railroads did not stop growing because the need for passenger and freight transportation declined. That grew. The railroads are in trouble today not because the need was filled by others… but because it was not filled by the railroads themselves.", who: "Theodore Levitt, “Marketing Myopia”, Harvard Business Review, 1960" },
-    { t: "p", text: "Say that slowly, because the structure of the claim is the whole lesson. A firm defined by *what it makes* can only see competitors who make the same thing. When the customer's need gets met by something structurally different, the firm does not even register it as competition until the market has gone." },
-    { t: "p", text: "Levitt's second example was Hollywood, which he said had nearly destroyed itself by defining its business as *movies* rather than *entertainment*. Television arrived, and the studios treated it as an enemy rather than as an opportunity — a new way to deliver the thing they were actually in the business of providing. The ones that survived were the ones that eventually redefined themselves." },
+    { t: "p", text: "Theodore Levitt opened with the American railroads, and the choice was deliberate. Within living memory of his readers they had been the largest enterprises on earth — larger than most governments, the defining industrial achievement of the previous century. By 1960 they were a problem to be managed rather than a business to be envied." },
+    { t: "p", text: "The explanation everyone gave was the obvious one: cars, lorries and aeroplanes took their traffic. Levitt agreed with the facts and rejected the explanation, and the distinction is the whole lecture." },
+    { t: "quote", text: "The railroads did not stop growing because the need for passenger and freight transportation declined. That grew. The railroads are in trouble today not because the need was filled by others (cars, trucks, airplanes, even telephones), but because it was not filled by the railroads themselves.", who: "Theodore Levitt, “Marketing Myopia”, Harvard Business Review, July–August 1960" },
+    { t: "p", text: "Read the second sentence twice. The demand for moving people and goods did not shrink; it grew enormously across exactly the decades in which the railroads declined. Every one of those new tonne-miles and passenger-miles was available. The railroads did not lose a contest for that traffic. They never entered it — because a firm that understands itself as *a railroad* is watching other railroads, and a lorry is not a railroad." },
+    { t: "p", text: "This is the mechanism, and it is worth stating as a general principle before we go near the four causes: **a firm defined by what it makes can only perceive competitors who make the same thing.** When the customer’s need is met by something structurally different, the firm does not lose the fight. It does not notice there was one." },
+
+    { t: "h2", text: "The claim most summaries drop" },
+    { t: "p", text: "Ask ten marketers what marketing myopia means and nine will say *defining your business too narrowly*. That is half of it, and the missing half is the half Levitt cared about most." },
+    { t: "p", text: "His central assertion was about **growth industries** — and it was that there is no such thing." },
+    { t: "quote", text: "There is no such thing as a growth industry. There are only companies organised and operated to create and capitalise on growth opportunities.", who: "Levitt, 1960" },
+    { t: "p", text: "This matters because the belief in growth industries is what produces complacency. If you believe you are *in* a growth industry, growth is a property of your surroundings — something the tide does for you — and your job is to keep the ships afloat and take delivery of it. If growth is instead something firms manufacture, then a firm in a booming market that is not actively creating growth opportunities is not succeeding. It is coasting, and the difference between coasting and succeeding is invisible until the tide turns." },
+    { t: "p", text: "Levitt's point is sharper still: every industry that was once a growth industry got there by satisfying a need better than the alternatives, and every one of them eventually stopped. The sequence is not accidental. Success produces confidence, confidence produces the four beliefs below, and the four beliefs produce the blindness." },
 
     { t: "h2", text: "The four self-deceptions" },
-    { t: "p", text: "Levitt identified four beliefs that together produce myopia. They travel as a set, and each one is comfortable, which is why they are hard to dislodge." },
-    { t: "ol", items: [
-      "**The belief that growth is assured by an expanding population.** If there will be more people next year, there will be more customers, and the firm need not work for them. This substitutes demographics for strategy and encourages a firm to coast.",
-      "**The belief that there is no competitive substitute for the industry’s main product.** This is the fatal one. It is *always* wrong, eventually, and it is invisible precisely because the substitute usually comes from outside the industry and looks like a toy when it arrives.",
-      "**Excessive faith in mass production, and in the cost reductions that come with volume.** Efficiency is a virtue that becomes a trap: a firm with a very efficient plant making a particular thing has enormous incentive to keep making that thing.",
-      "**Preoccupation with a product that lends itself to controlled experiment and improvement.** R&D gets prestige because its results are legible and measurable — a five percent efficiency gain is a fact. Customer needs are messy and contested. So the firm drifts toward the questions it can answer rather than the ones that matter."
-    ]},
-    { t: "p", text: "The fourth is the subtlest and the most modern. It explains why highly technical, well-managed, genuinely excellent firms are *especially* vulnerable. Competence in a measurable domain pulls attention away from an unmeasurable one, and the better you are at the first, the stronger the pull." },
+    { t: "p", text: "Levitt identified four beliefs that together produce myopia. They travel as a set, each one is comfortable, and each one is *partly true* — which is precisely why they are hard to dislodge. Nobody defends an obviously false belief for thirty years." },
 
-    { t: "h2", text: "Product definition against market definition" },
-    { t: "p", text: "The practical instrument Levitt gives you is the pair of definitions. Take any firm and write its business two ways." },
-    { t: "table",
-      head: ["Firm", "Product definition (myopic)", "Market definition (customer need)"],
-      rows: [
-        ["Railroad", "We run trains", "We move people and goods reliably"],
-        ["Film studio", "We make films", "We provide entertainment"],
-        ["Cosmetics firm", "We make lipstick", "We sell hope and self-confidence"],
-        ["Oil company", "We sell petrol", "We supply energy"],
-        ["Drill manufacturer", "We make drills", "We help people make holes"],
-        ["University", "We deliver lectures", "We develop capability and signal it credibly"],
-        ["Newspaper", "We print a paper", "We tell you what matters today, and who to trust"]
-      ],
-      say: "Seven firms, each defined twice. A railroad runs trains, or it moves people and goods. A studio makes films, or it provides entertainment. A drill manufacturer makes drills, or it helps people make holes.",
-      cap: "The right-hand column is not a slogan exercise. It changes what counts as a competitor, what counts as an opportunity, and what the firm should invest in. A drill company that believes it sells holes will take an interest in adhesives." },
-    { t: "p", text: "The classic teaching example is the drill. *People do not want a quarter-inch drill; they want a quarter-inch hole.* And they do not really want the hole either — they want a shelf on the wall, and underneath that they want a tidy room. Each step back opens the competitive set: at the level of holes, your rivals include adhesive strips; at the level of shelving, flat-pack furniture and a handyman service; at the level of a tidy room, a storage box that needs no wall at all." },
-    { t: "p", text: "This is the analytical payoff. Market definition is not a feel-good reframing. It is a method for discovering the competitors who will take your business and who currently do not appear in any of your market-share reports." },
-
-    { t: "h2", text: "The opposite error, which nobody warns you about" },
-    { t: "warn", title: "Marketing hyperopia", ps: [
-      "If myopia is defining the business too narrowly, the opposite — sometimes called marketing hyperopia — is defining it so broadly that the definition guides nothing.",
-      "*We are in the business of human happiness.* *We are in the business of connection.* *We are a technology company.* Every one of these is true of almost any firm, and therefore none of them tells anybody what to do on Monday morning. A definition that admits every possible action is not a strategy, it is a mood.",
-      "There is also a harder version of the error, in which the firm believes the broad definition and *acts* on it, entering markets where it has no advantage at all. The railroads would not have been saved by buying an airline — they had no relevant capability. A definition must be broad enough to see the substitute coming and narrow enough that the firm's actual strengths still apply."
-    ]},
-    { t: "p", text: "The test for a usable definition is simple: does it rule anything out? A definition that forbids nothing decides nothing. *We move people and goods reliably over land* rules out running an airline while still admitting lorries — which is roughly where a sensible railroad executive should have landed in 1955." },
-
-    { t: "h2", text: "Abell’s three dimensions" },
-    { t: "p", text: "Derek Abell gave the field a more disciplined instrument in 1980. Define a business along three axes, and answer all three explicitly." },
-    { t: "ul", items: [
-      "**Customer groups — who is being served.** Which people or organisations, specifically.",
-      "**Customer functions — what need is being met.** Which job the offering does for them.",
-      "**Technologies — how it is met.** By what means the function is performed."
-    ]},
-    { t: "p", text: "The power of the three axes is that they separate the dimension that *should* be stable from the dimensions that should not be. Customer functions are the durable axis — the need to move goods, to be entertained, to look competent. Technologies are the volatile axis. Myopia is what happens when a firm holds its technology fixed and lets the function drift away to someone else's technology." },
-
-    { t: "fig", title: "Abell’s three dimensions of a business definition", sketch: true,
-      say: "Three axes radiate from a single point. Customer groups asks who is served. Customer functions asks what need is met. Technologies asks how it is met. A business is a chosen region across all three. Marketing myopia is fixing the technology axis and letting the function axis escape.",
-      cap: "Draw this one. Then place a business you know on all three axes, and ask which axis your firm would defend if forced to choose. If the answer is the technology axis, you have found a myopic firm.",
-      svg: '<svg viewBox="0 0 680 290" role="img" aria-label="Three axes of business definition: customer groups, customer functions, technologies">' +
-        '<defs><marker id="ahAb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--ink-3)"/></marker></defs>' +
-        '<line x1="240" y1="200" x2="240" y2="44" stroke="var(--ink-3)" stroke-width="1.5" marker-end="url(#ahAb)"/>' +
-        '<line x1="240" y1="200" x2="620" y2="200" stroke="var(--ink-3)" stroke-width="1.5" marker-end="url(#ahAb)"/>' +
-        '<line x1="240" y1="200" x2="66" y2="266" stroke="var(--ink-3)" stroke-width="1.5" marker-end="url(#ahAb)"/>' +
-        '<text x="248" y="38" fill="var(--ink)" font-size="12.5" font-weight="600">CUSTOMER GROUPS</text>' +
-        '<text x="248" y="55" fill="var(--ink-3)" font-size="11">who is served?</text>' +
-        '<text x="620" y="222" text-anchor="end" fill="var(--ink)" font-size="12.5" font-weight="600">CUSTOMER FUNCTIONS</text>' +
-        '<text x="620" y="239" text-anchor="end" fill="var(--ink-3)" font-size="11">what need is met? — the durable axis</text>' +
-        '<text x="60" y="284" fill="var(--ink)" font-size="12.5" font-weight="600">TECHNOLOGIES</text>' +
-        '<text x="60" y="252" fill="var(--ink-3)" font-size="11">how? — the volatile axis</text>' +
-        '<circle cx="240" cy="200" r="5" fill="var(--accent)"/>' +
-        '<rect x="300" y="96" width="200" height="74" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.3"/>' +
-        '<text x="400" y="120" text-anchor="middle" fill="var(--accent-ink)" font-size="12" font-weight="600">The business</text>' +
-        '<text x="400" y="139" text-anchor="middle" fill="var(--ink-2)" font-size="11">a chosen region across</text>' +
-        '<text x="400" y="155" text-anchor="middle" fill="var(--ink-2)" font-size="11">all three dimensions</text>' +
-        '<path d="M300 133 L252 190" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="3 3"/>' +
-        '<text x="66" y="150" fill="var(--bad)" font-size="11" font-weight="600">Myopia:</text>' +
-        '<text x="66" y="167" fill="var(--ink-2)" font-size="11">hold the technology</text>' +
-        '<text x="66" y="182" fill="var(--ink-2)" font-size="11">axis fixed, and let the</text>' +
-        '<text x="66" y="197" fill="var(--ink-2)" font-size="11">function axis escape.</text>' +
-        '</svg>' },
-
-    { t: "case", title: "Three definitions of one small business",
+    { t: "h3", text: "One: growth is assured by an expanding, more affluent population" },
+    { t: "p", text: "If there will be more people next year, and they will be richer, there will be more customers, so demand takes care of itself. The industry's job is to keep up with it." },
+    { t: "p", text: "The belief substitutes demography for strategy. And it is unusually seductive because it is often *arithmetically correct in the short run* — the population really is growing, the customers really do arrive — which means the firm receives confirming evidence every year right up until the moment it stops working." },
+    { t: "case", title: "The arithmetic of coasting",
       ps: [
-        "A driving school in a mid-sized city. Fifteen instructors, a fleet of cars, forty years of trading. Bookings have fallen for three straight years and the owner blames the economy.",
-        "**Product definition:** *we teach people to drive cars.* Competitors are the other four driving schools in town. The strategy that follows is to be cheaper or to advertise harder than them — and this is exactly what the owner has been doing, with diminishing returns.",
-        "**Market definition — the function:** *we get young adults to independent mobility, credibly certified.* Now the competitive set includes things the owner has never counted: excellent public transport, cheap ride-hailing, a city where a licence is no longer socially necessary at eighteen, and parents who no longer assume a car at nineteen. Fewer people want the *function* at all. That is a market contraction, and no amount of price competition addresses it. It is also, crucially, *knowable in advance* — the licence-taking rate among nineteen-year-olds is a published statistic the owner could have watched falling for a decade.",
-        "**Abell’s three axes, done properly.** Groups: currently seventeen- to twenty-year-olds, almost exclusively. Functions: obtaining a licence; but also confidence behind the wheel, refresher training after a long gap, hazard training for company fleets, and licence conversion for people who have moved to the country. Technologies: in-car instruction; but also simulator time, app-based theory training, and intensive residential courses.",
-        "Written out, the strategy is visible. The *function* axis has more room than the owner thought — corporate fleet training and licence conversion are growing where teenage first licences are shrinking — and those functions reach different *groups* using largely the same *technology* and the same fleet. That is a business definition broad enough to see the contraction and narrow enough that the existing cars and instructors still matter.",
-        "Notice what the exercise did *not* produce: a recommendation to become a technology company, or to enter the business of human mobility in general. Hyperopia would have suggested both."
+        "A regional bakery has held roughly the same share for a decade. The city's population grows about 1.2% a year and real incomes about 2%. Revenue rises about 3% a year without anybody doing anything, and the annual report describes this as *steady growth in a growing market*.",
+        "Now decompose it. Of that 3%, roughly 1.2 points are more mouths, roughly 1.4 points are those mouths spending a little more, and the residual — about 0.4 points — is everything the firm actually did: its products, its pricing, its distribution, its advertising, its service. Four tenths of one percent.",
+        "The firm is not growing. The city is growing and the firm is attached to it. Every euro of that growth would have arrived if the marketing department had spent the decade asleep, and the moment population growth turns — which municipal projections will have signalled years in advance — the 3% becomes 1.8%, then 0.4%, and nobody will be able to explain what changed.",
+        "This is why the decomposition is worth doing every year on your own numbers: **growth you did not cause is not a capability, and it will not be there when you need it.**"
       ]},
 
-    { t: "h2", text: "Applying the myopia test" },
-    { t: "p", text: "Here is the routine. It takes ten minutes and it is worth doing on your own employer." },
-    { t: "ol", items: [
-      "Write the firm’s business as a **product** definition, in the words the firm actually uses internally.",
-      "Write it as a **function** definition: what job is the customer hiring this for? Push back one further step than feels natural, then stop before it becomes a platitude.",
-      "List every way that function could be performed **without** your product category. These are your real competitors, and most will not be in your market-share report.",
-      "For each one, ask what would have to become true for it to take ten percent of your customers — a price fall, a regulation, a habit change, a generation.",
-      "Check which of those conditions are **already trending** in that direction. Those are not risks; they are forecasts."
+    { t: "h3", text: "Two: there is no competitive substitute for the industry’s main product" },
+    { t: "p", text: "This is the fatal one, and it is *always* wrong eventually. Levitt's most extended treatment is the petroleum industry, and it is worth following in full because it is the clearest case ever assembled of an industry repeatedly rescued by people who did not work in it." },
+    { t: "p", text: "The industry began as a lighting business — kerosene for lamps. That demand was then largely destroyed by the incandescent electric lamp, which the oil industry had no hand in. It was rescued by the internal combustion engine, which it also had no hand in, and which created a petrol market larger than lamp oil had ever been. When that market matured, central oil heating expanded demand again. Levitt's observation was that at no point did the rescue originate inside the industry: on his account even the major improvements to petrol itself, such as tetraethyl lead as an anti-knock additive, came out of the automotive and chemical industries rather than the oil companies." },
+    { t: "p", text: "Levitt's conclusion was uncomfortable and precise. An industry can be saved from outside so many times that its executives mistake survival for invulnerability. Each rescue reinforces the belief that demand for the product is permanent, when what the record actually shows is that demand for *lighting*, and later for *mobility* and *warmth*, is permanent — and that the industry has repeatedly been on the wrong side of that distinction and got lucky." },
+    { t: "warn", title: "Why the substitute is invisible while it is cheap to respond to", ps: [
+      "The substitute almost always arrives from outside the industry, and it almost always arrives *bad*. The first version is worse on every dimension the incumbent's customers currently care about, it is bought by people the incumbent does not consider representative, and its volumes are trivial.",
+      "So the dismissal is not stupidity. It is a correct reading of the present, applied to a question about the future. Every objection an incumbent raises is true on the day it is raised — and all of them stop being true at roughly the same time, which is what makes the transition feel sudden from the inside.",
+      "Clayton Christensen later built a whole theory on this observation, and gave it a name the business world adopted: disruptive innovation. His addition to Levitt was to show that the incumbents are not merely blind but *rationally* blind — serving their best customers well is precisely what stops them responding."
     ]},
-    { t: "p", text: "Step five is where it earns its keep. Myopia is not usually a failure to imagine the substitute — most executives can name it. It is the failure to treat an already-visible trend as real because the firm's structure, incentives and sunk assets all argue for ignoring it." },
 
-    { t: "write", items: [
-      "Levitt’s claim: industries decline because of how they define themselves, not because demand fell.",
-      "The four self-deceptions: population growth, no substitute, faith in mass production, preoccupation with product R&D.",
-      "Product definition vs market definition — copy four rows of the table.",
-      "Abell’s three axes: customer groups (who), customer functions (what), technologies (how). Function is durable, technology is volatile.",
-      "Hyperopia: a definition that rules nothing out decides nothing.",
-      "The five-step myopia test."
+    { t: "h2", text: "Making the threat numerical" },
+    { t: "p", text: "Here is where this lecture asks more of you than most treatments do. *Watch for substitutes* is advice nobody can act on. The way to convert it into a decision is arithmetic, and the arithmetic is simple enough to do on the back of an envelope." },
+    { t: "p", text: "Take a category where you hold 97 units of volume and a substitute holds 3. Your category is drifting down by 2% a year; the substitute is growing at 40% a year off its tiny base. Nobody in your industry is worried, and at today's numbers nobody should be — the substitute is 3% of the market." },
+    { t: "math", label: "When does the substitute overtake?",
+      eqs: [
+        "  incumbent(n) = 97 × 0.98ⁿ",
+        "  substitute(n) =  3 × 1.40ⁿ",
+        "",
+        "  set equal:   (1.40 / 0.98)ⁿ  =  97 / 3  =  32.3",
+        "               1.4286ⁿ         =  32.3",
+        "               n = ln(32.3) / ln(1.4286)",
+        "               n = 3.48 / 0.357  ≈  9.7 years"
+      ],
+      say: "Set ninety-seven times nought point nine eight to the n equal to three times one point four to the n. Dividing gives one point four two eight six to the n equals thirty-two point three. Taking logs, n equals about nine point seven years.",
+      ps: [
+        "Under ten years. And notice where the danger sits: at year five the substitute is still only 16 units against your 88 — about one unit in six, comfortably ignorable, and by then you have **four years left**, not ten.",
+        "The general form is worth memorising, because you can run it in your head in a meeting: `n = ln(share ratio) / ln(growth ratio)`. Two numbers you can estimate badly and still get a useful answer — the result is far less sensitive to your estimates than your intuition is."
+      ]},
+
+    { t: "fig", title: "A 3% substitute growing at 40% a year", sketch: true,
+      say: "Two lines over twelve years. The incumbent starts at ninety-seven units and drifts gently down at two percent a year, ending near seventy-six. The substitute starts at three units and grows at forty percent a year: it is still only sixteen units at year five, forty-four at year eight, and crosses the incumbent line between year nine and year ten before running away.",
+      cap: "The shape is the lesson. For the first five years the substitute line is flat against the axis and every executive who dismisses it is reading the chart correctly. The curve does not change behaviour at year nine — it was always this curve. Only its visibility changes.",
+      svg: '<svg viewBox="0 0 680 348" role="img" aria-label="Line chart: a substitute growing 40 per cent a year overtakes a declining incumbent in under ten years">' +
+        '<line class="grid-line" x1="48" y1="294" x2="580" y2="294"/>' +
+        '<line class="grid-line" x1="48" y1="225.5" x2="580" y2="225.5"/>' +
+        '<line class="grid-line" x1="48" y1="157" x2="580" y2="157"/>' +
+        '<line class="grid-line" x1="48" y1="88.5" x2="580" y2="88.5"/>' +
+        '<line class="grid-line" x1="48" y1="20" x2="580" y2="20"/>' +
+        '<text class="ax-label" x="40" y="298" text-anchor="end">0</text>' +
+        '<text class="ax-label" x="40" y="229" text-anchor="end">45</text>' +
+        '<text class="ax-label" x="40" y="161" text-anchor="end">90</text>' +
+        '<text class="ax-label" x="40" y="92" text-anchor="end">135</text>' +
+        '<text class="ax-label" x="40" y="24" text-anchor="end">180</text>' +
+        '<text class="ax-label" x="20" y="160" text-anchor="middle" transform="rotate(-90 20 160)">units of volume</text>' +
+        '<line x1="479.8" y1="20" x2="479.8" y2="294" stroke="var(--gold)" stroke-width="1.4" stroke-dasharray="4 4"/>' +
+        '<text class="ax-label" x="474" y="38" text-anchor="end" fill="var(--gold-ink)">crossover, year 10</text>' +
+        '<path d="M48 146.3 L92.3 149.3 L136.7 152.2 L181 155 L225.3 157.8 L269.7 160.5 L314 163.2 L358.3 165.8 L402.7 168.4 L447 170.9 L491.3 173.3 L535.7 175.8 L580 178.1" fill="none" stroke="var(--series-1)" stroke-width="2" stroke-linejoin="round"/>' +
+        '<path d="M48 289.4 L92.3 287.6 L136.7 285 L181 281.5 L225.3 276.5 L269.7 269.4 L314 259.6 L358.3 245.9 L402.7 226.6 L447 199.7 L491.3 161.9 L535.7 109.1 L580 35.1" fill="none" stroke="var(--series-2)" stroke-width="2" stroke-linejoin="round"/>' +
+        '<circle cx="269.7" cy="160.5" r="4" fill="var(--series-1)" stroke="var(--surface)" stroke-width="2"/>' +
+        '<circle cx="269.7" cy="269.4" r="4" fill="var(--series-2)" stroke="var(--surface)" stroke-width="2"/>' +
+        '<text class="val-label" x="269.7" y="255" text-anchor="middle" fill="var(--ink-3)">16</text>' +
+        '<text class="ser-label" x="588" y="182" fill="var(--series-1)">the category</text>' +
+        '<text class="ser-label" x="588" y="39" fill="var(--series-2)">the substitute</text>' +
+        '<line class="axis-line" x1="48" y1="20" x2="48" y2="294"/>' +
+        '<text class="ax-label" x="48" y="314" text-anchor="middle">year 0</text>' +
+        '<text class="ax-label" x="181" y="314" text-anchor="middle">3</text>' +
+        '<text class="ax-label" x="314" y="314" text-anchor="middle">6</text>' +
+        '<text class="ax-label" x="447" y="314" text-anchor="middle">9</text>' +
+        '<text class="ax-label" x="580" y="314" text-anchor="middle">12</text>' +
+        '<text x="48" y="338" fill="var(--ink-3)" font-size="11">At year 5 the substitute holds one unit in six — and the incumbent has four years left.</text>' +
+        '</svg>' },
+
+    { t: "table",
+      head: ["Year", "Category (−2%/yr)", "Substitute (+40%/yr)", "Substitute’s share", "How it feels inside the firm"],
+      rows: [
+        ["0", "97.0", "3.0", "3%", "Not a competitor. A curiosity."],
+        ["3", "91.3", "8.2", "8%", "Someone raises it. It is dismissed, correctly, on quality."],
+        ["5", "87.7", "16.1", "16%", "A niche. “They serve customers we don’t want.”"],
+        ["8", "82.5", "44.3", "35%", "Alarm. A task force. Three years too late to be cheap."],
+        ["10", "79.3", "86.8", "52%", "The substitute is the market. You are the alternative."]
+      ],
+      say: "Year zero: ninety-seven against three, a three percent share. Year three: eight percent. Year five: sixteen percent. Year eight: thirty-five percent. Year ten: fifty-two percent, and the substitute is now the market.",
+      cap: "Copy this table. The right-hand column is the part that is not arithmetic, and it is the part that decides outcomes: at every row the firm's reading of the situation is defensible, and at exactly one row — year three or five — acting would still have been cheap." },
+
+    { t: "h3", text: "Three: faith in mass production and falling unit costs" },
+    { t: "p", text: "The belief that making more, more cheaply, is always the road to profit. Levitt's objection is not that economies of scale are unreal — they are very real — but that they create a gravitational field. A firm that has sunk capital into an efficient plant making a particular thing has enormous, continuous, entirely rational pressure to keep that plant full." },
+    { t: "p", text: "The consequence is a reversal of the marketing concept from week one. Instead of finding out what people need and making it, the firm produces what the plant makes efficiently and then goes looking for demand. Every decision downstream — pricing, promotion, channel — becomes a response to the question *how do we shift this output?* rather than *what should we be making?* The firm is selling-oriented not by choice but by capital structure." },
+
+    { t: "h3", text: "Four: preoccupation with a product that lends itself to controlled improvement" },
+    { t: "p", text: "The subtlest of the four and the most relevant to well-run modern firms. Research and development produces results that are legible, measurable and attributable: a 5% efficiency gain is a fact, it has an owner, and it can be put on a slide. Customer needs are messy, contested, and resist the same treatment — two competent researchers can look at the same market and disagree." },
+    { t: "p", text: "So the firm's attention drifts toward the questions it can answer rather than the questions that matter, and the drift is invisible because every individual decision is defensible. Levitt pressed this further, observing that in technically sophisticated industries the people who rise into general management are the people who did the measurable work — which means the executives least equipped by training to weigh unmeasurable customer questions are exactly the ones who end up deciding them." },
+    { t: "p", text: "Notice the implication. This deception does not afflict badly run firms. It afflicts **technically excellent** ones, and the better a firm is at its measurable domain, the stronger the pull. Competence is itself a risk factor." },
+
+    { t: "h2", text: "Defining the business: a method, not a slogan" },
+    { t: "p", text: "Levitt's prescription is to define the business by the customer function it performs rather than the product it makes. Written as a pair of columns, the difference looks trivial. It is not: the two columns produce different competitor lists, different investment cases, and different answers to what counts as an opportunity." },
+    { t: "table",
+      head: ["Firm", "Product definition (myopic)", "Market definition (customer function)", "What the second column adds to the competitor list"],
+      rows: [
+        ["Railroad", "We run trains", "We move people and goods reliably over land", "Lorries, coaches, pipelines, and eventually the telephone"],
+        ["Film studio", "We make films", "We provide entertainment", "Television, and every later screen"],
+        ["Drill maker", "We make drills", "We help people make holes — and hang shelves", "Adhesive fixings, flat-pack furniture, a handyman service"],
+        ["Newspaper", "We print a paper", "We tell you what matters today, from a source you trust", "Every feed, aggregator and newsletter"],
+        ["University", "We deliver lectures", "We build capability and certify it credibly", "Professional certification, bootcamps, employer training"],
+        ["Cosmetics firm", "We make lipstick", "We sell confidence in how you are seen", "Cosmetic procedures, clothing, filters on a camera app"]
+      ],
+      say: "Six firms defined twice. The right-hand column adds competitors that never appear in a market-share report: for the railroad, lorries and pipelines; for the drill maker, adhesive fixings and flat-pack furniture; for the university, professional certification and employer training.",
+      cap: "The fourth column is the point of the exercise. A market definition is only doing work if it puts a name on the list that the product definition could not see." },
+    { t: "p", text: "The classic teaching example deserves one more step than it usually gets. People do not want a quarter-inch drill; they want a quarter-inch hole. But they do not want the hole either — they want the shelf on the wall, and beneath that they want a room that is not a mess. Each step back widens the competitive set: at holes, adhesive strips compete; at shelving, flat-pack units and a handyman; at an ordered room, a storage box that needs no wall at all. **Step back until the list contains something that frightens you, then stop.**" },
+
+    { t: "h2", text: "Abell’s three dimensions" },
+    { t: "p", text: "Derek Abell gave the field a more disciplined instrument in 1980, and it is the version worth actually using because it separates what should stay fixed from what should not." },
+    { t: "ul", items: [
+      "**Customer groups — who is served.** Which people or organisations, named specifically enough that you could count them.",
+      "**Customer functions — what need is met.** Which job the offering performs. This is the *durable* axis: people have wanted to be moved, warmed, entertained and thought well of for as long as there are records.",
+      "**Technologies — how it is performed.** By what means. This is the *volatile* axis, and it turns over completely within a career."
     ]},
+    { t: "p", text: "Stated that way, marketing myopia has a one-line definition: **anchoring the firm's identity on the volatile axis.** A firm that is *a railroad* has tied itself to a technology. A firm that *moves goods over land* has tied itself to a function and is free to change how." },
+
+    { t: "fig", title: "Abell’s three dimensions, and where myopia happens", sketch: true,
+      say: "Three axes from a single origin. Customer groups asks who is served. Customer functions asks what need is met — the durable axis. Technologies asks how — the volatile axis. A business is a chosen region across all three. Myopia is holding the technology axis fixed and letting the function axis drift away to somebody else's technology.",
+      cap: "Draw this, then place your own employer on all three axes. The diagnostic question: if the firm had to abandon one axis to survive, which would it defend? An answer of *the technology* is the finding.",
+      svg: '<svg viewBox="0 0 680 300" role="img" aria-label="Three axes of business definition: customer groups, customer functions, technologies">' +
+        '<defs><marker id="ahAb4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--ink-3)"/></marker></defs>' +
+        '<line x1="250" y1="208" x2="250" y2="44" stroke="var(--ink-3)" stroke-width="1.5" marker-end="url(#ahAb4)"/>' +
+        '<line x1="250" y1="208" x2="628" y2="208" stroke="var(--good)" stroke-width="1.8" marker-end="url(#ahAb4)"/>' +
+        '<line x1="250" y1="208" x2="72" y2="272" stroke="var(--bad)" stroke-width="1.8" marker-end="url(#ahAb4)"/>' +
+        '<text x="258" y="38" fill="var(--ink)" font-size="12.5" font-weight="600">CUSTOMER GROUPS</text>' +
+        '<text x="258" y="55" fill="var(--ink-3)" font-size="11">who is served?</text>' +
+        '<text x="628" y="230" text-anchor="end" fill="var(--good)" font-size="12.5" font-weight="600">CUSTOMER FUNCTIONS</text>' +
+        '<text x="628" y="247" text-anchor="end" fill="var(--ink-3)" font-size="11">what need is met? — durable, anchor here</text>' +
+        '<text x="66" y="290" fill="var(--bad)" font-size="12.5" font-weight="600">TECHNOLOGIES</text>' +
+        '<text x="66" y="256" fill="var(--ink-3)" font-size="11">how? — volatile, never anchor here</text>' +
+        '<circle cx="250" cy="208" r="5" fill="var(--accent)"/>' +
+        '<rect x="316" y="96" width="212" height="78" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.3"/>' +
+        '<text x="422" y="122" text-anchor="middle" fill="var(--accent-ink)" font-size="12.5" font-weight="600">The business</text>' +
+        '<text x="422" y="141" text-anchor="middle" fill="var(--ink-2)" font-size="11">a chosen region across</text>' +
+        '<text x="422" y="157" text-anchor="middle" fill="var(--ink-2)" font-size="11">all three dimensions</text>' +
+        '<path d="M316 135 L262 198" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="3 3"/>' +
+        '</svg>' },
+
+    { t: "h2", text: "The case against Levitt" },
+    { t: "p", text: "A course that presented this article as settled truth would be doing you a disservice. Levitt's advice, followed literally, has destroyed a great deal of value, and the objections are serious enough that you should be able to state them as well as you state the argument." },
+
+    { t: "h3", text: "Objection one: hyperopia" },
+    { t: "p", text: "If myopia is defining the business too narrowly, the opposite error is defining it so broadly that the definition constrains nothing. *We are in the business of human connection. We are in the mobility business. We are a technology company.* Each is true of thousands of firms and therefore tells nobody what to do on Monday." },
+    { t: "p", text: "There is a worse version, in which the firm believes the broad definition and *acts* on it. The 1960s and 1970s produced a wave of conglomerates assembled on exactly this logic — a railroad that concludes it is in transportation may buy an airline, having no relevant capability whatsoever, and a decade later both businesses are worse. Richard Rumelt's formulation is the one to carry: a statement that forbids nothing decides nothing." },
+    { t: "p", text: "So there is a test, and it is short: **does the definition rule anything out?** *We move people and goods reliably over land* rules out an airline while still admitting lorries. That is a usable definition. *We are in transportation* is a mood." },
+
+    { t: "h3", text: "Objection two: the firm is a bundle of capabilities, not only a servant of needs" },
+    { t: "p", text: "Levitt reasons from the customer inward. A whole tradition in strategy reasons from the firm outward: Wernerfelt's resource-based view of the firm in 1984, and most famously Prahalad and Hamel's argument in 1990 that a corporation is better understood as a portfolio of **core competences** than as a portfolio of businesses." },
+    { t: "p", text: "On that account, what a firm should do next is governed by what it is distinctively good at — capabilities that are valuable, rare, hard to imitate and applicable across several markets. A firm that abandons its technology to chase a customer function it has no ability to serve has not escaped myopia; it has merely found a more expensive way to fail." },
+    { t: "p", text: "Both views are partial and the failure modes are mirror images. Pure Levitt gives you a firm chasing needs it cannot meet. Pure resource-based view gives you a firm with superb capabilities in a market that is disappearing — a company that makes the world's finest mechanical typewriter." },
+    { t: "p", text: "**The synthesis is the intersection.** Define the business as the customer function you serve *and* have a distinctive capability to serve. Function alone is hyperopia. Capability alone is myopia wearing a better suit. The intersection is narrow enough to rule things out, wide enough to survive a technology turning over, and it is where a usable business definition lives." },
+
+    { t: "h3", text: "Objection three: timing" },
+    { t: "p", text: "The myopia framework tells you a substitute is coming. It does not tell you when, and being early is operationally identical to being wrong. A firm that abandons a profitable business a decade before the substitute arrives has destroyed a decade of earnings to avoid a threat its successors would have had time to handle." },
+    { t: "p", text: "This is why the arithmetic earlier in the lecture is not a decoration. The value of computing a crossover year — however rough — is that it converts *a threat exists* into *we have roughly six years*, and six years is a plannable quantity in a way that dread is not." },
+
+    { t: "h2", text: "The myopia test, in five steps" },
+    { t: "p", text: "This takes about half an hour and it is worth doing on your own employer. It produces a competitor list the firm's own reports do not contain." },
+    { t: "ol", items: [
+      "Write the firm's business as a **product definition**, in the words used internally. Not the website's words — the words used in a Tuesday meeting.",
+      "Write it as a **function definition**: what job is the customer hiring this for? Push back one step further than feels natural, then stop before it becomes a platitude. Apply the rules-something-out test.",
+      "List every way that function could be performed **without your product category**. Include ways that are currently bad, expensive or embarrassing. These are the real competitors and most will not be in any share report.",
+      "For each one, ask what would have to become true for it to take a tenth of your customers: a price fall, a regulation, a habit change, one generation. Then estimate the two numbers and **compute the crossover year**.",
+      "Check which of those conditions are **already moving** in that direction. Those are not risks. They are forecasts, and they belong in a budget rather than in a risk register."
+    ]},
+    { t: "p", text: "Step five is where the exercise earns its keep. Myopia is rarely a failure of imagination — ask any executive to name the thing that might replace them and most can. It is the failure to treat a visible trend as real, because the firm's structure, its incentives, its sunk assets and its best customers all argue for discounting it. The remedy is not more insight. It is writing the number down where somebody has to look at it again next year." },
 
     { t: "h2", text: "What you should be able to do now" },
-    { t: "p", text: "You can state Levitt's argument accurately, including the part people misquote — he did not say *define yourself broadly*, he said define yourself by the customer's function. You can run the five-step test on any firm and produce a list of competitors that its own reports do not contain. And you know the failure mode on the other side, which most courses never mention." },
-    { t: "p", text: "Next lecture, the last of week one: the marketing mix. The four Ps, the three that services added, the four Cs that reframed the whole thing from the customer's side — and the question of whether a framework from 1960 is still the right way to organise the work." }
+    { t: "p", text: "You can state Levitt's argument including the growth-industry claim that most summaries lose. You can name the four self-deceptions and recognise which one a given firm is running. You can turn a vague substitution worry into a year, on an envelope, with two estimates. You can define a business on three axes and test the definition by what it forbids. And you can argue the other side — hyperopia, capabilities, timing — which is the difference between having learned the article and having been taught it." },
+    { t: "p", text: "Next lecture closes week one with the marketing mix: the four Ps, the three that services added, the four Cs that turned the whole thing around to face the customer, and the question of whether a mnemonic from 1960 is still the right way to organise the work." }
+  ],
+  exercises: [
+    { task: "**Decompose your own growth.** Take any organisation whose numbers you can see — an employer, a family business, a club. Split last year's revenue or membership growth into three parts: how much came from the population or market growing, how much from customers spending more, and how much from anything the organisation actually did. Write the three numbers down.",
+      hint: "If you cannot find market growth figures, national or municipal statistics offices publish population and real income series free. An estimate you can defend beats a precise number you cannot." },
+    { task: "**Run the crossover arithmetic.** A category you know holds 90 units; a substitute holds 10 and is growing 25% a year while the category shrinks 1% a year. Compute the crossover year using `n = ln(share ratio) / ln(growth ratio)`. Then redo it with the substitute growing at 15% instead of 25%, and note how much the answer moved.",
+      hint: "The second calculation is the important one. It shows you how sensitive the conclusion is to the estimate you are least sure about — which tells you whether the estimate is worth refining." },
+    { task: "**Define one business three ways.** Pick an organisation and write its business as (a) a product definition, (b) a function definition, (c) a hyperopic definition so broad it forbids nothing. For (b), list at least four competitors that (a) cannot see.",
+      hint: "If you cannot write a convincing (c), you have not made (b) narrow enough to be safe from it." },
+    { task: "**Find the anchor.** Place a firm you know on Abell's three axes, then answer: if it had to abandon one axis to survive, which would it defend? Write the answer and one sentence of evidence — something the firm has actually done, not something it says.",
+      hint: "Evidence lives in where money goes: capital spending, hiring, and which department's head sits closest to the chief executive." },
+    { task: "**Argue the other side.** In no more than 200 words, make the strongest case that a specific firm should *not* redefine itself along customer-function lines — that its distinctive capability is tied to its current technology and abandoning it would be value-destroying.",
+      hint: "This is the resource-based view in practice. If you cannot make this argument, you will over-apply Levitt, which is the more expensive of the two errors." }
+  ],
+  reading: [
+    { author: "Theodore Levitt", work: "Marketing Myopia", where: "Harvard Business Review", year: 1960,
+      note: "The primary source, and short. Read it rather than a summary — the petroleum section and the growth-industry claim are both routinely dropped from second-hand accounts." },
+    { author: "Theodore Levitt", work: "Marketing Myopia (with retrospective commentary)", where: "Harvard Business Review", year: 1975,
+      note: "Levitt reissued the article fifteen years later with his own commentary on how it had been used and misused. The commentary is the best short answer to the hyperopia objection." },
+    { author: "Derek F. Abell", work: "Defining the Business: The Starting Point of Strategic Planning", where: "Prentice-Hall", year: 1980,
+      note: "Where the three dimensions come from. Dense, and the first two chapters carry most of the value." },
+    { author: "C. K. Prahalad and Gary Hamel", work: "The Core Competence of the Corporation", where: "Harvard Business Review", year: 1990,
+      note: "The strongest counterweight to Levitt: define the firm by what it is distinctively able to do. Read it directly after the 1960 article and hold both." },
+    { author: "Clayton M. Christensen", work: "The Innovator's Dilemma", where: "Harvard Business School Press", year: 1997,
+      note: "Why competent firms miss substitutes even when they can see them — the mechanism Levitt described but did not explain." },
+    { author: "Richard P. Rumelt", work: "Good Strategy / Bad Strategy", where: "Crown Business", year: 2011,
+      note: "The chapters on fluff and on bad strategic objectives are the antidote to definitions that rule nothing out." }
   ],
   glossary: [
-    { term: "Marketing myopia", def: "Defining the business by the product it makes rather than the customer need it serves, so that substitutes from outside the category are invisible until it is too late." },
+    { term: "Marketing myopia", def: "Defining a business by the product it makes rather than the customer function it serves, so that substitutes from outside the category stay invisible until it is too late to respond cheaply." },
+    { term: "Growth-industry fallacy", def: "The belief that growth is a property of the industry rather than something firms create. Levitt's central claim is that there are no growth industries, only firms organised to create growth." },
     { term: "Product definition", def: "A statement of what the firm makes. Narrow, comfortable, and blind to substitution." },
-    { term: "Market definition", def: "A statement of the customer function the firm performs. Wider competitive set, and a different investment logic." },
-    { term: "Marketing hyperopia", def: "The opposite error: a definition so broad that it rules nothing out and therefore guides nothing." },
-    { term: "Abell’s three dimensions", def: "Defining a business by customer groups (who), customer functions (what need) and technologies (how) — treating function as durable and technology as volatile." },
-    { term: "Substitute", def: "Any alternative means of performing the customer’s function, including means from outside the industry. Usually the thing that kills a category." },
-    { term: "Competitive set", def: "The alternatives a customer actually considers. Defined by the customer’s function, not by the firm’s product classification." }
+    { term: "Market definition", def: "A statement of the customer function the firm performs. Produces a wider competitor list and a different investment logic." },
+    { term: "Marketing hyperopia", def: "The opposite error: a definition so broad it rules nothing out, licensing entry into markets where the firm has no advantage." },
+    { term: "Abell's three dimensions", def: "Customer groups (who), customer functions (what need), technologies (how). Function is durable; technology is volatile." },
+    { term: "Crossover year", def: "The year a growing substitute overtakes a declining incumbent: n = ln(share ratio) / ln(growth ratio)." },
+    { term: "Core competence", def: "A capability that is valuable, rare, hard to imitate and applicable across several markets — Prahalad and Hamel's unit of strategic analysis." },
+    { term: "Resource-based view", def: "The tradition that explains firm performance by the resources and capabilities it controls, reasoning from the firm outward rather than from the customer inward." },
+    { term: "Disruptive innovation", def: "Christensen's account of a substitute that enters below the incumbent on the dimensions existing customers value, and improves until it takes the market." }
   ],
   quiz: [
     { id: "w01l04q1", concept: "myopia", type: "mcq",
@@ -1057,6 +1168,39 @@ window.LESSONS['marketing.w01'] = {
       ],
       answer: 2,
       explain: "Most executives can name the substitute — myopia is rarely a failure of imagination. It is the failure to treat an already-visible trend as real, because the firm’s structure, incentives and sunk assets all argue for discounting it. Step five converts a risk into a forecast, and that is the step that gets skipped." },
+
+    { id: "w01l04q11", concept: "growth-fallacy", type: "mcq",
+      q: "Levitt wrote that “there is no such thing as a growth industry”. What is the operational consequence of taking that seriously?",
+      options: [
+        "Firms should avoid industries described as high-growth, since the label attracts competitors",
+        "Growth in a booming market is not evidence of success, because it may be entirely the market's",
+        "Industry growth rates are unreliable and should not be forecast",
+        "Firms should diversify out of any single industry"
+      ],
+      answer: 1,
+      explain: "The claim relocates growth from the environment to the firm. If growth is something firms create rather than something industries have, then rising revenue in a rising market tells you nothing until you have decomposed it — and the residual after population and income growth is the only part that is actually yours. A firm that cannot point to that residual is coasting, and coasting is invisible until the tide turns." },
+
+    { id: "w01l04q12", concept: "substitutes", type: "num",
+      q: "A category holds 80 units and shrinks 2% a year. A substitute holds 5 units and grows 30% a year. In roughly how many years does the substitute overtake the category? Give the answer to the nearest whole year.",
+      answer: 9, tol: 0.6, unit: "years",
+      placeholder: "e.g. 7",
+      explain: "n = ln(80/5) ÷ ln(1.30/0.98) = ln(16) ÷ ln(1.3265) = 2.773 ÷ 0.2824 ≈ **9.8**, so about ten years — but nine is within tolerance and the point is the order of magnitude, not the decimal. Sanity-check it: at year 5 the substitute is 5 × 1.3⁵ ≈ 18.6 against the category's 72 — still under a quarter, still easy to dismiss, and only four years of room left." },
+
+    { id: "w01l04q13", concept: "capability", type: "mcq",
+      q: "A precision-optics manufacturer concludes it is really in “the business of helping people see”, and on that basis enters consumer eyewear retail, where it has no distribution, no brand and no retail experience. Which diagnosis fits best?",
+      options: [
+        "Correct application of Levitt: the function definition widened the opportunity",
+        "Marketing myopia: it stayed too close to its existing technology",
+        "Hyperopia compounded by ignoring the resource-based view: a function it cannot distinctively serve",
+        "Synchromarketing: it moved demand into a trough"
+      ],
+      answer: 2,
+      explain: "The definition is broad enough to license the move and does not rule anything out, which is hyperopia; and the move ignores the question the resource-based view exists to ask — what are we distinctively able to do? The synthesis in the lecture is the intersection: the customer function you serve **and** have a distinctive capability to serve. Function alone produces exactly this failure, and it is the more expensive of the two errors because it spends capital rather than merely missing an opportunity." },
+
+    { id: "w01l04q14", concept: "capability", type: "short",
+      q: "State the synthesis between Levitt's customer-function view and the resource-based view, and give the failure mode of each taken alone.",
+      answer: "**The synthesis:** define the business as the customer function you serve *and* have a distinctive capability to serve — the intersection of the two, which is narrow enough to rule options out and wide enough to survive a technology turning over. **Levitt alone** reasons from the customer inward and produces a firm chasing needs it has no ability to meet: the definition licenses entry into markets where it holds no advantage, and capital is destroyed. **The resource-based view alone** reasons from the firm outward and produces superb capabilities aimed at a disappearing market — the company making the world's finest mechanical typewriter. The two failures are mirror images, which is why holding only one of the frameworks is worse than holding both loosely.",
+      explain: "Examiners reward the mirror-image structure. The commonest weak answer states the synthesis and then describes only Levitt's failure mode, because the resource-based failure is less famous — but it is the one that afflicts technically excellent firms, which are the ones most likely to employ you." },
 
     { id: "w01l04q10", concept: "hyperopia", type: "short",
       q: "Give the one-line test for whether a business definition is usable, and apply it to “we are in the transportation business” as a definition for a regional railway.",

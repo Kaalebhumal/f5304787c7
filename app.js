@@ -659,6 +659,17 @@
           addSpeech(b.text + ' -- ' + b.who, aid);
           break;
 
+        case 'exercises':
+          node = el('ol', 'exercise-list spk',
+            b.items.map(function (x, xi) {
+              return '<li><div class="ex-body">' + inline(typeof x === 'string' ? x : x.task) + '</div>' +
+                (x && x.hint ? '<div class="ex-hint">' + inline(x.hint) + '</div>' : '') + '</li>';
+            }).join(''));
+          b.items.forEach(function (x, xi) {
+            addSpeech('Exercise ' + (xi + 1) + '. ' + (typeof x === 'string' ? x : x.task), aid);
+          });
+          break;
+
         case 'write':
           node = el('div', 'box box-write spk',
             '<div class="box-label">Write this down</div><ol>' +
@@ -1196,7 +1207,14 @@
     }
 
     /* --- transport --- */
-    var built = T.renderBlocks(L.blocks, meta);
+    var body = L.blocks.slice();
+    if (L.exercises && L.exercises.length) {
+      body.push({ t: 'h2', text: 'Work to do before the next lecture' });
+      body.push({ t: 'p', text: L.exercisesLead ||
+        'These are not test questions. They are the hour after the hour — the part that turns a lecture you followed into something you can use.' });
+      body.push({ t: 'exercises', items: L.exercises });
+    }
+    var built = T.renderBlocks(body, meta);
     var transport = buildTransport(built.units, meta, L);
     col.appendChild(transport);
 
@@ -1213,6 +1231,21 @@
         return '<div class="row"><dt>' + inline(t.term) + '</dt><dd>' + inline(t.def) + '</dd></div>';
       }).join('') + '</dl>';
       col.appendChild(g);
+    }
+
+    /* --- further reading --- */
+    if (L.reading && L.reading.length) {
+      var rh = el('div', 'block-head');
+      rh.innerHTML = '<h2>Where this comes from</h2><span class="hint">Read the first one if you read nothing else</span>';
+      col.appendChild(rh);
+      var rl = el('ol', 'reading-list');
+      rl.innerHTML = L.reading.map(function (r) {
+        return '<li><span class="rd-cite"><span class="rd-author">' + inline(r.author) + '</span>, ' +
+          '<span class="rd-work">' + inline(r.work) + '</span>' +
+          (r.where ? ', ' + inline(r.where) : '') + (r.year ? ', ' + r.year : '') + '.</span>' +
+          (r.note ? '<span class="rd-note">' + inline(r.note) + '</span>' : '') + '</li>';
+      }).join('');
+      col.appendChild(rl);
     }
 
     /* --- notes --- */

@@ -1378,3 +1378,78 @@ body[data-nocourse="1"] #syllabus { display: none; }
   padding-top: 10px; border-top: 1px solid var(--rule);
 }
 .cc-sub { font-size: 10.5px; color: var(--ink-3); letter-spacing: .04em; }
+
+/* ---------- exercises ---------- */
+.exercise-list {
+  counter-reset: ex;
+  list-style: none;
+  margin: 22px 0 8px;
+  padding: 0;
+  max-width: var(--measure);
+}
+.exercise-list li {
+  counter-increment: ex;
+  position: relative;
+  padding: 15px 18px 15px 52px;
+  margin-bottom: 10px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--gold);
+  border-radius: 5px;
+  font-family: var(--font-ui);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.exercise-list li::before {
+  content: counter(ex);
+  position: absolute;
+  left: 17px; top: 15px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--gold-ink);
+  background: var(--gold-soft);
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+}
+.exercise-list .ex-body { color: var(--ink); }
+.exercise-list .ex-hint {
+  margin-top: 8px;
+  font-size: 12.5px;
+  color: var(--ink-3);
+  line-height: 1.55;
+  padding-top: 8px;
+  border-top: 1px dashed var(--rule);
+}
+
+/* ---------- further reading ---------- */
+.reading-list {
+  counter-reset: rd;
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.reading-list li {
+  counter-increment: rd;
+  background: var(--surface);
+  padding: 13px 16px 13px 46px;
+  position: relative;
+  font-family: var(--font-ui);
+}
+.reading-list li::before {
+  content: counter(rd);
+  position: absolute; left: 17px; top: 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-3);
+}
+.rd-cite { display: block; font-size: 13.5px; line-height: 1.5; color: var(--ink); }
+.rd-author { font-weight: 600; }
+.rd-work { font-style: italic; }
+.rd-note { display: block; margin-top: 5px; font-size: 12.5px; color: var(--ink-2); line-height: 1.55; }
