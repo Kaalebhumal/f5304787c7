@@ -386,162 +386,269 @@ window.LESSONS['marketing.w01'] = {
    1.2  Five orientations
    ============================================================ */
 "w01l02": {
-  standfirst: "Every firm carries an unspoken belief about why people buy from it. That belief was usually formed decades ago, it is rarely written down, and it silently decides what the firm does when sales fall. There are five of them, and you can diagnose a company’s from the outside in about ten minutes.",
+  standfirst: "Every company carries an unspoken belief about why people buy from it. Nobody writes it down, most of the staff could not say it out loud, and it quietly decides what the company does when sales fall. There are five of them. You can work out which one you are looking at in about ten minutes, from the outside.",
+  thread: {
+    from: "What marketing is, the six activities it is made of, and where it is used.",
+    adds: "The five beliefs a company can hold about its customers — and how to tell which one, from outside.",
+    toward: "Lecture 4, where one of these beliefs turns out to kill whole industries."
+  },
   objectives: [
-    "Name the five marketing orientations in the order they historically emerged, and state the core belief of each.",
-    "Diagnose a firm’s orientation from observable evidence — what it measures, who is promoted, what it does when sales fall.",
-    "Explain why the selling orientation persists despite being widely taught as obsolete.",
-    "Distinguish the marketing concept from the societal marketing concept, and say what the latter adds.",
-    "Argue the case *against* being purely customer-led."
+    "Name the five orientations and state the core belief of each in one line.",
+    "Diagnose a company's orientation from outside evidence: what it measures, who it promotes, what it does when sales fall.",
+    "Explain why production orientation was right for Ford and has an expiry date.",
+    "Explain why an excellent product can fail, using a real case with real numbers.",
+    "Give three serious reasons the selling orientation survives, none of which is stupidity.",
+    "Argue the case against being purely customer-led."
   ],
   concepts: [
     { id: "orientations",  name: "The five orientations" },
-    { id: "prod-vs-mkt",   name: "Production and product orientation" },
+    { id: "prod-orient",   name: "Production orientation" },
+    { id: "product-orient",name: "Product orientation" },
     { id: "selling-orient",name: "The selling orientation" },
     { id: "mkt-concept",   name: "The marketing concept" },
-    { id: "societal",      name: "Societal marketing" }
+    { id: "societal",      name: "Societal marketing" },
+    { id: "diagnose-from-outside", name: "Diagnosing from outside" }
+  ],
+  vocab: [
+    { word: "orientation", plain: "The basic belief a company holds about why people buy from it.", et: "orientatsioon, põhihoiak" },
+    { word: "reflex", plain: "What someone does automatically, without stopping to think.", et: "refleks" },
+    { word: "expiry", plain: "The point at which something stops being valid or useful.", et: "aegumine" },
+    { word: "seductive", plain: "Very attractive, in a way that can lead you somewhere bad.", et: "ahvatlev" },
+    { word: "prestige", plain: "Respect and status inside a group.", et: "prestiiž, maine" },
+    { word: "commission", plain: "Pay that depends on how much you sell.", et: "komisjonitasu, müügitasu" },
+    { word: "overcapacity", plain: "Being able to make far more than you can sell.", et: "ülevõimsus" },
+    { word: "unsought", plain: "Something nobody goes looking for, even when they need it.", et: "mitteotsitav" },
+    { word: "articulate", plain: "To put something into clear words.", et: "sõnastama" },
+    { word: "distinctive", plain: "Easy to tell apart from the others.", et: "eristatav" }
+  ],
+  tools: [
+    { kind: "test", name: "The falling-sales test",
+      answers: "What does this company actually believe about its customers?",
+      when: "Watch what a firm does first when revenue drops. Cut price → production. Add features → product. Hire sellers or run a promotion → selling. Ask customers why they left → marketing. The reflex reveals the belief, and the belief predicts the next ten decisions." },
+    { kind: "framework", name: "The five orientations",
+      answers: "Which of the five theories of the customer is this firm running?",
+      when: "Before advising, joining or investing in any company. It tells you what arguments will be heard inside it, and which will not." },
+    { kind: "rule", name: "Every orientation has an expiry date",
+      answers: "Is this firm's belief still the right one for its market?",
+      when: "Whenever a firm is doing well. Production orientation was right for Ford for about fifteen years, and the day supply caught demand it became wrong. The belief does not announce its own expiry." }
   ],
   blocks: [
-    { t: "h2", text: "The question every firm has already answered" },
-    { t: "p", text: "Ask a company why its customers buy from it and you will get a prepared answer. Watch what the company *does* when sales fall fifteen percent, and you will get the real one." },
-    { t: "p", text: "Some firms cut price. Some add features. Some hire more salespeople. Some commission research. Those four responses are not four tactics drawn from a common menu; they are four different theories of the customer, and each is so deeply embedded that the people acting on it usually cannot articulate it. This lecture gives you the five theories, in the order they appeared, so that you can name what you are looking at." },
-    { t: "p", text: "A warning before we start. Textbooks present these as a march of progress, each stage superseding the last. That is tidy and partly false. All five are alive today, all five are correct under some conditions, and the interesting question is never *which era is this firm stuck in* but *does this firm’s orientation match its actual market*." },
+    { t: "h2", text: "Ask what they do, not what they say" },
+    { t: "p", text: "Ask a company why its customers buy from it and you get the prepared answer. Watch what it *does* when sales fall fifteen percent, and you get the real one." },
+    { t: "p", text: "Four companies, same problem, four first moves:" },
+    { t: "ul", items: [
+      "One **cuts the price.**",
+      "One **adds features.**",
+      "One **hires more salespeople** or runs a promotion.",
+      "One **asks the customers who left why they left.**"
+    ]},
+    { t: "p", text: "Those are not four tactics off a common menu. They are four different theories of why anyone buys anything, and each one is so deeply built into the company that the people acting on it usually cannot say it out loud. This lecture gives you the five theories, so you can name what you are looking at." },
+    { t: "warn", title: "A warning about how this is usually taught", ps: [
+      "Textbooks lay these out as a march of progress: each stage better than the last, ending with the enlightened modern one. That is tidy and partly false.",
+      "All five are alive today. All five are **correct under some conditions**. The interesting question is never *which era is this company stuck in* — it is **does this company's belief match the market it is actually in.**"
+    ]},
 
-    { t: "fig", title: "The five orientations and their core belief", sketch: true,
-      say: "Five stages across the page. Production orientation believes customers want availability and low price. Product orientation believes customers want the best quality and features. Selling orientation believes customers must be persuaded. Marketing orientation believes the customer's need comes first. Societal orientation adds the long-run welfare of the customer and of society.",
-      cap: "The dates are indicative of when each *dominated* Western industry, not of when it began or ended. All five are in use somewhere today, and the arrow is not a value judgement.",
-      svg: '<svg viewBox="0 0 680 300" role="img" aria-label="Five marketing orientations in historical sequence with their core beliefs">' +
-        '<line x1="30" y1="48" x2="650" y2="48" stroke="var(--rule-strong)" stroke-width="1"/>' +
-        '<g font-size="11" text-anchor="middle">' +
-        '<circle cx="82" cy="48" r="6" fill="var(--series-1)"/><text x="82" y="34" fill="var(--ink-3)" font-size="10">to ~1920s</text>' +
-        '<circle cx="216" cy="48" r="6" fill="var(--series-1)"/><text x="216" y="34" fill="var(--ink-3)" font-size="10">1920s–30s</text>' +
-        '<circle cx="350" cy="48" r="6" fill="var(--series-1)"/><text x="350" y="34" fill="var(--ink-3)" font-size="10">1930s–50s</text>' +
-        '<circle cx="484" cy="48" r="6" fill="var(--series-1)"/><text x="484" y="34" fill="var(--ink-3)" font-size="10">1950s–90s</text>' +
-        '<circle cx="618" cy="48" r="6" fill="var(--series-1)"/><text x="618" y="34" fill="var(--ink-3)" font-size="10">1970s–</text>' +
+    { t: "h2", text: "One: production orientation" },
+    { t: "p", text: "**The belief:** customers want products that are available and affordable. So make more, make them cheaper, and get them everywhere." },
+    { t: "p", text: "This is the oldest of the five and it is the right answer under two conditions: **demand exceeds supply**, and the product is close enough to a commodity that cost is genuinely the battleground. When both hold, the company that drives cost down wins, and nothing else matters much." },
+    { t: "p", text: "The standard illustration is Henry Ford, and it is usually told as a joke about arrogance — *any colour so long as it is black.* It was not arrogance. Black enamel dried fastest, drying time set the speed of the line, line speed set the cost, and the cost was what put a car within reach of a farmer. Look at what that produced." },
+    { t: "table",
+      head: ["Year", "Price of a Model T", "Units built that year"],
+      rows: [
+        ["1909", "$825", "10,660"],
+        ["1916", "$345", "501,462"],
+        ["1923", "—", "2,011,125 (peak)"],
+        ["1925", "$260", "1,911,706"]
+      ],
+      say: "In 1909 a Model T cost eight hundred and twenty-five dollars and Ford built ten thousand six hundred and sixty of them. By 1916 the price was three hundred and forty-five dollars and production was half a million. In 1923 Ford built over two million in a single year, and by 1925 the price had fallen to two hundred and sixty dollars.",
+      cap: "Prices and production as recorded for the Model T. The 1909 price is for the Runabout; Ford sold several body styles at different prices." },
+
+    { t: "fig", title: "What a production orientation actually did", sketch: true,
+      say: "The price of a Model T fell from eight hundred and twenty-five dollars in 1909 to two hundred and sixty dollars in 1925 — under a third of where it started. Production over the same period went from about eleven thousand cars a year to nearly two million.",
+      cap: "Price on a single scale. Production is shown as labels rather than a second axis, because two different measures on one chart with two scales is the easiest way in the world to mislead yourself — a rule we will use for the rest of the course.",
+      svg: '<svg viewBox="0 0 680 320" role="img" aria-label="The price of a Ford Model T falling from 825 dollars in 1909 to 260 dollars in 1925">' +
+        '<line class="grid-line" x1="62" y1="264" x2="600" y2="264"/>' +
+        '<line class="grid-line" x1="62" y1="204" x2="600" y2="204"/>' +
+        '<line class="grid-line" x1="62" y1="144" x2="600" y2="144"/>' +
+        '<line class="grid-line" x1="62" y1="84" x2="600" y2="84"/>' +
+        '<line class="grid-line" x1="62" y1="24" x2="600" y2="24"/>' +
+        '<text class="ax-label" x="54" y="268" text-anchor="end">$0</text>' +
+        '<text class="ax-label" x="54" y="208" text-anchor="end">$250</text>' +
+        '<text class="ax-label" x="54" y="148" text-anchor="end">$500</text>' +
+        '<text class="ax-label" x="54" y="88" text-anchor="end">$750</text>' +
+        '<text class="ax-label" x="54" y="28" text-anchor="end">$1000</text>' +
+        '<text class="ax-label" x="22" y="145" text-anchor="middle" transform="rotate(-90 22 145)">price of one car</text>' +
+        '<path d="M96 66 L365 181 L600 201.6" fill="none" stroke="var(--series-1)" stroke-width="2.4" stroke-linejoin="round"/>' +
+        '<g fill="var(--series-1)" stroke="var(--surface)" stroke-width="2">' +
+        '<circle cx="96" cy="66" r="5"/><circle cx="365" cy="181" r="5"/><circle cx="600" cy="201.6" r="5"/>' +
         '</g>' +
-        '<g font-size="12.5" font-weight="600" text-anchor="middle" fill="var(--ink)">' +
-        '<text x="82" y="80">Production</text><text x="216" y="80">Product</text><text x="350" y="80">Selling</text>' +
-        '<text x="484" y="80">Marketing</text><text x="618" y="80">Societal</text>' +
-        '</g>' +
-        '<g font-size="10.5" text-anchor="middle" fill="var(--ink-2)">' +
-        '<rect x="24" y="96" width="116" height="92" rx="4" fill="var(--surface-2)" stroke="var(--rule)"/>' +
-        '<text x="82" y="118">“They want it</text><text x="82" y="133">available</text><text x="82" y="148">and cheap.”</text>' +
-        '<text x="82" y="172" fill="var(--ink-3)" font-size="10">Scale, cost,</text><text x="82" y="184" fill="var(--ink-3)" font-size="10">distribution</text>' +
-        '<rect x="158" y="96" width="116" height="92" rx="4" fill="var(--surface-2)" stroke="var(--rule)"/>' +
-        '<text x="216" y="118">“They want</text><text x="216" y="133">the best made</text><text x="216" y="148">thing.”</text>' +
-        '<text x="216" y="172" fill="var(--ink-3)" font-size="10">Quality,</text><text x="216" y="184" fill="var(--ink-3)" font-size="10">features, R and D</text>' +
-        '<rect x="292" y="96" width="116" height="92" rx="4" fill="var(--surface-2)" stroke="var(--rule)"/>' +
-        '<text x="350" y="118">“They won’t buy</text><text x="350" y="133">unless we</text><text x="350" y="148">push.”</text>' +
-        '<text x="350" y="172" fill="var(--ink-3)" font-size="10">Sales force,</text><text x="350" y="184" fill="var(--ink-3)" font-size="10">promotion</text>' +
-        '<rect x="426" y="96" width="116" height="92" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4"/>' +
-        '<text x="484" y="118" fill="var(--accent-ink)">“What do they</text><text x="484" y="133" fill="var(--accent-ink)">actually</text><text x="484" y="148" fill="var(--accent-ink)">need?”</text>' +
-        '<text x="484" y="172" fill="var(--ink-3)" font-size="10">Research,</text><text x="484" y="184" fill="var(--ink-3)" font-size="10">segmentation</text>' +
-        '<rect x="560" y="96" width="116" height="92" rx="4" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="1.4"/>' +
-        '<text x="618" y="118" fill="var(--gold-ink)">“…and what</text><text x="618" y="133" fill="var(--gold-ink)">does it do to</text><text x="618" y="148" fill="var(--gold-ink)">everyone else?”</text>' +
-        '<text x="618" y="172" fill="var(--ink-3)" font-size="10">Long-run</text><text x="618" y="184" fill="var(--ink-3)" font-size="10">welfare</text>' +
-        '</g>' +
-        '<line x1="24" y1="212" x2="656" y2="212" stroke="var(--rule)" stroke-dasharray="3 3"/>' +
-        '<text x="24" y="234" fill="var(--ink-3)" font-size="11">Inward-looking: the firm starts from what it can make.</text>' +
-        '<text x="24" y="252" fill="var(--ink-3)" font-size="11">Outward-looking: the firm starts from what someone needs.</text>' +
-        '<path d="M330 228 L330 244" stroke="var(--rule-strong)" stroke-width="1"/>' +
-        '<text x="340" y="272" fill="var(--ink-3)" font-size="11">The break falls between selling and marketing — that is the only boundary that matters.</text>' +
+        '<text class="val-label" x="96" y="54" text-anchor="middle" font-weight="600">$825</text>' +
+        '<text class="val-label" x="365" y="169" text-anchor="middle" font-weight="600">$345</text>' +
+        '<text class="val-label" x="600" y="190" text-anchor="end" font-weight="600">$260</text>' +
+        '<text class="ax-label" x="96" y="290" text-anchor="middle">1909</text>' +
+        '<text class="ax-label" x="365" y="290" text-anchor="middle">1916</text>' +
+        '<text class="ax-label" x="600" y="290" text-anchor="middle">1925</text>' +
+        '<text class="ax-label" x="96" y="304" text-anchor="middle" fill="var(--series-2)">10,660 built</text>' +
+        '<text class="ax-label" x="365" y="304" text-anchor="middle" fill="var(--series-2)">501,462 built</text>' +
+        '<text class="ax-label" x="600" y="304" text-anchor="end" fill="var(--series-2)">1,911,706 built</text>' +
+        '<line class="axis-line" x1="62" y1="24" x2="62" y2="264"/>' +
         '</svg>' },
 
-    { t: "h2", text: "Production orientation" },
-    { t: "p", text: "The belief: *customers want products that are available and affordable, so the job is to make more of them, more cheaply, and get them everywhere.*" },
-    { t: "p", text: "This is the oldest orientation and it is the correct one under two conditions: when demand exceeds supply, and when the product is close to a commodity so that cost is genuinely the battleground. Henry Ford’s remark that the customer could have any colour so long as it was black is the standard illustration, and it is usually told as a joke about arrogance. It was not arrogance. Black enamel dried fastest, drying time set the line speed, line speed set the cost, and the cost was what put a car within reach of a farmer. For roughly fifteen years it was exactly the right answer." },
-    { t: "p", text: "It stopped being the right answer the moment supply caught demand and General Motors offered colours. That is the pattern: production orientation is not a mistake, it is a correct strategy with an expiry date that firms do not notice passing." },
-    { t: "p", text: "How to spot it today: the firm's key metrics are unit cost, capacity utilisation and throughput. The most powerful person outside the chief executive runs operations. When sales fall, the instinct is to cut price, because price is the lever the firm understands." },
+    { t: "p", text: "Price down to under a third. Volume up roughly a hundred and eighty times. That is not a company being stubborn — that is a production orientation working exactly as it should, and putting a car under millions of people who could never have had one." },
+    { t: "p", text: "**And then it expired.** The moment supply caught demand, customers started caring about things other than price, General Motors offered colours and model years, and the same belief that had built the largest car company in the world began to lose it. That is the pattern to hold on to: **a production orientation is not a mistake. It is a correct strategy with an expiry date that companies do not notice passing.**" },
+    { t: "p", text: "**How to spot it today.** The numbers that get quoted internally are unit cost, capacity use and throughput. The most powerful person outside the chief executive runs operations. When sales fall, the reflex is to cut price, because price is the lever the company understands." },
 
-    { t: "h2", text: "Product orientation" },
-    { t: "p", text: "The belief: *customers want the best-made, highest-performing, most feature-rich product, so the job is continuous improvement.*" },
-    { t: "p", text: "This one is seductive because it is the orientation of engineers, craftsmen and anybody who takes pride in their work — which is to say, of the people you would most like to employ. It produces genuinely excellent objects. It also produces the single most common failure mode in business: a superb product that nobody wants, priced for a level of quality nobody asked for." },
-    { t: "warn", title: "The better mousetrap fallacy", ps: [
-      "The proverb says that if you build a better mousetrap, the world will beat a path to your door. The proverb is wrong, and it is wrong in an instructive way.",
-      "The world does not know your door exists. The world is not convinced your mousetrap is better, because it cannot evaluate mousetraps. The world has a mousetrap already and the switching cost is not zero. And a large part of the world does not want a better mousetrap at all — it wants no mice, which might be a cat, a sealed floor, or a landlord’s problem.",
-      "Every one of those four objections is a marketing problem that superior engineering does not touch. This is why product-oriented firms so often have an excellent product and a bewildered sales meeting."
-    ]},
-    { t: "p", text: "How to spot it: the firm talks about specifications where customers talk about outcomes. Engineering or design holds the most internal prestige. When sales fall, the instinct is to add features, and the product roadmap grows faster than the customer's ability to use it. Watch also for the phrase *we just need to educate the market*, which is nearly always the sound of a product-oriented firm blaming the customer for its own positioning failure." },
-
-    { t: "h2", text: "Selling orientation" },
-    { t: "p", text: "The belief: *left alone, customers will not buy enough, so the job is aggressive promotion and a strong sales effort.*" },
-    { t: "p", text: "This orientation emerged when mass production finally outran natural demand, and it is characterised by a particular asymmetry: the firm's effort goes into moving the stock it has already made, rather than into deciding what to make. Levitt's phrase is the sharpest summary ever written: **selling focuses on the needs of the seller; marketing on the needs of the buyer.**" },
-    { t: "p", text: "Textbooks treat the selling orientation as an embarrassing historical stage. It is nothing of the sort — it is thriving, for four unglamorous reasons." },
-    { t: "ol", items: [
-      "**Unsought goods genuinely need it.** Nobody wakes up wanting life insurance, a burial plot, or a smoke alarm. For products people would never seek out, an active selling effort is not a symptom of bad marketing; it is the correct channel.",
-      "**Overcapacity forces it.** A firm with a factory running at forty percent has a fixed cost problem this quarter, and the honest long-term answer — make something else — does not pay the wages in March.",
-      "**Sales effort is measurable and fast.** Hire ten salespeople and you see the effect in a quarter. Reposition a brand and you see the effect in two years. Under pressure, managers choose the lever with the shorter feedback loop, and they are not being stupid.",
-      "**It works, in the short run, at a cost that appears later.** High-pressure selling does move units. It also produces returns, churn, bad word of mouth and a reputation that takes years to repair — and none of those land in the quarter that the sales bonus is paid on."
-    ]},
-    { t: "p", text: "How to spot it: sales headcount is the growth plan. Commission dominates compensation. Marketing reports to sales, or is described as *sales support*. When sales fall, the instinct is to run a promotion or add salespeople. The tell-tale sentence is *we have a great product, we just need to get it in front of more people*." },
-
-    { t: "h2", text: "The marketing concept" },
-    { t: "p", text: "The belief: *achieving the firm’s goals depends on determining the needs and wants of target markets and delivering the desired satisfaction better than competitors do.*" },
-    { t: "p", text: "Three things are doing the work in that sentence, and all three are easy to skim past." },
-    { t: "ul", items: [
-      "**Target markets** — not everyone. The marketing concept is not *give every customer what they want*, which is incoherent because customers want contradictory things. It is *choose whom to serve, then serve them properly*. The choosing is week seven.",
-      "**Determining needs and wants** — an empirical activity, not an act of imagination in a meeting room. This is why marketing research is a third of a serious syllabus.",
-      "**Better than competitors** — satisfaction is relative, not absolute. A customer perfectly happy with you will still leave for someone who delights them more. Your performance is always measured against an alternative."
-    ]},
-    { t: "p", text: "The structural change that follows is that marketing stops being a department and becomes an orientation of the whole firm. If product decisions are made from customer understanding, then the finance director, the plant manager and the person who answers the telephone are all executing marketing decisions, whatever their job titles say." },
-    { t: "case", title: "Diagnosing an orientation from the outside",
+    { t: "h2", text: "Two: product orientation" },
+    { t: "p", text: "**The belief:** customers want the best-made, highest-performing, most advanced product. So keep improving it." },
+    { t: "p", text: "This one is seductive, because it is the belief of engineers, craftsmen and anyone who takes pride in their work — which is to say, the people you would most want to employ. It produces genuinely excellent objects. It also produces the single most common failure in business: a superb product that almost nobody buys." },
+    { t: "case", title: "The Segway",
       ps: [
-        "Two firms make premium loudspeakers at similar prices. Same category, same price bracket, different theories of the customer.",
-        "**Firm A’s** website leads with frequency response curves, driver materials and total harmonic distortion. Its founder is an acoustic engineer who gives conference talks. Its reviews are excellent in specialist magazines. When sales dipped last year it launched a model with a better tweeter. Its most common internal phrase is *people don’t understand what they’re listening to*. This is **product orientation**, and it is not a criticism of the speakers — they are probably superb.",
-        "**Firm B** ran a study of how people actually use speakers at home and found the dominant use was background music while cooking and talking, at low volume, in rooms with terrible acoustics. It launched a model tuned to sound good quietly, in a bad room, and sold it on that. Its specifications are worse than Firm A’s on paper. This is **marketing orientation**: the need was determined empirically, a target was chosen, and the product was built backwards from it.",
-        "Now the honest complication. If the specialist segment is large enough and loyal enough, Firm A may be more profitable than Firm B. A product orientation aimed squarely at a segment that genuinely wants maximum fidelity is not wrong — it is an unarticulated marketing orientation that happens to have chosen its target correctly. The orientation becomes dangerous only when the firm assumes the whole market shares the founder’s preferences. That assumption is the actual failure, and it is invisible from inside."
+        "In 2001 Dean Kamen launched the Segway, a self-balancing personal transporter. The engineering was real and original. The investment was reported at around a hundred million dollars. Expectations were extraordinary: Kamen was reported to estimate the company would sell **10,000 units a week** — over half a million a year.",
+        "**Over its entire lifetime, the Segway sold about 140,000 units.** Not per year. In total, across roughly two decades.",
+        "So the forecast was out by a factor of well over a hundred on an annual basis. And the interesting part is that **nothing was wrong with the machine.** It balanced. It worked. It did what it said.",
+        "What was wrong was everything the six activities from lecture one would have asked. Who is this for, specifically? What job are they hiring it to do that walking, a bicycle or a car does not already do? Where do they buy it, and at what price against those alternatives? Is it legal to ride on the pavement here? What does riding one say about the person riding it — and is that something they want said?",
+        "Not one of those is an engineering question. Every one of them is a marketing question, and a product orientation does not ask them, because it already knows the answer: the product is better, so people will want it."
       ]},
-
-    { t: "h2", text: "The societal marketing concept" },
-    { t: "p", text: "The belief: *the firm should determine needs and wants and deliver satisfaction more effectively than competitors — in a way that preserves or enhances the long-run wellbeing of the consumer and of society.*" },
-    { t: "p", text: "Two additions to the marketing concept, and it is worth being precise about which is which, because people routinely collapse them." },
-    { t: "ul", items: [
-      "**Long-run consumer welfare.** What the customer wants right now and what is good for them over ten years can diverge. A lender can satisfy a want for immediate credit and ruin the customer. The marketing concept alone has nothing to say about this; the societal concept does.",
-      "**Society at large.** Third parties who never bought anything still bear consequences — pollution, congestion, addiction, misinformation. Their interests enter the calculation."
+    { t: "warn", title: "The better mousetrap fallacy", ps: [
+      "The proverb says that if you build a better mousetrap, the world will beat a path to your door. It is wrong, and it is wrong in four separate ways at once.",
+      "The world **does not know your door exists**. The world **cannot tell that your mousetrap is better**, because it has no way to judge mousetraps. The world **already has a mousetrap** and switching costs something. And a large part of the world **does not want a mousetrap at all** — it wants no mice, which might be a cat, a sealed floor, or somebody else's problem entirely.",
+      "Every one of those four is a marketing problem that superior engineering does not touch. This is why product-oriented companies so often have an excellent product and a bewildered sales meeting."
     ]},
-    { t: "p", text: "The standard picture is a triangle: company profit, consumer wants, society’s interests, with the marketer required to balance all three rather than optimise one. Whether firms actually do this is a separate question, and week sixteen takes it seriously, including the uncomfortable evidence on whether consumers reward it." },
-    { t: "p", text: "Keep one distinction clean. Societal marketing is a *concept about how to decide what to sell*. Cause-related marketing — donating a share of sales to a charity — is a *promotional tactic*. A firm can run the second while ignoring the first entirely, and many do. That gap has a name, greenwashing, and you will learn to detect it." },
+    { t: "p", text: "**How to spot it.** The company talks about specifications where customers talk about outcomes. Engineering or design holds the internal prestige. When sales fall, the reflex is to add features, and the roadmap grows faster than any customer's ability to use it. Listen for the sentence **“we just need to educate the market”** — it is almost always a product-oriented firm blaming the customer for its own failure to explain what it is for." },
+
+    { t: "h2", text: "Three: selling orientation" },
+    { t: "p", text: "**The belief:** left alone, customers will not buy enough. So the job is aggressive promotion and a strong sales effort." },
+    { t: "p", text: "This one appeared when mass production finally outran natural demand, and it has a particular shape: the company's effort goes into **moving the stock it has already made**, rather than into deciding what to make. Theodore Levitt wrote the sharpest summary anyone has managed: **selling focuses on the needs of the seller; marketing on the needs of the buyer.** Learn that sentence." },
+    { t: "p", text: "Textbooks treat this as an embarrassing historical stage. It is nothing of the sort — it is thriving, for four unglamorous reasons that have nothing to do with stupidity." },
+    { t: "ol", items: [
+      "**Some goods genuinely are unsought.** Nobody wakes up wanting life insurance, a burial plot, a smoke alarm or a pension review. For products people would never go looking for, an active selling effort is not a symptom of bad marketing — it is the correct channel, and the only one.",
+      "**Overcapacity forces it.** A company with a factory running at forty percent has a fixed-cost problem *this quarter*. The honest long-term answer — make something else — does not pay the wages in March.",
+      "**Sales effort is measurable and fast.** Hire ten salespeople and you see the effect within a quarter. Reposition a brand and you see the effect in two years. Under pressure, managers pick the lever with the shorter feedback loop, and they are not being irrational.",
+      "**It works in the short run, at a cost that arrives later.** High-pressure selling does move units. It also produces returns, cancellations, complaints and a reputation that takes years to repair — and none of those land in the quarter the bonus is paid on."
+    ]},
+    { t: "p", text: "**How to spot it.** Sales headcount *is* the growth plan. Commission dominates pay. Marketing reports to sales, or is described as *sales support*. The tell-tale sentence is **“we have a great product, we just need to get it in front of more people.”**" },
+
+    { t: "h2", text: "Four: the marketing concept" },
+    { t: "p", text: "**The belief:** the company reaches its own goals by working out what a chosen group of customers needs, and satisfying that better than competitors do." },
+    { t: "p", text: "Three things in that sentence are doing real work, and all three get dropped when people quote it loosely." },
+    { t: "ul", items: [
+      "**A chosen group — not everyone.** The marketing concept is not *give every customer what they want*, which is incoherent, because customers want contradictory things. It is *decide whom to serve, then serve them properly*. The deciding is week seven.",
+      "**Working out what they need** — by going and finding out, not by imagining it in a meeting room. This is why marketing research gets a full week of a serious course.",
+      "**Better than competitors.** Satisfaction is relative. A customer perfectly happy with you will still leave for someone who pleases them more. Your performance is always measured against an alternative, never against zero."
+    ]},
+    { t: "p", text: "The structural consequence is that marketing stops being a department and becomes an orientation of the whole company. If product decisions come from customer understanding, then the finance director, the operations manager and the person who answers the phone are all executing marketing decisions, whatever their job titles say." },
+
+    { t: "h2", text: "Five: the societal marketing concept" },
+    { t: "p", text: "**The belief:** all of the above, *and* in a way that preserves or improves the long-run wellbeing of the customer and of everyone else." },
+    { t: "p", text: "Two additions, and they are different from each other." },
+    { t: "ul", items: [
+      "**Long-run welfare of the customer.** What someone wants right now and what is good for them over ten years can point in opposite directions. A lender can satisfy a genuine want for immediate credit and ruin the borrower. The marketing concept alone has nothing to say about that; the societal concept does.",
+      "**Everyone else.** Third parties who never bought anything still carry consequences — pollution, congestion, addiction, misinformation. Their interests enter the calculation."
+    ]},
+    { t: "p", text: "Keep one distinction clean, because it is the one people collapse. **Societal marketing is a rule about what you should sell.** **Cause-related marketing** — giving a share of sales to a charity — is a promotional tactic. A company can run the second enthusiastically while ignoring the first entirely, and many do. The gap between them has a name, greenwashing, and week sixteen takes it seriously." },
 
     { t: "h2", text: "The case against being purely customer-led" },
-    { t: "p", text: "A course that presented the marketing concept as the unambiguous right answer would be selling you a simplification. There are three serious objections, and you should be able to state them." },
+    { t: "p", text: "A course that presented the marketing concept as the obvious right answer would be selling you a simplification. There are three serious objections and you should be able to state them." },
     { t: "ol", items: [
-      "**Customers cannot describe what does not exist.** Research tells you about the world as it is. Asked directly, people request faster horses, more storage, a slightly cheaper version of what they already use. Genuinely discontinuous innovation usually comes from a technical or design insight, and its market is discovered afterwards. The answer is not to abandon research but to use the right *kind* — observing problems people have rather than asking what products they want. Week six is largely about this distinction.",
-      "**Following customers is a recipe for being second.** If every firm in a category researches the same customers with the same methods, every firm arrives at the same conclusions and the category converges. Differentiation requires somebody to make a bet that the research did not mandate.",
-      "**Short-run satisfaction can destroy long-run value.** Customers reliably want lower prices, more features and faster delivery. Granting all three continuously is how firms erode their own margins into nothing. The marketing concept says serve the customer profitably; the profitably is not optional, and it is the word that gets dropped."
+      "**Customers cannot describe what does not exist.** Research tells you about the world as it is. Asked directly, people request a slightly cheaper version of what they already use. Genuinely new things usually come from a technical or design insight, and their market is discovered afterwards. The answer is not to stop researching but to research the right thing — observe the *problems* people have, rather than asking which *products* they want. That distinction is most of week six.",
+      "**Following customers is a recipe for being second.** If every company in a category researches the same customers with the same methods, they all reach the same conclusions and the category converges. Differentiating requires somebody to make a bet the research did not mandate.",
+      "**Short-run satisfaction can destroy long-run value.** Customers reliably want lower prices, more features and faster delivery. Granting all three forever is how companies erode their own margins to nothing. The concept says serve the customer *profitably* — and *profitably* is the word that gets dropped."
     ]},
-    { t: "p", text: "The synthesis most working marketers arrive at is this: be **market-oriented** rather than merely customer-led. Market orientation means systematic intelligence about customers *and* competitors *and* the wider environment, spread across the whole firm, with the willingness to act on it — including acting on a conclusion no customer asked for." },
+    { t: "p", text: "The synthesis most working marketers arrive at is **market orientation**: systematic intelligence about customers *and* competitors *and* the wider environment, spread across the whole company, with the willingness to act on it — including acting on a conclusion no customer asked for." },
 
-    { t: "write", items: [
-      "The five orientations in order, with the core belief of each in one line.",
-      "Levitt: selling focuses on the needs of the seller, marketing on the needs of the buyer.",
-      "The three load-bearing words in the marketing concept: target markets, determining needs, better than competitors.",
-      "The diagnostic: what does the firm do when sales fall? Cut price / add features / hire sellers / commission research.",
-      "The three objections to being purely customer-led."
-    ]},
+    { t: "h2", text: "Diagnosing a company from outside" },
+    { t: "p", text: "You do not need to work somewhere to read its orientation. Four sources, all public." },
+    { t: "table",
+      head: ["Where to look", "Production", "Product", "Selling", "Marketing"],
+      rows: [
+        ["**Job adverts**", "Operations, supply chain, cost engineering", "R&D, design, specialist engineers", "Large commission-based sales force", "Insight, research, segmentation, customer experience"],
+        ["**The website's first screen**", "Price, availability, coverage", "Specifications, awards, technology", "Offers, free trials, “book a call”", "A customer problem, named"],
+        ["**When sales fall**", "Cuts price", "Adds features", "Runs a promotion, hires sellers", "Researches why customers left"],
+        ["**Who is second in command**", "Operations", "Engineering or design", "Sales", "Varies — but insight reaches the top table"]
+      ],
+      say: "Four public sources. Job adverts show where the company believes growth comes from. The website's first screen shows what it thinks persuades. Its reaction to falling sales shows its reflex. And who sits second in command shows where the power is.",
+      cap: "Job adverts are the most honest of the four, because they are written to attract candidates rather than to impress analysts. Where a company spends headcount is where it believes growth comes from — and that belief **is** the orientation." },
 
-    { t: "h2", text: "What you should be able to do now" },
-    { t: "p", text: "Given a company — its website, its job adverts, its quarterly statement, the background of its chief executive — you can now make a defensible claim about which orientation it holds, cite the evidence, and predict what it will do next time revenue slips. That is a genuinely useful party trick and it is also the first half of a consulting diagnosis." },
-    { t: "p", text: "Next lecture: needs, wants and demand. Three words used interchangeably in ordinary speech that mean sharply different things here, and the distinction settles the oldest argument about whether marketing creates desire or serves it." }
+    { t: "h2", text: "What you can do now" },
+    { t: "p", text: "Given a company — its website, its job adverts, its results statement, the background of its chief executive — you can make a defensible claim about which of the five beliefs it holds, cite the evidence, and predict what it will do the next time revenue slips. That is a genuinely useful party trick, and it is also the first half of a consulting diagnosis." },
+    { t: "p", text: "Next lecture: needs, wants and demand. Three words that ordinary speech treats as the same thing, and that mean sharply different things here — and the distinction settles the oldest argument about whether marketing creates desire or serves it." }
+  ],
+  exercises: [
+    { task: "**Run the falling-sales test.** Find a company that has published a bad quarter in the last two years — any listed company's results statement will say what management plans to do about it. Read the plan and name the orientation it reveals. Quote the sentence that gave it away.",
+      hint: "Investor-relations pages carry every results release for free. The management commentary is where the reflex shows: look for the first concrete action named after the bad number." },
+    { task: "**Read the job adverts.** Take the company you are watching and look at every role it has advertised recently. Sort them into operations, engineering, sales and insight. Which pile is biggest, and what does that say about where it thinks growth comes from?",
+      hint: "If the piles are even, look at seniority instead of count. One head of insight outweighs six junior sales roles as evidence." },
+    { task: "**Find the expiry date.** Ford's production orientation was right for about fifteen years. For the company you are watching, name the condition that currently makes its orientation correct — and then name the change that would make it wrong.",
+      hint: "The condition is usually one of: demand exceeds supply, the product is near-commodity, the category is technically immature, or customers cannot yet judge quality. Ask what happens when that stops being true." },
+    { task: "**Write the Segway brief nobody wrote.** In half a page, write the six questions from lecture one that the Segway team should have answered before building: who is it for, what job, at what price against what alternatives, where bought, is it legal, and what does owning one say about the owner.",
+      hint: "You are not being asked to save the Segway. You are practising the habit of asking these six before the money is spent, which is the entire difference between the product orientation and the marketing concept." },
+    { task: "**Argue for the selling orientation.** Pick a product that genuinely is unsought — insurance, a pension, a smoke alarm, a will. In 150 words, argue that an active sales force is the *correct* marketing decision for it, not a failure.",
+      hint: "The strongest version of this argument turns on the customer's interest, not the seller's: some things people genuinely need are things they will never go looking for." }
+  ],
+  reading: [
+    { author: "Philip Kotler and Kevin Lane Keller", work: "Marketing Management", where: "Pearson", year: 2016,
+      note: "Chapter 1 sets out the five orientations. Any recent edition; libraries have it." },
+    { author: "Theodore Levitt", work: "Marketing Myopia", where: "Harvard Business Review", year: 1960,
+      note: "The source of the selling-versus-marketing line, and the subject of lecture four." },
+    { author: "Ajay K. Kohli and Bernard J. Jaworski", work: "Market Orientation: The Construct, Research Propositions, and Managerial Implications", where: "Journal of Marketing", year: 1990,
+      note: "Where market orientation gets defined properly — intelligence generation, dissemination across departments, and responsiveness. Academic, but the three-part definition is worth having." }
   ],
   glossary: [
-    { term: "Production orientation", def: "The belief that customers want available, affordable products; the firm optimises cost, scale and distribution. Correct when demand exceeds supply or the product is near-commodity." },
+    { term: "Production orientation", def: "The belief that customers want available, affordable products; the firm optimises cost, scale and distribution. Correct when demand exceeds supply or the product is near-commodity — and it expires." },
     { term: "Product orientation", def: "The belief that customers want the best-made, highest-performing product; the firm optimises quality and features. Produces the better-mousetrap fallacy." },
-    { term: "Selling orientation", def: "The belief that customers must be pushed to buy; the firm optimises sales effort and promotion for stock it has already made." },
-    { term: "Marketing concept", def: "Achieving the firm’s goals by determining the needs of chosen target markets and satisfying them better than competitors do." },
-    { term: "Societal marketing concept", def: "The marketing concept plus the long-run welfare of the consumer and of society, balanced against firm profit." },
-    { term: "Market orientation", def: "Firm-wide generation of intelligence about customers, competitors and environment, disseminated across departments, with responsiveness to it. The operational version of the marketing concept." },
+    { term: "Selling orientation", def: "The belief that customers must be pushed to buy; effort goes into moving stock already made rather than deciding what to make." },
+    { term: "Marketing concept", def: "Reaching the firm's goals by determining the needs of chosen target markets and satisfying them better than competitors do — profitably." },
+    { term: "Societal marketing concept", def: "The marketing concept plus the long-run welfare of the customer and of society, balanced against firm profit." },
+    { term: "Market orientation", def: "The operational version: firm-wide intelligence about customers, competitors and environment, spread across departments, with the willingness to act on it." },
     { term: "Better mousetrap fallacy", def: "The false belief that a superior product will be discovered and adopted on its merits without marketing." },
-    { term: "Unsought goods", def: "Products the buyer does not seek out and often prefers not to think about — insurance, funeral services, smoke alarms — for which active selling is the appropriate channel, not a symptom of failure." },
+    { term: "Unsought goods", def: "Products buyers do not look for and often prefer not to think about — insurance, funeral services, smoke alarms — for which active selling is the correct channel." },
     { term: "Cause-related marketing", def: "A promotional tactic tying sales to a charitable contribution. Not the same as the societal marketing concept, and frequently substituted for it." }
   ],
   quiz: [
+    { id: "w01l02q12", concept: "prod-orient", type: "num",
+      q: "A Model T cost $825 in 1909 and $260 in 1925. The 1925 price is what percentage of the 1909 price? Give a whole number.",
+      answer: 32, tol: 1, unit: "percent",
+      placeholder: "e.g. 45",
+      explain: "260 ÷ 825 = 0.315, so about **32%** — under a third of where it started, while yearly production went from 10,660 cars to over 1.9 million. That is a production orientation doing exactly what it is for. The lesson is not that Ford was wrong; it is that the same belief that achieved this became the thing that lost him leadership once supply caught demand and customers started caring about something other than price." },
+
+    { id: "w01l02q13", concept: "product-orient", type: "short",
+      q: "The Segway worked as engineered and sold about 140,000 units in its whole life against a reported expectation of 10,000 a week. Name three questions a marketing orientation would have forced the team to answer before building, and say why engineering excellence could not rescue the launch.",
+      must: [{"point":"who exactly is it for","any":["who is it for","which people","target","segment","customer is","who would"]},
+             {"point":"what job does it do that alternatives do not","any":["job","what problem","instead of walking","bicycle","car","alternative","already"]},
+             {"point":"price against alternatives, or where it is bought","any":["price","cost","how much","where","buy","channel","shop"]},
+             {"point":"legality or where it can be used","any":["legal","law","pavement","sidewalk","allowed","regulat","road"]},
+             {"point":"what owning one says about the owner","any":["say about","image","status","look","embarrass","ridicul","identity","percei"]},
+             {"point":"none of these is an engineering question","any":["not engineering","not a technical","no amount of engineer","cannot be solved by","marketing question"]}],
+      answer: "Any three of: **who is this for**, specifically enough to count them; **what job are they hiring it to do** that walking, a bicycle or a car does not already do; **what does it cost against those alternatives**; **where do they buy it**; **is it legal to ride where they would want to**; and **what does owning one say about the owner** — an image question that turned out to matter enormously. Engineering excellence could not rescue it because **none of these is an engineering question**. The machine did what it promised; the failure was that nobody had established there was a group of people with a job to be done, able and willing to pay, legally able to use it, who would be happy to be seen on one. A product orientation does not ask those questions, because it already believes the answer: the product is better, so people will want it.",
+      explain: "The Segway is the cleanest case in the course of the gap between *works* and *wanted*. Hold on to the last sentence: the product orientation is not lazy or stupid — it has an answer, and the answer is wrong." },
+
+    { id: "w01l02q14", concept: "diagnose-from-outside", type: "mcq",
+      q: "Of the four public sources in the lecture, which is described as the most honest evidence of a company's orientation, and why?",
+      options: [
+        "The website's first screen, because it is what the company most wants you to see",
+        "Job adverts, because they are written to attract candidates rather than to impress analysts",
+        "The results statement, because it is audited",
+        "Who is second in command, because power cannot be faked"
+      ],
+      answer: 1,
+      explain: "Job adverts are written for a different audience than the one a company performs for. A results statement is audited for accuracy but drafted for investors; a website is pure performance. An advert has to describe the actual work, or nobody suitable applies — and where a company spends headcount is where it believes growth comes from, which *is* the orientation. Seniority counts for more than volume here: one head of insight outweighs six junior sales roles as evidence." },
+
+    { id: "w01l02q15", concept: "orientations", type: "short",
+      q: "Explain why the lecture calls production orientation “a correct strategy with an expiry date”, using Ford. What exactly expires?",
+      must: [{"point":"it was correct while demand exceeded supply","any":["demand exceeded","more demand than","supply","shortage","could not make enough","affordab"]},
+             {"point":"cost reduction genuinely was the battleground","any":["cost","price","cheap","afford","commodit"]},
+             {"point":"it expired when supply caught demand and customers wanted other things","any":["caught up","supply caught","started caring","other things","colour","choice","variety","model year"]},
+             {"point":"General Motors offered variety and Ford lost leadership","any":["general motors","gm","competitor offered","lost lead","overtook","rival"]}],
+      answer: "It was correct because the conditions that make it correct actually held: **demand exceeded supply**, and the product was close enough to a commodity that **cost was genuinely the battleground**. Driving the price from $825 to $260 while production went from 10,660 to nearly two million a year put a car within reach of people who could never have owned one — that is the strategy succeeding, not a company being stubborn. What expires is **the conditions, not the logic**. Once supply caught up with demand, customers could afford to care about things other than price — colour, choice, a new model each year — and General Motors offered exactly that. The belief did not announce its own expiry; Ford went on being right about cost in a market that had stopped being about cost, and lost leadership.",
+      explain: "This is the shape of every orientation failure in the course: the belief was true, the conditions changed, and nothing inside the company was watching the conditions. It is also why lecture four exists." },
+
     { id: "w01l02q1", concept: "orientations", type: "mcq",
       q: "A firm’s revenue falls 15%. Its first action is to launch a version with more features. Which orientation does this most strongly suggest?",
       options: ["Production", "Product", "Selling", "Marketing"],
       answer: 1,
       explain: "Adding features assumes the problem is that the product is not good enough — the product orientation’s core belief. A production-oriented firm cuts price; a selling-oriented firm runs a promotion or hires salespeople; a marketing-oriented firm asks why customers left before deciding what to change. The diagnostic value of the question is that all four firms are *reacting*, and the reaction reveals the theory." },
 
-    { id: "w01l02q2", concept: "prod-vs-mkt", type: "mcq",
+    { id: "w01l02q2", concept: "prod-orient", type: "mcq",
       q: "Ford’s “any colour so long as it is black” is usually told as a story about arrogance. What is the more accurate reading?",
       options: [
         "Ford was indifferent to customers because he held a monopoly.",
@@ -576,10 +683,11 @@ window.LESSONS['marketing.w01'] = {
 
     { id: "w01l02q5", concept: "societal", type: "short",
       q: "Distinguish the societal marketing concept from cause-related marketing, and explain why conflating them is dangerous.",
+      must: [{"point": "societal concept is a rule about WHAT you sell", "any": ["what to sell", "what you sell", "decision rule", "which product", "constrains", "offer at all"]}, {"point": "cause-related marketing is a promotional tactic", "any": ["promotion", "tactic", "donat", "share of sales", "charity", "campaign"]}, {"point": "a firm can do the second while ignoring the first", "any": ["while ignoring", "without", "can do one", "cover", "greenwash", "decorat"]}],
       answer: "The **societal marketing concept** is a decision rule about what the firm should offer at all: satisfy target customers better than rivals *while* preserving the long-run welfare of the consumer and of society, balancing three interests — firm profit, consumer wants, social good. **Cause-related marketing** is a promotional tactic: tie a share of revenue to a charitable cause to increase sales or improve image. The first constrains what you sell; the second decorates how you sell it. Conflating them is dangerous because a firm can run cause-related campaigns enthusiastically while its core offering harms customers or third parties — the donation becomes cover rather than correction, which is the structure of greenwashing.",
       explain: "The test of whether a firm holds the societal concept is whether it has ever *declined* to sell something profitable on welfare grounds, or changed the product itself. Donations are evidence of nothing." },
 
-    { id: "w01l02q6", concept: "prod-vs-mkt", type: "mcq",
+    { id: "w01l02q6", concept: "product-orient", type: "mcq",
       q: "A start-up founder says: “The technology is clearly superior — we just need to educate the market.” What is the most likely diagnosis?",
       options: [
         "A communication budget that is too small",
@@ -631,6 +739,7 @@ window.LESSONS['marketing.w01'] = {
 
     { id: "w01l02q11", concept: "orientations", type: "short",
       q: "You are shown a company’s job advertisements for the last two years. What would you look for to diagnose its orientation, and what would each pattern suggest?",
+      must: [{"point": "look at which functions are hired and at what seniority", "any": ["job advert", "hiring", "hire", "headcount", "roles", "recruit", "seniority"]}, {"point": "operations-heavy suggests production orientation", "any": ["operations", "supply chain", "cost engineer", "production orient"]}, {"point": "R&D or design-heavy suggests product orientation", "any": ["r&d", "research and development", "engineer", "design", "product orient"]}, {"point": "insight and research roles suggest marketing orientation", "any": ["insight", "research", "segmentation", "customer experience", "marketing orient"]}],
       answer: "Look at which functions are being hired into and at what seniority. Heavy hiring of operations, supply chain and cost engineering suggests **production orientation**. Heavy hiring of R&D, design and specialist engineers with specification-led adverts suggests **product orientation**. A large and growing commission-based sales force, with marketing roles described as “sales support”, suggests **selling orientation**. Roles in insight, research, segmentation and customer experience — especially reporting at senior level and cutting across departments — suggest **marketing or market orientation**. Also read the language: adverts that describe the product suggest an inward orientation; adverts that describe a customer problem suggest an outward one.",
       explain: "Job adverts are unusually honest evidence because they are written to attract, not to impress analysts. Where a company spends headcount is where it believes growth comes from, and that belief *is* the orientation." }
   ]
@@ -640,138 +749,160 @@ window.LESSONS['marketing.w01'] = {
    1.3  Needs, wants, demand, value
    ============================================================ */
 "w01l03": {
-  standfirst: "Three words that ordinary speech treats as synonyms, and that this discipline keeps sharply apart. Getting them straight settles the oldest argument about marketing — whether it creates desire or serves it — and it gives you the equation that everything from pricing to brand strategy is ultimately trying to move.",
+  standfirst: "Three words that ordinary speech treats as the same thing, and that this subject keeps sharply apart. Getting them straight settles the oldest argument about marketing — whether it creates desire or serves it — and hands you the equation that pricing, positioning and service are all quietly trying to move.",
+  thread: {
+    from: "What marketing is, and the five beliefs a company can hold about its customers.",
+    adds: "The vocabulary of wanting, and the equation that decides whether somebody buys.",
+    toward: "Every lecture on price, product and service. When week ten asks what a discount really costs you, this is the equation it moves."
+  },
   objectives: [
-    "State the difference between a need, a want and a demand, and place any example correctly.",
-    "Answer the charge that marketing creates needs, with a defensible position rather than a slogan.",
-    "Write the customer perceived value equation and list what goes into each side.",
-    "Explain satisfaction as a gap between expectation and perception, and derive the trap this sets for advertising.",
-    "Name the five utilities and identify which of them a given business creates."
+    "Place any example correctly as a need, a want or a demand, and say why the difference matters to a forecast.",
+    "Answer the charge that marketing creates needs, with a position you can defend under challenge.",
+    "Write out the customer perceived value equation and name all eight components.",
+    "Identify the non-monetary cost that is losing a real business its customers, using published evidence.",
+    "Explain satisfaction as a gap, and show why a successful campaign can make satisfaction fall.",
+    "Name the five utilities and say which one a given business actually sells."
   ],
   concepts: [
     { id: "need-want-demand", name: "Need, want, demand" },
     { id: "creates-needs",    name: "Does marketing create needs?" },
     { id: "perceived-value",  name: "Customer perceived value" },
+    { id: "nonmoney-cost",    name: "Non-monetary cost" },
     { id: "satisfaction",     name: "Satisfaction and expectation" },
     { id: "utilities",        name: "The five utilities" }
   ],
+  vocab: [
+    { word: "deprivation", plain: "The state of not having something you need.", et: "puudus, ilmajäetus" },
+    { word: "abandon", plain: "To leave something unfinished and walk away — like a shopping basket you never pay for.", et: "hülgama, pooleli jätma" },
+    { word: "checkout", plain: "The last part of buying online, where you pay.", et: "kassa, ostu lõpetamine" },
+    { word: "friction", plain: "Anything that makes an action harder than it needs to be.", et: "hõõrdumine, takistus" },
+    { word: "conversion", plain: "Turning a visitor into a buyer.", et: "konversioon" },
+    { word: "expectation", plain: "What someone believes will happen before it happens.", et: "ootus" },
+    { word: "disconfirmation", plain: "The gap between what you expected and what you got.", et: "ootuse mittetäitumine" },
+    { word: "delight", plain: "Satisfaction well beyond what was expected.", et: "vaimustus" },
+    { word: "utility", plain: "A kind of usefulness a business adds — not the same as an electricity company.", et: "kasulikkus" },
+    { word: "haggling", plain: "Arguing back and forth over a price.", et: "kauplemine, tingimine" },
+    { word: "flatter", plain: "To make something look better than it is.", et: "meelitama, ilustama" }
+  ],
+  tools: [
+    { kind: "framework", name: "Need / want / demand",
+      answers: "Is this a real market, or a wish?",
+      when: "Whenever somebody sizes a market. A forecast built on wants ignores whether anyone can or will pay, and overstates the market every time." },
+    { kind: "formula", name: "Customer perceived value",
+      form: "CPV = (product + service + personal + image) − (money + time + energy + psychological)",
+      answers: "Why is somebody buying the more expensive one?",
+      when: "A competitor with a higher price is winning and you are about to conclude customers are irrational. They are not — you are measuring one term of an eight-term equation." },
+    { kind: "formula", name: "Satisfaction as a gap",
+      form: "satisfaction = perceived performance − prior expectation",
+      answers: "Why did satisfaction fall when we improved the product?",
+      when: "After any campaign, price rise or relaunch. You control both sides, and raising expectation is easier than raising performance." }
+  ],
   blocks: [
-    { t: "h2", text: "Three words, three different things" },
-    { t: "p", text: "A **need** is a state of felt deprivation. You are hungry, cold, bored, lonely, unsafe, or unregarded. Needs are not created by anyone. They are part of the human condition and they were fully operational long before commerce existed. There is a finite and fairly short list of them." },
-    { t: "p", text: "A **want** is a need given a specific shape by culture, personality, memory and exposure. Hunger is a need; a want is *a slice of pizza*, or *rye bread and herring*, or *whatever my mother made on Sundays*. Two people with identical needs will want entirely different objects, and the same person's wants will change over a lifetime while the underlying need does not." },
-    { t: "p", text: "A **demand** is a want backed by the ability and the willingness to pay for it. Wanting a Porsche is not demand. Wanting a Porsche, having sixty thousand euros, and being prepared to part with them rather than keep them — that is demand. Demand is the only one of the three that appears in a sales forecast." },
-    { t: "p", text: "So the sequence runs: need is universal, want is cultural and personal, demand is economic. And the practical consequence is that these three call for three completely different responses when they go wrong." },
-
-    { t: "fig", title: "Need, want, demand — and where marketing acts", sketch: true,
-      say: "A need such as hunger is shaped by culture, personality and exposure into a want for a particular thing, which becomes demand only when ability and willingness to pay are added. Marketing acts on the two arrows — shaping the want and enabling the demand. It does not create the need.",
-      cap: "Marketing operates on the arrows, not on the first box. This diagram is the whole answer to the accusation that marketing manufactures needs — and it is also the reason the accusation keeps being made, because shaping a want feels, from the inside, exactly like being given a need.",
-      svg: '<svg viewBox="0 0 680 250" role="img" aria-label="Diagram: a need is shaped into a want and then into demand">' +
-        '<defs><marker id="ahN3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--series-2)"/></marker></defs>' +
-        '<rect x="20" y="72" width="152" height="86" rx="5" fill="var(--surface-2)" stroke="var(--rule-strong)"/>' +
-        '<text x="96" y="100" text-anchor="middle" fill="var(--ink)" font-size="14" font-weight="600">NEED</text>' +
-        '<text x="96" y="122" text-anchor="middle" fill="var(--ink-2)" font-size="11.5">felt deprivation</text>' +
-        '<text x="96" y="140" text-anchor="middle" fill="var(--ink-3)" font-size="11">“I am hungry”</text>' +
-        '<rect x="264" y="72" width="152" height="86" rx="5" fill="var(--surface-2)" stroke="var(--rule-strong)"/>' +
-        '<text x="340" y="100" text-anchor="middle" fill="var(--ink)" font-size="14" font-weight="600">WANT</text>' +
-        '<text x="340" y="122" text-anchor="middle" fill="var(--ink-2)" font-size="11.5">need, given a shape</text>' +
-        '<text x="340" y="140" text-anchor="middle" fill="var(--ink-3)" font-size="11">“I want that pizza”</text>' +
-        '<rect x="508" y="72" width="152" height="86" rx="5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4"/>' +
-        '<text x="584" y="100" text-anchor="middle" fill="var(--accent-ink)" font-size="14" font-weight="600">DEMAND</text>' +
-        '<text x="584" y="122" text-anchor="middle" fill="var(--ink-2)" font-size="11.5">want + ability to pay</text>' +
-        '<text x="584" y="140" text-anchor="middle" fill="var(--ink-3)" font-size="11">“and I will pay €9”</text>' +
-        '<line x1="180" y1="115" x2="256" y2="115" stroke="var(--series-2)" stroke-width="2" marker-end="url(#ahN3)"/>' +
-        '<line x1="424" y1="115" x2="500" y2="115" stroke="var(--series-2)" stroke-width="2" marker-end="url(#ahN3)"/>' +
-        '<text x="218" y="60" text-anchor="middle" fill="var(--ink-3)" font-size="10.5">culture, personality,</text>' +
-        '<text x="218" y="46" text-anchor="middle" fill="var(--ink-3)" font-size="10.5">memory, exposure</text>' +
-        '<text x="462" y="60" text-anchor="middle" fill="var(--ink-3)" font-size="10.5">income, price,</text>' +
-        '<text x="462" y="46" text-anchor="middle" fill="var(--ink-3)" font-size="10.5">priority, access</text>' +
-        '<path d="M218 128 L218 178" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="3 3"/>' +
-        '<path d="M462 128 L462 178" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="3 3"/>' +
-        '<rect x="150" y="180" width="380" height="30" rx="4" fill="var(--accent)" />' +
-        '<text x="340" y="200" text-anchor="middle" fill="var(--on-accent)" font-size="12" font-weight="600">Marketing acts here — on the arrows</text>' +
-        '<text x="96" y="200" text-anchor="middle" fill="var(--ink-3)" font-size="10.5">not here</text>' +
-        '<text x="340" y="232" text-anchor="middle" fill="var(--ink-3)" font-size="11">Shaping a want and enabling a demand. The need was already there.</text>' +
-        '</svg>' },
-
+    { t: "h2", text: "Why three words, not one" },
+    { t: "p", text: "Somebody tells you forty thousand people in this city want your product. What is that worth?" },
+    { t: "p", text: "Nothing, until you know which of three things they meant. And the three are so different that a forecast built on the wrong one will be wrong by a factor you cannot recover from." },
+    { t: "ul", items: [
+      "A **need** is a state of felt deprivation. You are hungry, cold, bored, lonely, unsafe, or unregarded. Nobody created these. They are part of being human and they were fully operational long before commerce existed. There is a short list of them.",
+      "A **want** is a need given a specific shape by culture, personality, memory and what you have been exposed to. Hunger is the need; *a slice of pizza*, or *rye bread and herring*, or *whatever my mother made on Sundays* is the want. Two people with identical needs want completely different objects.",
+      "A **demand** is a want backed by the **ability and the willingness to pay**. Wanting a car is not demand. Wanting a car, having the money, and being prepared to part with it rather than keep it — that is demand."
+    ]},
+    { t: "p", text: "So: need is universal, want is cultural and personal, demand is economic. And **only demand appears in a sales forecast.** A market sized on wants counts everybody who would like the thing, including everybody who cannot afford it and everybody who would rather spend the money elsewhere." },
     { t: "table",
       head: ["Need (universal)", "Want (cultural, personal)", "Demand (economic)"],
       rows: [
-        ["Hunger", "Sushi; black bread; whatever is nearest at 14:00", "Sushi, at €14, this Thursday, because payday was Tuesday"],
+        ["Safety", "Insurance; a locked door; savings; a will", "A policy at €31 a month, signed in March"],
         ["Belonging", "A football club; a church; a Discord server", "A season ticket at €280"],
-        ["Esteem", "A visible watch; a published paper; a tidy garden", "A watch at €2,400 bought on credit"],
-        ["Safety", "Insurance; a locked door; savings", "A policy at €31 a month"],
-        ["Mobility", "A car; a bicycle; a monthly transit pass", "A bicycle at €600, after comparing four"]
+        ["Esteem", "A visible watch; a published paper; a tidy garden", "A watch at €2,400, bought on credit"],
+        ["Mobility", "A car; a bicycle; a monthly transport pass", "A bicycle at €600, after comparing four"],
+        ["Security about money", "A savings account; a pension; a stable job", "€200 a month into a pension, starting now"]
       ],
-      say: "Examples across the three columns. Hunger is a need. Sushi is a want. Sushi at fourteen euros this Thursday is demand.",
-      cap: "Read across each row. The need column would have looked much the same three thousand years ago; the want column is entirely a product of the last few decades; the demand column changes with every pay cheque." },
+      say: "Read across each row. Safety is a need. Insurance is a want. A policy at thirty-one euros a month signed in March is demand.",
+      cap: "The left column would have looked much the same three thousand years ago. The middle column is a product of the last few decades. The right column changes with every pay cheque." },
 
     { t: "h2", text: "Does marketing create needs?" },
-    { t: "p", text: "This is the oldest charge against the discipline and you will be asked it at dinner parties for the rest of your career. It deserves a real answer rather than a defensive one." },
-    { t: "p", text: "**The defence.** Marketing does not create needs; needs pre-exist marketing. What marketing does is shape wants — it proposes a particular object as the answer to a need you already had. Nobody was made to need status by an advertisement. The need for status is documented in every society we have records of. What an advertisement can do is propose *this watch* as the way to signal it." },
-    { t: "p", text: "**The prosecution, put fairly.** That defence is technically correct and somewhat slippery. Three things complicate it." },
+    { t: "p", text: "This is the oldest charge against the subject and you will be asked it for the rest of your life. It deserves a real answer rather than a defensive one." },
+    { t: "p", text: "**The defence.** Marketing does not create needs; needs pre-exist marketing. What marketing does is **shape wants** — it proposes a particular object as the answer to a need you already had. Nobody was made to need status by an advertisement. The need for status is documented in every society we have records of. What an advertisement can do is propose *this watch* as the way to signal it." },
+    { t: "p", text: "**The prosecution, put fairly.** That defence is technically correct and slightly slippery. Three things complicate it." },
     { t: "ol", items: [
-      "**The distinction is invisible from the inside.** If you did not previously experience your kitchen as inadequate, and after sustained exposure to images of other kitchens you do, the philosophical point that your underlying need for esteem was always there is not much comfort. The *felt deprivation* is new, even if the need category is old.",
-      "**Wants are not costless.** Shaping a want toward an expensive, resource-intensive or harmful object has real consequences, and “we only shaped the want” does not discharge responsibility for which shape was chosen.",
-      "**Some marketing does manufacture felt deprivation deliberately.** Categories built on insecurity — a considerable amount of cosmetics, some supplements, parts of the wellness industry — work by first establishing that a condition is a problem. That is closer to creating a need than the textbook defence admits."
+      "**The distinction is invisible from inside the person.** If you did not previously experience your kitchen as inadequate, and after months of seeing other kitchens you do, the philosophical point that your underlying need for esteem was always there is not much comfort. The *felt deprivation* is new, even if the category of need is old.",
+      "**Wants are not costless.** Shaping a want toward an expensive, resource-hungry or harmful object has real consequences, and “we only shaped the want” does not settle who is answerable for which shape was chosen.",
+      "**Some marketing does manufacture felt deprivation on purpose.** Categories built on insecurity work by first establishing that an ordinary condition is a problem. That is closer to creating a need than the textbook defence admits."
     ]},
-    { t: "p", text: "**The position worth holding.** Marketing does not create needs, but it is not innocent of them either. It has enormous influence over which objects get attached to which needs, and that influence is exactly where the ethical weight of the profession sits. A marketer who hides behind *we only satisfy existing needs* is using a true sentence to avoid a real question. Say instead: needs are given, wants are shaped, and shaping is a responsibility." },
+    { t: "p", text: "**The position worth holding:** marketing does not create needs, but it is not innocent of them either. It has enormous influence over which objects get attached to which needs, and that influence is exactly where the ethical weight of the profession sits. Say it like this — **needs are given, wants are shaped, and shaping is a responsibility.** A marketer who hides behind *we only satisfy existing needs* is using a true sentence to avoid a real question." },
 
-    { t: "h2", text: "Value: the equation underneath everything" },
-    { t: "p", text: "Customers do not buy products. They buy an expected improvement in their situation, and they pay for it in more than money. The concept that captures this is **customer perceived value**." },
+    { t: "h2", text: "The equation underneath every purchase" },
+    { t: "p", text: "Customers do not buy products. They buy an expected improvement in their situation, and they pay for it in more than money. The idea that captures this is **customer perceived value**." },
     { t: "math", label: "Customer perceived value",
       eqs: [
-        "CPV  =  Total customer benefit  −  Total customer cost",
+        "  CPV  =  total benefit  −  total cost",
         "",
-        "benefit  =  product + service + personal + image",
-        "cost     =  money + time + energy + psychological"
+        "  benefit  =  product  +  service  +  personal  +  image",
+        "  cost     =  money    +  time     +  energy    +  psychological"
       ],
-      say: "Customer perceived value equals total customer benefit minus total customer cost. Benefit is made of product, service, personal and image benefits. Cost is made of money, time, energy and psychological cost.",
+      terms: [
+        { sym: "product", means: "what the thing actually does." },
+        { sym: "service", means: "delivery, installation, support, returns — how easy you are to deal with." },
+        { sym: "personal", means: "the competence and warmth of the actual human they deal with." },
+        { sym: "image", means: "what owning it says about them, to themselves and to others." },
+        { sym: "money", means: "the price. **One term out of eight.**" },
+        { sym: "time", means: "how long they spend acquiring, learning and maintaining it." },
+        { sym: "energy", means: "physical and mental effort — assembly, forms, decisions, phone calls." },
+        { sym: "psychological", means: "risk, anxiety, fear of being wrong, embarrassment at needing it at all." }
+      ],
+      use: "Use it the moment you catch yourself thinking a competitor is winning because they are cheaper, or losing because they are dearer. Write out all eight terms for both of you. The answer is almost never in the money row.",
+      say: "Customer perceived value equals total benefit minus total cost. Benefit is product, service, personal and image. Cost is money, time, energy and psychological.",
       ps: [
-        "Both sides are **perceived**, not measured. The customer's estimate is the only one that affects behaviour, and it is formed before purchase on incomplete information.",
-        "Note that only one of the four cost components is money. A great deal of practical marketing consists of attacking the other three — which is why a shop that is easier to park at can beat a cheaper one."
+        "Both sides are **perceived**, not measured. The customer's estimate is the only one that changes behaviour, and it is formed before purchase, on incomplete information.",
+        "Notice that **only one of the four costs is money.** A great deal of practical marketing consists of attacking the other three — which is why a shop that is easier to park at beats a cheaper one, and why the next section is the most useful thing in this lecture."
       ]},
-    { t: "p", text: "Unpack the benefit side. **Product benefit** is what the thing does. **Service benefit** is delivery, installation, support, returns, the ease of dealing with you. **Personal benefit** is the competence and warmth of the individual human the customer interacts with. **Image benefit** is what owning it says about them, to themselves and to others." },
-    { t: "p", text: "Now the cost side, which is where amateurs stop early. **Monetary cost** is the price. **Time cost** is how long the customer spends acquiring, learning and maintaining. **Energy cost** is physical and mental effort — assembly, forms, decisions. **Psychological cost** is risk, anxiety, the fear of being wrong, the embarrassment of asking, the discomfort of admitting you need the product at all." },
-    { t: "p", text: "This last one is routinely enormous and routinely ignored. Psychological cost is why people delay going to the doctor, why enterprise buyers choose the safe vendor over the better one, and why a free trial that requires a credit card converts far worse than one that does not — the money is the same, the risk is not." },
 
-    { t: "case", title: "Two coffee shops, same coffee, different value",
+    { t: "h2", text: "The cost nobody puts a price on" },
+    { t: "p", text: "Psychological and energy cost sound soft. They are not. Here is what they do, measured, at scale, in an industry that records every single abandonment." },
+    { t: "p", text: "Across e-commerce, roughly **seven in ten** filled shopping baskets are abandoned before payment. The Baymard Institute, which has tracked this for years, puts the average at about **70%**. Now look at the reasons people give." },
+    { t: "table",
+      head: ["Reason given for abandoning a full basket", "Share of shoppers", "Which cost is that?"],
+      rows: [
+        ["Extra costs at checkout were too high — shipping, tax, fees", "48%", "**Monetary** — but only because it appeared *late*"],
+        ["The site made them create an account", "26%", "**Energy and psychological.** No money involved at all"]
+      ],
+      say: "About seventy percent of full shopping baskets are abandoned. Forty-eight percent of shoppers say it was because extra costs at checkout were too high. Twenty-six percent say it was because the site made them create an account.",
+      cap: "Baymard Institute's checkout research, as reported for 2025–26. Percentages are of shoppers giving each reason and do not sum to 100, since people give several." },
+    { t: "p", text: "Read the second row again. **One shopper in four walks away from something they had already chosen, at a price they had already accepted, because of a form.** No money changed. The product did not change. The price did not change. What changed was the energy and the psychological cost of handing over an email address and inventing another password." },
+    { t: "p", text: "And the first row is subtler than it looks. Those extra costs were not invented at checkout — shipping and tax were always going to apply. What killed the sale was that they appeared **after** the customer had formed an expectation. Which is the next section of this lecture, arriving early." },
+    { t: "case", title: "What this is worth, in money",
       ps: [
-        "Two cafés on the same street sell espresso from similar machines using similar beans. One charges €2.20, the other €3.40. The expensive one is busier. A production-oriented analyst concludes that the customers are irrational. Compute perceived value instead.",
-        "**Benefit side.** Product benefit is roughly equal — assume it is identical. Service benefit is not: the expensive café has four seats free at 09:00 because it has more of them, opens earlier, and the queue moves faster. Personal benefit: the staff know regulars by name and start the order when they walk in, which saves ninety seconds and confers a small, real pleasure. Image benefit: it is where people from the design studio go.",
-        "**Cost side.** Monetary cost is €1.20 higher. Time cost is *lower* — shorter queue, faster service, and no walk to a second place when it is full. Energy cost is lower: no decision to make, because the staff remember. Psychological cost is lower: no risk of an awkward wait, no chance of being the person who cannot find a seat while holding a cup.",
-        "So the expensive café loses on one component and wins on four. A customer who values their nine o’clock minutes at more than €1.20 is behaving perfectly rationally. The cheaper café is not competing on price — it is *conceding* on everything else and pricing accordingly, which is a strategy, but it should know that is what it is doing.",
-        "The general lesson: when a competitor with a higher price is winning, the answer is almost never that customers are stupid. It is that you are measuring one component of a four-plus-four equation."
+        "Suppose an online shop takes €400,000 a year and abandons baskets at the industry-typical rate. Roughly seven in ten baskets never convert, so the money that *reached checkout and left* is a large multiple of the money that stayed.",
+        "Now take just the account-creation reason — a quarter of abandonments, on Baymard's numbers. Offering a guest checkout is a change one developer makes in a day. It costs no margin, no discount, no advertising. It does not touch the product.",
+        "Compare that with the usual reflex, which is a discount. A 10% discount to lift sales gives away 10% of *every* sale, including all the ones that would have happened anyway — and week ten will show you exactly how brutal that arithmetic is.",
+        "**The general rule: look for the cost that is not money, because it is usually cheaper to remove.** Monetary cost is the only one you pay for reducing. The other three you mostly pay *attention* for."
       ]},
 
     { t: "h2", text: "Satisfaction is a gap, not a level" },
-    { t: "p", text: "Satisfaction is not how good the product is. Satisfaction is **perceived performance minus expectation**. This is the expectancy-disconfirmation model, it is one of the most reliably supported findings in the field, and it has a consequence that every marketer eventually learns the hard way." },
-    { t: "p", text: "If performance falls short of expectation, the customer is dissatisfied. If it matches, they are satisfied — merely. If it exceeds, they are delighted, and delight is what produces word of mouth, forgiveness of later mistakes, and a willingness to pay more." },
+    { t: "p", text: "Satisfaction is not how good the product is. Satisfaction is **perceived performance minus prior expectation**. This is called the expectancy-disconfirmation model, it is one of the best-supported findings in the field, and it has a consequence that every marketer eventually learns painfully." },
+    { t: "p", text: "Below expectation, the customer is dissatisfied. At expectation, they are satisfied — *merely*. Above it, they are delighted, and delight is what produces word of mouth, forgiveness of later mistakes, and willingness to pay more." },
 
     { t: "fig", title: "The same performance, three different verdicts", sketch: true,
-      say: "Three panels, each showing an expectation bar and a perceived performance bar. In the first, performance falls short of a high expectation and the customer is dissatisfied. In the second, performance matches expectation and the customer is merely satisfied. In the third, the same performance exceeds a modest expectation and the customer is delighted. The performance bar is identical in all three.",
+      say: "Three panels, each with an expectation bar and a performance bar. In the first, performance falls short of a high expectation and the customer is dissatisfied. In the second, performance matches expectation and the customer is merely satisfied. In the third, the same performance exceeds a modest expectation and the customer is delighted. The performance bar is identical in all three.",
       cap: "The performance bar is the **same height in all three panels**. Only the expectation moves — and expectation is set largely by your own advertising, your price, and your competitors. This is why over-promising is not merely dishonest but strategically self-defeating.",
       svg: '<svg viewBox="0 0 680 250" role="img" aria-label="Three panels showing satisfaction as the gap between expectation and perceived performance">' +
         '<g font-size="11">' +
-        /* panel 1 */
         '<text x="30" y="26" fill="var(--ink-2)" font-size="12" font-weight="600">Over-promised</text>' +
-        '<line class="grid-line" x1="30" y1="180" x2="210" y2="180" stroke="var(--grid)"/>' +
+        '<line class="grid-line" x1="30" y1="180" x2="210" y2="180"/>' +
         '<rect x="52" y="60" width="52" height="120" rx="3" fill="var(--surface-3)" stroke="var(--rule-strong)"/>' +
         '<rect x="128" y="110" width="52" height="70" rx="3" fill="var(--series-1)"/>' +
         '<text x="78" y="196" text-anchor="middle" fill="var(--ink-3)">expected</text>' +
         '<text x="154" y="196" text-anchor="middle" fill="var(--ink-3)">got</text>' +
         '<path d="M110 60 L122 60 M116 60 L116 110 M110 110 L122 110" stroke="var(--bad)" stroke-width="1.4" fill="none"/>' +
         '<text x="120" y="228" text-anchor="middle" fill="var(--bad)" font-size="11.5" font-weight="600">Dissatisfied</text>' +
-        /* panel 2 */
         '<text x="250" y="26" fill="var(--ink-2)" font-size="12" font-weight="600">Matched</text>' +
-        '<line class="grid-line" x1="250" y1="180" x2="430" y2="180" stroke="var(--grid)"/>' +
+        '<line class="grid-line" x1="250" y1="180" x2="430" y2="180"/>' +
         '<rect x="272" y="110" width="52" height="70" rx="3" fill="var(--surface-3)" stroke="var(--rule-strong)"/>' +
         '<rect x="348" y="110" width="52" height="70" rx="3" fill="var(--series-1)"/>' +
         '<text x="298" y="196" text-anchor="middle" fill="var(--ink-3)">expected</text>' +
         '<text x="374" y="196" text-anchor="middle" fill="var(--ink-3)">got</text>' +
         '<text x="340" y="228" text-anchor="middle" fill="var(--ink-2)" font-size="11.5" font-weight="600">Merely satisfied</text>' +
-        /* panel 3 */
         '<text x="470" y="26" fill="var(--ink-2)" font-size="12" font-weight="600">Under-promised</text>' +
-        '<line class="grid-line" x1="470" y1="180" x2="650" y2="180" stroke="var(--grid)"/>' +
+        '<line class="grid-line" x1="470" y1="180" x2="650" y2="180"/>' +
         '<rect x="492" y="140" width="52" height="40" rx="3" fill="var(--surface-3)" stroke="var(--rule-strong)"/>' +
         '<rect x="568" y="110" width="52" height="70" rx="3" fill="var(--series-1)"/>' +
         '<text x="518" y="196" text-anchor="middle" fill="var(--ink-3)">expected</text>' +
@@ -782,51 +913,82 @@ window.LESSONS['marketing.w01'] = {
         '<line x1="30" y1="206" x2="650" y2="206" stroke="var(--rule)" stroke-dasharray="3 3"/>' +
         '</svg>' },
 
-    { t: "p", text: "Now the trap. You control both terms of the equation, and they pull against each other. Raising expectation — through advertising, through price, through promises — is how you get the customer to try you in the first place. Raising it too far guarantees that trial ends in dissatisfaction, however good the product actually is." },
     { t: "warn", title: "The over-promise trap", ps: [
-      "A campaign that lifts expectation by twenty percent and delivers a product that performs ten percent better than before will produce *worse* satisfaction scores than doing nothing at all. The product improved. The customers are unhappier. Both facts are true and the mechanism is the gap.",
-      "This is why the classic advice is to under-promise and over-deliver — and why that advice is harder to follow than it sounds, because the person who under-promises loses the argument for the budget to the person who over-promises, and is gone before the satisfaction data arrives."
+      "A campaign that lifts expectation by twenty percent, attached to a product that performs ten percent better than before, will produce **worse** satisfaction than doing nothing. The product improved. The customers are unhappier. Both are true, and the mechanism is the gap.",
+      "This is why the old advice is to under-promise and over-deliver — and why it is harder to follow than it sounds, since the person who under-promises loses the argument for the budget to the person who over-promises, and has usually moved on before the satisfaction data arrives."
     ]},
-    { t: "p", text: "One more subtlety worth having. Expectation is not set by you alone. It is set by your price — a €3.40 coffee is *expected* to be better than a €2.20 one, so the premium brand has to clear a higher bar with the same liquid. It is set by competitors, whose improvements raise the baseline for everyone. And it is set by category-adjacent experiences: once people can track a parcel to the minute, they expect to track a plumber." },
+    { t: "p", text: "One more thing you do not fully control: expectation is also set by **your price** — a customer paying more expects more, so a premium brand has to clear a higher bar with the same product — by **competitors**, whose improvements raise everybody's baseline, and by **completely unrelated experiences**. Once people can watch a parcel move across a map in real time, they expect to know where the plumber is." },
 
     { t: "h2", text: "The five utilities" },
-    { t: "p", text: "A last piece of vocabulary, and a genuinely useful one for seeing where a business actually creates its value. Marketing creates five kinds of utility." },
+    { t: "p", text: "A last piece of vocabulary, and a genuinely useful one for seeing where a business actually creates its value." },
     { t: "ul", items: [
-      "**Form utility** — turning inputs into something more useful. Flour into bread. Usually production’s contribution, but marketing decides *which* form.",
-      "**Place utility** — having it where the customer is. A bottle of water is worth more at a festival than in a warehouse eight kilometres away, and no atom of it has changed.",
-      "**Time utility** — having it when the customer wants it. Open at 23:00. In stock in December. Next-day rather than next-week.",
-      "**Possession utility** — making transfer of ownership easy. Credit, leasing, subscription, one-click checkout, easy returns. A great many businesses are almost entirely possession utility.",
-      "**Information utility** — the customer knowing it exists, what it does, and why it fits them. Without this the other four create nothing, because the exchange never occurs."
+      "**Form** — turning inputs into something more useful. Flour into bread. Usually production's contribution, but marketing decides *which* form.",
+      "**Place** — having it where the customer is. A bottle of water is worth more at a festival than in a warehouse eight kilometres away, and not one atom of it has changed.",
+      "**Time** — having it when they want it. Open at 23:00. In stock in December. Now rather than next week.",
+      "**Possession** — making ownership easy to transfer. Credit, leasing, subscription, one-click checkout, easy returns. A great many businesses are almost entirely this — and a guest checkout is possession utility.",
+      "**Information** — the customer knowing it exists, what it does, and why it fits them. Without this the other four create nothing, because the exchange never happens."
     ]},
-    { t: "p", text: "Ask of any business: which of the five is it actually selling? A convenience store sells place and time utility at a markup, and everyone understands the deal. A furniture retailer that delivers and assembles is selling form, place and possession. A comparison site sells pure information utility and nothing else — it never touches the product. Naming the utility tells you what you must protect and what you can outsource." },
+    { t: "p", text: "Ask of any business: **which of the five is it actually selling?** A petrol-station shop sells place and time at a markup, and everyone understands the deal. A comparison site sells pure information utility and never touches the product. A bank offering a loan is selling possession utility — you could have the thing now instead of in four years. Naming the utility tells you what you must protect, and what you can safely hand to somebody else." },
 
-    { t: "write", items: [
-      "Need = felt deprivation. Want = need shaped by culture and personality. Demand = want + ability and willingness to pay.",
-      "The position on “marketing creates needs”: needs are given, wants are shaped, shaping is a responsibility.",
-      "CPV = total benefit (product, service, personal, image) − total cost (money, time, energy, psychological).",
-      "Satisfaction = perceived performance − expectation. Draw the three-panel figure from memory.",
-      "The five utilities: form, place, time, possession, information."
-    ]},
-
-    { t: "h2", text: "What you should be able to do now" },
-    { t: "p", text: "You can classify any example into need, want or demand and explain why it matters which. You can answer the dinner-party accusation without either defensiveness or dishonesty. You can decompose a purchase into eight components of value and find the ones a competitor is winning on. And you can explain to a colleague why their brilliant campaign made customer satisfaction go down." },
-    { t: "p", text: "Next lecture: Theodore Levitt, 1960, and the argument that industries do not die of competition — they die of how they answered the question *what business are we in?*" }
+    { t: "h2", text: "What you can do now" },
+    { t: "p", text: "You can tell a need from a want from a demand, and explain why a market sized on the wrong one is wrong by a factor. You can answer the dinner-party accusation without either defensiveness or dishonesty. You can break a purchase into eight components and find the one a competitor is quietly winning on — and you have seen, in published numbers, one in four shoppers walk away from a decided purchase because of a form. And you can explain to a colleague why their successful campaign made satisfaction go down." },
+    { t: "p", text: "Next lecture: Theodore Levitt, 1960, and the argument that industries do not die of competition. They die of the answer they gave to one question." }
+  ],
+  exercises: [
+    { task: "**Find your own non-monetary cost.** Buy something small online from a company you have never used. Time it. Count the steps, the forms, the decisions, and note every moment you hesitated. Write down which of the four costs — money, time, energy, psychological — nearly stopped you.",
+      hint: "The hesitation is the data. Note the exact screen where you paused, because that is where the business is losing people who are less patient than you." },
+    { task: "**Do the same for the company you are watching.** Walk their whole buying process as a customer — online or in person — and write one line on each of the four costs. Then name the single cheapest change that would reduce the largest one.",
+      hint: "Cheapest almost never means a discount. Look for a form, a wait, a missing price, an unanswered question, or a moment where you have to ask someone for help." },
+    { task: "**Size a market twice.** Take any product and estimate how many people in Estonia *want* it, then how many *demand* it — want, plus can afford it, plus would choose it over the alternatives. Write both numbers and the ratio between them.",
+      hint: "You are not being marked on accuracy. You are being marked on whether the second number is visibly, honestly smaller, and whether you can say what you removed to get there." },
+    { task: "**Write the eight terms for a real choice.** Take a purchase where you chose the more expensive option. Write all eight components of perceived value for both options, and mark the ones that decided it.",
+      hint: "If you conclude you were irrational, you have not filled in all eight. Go back to service, personal and psychological — that is usually where the answer is hiding." },
+    { task: "**Find an over-promise.** Find one advertisement or product page that sets an expectation the product is unlikely to clear. Write what expectation it creates, and what the customer will feel at the moment of delivery.",
+      hint: "Watch for absolute words — instantly, effortlessly, anyone can, in minutes. Each one is a bar the product now has to clear." }
+  ],
+  reading: [
+    { author: "Baymard Institute", work: "Cart & Checkout research", where: "baymard.com", year: 2026,
+      note: "The abandonment figures in this lecture. Their free articles alone are the best short course in non-monetary cost that exists." },
+    { author: "Philip Kotler and Kevin Lane Keller", work: "Marketing Management", where: "Pearson", year: 2016,
+      note: "The chapter on creating customer value sets out perceived value and satisfaction formally." },
+    { author: "Richard L. Oliver", work: "Satisfaction: A Behavioral Perspective on the Consumer", where: "Routledge", year: 2014,
+      note: "The standard work on expectancy-disconfirmation. Heavy going, but the first chapter repays the effort if satisfaction ever becomes your problem." }
   ],
   glossary: [
     { term: "Need", def: "A state of felt deprivation. Universal, pre-existing, and not created by marketing." },
     { term: "Want", def: "A need given specific shape by culture, personality, memory and exposure. This is what marketing influences." },
-    { term: "Demand", def: "A want backed by ability and willingness to pay. The only one of the three that appears in a forecast." },
-    { term: "Customer perceived value (CPV)", def: "Total perceived benefit minus total perceived cost. Both sides are estimates made by the customer before purchase." },
-    { term: "Psychological cost", def: "Risk, anxiety, fear of being wrong, embarrassment. Frequently the largest non-monetary cost and the most often ignored." },
-    { term: "Expectancy-disconfirmation", def: "The model in which satisfaction equals perceived performance minus prior expectation, so satisfaction can fall while quality rises." },
+    { term: "Demand", def: "A want backed by ability and willingness to pay. The only one of the three that belongs in a forecast." },
+    { term: "Customer perceived value", def: "Total perceived benefit minus total perceived cost. Both sides are the customer's estimate, made before purchase." },
+    { term: "Psychological cost", def: "Risk, anxiety, fear of being wrong, embarrassment at needing the product. Frequently the largest non-monetary cost and the most often ignored." },
+    { term: "Cart abandonment", def: "A shopper filling a basket and leaving without paying. Runs around 70% across e-commerce, and the reasons are mostly not price." },
+    { term: "Expectancy-disconfirmation", def: "Satisfaction equals perceived performance minus prior expectation — so satisfaction can fall while quality rises." },
     { term: "Customer delight", def: "Performance materially above expectation; the state that produces word of mouth and tolerance of later failures." },
     { term: "Form utility", def: "Value created by converting inputs into a more useful configuration." },
     { term: "Place utility", def: "Value created by having the offering where the customer is." },
     { term: "Time utility", def: "Value created by having the offering when the customer wants it." },
-    { term: "Possession utility", def: "Value created by making the transfer of ownership easy — credit, subscription, returns, checkout." },
-    { term: "Information utility", def: "Value created by the customer knowing the offering exists and understanding its fit. Without it the other four cannot be realised." }
+    { term: "Possession utility", def: "Value created by making ownership easy to transfer — credit, subscription, checkout, returns." },
+    { term: "Information utility", def: "Value created by the customer knowing the offering exists and understanding its fit." }
   ],
   quiz: [
+    { id: "w01l03q12", concept: "nonmoney-cost", type: "mcq",
+      q: "Baymard's checkout research finds about 26% of shoppers abandon a full basket because the site required them to create an account. Which cost is that, and what makes it important?",
+      options: [
+        "Monetary cost — an account implies future charges",
+        "Energy and psychological cost — no money changes, yet a quarter of decided buyers leave",
+        "Time cost — the form takes several minutes",
+        "Image cost — people dislike being tracked"
+      ],
+      answer: 1,
+      explain: "Nothing about the money changed. The product, the price and the shipping were all already accepted — these were people with a full basket. What stopped them was the effort of another form and the small dread of another password. It matters because this is the cheapest category of cost to remove: a guest checkout costs no margin, no discount and no advertising, where the usual reflex — a discount — gives away a slice of every sale including all the ones that would have happened anyway." },
+
+    { id: "w01l03q13", concept: "nonmoney-cost", type: "short",
+      q: "About 48% of abandoning shoppers cite extra costs at checkout — shipping, tax, fees — as the reason. Those costs were always going to apply. Explain what actually went wrong, using the vocabulary of this lecture.",
+      must: [{"point":"the costs appeared late, after an expectation had formed","any":["late","after","at the end","checkout","surprise","not shown","hidden","revealed"]},
+             {"point":"the customer had already formed an expectation of the total","any":["expect","assumed","thought it would","in their head","anchored"]},
+             {"point":"it is the gap, not the level, that causes the reaction","any":["gap","difference","disconfirm","versus what they expected","relative"]},
+             {"point":"the fix is showing total cost early, not cutting price","any":["show early","upfront","display","earlier","before","transparen","not a discount","without cutting"]}],
+      answer: "The costs themselves were not the problem — shipping and tax were always going to apply, and most of those shoppers would have accepted them if told at the start. What went wrong is **when** they appeared. By the time the customer reached checkout they had already formed an **expectation** of what this would cost, built from the price on the product page. The extra charges arrived **after** that expectation was set, so what the customer experienced was not a price but a **gap** — exactly the expectancy-disconfirmation effect from later in this lecture, applied to cost instead of quality. The fix is therefore not to cut the price or absorb the shipping. It is to **show the total early**, so no expectation forms that the checkout then has to break.",
+      explain: "This is why the two findings belong together. One in four leaves over a form and nearly half leaves over a surprise — and neither is solved by being cheaper. Both are solved by removing friction and setting expectations honestly, which cost nothing per sale." },
     { id: "w01l03q1", concept: "need-want-demand", type: "mcq",
       q: "“A 19-year-old student wants the new iPhone but cannot afford it.” In the technical vocabulary, this is:",
       options: ["A need", "A want but not demand", "Demand", "A want and a demand"],
@@ -852,6 +1014,7 @@ window.LESSONS['marketing.w01'] = {
 
     { id: "w01l03q4", concept: "creates-needs", type: "short",
       q: "Someone tells you marketing creates needs that people would not otherwise have. Give the defence, then give the strongest objection to your own defence, then state the position you would actually hold.",
+      must: [{"point": "defence: needs pre-exist, marketing shapes wants", "any": ["pre-exist", "already", "shapes want", "existed before", "did not create", "universal"]}, {"point": "objection: the felt deprivation is genuinely new to the person", "any": ["felt", "new to", "from inside", "invisible", "experience", "did not feel before"]}, {"point": "position: needs given, wants shaped, shaping is a responsibility", "any": ["responsib", "answerable", "accountab", "not innocent", "ethical"]}],
       answer: "**Defence:** needs are states of felt deprivation that pre-exist commerce — hunger, safety, belonging, esteem — and the same short list appears in every documented society. Marketing shapes *wants*, proposing a particular object as the answer to a need already present; it did not invent the desire for status, only the suggestion that a watch expresses it. **Objection:** the distinction is invisible from inside the person. If sustained exposure to images of other kitchens makes you experience your own as inadequate, the felt deprivation is genuinely new even if the need category is ancient; and some categories are built precisely by first establishing that a normal condition is a problem, which is close to manufacturing a need. **Position:** needs are given, wants are shaped, and shaping carries responsibility — the defence is true but does not discharge the marketer from answering for which shape was chosen.",
       explain: "What is being marked here is whether you can hold a position under challenge rather than recite a slogan. The pure defence is technically correct and rhetorically weak precisely because it is used to dodge the real question." },
 
@@ -885,6 +1048,7 @@ window.LESSONS['marketing.w01'] = {
 
     { id: "w01l03q8", concept: "satisfaction", type: "short",
       q: "Explain why a premium-priced brand must deliver more than a cheap one to achieve the same satisfaction score, even if the physical product is identical.",
+      must: [{"point": "price itself sets the expectation", "any": ["price sets", "price signals", "expect more", "because they paid", "higher price"]}, {"point": "satisfaction is the gap, so the bar is higher", "any": ["gap", "bar", "reference", "disconfirm", "measured against", "relative to"]}, {"point": "same performance yields less satisfaction at a higher price", "any": ["same performance", "identical", "same product", "less satisf", "smaller gap", "worse score"]}],
       answer: "Price is itself a signal that sets expectation. A customer paying €3.40 expects more than one paying €2.20, so the same delivered performance is disconfirmed against a higher reference point and produces a smaller — possibly negative — satisfaction gap. Premium pricing therefore buys you margin and image benefit but simultaneously raises the bar you must clear, and the two effects have to be managed together. A firm that raises price without raising delivered performance or reducing non-monetary costs will see satisfaction fall even though nothing about the product changed.",
       explain: "This is the bridge between week one and week ten. Price is never only a number — it is a promise, and satisfaction is measured against it." },
 
@@ -917,6 +1081,23 @@ window.LESSONS['marketing.w01'] = {
    1.4  Marketing myopia
    ============================================================ */
 "w01l04": {
+  thread: {
+    from: "The four Ps are next week; for now: what marketing is, the five orientations, and perceived value.",
+    adds: "The most expensive mistake in the subject — and a piece of arithmetic that tells you how long you have.",
+    toward: "Week 2, where you draw the boundary of a market properly, and week 7, where you decide who to serve."
+  },
+  tools: [
+    { kind: "test", name: "The five-step myopia test",
+      answers: "Who is going to take my customers, that my own reports cannot see?",
+      when: "Once a year on your own employer, and before joining or investing anywhere. Product definition → function definition → every way that function could be met without your category → what would have to change → which of those are already changing." },
+    { kind: "formula", name: "The crossover year",
+      form: "n = ln(share ratio) / ln(growth ratio)",
+      answers: "How many years until that small, fast-growing rival passes us?",
+      when: "The moment somebody says a competitor is too small to matter. Two rough estimates turn an argument about feelings into a number of years. Remember it is a CEILING on your time: debt and fixed costs kill an incumbent earlier." },
+    { kind: "framework", name: "Abell's three dimensions",
+      answers: "What business are we actually in?",
+      when: "Whenever a definition is being written. Customer groups (who), customer functions (what job — the durable axis), technologies (how — the volatile axis). Anchoring identity on the technology axis IS myopia." }
+  ],
   standfirst: "Here is a question you can ask about any company, including the one you work for: **what business are we in?** It sounds harmless. It is the most dangerous question in this course — because the answer decides who you count as a competitor, and a competitor you do not count is one who can take your customers without you ever noticing.",
   objectives: [
     "Explain why the question “what business are we in?” decides which threats a firm can see at all.",
@@ -1469,161 +1650,209 @@ window.LESSONS['marketing.w01'] = {
    1.5  The mix: 4Ps, 7Ps and the 4Cs
    ============================================================ */
 "w01l05": {
-  standfirst: "A framework from 1960 that has survived every attempt to kill it. The four Ps are the decision surface of marketing — the levers you actually hold — and the single most important thing about them is not what each one contains but whether they agree with each other.",
+  standfirst: "A framework from 1960 that has survived every attempt to replace it. The four Ps are the decision surface of marketing — the levers you actually hold. And the most important thing about them is not what is in each one, but whether they agree with each other. In 2012 an American department store found out what happens when they do not, and it cost about four billion dollars of revenue in a single year.",
+  thread: {
+    from: "What marketing is, the five orientations, and the equation that decides whether somebody buys.",
+    adds: "The four levers you actually pull — and the rule that they must all say the same thing.",
+    toward: "Weeks ten to twelve, which take one P each and go to the bottom of it. This lecture is the map of that whole half of the course."
+  },
   objectives: [
-    "List the four Ps and the principal decisions under each.",
-    "Explain why internal consistency of the mix matters more than the excellence of any single element.",
-    "State what services marketing added in the extended 7Ps, and why.",
-    "Map the 4Ps onto Lauterborn’s 4Cs and say what the reframing is for.",
-    "Give three serious criticisms of the mix as a framework, and the defence."
+    "List the four Ps and the main decisions under each.",
+    "Explain why the mix must agree with itself, and predict what customers conclude when it does not.",
+    "Analyse a real failure where one P was changed and the others were not.",
+    "State what the three service Ps add, and why services needed them.",
+    "Translate the four Ps into the four Cs and say what the reframing catches."
   ],
   concepts: [
     { id: "four-ps",     name: "The four Ps" },
     { id: "mix-consist", name: "Internal consistency of the mix" },
+    { id: "mix-failure", name: "When the mix contradicts itself" },
     { id: "seven-ps",    name: "The extended 7Ps" },
     { id: "four-cs",     name: "The 4Cs reframing" },
     { id: "mix-critique",name: "Criticisms of the mix" }
   ],
+  vocab: [
+    { word: "coherent", plain: "The parts fit together and tell the same story.", et: "sidus, kooskõlaline" },
+    { word: "contradict", plain: "To say the opposite of something else.", et: "vastu rääkima, vastuolus olema" },
+    { word: "architecture", plain: "How the parts of something are arranged — here, how prices relate to each other across a range.", et: "ülesehitus, arhitektuur" },
+    { word: "markdown", plain: "A price reduction from the original price.", et: "allahindlus" },
+    { word: "ritual", plain: "Something people do in the same way each time, which means more to them than the action itself.", et: "rituaal" },
+    { word: "comparable", plain: "Measured against the same thing a year earlier — same shops, so growth is not just new shops opening.", et: "võrreldav" },
+    { word: "intangible", plain: "Cannot be touched. A haircut is intangible; the scissors are not.", et: "immateriaalne" },
+    { word: "simultaneous", plain: "Happening at the same moment.", et: "samaaegne" },
+    { word: "discretion", plain: "The freedom to decide something yourself without asking permission.", et: "otsustusõigus" },
+    { word: "mnemonic", plain: "A memory aid — a trick for remembering a list.", et: "mälutehnika, meeldejätmisvõte" }
+  ],
+  tools: [
+    { kind: "framework", name: "The four Ps",
+      answers: "Have we decided everything we need to decide?",
+      when: "Against any plan or brief. Walk the four and find the one nobody has thought about. It is usually place." },
+    { kind: "test", name: "The consistency test",
+      answers: "Does our mix say one thing or four different things?",
+      when: "Before launching anything, and immediately before agreeing to a discount. Write the sentence each P says about quality. If they disagree, customers will disbelieve the product claim — because price and place are costly to fake and a product claim is not." },
+    { kind: "framework", name: "The four Cs",
+      answers: "What does this decision look like from the customer's chair?",
+      when: "After the plan is written, as an audit. Plan with the Ps because they match budgets and departments; audit with the Cs because they catch the moment an internally sensible decision is externally absurd." }
+  ],
   blocks: [
-    { t: "h2", text: "Where the four Ps came from" },
-    { t: "p", text: "In the late 1940s Neil Borden, at Harvard, began describing the marketing manager as a *mixer of ingredients* — someone who combines elements into a recipe rather than pulling a single lever. His own list ran to twelve items and nobody could remember it." },
-    { t: "p", text: "In 1960 Jerome McCarthy compressed Borden's twelve into four alliterative categories, and that compression is why you have heard of it. **Product, price, place, promotion.** It is not a theory. It is a mnemonic for a checklist, and it has outlived every more sophisticated scheme proposed since, because it is short enough to use under pressure and complete enough to catch the things people forget." },
-    { t: "p", text: "The four are the firm's **controllable** variables. That is the organising idea. PESTEL, which we meet next week, covers what you cannot control; the mix covers what you can. Everything a marketer actually *decides* lands in one of the four boxes." },
-
+    { t: "h2", text: "The levers you actually hold" },
+    { t: "p", text: "In 1960 Jerome McCarthy compressed a longer list into four words that all begin with the same letter, and that compression is why you have heard of it. **Product, price, place, promotion.**" },
+    { t: "p", text: "It is not a theory. It is a **mnemonic for a checklist**, and it has outlived every more sophisticated scheme proposed since, because it is short enough to use under pressure and complete enough to catch what people forget." },
+    { t: "p", text: "The organising idea is that these four are what you **control**. Next week we meet PESTEL, which covers what you do not. Everything a marketer actually decides lands in one of these four boxes." },
     { t: "table",
       head: ["The P", "What it covers", "The decisions you actually make"],
       rows: [
-        ["**Product**", "The offering itself, tangible or not", "Features and quality level · design · variants and range breadth · branding and naming · packaging · warranty · support and service level · what to discontinue"],
-        ["**Price**", "What the customer gives up, and how", "List price · discount structure · allowances · payment terms and credit · subscription vs one-off · price architecture across the range · psychological framing"],
-        ["**Place**", "Getting it to where the customer is", "Channel type and length · coverage and intensity · retail partners · inventory and stock levels · logistics · territory · online, physical, or both"],
-        ["**Promotion**", "Making it known and understood", "Advertising · public relations · sales promotion · personal selling · direct and digital · message and creative · media choice · budget and weight · timing"]
+        ["**Product**", "The offering itself, tangible or not", "Features · quality level · design · range · branding and naming · packaging · warranty · support · what to discontinue"],
+        ["**Price**", "What the customer gives up, and how", "List price · discount structure · payment terms and credit · subscription or one-off · how prices relate across the range · psychological framing"],
+        ["**Place**", "Getting it to where the customer is", "Channel type and length · coverage · retail partners · stock levels · logistics · territory · online, physical or both"],
+        ["**Promotion**", "Making it known and understood", "Advertising · PR · sales promotion · personal selling · direct and digital · the message · media choice · budget · timing"]
       ],
-      say: "The four Ps and their decisions. Product covers features, quality, design, range, branding, packaging, warranty and service. Price covers list price, discounts, allowances, payment terms and price architecture. Place covers channel type, coverage, retail partners, inventory, logistics and territory. Promotion covers advertising, PR, sales promotion, personal selling, direct marketing, message, media, budget and timing.",
-      cap: "Copy this table into your notebook and keep it. Nine tenths of practical marketing work is a decision that belongs in one of these twelve cells, and being able to say *which* cell is most of the skill in the first year of a career."
-    },
+      say: "Product covers features, quality, design, range, branding, packaging, warranty and support. Price covers list price, discounts, payment terms and how prices relate across the range. Place covers channel, coverage, partners, stock and logistics. Promotion covers advertising, PR, sales promotion, personal selling, the message, media, budget and timing.",
+      cap: "Copy this into your notebook and keep it. Nine tenths of practical marketing work is a decision that belongs in one of these twelve cells, and knowing *which* cell is most of the skill in a first year." },
 
-    { t: "h2", text: "The thing about the mix that most courses bury" },
-    { t: "p", text: "Here is the point of the whole lecture, and it is not in the list." },
-    { t: "p", text: "**The mix must be internally consistent.** The four Ps are not four independent optimisation problems. They are four statements about the same thing, and if they contradict each other the customer notices — not consciously, and not in words, but as a feeling that something is off. That feeling kills more products than bad execution does." },
-    { t: "p", text: "A premium product at a premium price, sold in a discount warehouse, advertised with a coupon: every element might be individually defensible and the combination is incoherent. The price says *this is fine*, the place says *this is cheap*, the promotion says *we are desperate*. A customer standing in front of it cannot articulate the contradiction and does not need to; they simply do not believe the proposition." },
-    { t: "p", text: "This is why the mix is better understood as a **sentence** than a checklist. Product is the noun, price is the claim about worth, place is the setting, promotion is the tone of voice. Sentences can be grammatical or not." },
+    { t: "h2", text: "The rule that matters more than the list" },
+    { t: "p", text: "Here is the point of the lecture, and it is not in the table." },
+    { t: "p", text: "**The four must agree with each other.** They are not four separate problems to optimise. They are four statements about the same thing, and if they contradict, the customer notices — not consciously, not in words, but as a feeling that something is off. That feeling kills more products than bad execution does." },
+    { t: "p", text: "A premium product, at a premium price, sold in a discount warehouse, advertised with a coupon: each decision might be individually defensible, and the combination is incoherent. The price says *this is serious*. The place says *this is cheap*. The promotion says *we are desperate*. A customer standing in front of it cannot articulate the contradiction and does not need to. They simply do not believe the proposition." },
+    { t: "p", text: "So the mix is better understood as a **sentence** than as a checklist. Product is the noun. Price is the claim about worth. Place is the setting. Promotion is the tone of voice. Sentences can be grammatical or not." },
+    { t: "warn", title: "Which element does the customer believe?", ps: [
+      "When the mix contradicts itself, customers do not split the difference. They decide which element is lying — and they almost always decide it is the **product claim**.",
+      "Why? Because anyone can *say* their product is excellent, and saying it is free. A price and a distribution channel are **costly commitments**. Charging a high price forgoes volume. Distributing selectively forgoes reach. Costly signals are believed; cheap ones are not.",
+      "The rule that follows: **price and place are your loudest statements about quality, and they are the ones you cannot take back cheaply.** A premium brand that discounts deeply has not run a promotion. It has published a revised opinion of itself."
+    ]},
 
+    { t: "h2", text: "What it costs to get this wrong" },
+    { t: "p", text: "This is usually taught with invented examples. It does not have to be." },
+    { t: "case", title: "JCPenney, 2012",
+      ps: [
+        "JCPenney is a large American department-store chain. For decades it ran on markdowns: a high list price, and then constant sales, coupons and promotions against it. In **2011 it ran around 590 separate promotions.** Customers did not simply buy clothes there. They bought clothes *on offer*, with a coupon, having waited for the sale.",
+        "In 2012 a new chief executive replaced all of that with **“fair and square” pricing**: honest everyday prices set far lower to begin with, and roughly **12 themed promotions a year instead of 590**. No fake list prices. No coupons. On its own terms, the argument was excellent — the old system was, in a real sense, a pretence, and the new one was more honest.",
+        "**What happened:**",
+        "Comparable store sales fell **18.9% in the first quarter**. They kept falling. By the **fourth quarter they were down 31.7%**. Over the year, revenue went from about **$17.3 billion to about $13 billion — a fall of roughly 25%**. The company posted a net loss of about **$985 million** for the year. The chief executive was gone by April 2013, and the chain went back to running sales.",
+        "**Now diagnose it with the mix.** Price changed completely. **Product did not change** — the same clothes, of the same quality, from the same suppliers, on the same shelves. **Place did not change** — the same shops, in the same malls. **Promotion changed** only in the sense that there was now much less of it.",
+        "So one lever moved and three did not, and the sentence stopped being grammatical. Worse, the change attacked something the customer valued that nobody had written down: **the coupon was not only a price, it was a ritual.** Finding the offer, waiting for the sale, feeling clever at the till — that was part of what people were buying. Removing it removed a benefit while insisting it was a gift.",
+        "**The lesson is not that honest pricing is wrong.** It is that a P cannot be changed alone. A genuine move to everyday low pricing needs product, place and promotion to move with it — a different shop layout, a different range, a different way of talking, and years of patience while a new kind of customer is recruited to replace the one you have just told to go away."
+      ]},
     { t: "table",
-      head: ["Element", "Budget hotel — coherent", "Boutique hotel — coherent", "Incoherent mix"],
+      head: ["", "2011", "2012", "Change"],
       rows: [
-        ["Product", "Clean, small, consistent, no restaurant, self check-in", "18 rooms, designed, local materials, a real bar", "18 designed rooms, a real bar"],
-        ["Price", "€49, non-refundable, pay online", "€210, flexible, includes breakfast", "€79, non-refundable, pay online"],
+        ["Promotions run in the year", "≈590", "≈12 themed", "−98%"],
+        ["Comparable store sales, Q1", "—", "−18.9%", ""],
+        ["Comparable store sales, Q4", "—", "−31.7%", ""],
+        ["Annual revenue", "≈$17.3bn", "≈$13bn", "≈−25%"],
+        ["Net result for the year", "—", "≈−$985m", ""]
+      ],
+      say: "Promotions fell from about five hundred and ninety a year to about twelve. First-quarter comparable sales fell eighteen point nine percent, fourth-quarter sales fell thirty-one point seven percent, annual revenue fell from about seventeen point three billion to about thirteen billion dollars, and the company lost about nine hundred and eighty-five million dollars.",
+      cap: "Figures as reported by the company and in contemporary coverage. Comparable store sales strip out shop openings and closures, so the fall is genuine customer behaviour rather than a smaller estate." },
+
+    { t: "h2", text: "A mix that agrees with itself" },
+    { t: "p", text: "The same four decisions, made two different ways, each one coherent — and then a third column showing the JCPenney shape." },
+    { t: "table",
+      head: ["Element", "Budget hotel — coherent", "Boutique hotel — coherent", "Incoherent"],
+      rows: [
+        ["Product", "Clean, small, identical every time, no restaurant, self check-in", "18 rooms, designed, local materials, a real bar", "18 designed rooms, a real bar"],
+        ["Price", "€49, non-refundable, pay online", "€210, flexible, breakfast included", "€79, non-refundable, pay online"],
         ["Place", "Motorway junctions, airports, booking aggregators", "Own site, one curated platform, direct phone", "Discount aggregators, deal-of-the-day sites"],
-        ["Promotion", "Price-led search ads, loyalty points, aggregator ranking", "Design press, photography, word of mouth, no discounting", "Flash-sale emails, 40% off banners"],
+        ["Promotion", "Price-led search ads, loyalty points, ranking on aggregators", "Design press, photography, word of mouth, no discounting", "Flash-sale emails, 40% off banners"],
         ["What the customer concludes", "Predictable and cheap. Exactly as promised.", "Special, considered, worth it.", "Why is a beautiful hotel this desperate? What is wrong with it?"]
       ],
-      say: "Three mixes compared. The budget hotel and the boutique hotel are each internally consistent. The third column has a boutique product priced and distributed like a budget one, and the customer concludes that something must be wrong with it.",
-      cap: "The third column is not a bad hotel. It is a good hotel with a mix that argues with itself — and the customer resolves the contradiction by assuming the *product* claim is the false one, because price and distribution are harder to fake."
-    },
+      say: "Three mixes. The budget hotel and the boutique hotel are each internally consistent. The third column has a boutique product priced and distributed like a budget one, and the customer concludes that something must be wrong with it.",
+      cap: "The third column is not a bad hotel. It is a good hotel whose mix argues with itself — and the customer settles the argument by assuming the **product** claim is the false one." },
 
-    { t: "warn", title: "Which element does the customer believe?", ps: [
-      "When the mix contradicts itself, customers do not split the difference. They decide which element is lying, and they almost always decide it is the product claim — because anyone can *say* their product is excellent, while a price and a distribution channel are costly commitments that are harder to fake.",
-      "The practical rule that follows: **price and place are your loudest statements about quality, and they are the ones you cannot take back cheaply.** A premium brand that discounts deeply has not run a promotion; it has published a revised opinion of itself. Week ten returns to this with the arithmetic."
-    ]},
-
-    { t: "h2", text: "The extended mix: 7Ps" },
-    { t: "p", text: "In 1981 Bernard Booms and Mary Jo Bitner argued that the four Ps had been built for physical goods and broke down for services, where the product is produced and consumed at the same moment, by people, in front of the customer. They added three." },
+    { t: "h2", text: "Three more Ps, for services" },
+    { t: "p", text: "In 1981 Booms and Bitner argued that four Ps had been built for physical goods and broke down for services, where the product is produced and consumed at the same moment, by people, in front of the customer. They added three." },
     { t: "ul", items: [
-      "**People.** In a service, the staff *are* part of the product. The same haircut from two barbers is not the same service. This P covers recruitment, training, scripting, empowerment, appearance and — critically — how much discretion a front-line person has to fix a problem without asking permission.",
-      "**Process.** The procedure by which the service is delivered: queuing, booking, handover, escalation, what happens when it goes wrong. For services, process is frequently *the entire experience*. Two clinics with identical doctors and different appointment systems are different products.",
-      "**Physical evidence.** Because a service cannot be inspected before purchase, the customer judges it by the tangible cues surrounding it: premises, uniforms, documents, the weight of the folder, the state of the waiting room, the confirmation email. These are not decoration. They are the only evidence available before the purchase is irreversible."
+      "**People.** In a service the staff *are* the product. The same haircut from two barbers is not the same service. This covers recruitment, training, what they are allowed to say, appearance — and, critically, **how much discretion a front-line person has to fix a problem without asking permission.**",
+      "**Process.** The procedure by which the service is delivered: queuing, booking, handover, what happens when it goes wrong. For many services, process *is* the experience. Two clinics with identical doctors and different appointment systems are different products.",
+      "**Physical evidence.** Because a service cannot be inspected before purchase, the customer judges it by the tangible things around it: the premises, the uniforms, the documents, the weight of the folder, the confirmation email. These are not decoration. Before the purchase is irreversible, they are the **only evidence available.**"
     ]},
-    { t: "p", text: "The three additions matter beyond services. Any business with meaningful human contact or a complicated buying process has them, and a great deal of what is now called *customer experience* is simply people, process and physical evidence under a newer name. We give services a full lecture in week nine, including the gaps model that explains precisely how service quality fails." },
+    { t: "p", text: "The three matter well beyond services. Any business with meaningful human contact or a complicated buying process has them, and most of what is now called *customer experience* is people, process and physical evidence under a newer name. Week nine gives services a full lecture, including the model that explains precisely where service quality fails." },
 
-    { t: "h2", text: "The 4Cs: the same thing, from the other side" },
-    { t: "p", text: "Robert Lauterborn's objection in 1990 was not that the four Ps are wrong but that they are written from the seller's chair. Every P is something the firm does. He proposed a translation into the customer's terms." },
+    { t: "h2", text: "The same four, from the other chair" },
+    { t: "p", text: "Robert Lauterborn's objection in 1990 was not that the four Ps are wrong, but that every one of them is written from the seller's chair. Each P is something the company does. He proposed a translation." },
+    { t: "table",
+      head: ["The seller says", "The customer experiences", "What the reframing catches"],
+      rows: [
+        ["**Product**", "**Customer solution**", "People are not buying an object; they are hiring something to make progress on a problem. Stops you polishing a feature nobody uses."],
+        ["**Price**", "**Cost to the customer**", "Straight back to lecture three: their cost includes time, effort and risk. A cheaper thing that takes two hours to set up costs more."],
+        ["**Place**", "**Convenience**", "Place asks where *we* sell. Convenience asks how hard it is for *them* to buy. You can be in exactly the right channel and still be inconvenient inside it."],
+        ["**Promotion**", "**Communication**", "Promotion is a broadcast verb. Communication goes both ways and includes listening — reviews, complaints, what people say where you are not present."]
+      ],
+      say: "Product becomes customer solution. Price becomes cost to the customer, including time, effort and risk. Place becomes convenience. Promotion becomes communication, which is two-way and includes listening.",
+      cap: "The right-hand column is not a replacement for the left. It is a **test you run on it**: having made each decision as a seller, ask what it looks like from the other chair." },
+    { t: "p", text: "In practice: **plan with the Ps, audit with the Cs.** The Ps are better for organising work, because they map to budgets and departments. The Cs are better at catching the moment an internally sensible decision is externally absurd — which is, more or less, the whole of the JCPenney story." },
 
-    { t: "fig", title: "Four Ps, four Cs — the same decisions, the other chair", sketch: true,
-      say: "Product becomes customer solution — people buy a solution to a problem, not a product. Price becomes cost to the customer, which includes time, effort and risk, not only money. Place becomes convenience, which asks how easy it is to buy rather than where the firm chooses to sell. Promotion becomes communication, which is two-way and includes listening, rather than one-way broadcast.",
-      cap: "The right-hand column is not a replacement for the left. It is a test you run on it: having made each of the four decisions as a seller, ask what it looks like from the other chair.",
-      svg: '<svg viewBox="0 0 680 320" role="img" aria-label="Mapping the four Ps onto the four Cs">' +
-        '<text x="140" y="30" text-anchor="middle" fill="var(--ink-3)" font-size="10.5" letter-spacing="1.4">THE SELLER’S VIEW</text>' +
-        '<text x="520" y="30" text-anchor="middle" fill="var(--ink-3)" font-size="10.5" letter-spacing="1.4">THE CUSTOMER’S VIEW</text>' +
-        '<g font-size="13" font-weight="600">' +
-        '<rect x="34" y="48" width="212" height="52" rx="4" fill="var(--surface-2)" stroke="var(--rule-strong)"/><text x="140" y="79" text-anchor="middle" fill="var(--ink)">Product</text>' +
-        '<rect x="34" y="112" width="212" height="52" rx="4" fill="var(--surface-2)" stroke="var(--rule-strong)"/><text x="140" y="143" text-anchor="middle" fill="var(--ink)">Price</text>' +
-        '<rect x="34" y="176" width="212" height="52" rx="4" fill="var(--surface-2)" stroke="var(--rule-strong)"/><text x="140" y="207" text-anchor="middle" fill="var(--ink)">Place</text>' +
-        '<rect x="34" y="240" width="212" height="52" rx="4" fill="var(--surface-2)" stroke="var(--rule-strong)"/><text x="140" y="271" text-anchor="middle" fill="var(--ink)">Promotion</text>' +
-        '<rect x="414" y="48" width="232" height="52" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.3"/><text x="530" y="72" text-anchor="middle" fill="var(--accent-ink)">Customer solution</text>' +
-        '<rect x="414" y="112" width="232" height="52" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.3"/><text x="530" y="136" text-anchor="middle" fill="var(--accent-ink)">Cost to the customer</text>' +
-        '<rect x="414" y="176" width="232" height="52" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.3"/><text x="530" y="200" text-anchor="middle" fill="var(--accent-ink)">Convenience</text>' +
-        '<rect x="414" y="240" width="232" height="52" rx="4" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.3"/><text x="530" y="264" text-anchor="middle" fill="var(--accent-ink)">Communication</text>' +
-        '</g>' +
-        '<g font-size="10.5" text-anchor="middle" fill="var(--ink-2)">' +
-        '<text x="530" y="90">“what problem does this solve?”</text>' +
-        '<text x="530" y="154">money + time + effort + risk</text>' +
-        '<text x="530" y="218">“how easy is it for me to buy?”</text>' +
-        '<text x="530" y="282">two-way — including listening</text>' +
-        '</g>' +
-        '<g stroke="var(--accent)" stroke-width="1.4" fill="none">' +
-        '<path d="M250 74 L410 74"/><path d="M250 138 L410 138"/><path d="M250 202 L410 202"/><path d="M250 266 L410 266"/>' +
-        '<path d="M402 68 L410 74 L402 80"/><path d="M402 132 L410 138 L402 144"/><path d="M402 196 L410 202 L402 208"/><path d="M402 260 L410 266 L402 272"/>' +
-        '</g>' +
-        '<line x1="34" y1="306" x2="646" y2="306" stroke="var(--rule)" stroke-dasharray="3 3"/>' +
-        '</svg>' },
-
-    { t: "p", text: "Each translation carries a real shift, not just a rename." },
-    { t: "ul", items: [
-      "**Product → Customer solution.** The customer is not buying an object; they are hiring something to make progress on a problem. This anticipates the jobs-to-be-done framing and it keeps you from optimising a feature nobody uses.",
-      "**Price → Cost to the customer.** Straight back to week one's value equation: the customer's cost includes time, effort and risk. A cheaper product that takes two hours to set up may cost more.",
-      "**Place → Convenience.** Place asks where *we* sell. Convenience asks how hard it is for *them* to buy. Those produce different answers — a firm may be present in the right channel and still be inconvenient in it.",
-      "**Promotion → Communication.** Promotion is a broadcast verb. Communication is two-way, and includes listening — reviews, complaints, service conversations, what people say to each other where you are not present."
-    ]},
-    { t: "p", text: "In practice, plan with the Ps and audit with the Cs. The Ps are better for organising work, because they map to budgets and departments; the Cs are better for catching the moment when an internally sensible decision is externally absurd." },
-
-    { t: "h2", text: "Three serious criticisms, and the defence" },
+    { t: "h2", text: "Three criticisms, and the defence" },
     { t: "p", text: "You should be able to argue against the framework as well as with it." },
     { t: "ol", items: [
-      "**It is producer-oriented.** Every element is something the firm does *to* a market. It has no natural place for relationships, for customers who co-create value, or for a community that shapes the brand without permission. The 4Cs partly patch this; relationship marketing challenges it more fundamentally.",
-      "**It is static.** The mix describes a set of decisions at a moment, with no account of sequence, learning, or how the elements evolve over a product’s life. It tells you what to decide, never when or in what order.",
-      "**The categories are arbitrary, and the alliteration did the deciding.** Why is packaging under product and not promotion, when its main job is often to communicate at the shelf? Why is a salesperson promotion in the 4Ps and people in the 7Ps? The boundaries are conventions, not natural joints, and they were chosen partly because they began with P."
+      "**It is producer-oriented.** Every element is something the company does *to* a market. There is no natural place in it for relationships, for customers who help create the value, or for a community that shapes a brand without permission. The Cs patch this; relationship marketing challenges it more deeply.",
+      "**It is static.** It describes a set of decisions at a moment. It says nothing about sequence, learning, or how the elements should evolve over a product's life. It tells you what to decide, never when or in what order.",
+      "**The categories are conventions, and the alliteration did some of the deciding.** Why is packaging under product rather than promotion, when its main job is often to communicate at the shelf? Why is a salesperson *promotion* in the 4Ps and *people* in the 7Ps? The boundaries are agreed, not natural."
     ]},
-    { t: "p", text: "**The defence** is unfashionable and correct. Frameworks are judged by usefulness, not by elegance, and nothing proposed in sixty-five years has displaced it in practice. It is memorable under pressure. It is complete enough that walking the list catches real omissions — a marketing plan with nothing to say about place is genuinely defective, and the framework is what makes that visible. It maps cleanly onto how firms are actually organised and budgeted. And its weaknesses are known and teachable, which is more than can be said for its replacements." },
-    { t: "p", text: "Use it as a checklist and a consistency test, not as a theory of how markets work. That is what it is good for, and it is very good at it." },
-
-    { t: "case", title: "Auditing a mix in ten minutes",
-      ps: [
-        "A small roastery sells coffee beans. It roasts well, and it is not growing. Walk the mix.",
-        "**Product.** Single-origin beans, four rotating varieties, roasted weekly, 250g bags, minimal label, roast date printed. Quality genuinely high. Range possibly too narrow for a weekly shop and the 250g size suits a household of one.",
-        "**Price.** €12.50 per 250g — roughly triple supermarket coffee, at the low end of specialist. Consistent with the product claim. No subscription, so every purchase requires a fresh decision, which is a *price architecture* problem disguised as a convenience problem.",
-        "**Place.** Two independent delicatessens and a market stall on Saturdays. Here is the break: the product is perishable and positioned on freshness, but the customer can buy it in only three places, one of which exists for six hours a week. The place decision contradicts the product claim — freshness is worthless if buying is inconvenient enough that people buy a fortnight’s worth or, more likely, give up.",
-        "**Promotion.** An occasional post about roast profiles. The message speaks to people who already know what a roast profile is, so promotion is aimed at a narrower segment than the product needs.",
-        "**The audit through the Cs.** Solution: what problem? For the enthusiast, better coffee. For everyone else, *not running out of decent coffee*, which the roastery does not address at all. Cost: €12.50 plus a Saturday morning plus the risk of a variety you dislike. Convenience: poor, and it is the binding constraint. Communication: one-way and pitched at experts.",
-        "**The diagnosis.** The product is not the problem. The mix is inconsistent — a freshness claim delivered through the least convenient channel available — and the single highest-value change is a subscription with delivery, which simultaneously fixes place, price architecture and the real customer job. Note that no amount of extra promotion would have fixed this, and promotion is what the owner was about to spend money on."
-      ]},
-
-    { t: "write", items: [
-      "The four Ps and the main decisions under each — copy the twelve-cell table.",
-      "The mix must be internally consistent. It is a sentence, not a checklist.",
-      "When the mix contradicts itself, customers disbelieve the product claim, because price and place are costlier to fake.",
-      "7Ps adds people, process, physical evidence — because in services the staff and the procedure are the product.",
-      "4Cs: customer solution, cost, convenience, communication. Plan with Ps, audit with Cs.",
-      "Three criticisms: producer-oriented, static, arbitrary categories. And the defence: it is useful."
-    ]},
+    { t: "p", text: "**The defence** is unfashionable and correct. Frameworks are judged by usefulness, not elegance. Nothing proposed in sixty-five years has displaced it in practice. It is memorable under pressure. It is complete enough that walking the list catches real omissions — a plan silent on place is genuinely defective, and the framework is what makes that visible. It maps onto how companies are actually organised and budgeted. And its weaknesses are known and teachable, which is more than its replacements can say." },
+    { t: "p", text: "Use it as a **checklist and a consistency test**, not as a theory of how markets work. That is what it is for, and it is very good at it." },
 
     { t: "h2", text: "Week one, closed" },
-    { t: "p", text: "You began the week not being able to define marketing without saying advertising. You end it able to define it, diagnose a firm's orientation from the outside, separate needs from wants from demand, compute perceived value, name the business a firm is actually in, and audit a complete marketing mix for internal contradiction." },
-    { t: "p", text: "That is the vocabulary. Everything from here is depth. Next week we stop looking at the firm and look outward: how to draw the boundary of a market, the six external forces you do not control, the five structural forces that decide where the profit in an industry ends up, and how to do a SWOT that is worth the paper." },
-    { t: "p", text: "Before you go: take the test, and then, on a blank page, write the four Ps from memory with three decisions under each. If you cannot, listen to section two again. That table is load-bearing for the next fifteen weeks." }
+    { t: "p", text: "You began the week unable to define marketing without saying advertising. You end it able to define it, name the six activities it is made of, point to five organisations that use it, diagnose a company's orientation from outside, separate needs from wants from demand, compute perceived value across eight components, name the business a company is really in, and audit a complete mix for contradiction." },
+    { t: "p", text: "That is the vocabulary. Everything from here is depth. Next week we stop looking at the company and look outward: how to draw the boundary of a market, the six external forces you do not control, the five structural forces that decide where the profit in an industry ends up, and how to do a SWOT that is worth the paper." },
+    { t: "p", text: "Before you go: on a blank page, write the four Ps from memory with three decisions under each. If you cannot, listen to section one again. That table is load-bearing for the next fifteen weeks." }
+  ],
+  exercises: [
+    { task: "**Write the mix for the company you are watching.** One line under each of the four Ps, from what you can observe. Then write, in one sentence each, what each P *says about quality*. Do the four sentences agree?",
+      hint: "If they agree, say what the shared claim is. If they disagree, name which P the customer will disbelieve — and remember it is almost always the product claim, because that is the cheapest one to fake." },
+    { task: "**Find a mix that argues with itself.** Look for a premium-looking product being sold through a discount channel, or a cheap product with expensive packaging. Photograph it or note it down, and write the three contradictory sentences.",
+      hint: "Supermarket own-brand ranges and airport shops are unusually rich hunting grounds, because both are trying to be two things at once." },
+    { task: "**Rescue JCPenney.** In half a page, describe what would have had to change in product, place and promotion for “fair and square” pricing to work. Then say how long you think it would have taken.",
+      hint: "There is no answer that keeps the same customers. Everyday low pricing recruits a different customer, and the honest answer includes a number of years and a fall in sales you plan for in advance rather than discover." },
+    { task: "**Run the Cs on a service you used this week.** Take one service and write the four Cs: what problem it solved, what it cost you in total including time and risk, how convenient it was to obtain, and whether the communication went both ways.",
+      hint: "The fourth is the revealing one. Ask whether there is any route by which your experience reaches somebody who could change it — and how long you would have to spend to use that route." },
+    { task: "**Find the three service Ps.** For a service business you know, write one line on people, process and physical evidence. Then say which of the three is doing the most work to make you trust it before you have bought anything.",
+      hint: "In financial services physical evidence does an enormous amount of quiet work — premises, documents, the design of a statement, the wording of a confirmation. Notice how much of it exists purely to be reassuring." }
+  ],
+  reading: [
+    { author: "E. Jerome McCarthy", work: "Basic Marketing: A Managerial Approach", where: "Irwin", year: 1960,
+      note: "Where the four Ps appear. Historical interest rather than a good read, but worth knowing the source is a textbook, not a theory paper." },
+    { author: "Bernard H. Booms and Mary Jo Bitner", work: "Marketing Strategies and Organization Structures for Service Firms", where: "American Marketing Association", year: 1981,
+      note: "The three extra Ps, and the argument for why services needed them." },
+    { author: "Robert F. Lauterborn", work: "New Marketing Litany: Four Ps Passé; C-Words Take Over", where: "Advertising Age", year: 1990,
+      note: "One page. The whole 4Cs argument, written as an attack." },
+    { author: "Harvard Business School", work: "J.C. Penney's “Fair and Square” Pricing Strategy", where: "HBS case 513-036", year: 2012,
+      note: "The full case, written while it was happening. If you ever want to see how a good argument destroys a company, this is the cleanest example on record." }
   ],
   glossary: [
-    { term: "Marketing mix", def: "The set of controllable variables a firm combines to produce the response it wants from a target market." },
+    { term: "Marketing mix", def: "The set of controllable variables a company combines to produce the response it wants from a target market." },
     { term: "Product (P)", def: "The offering itself: features, quality, design, range, branding, packaging, warranty and support." },
-    { term: "Price (P)", def: "What the customer gives up and how: list price, discounts, terms, credit, and the architecture across a range." },
-    { term: "Place (P)", def: "Channel and availability decisions: channel type and length, coverage, partners, inventory, logistics, territory." },
+    { term: "Price (P)", def: "What the customer gives up and how: list price, discounts, terms, credit, and how prices relate across a range." },
+    { term: "Place (P)", def: "Channel and availability: channel type and length, coverage, partners, stock, logistics, territory." },
     { term: "Promotion (P)", def: "Advertising, PR, sales promotion, personal selling and direct marketing, plus message, media, budget and timing." },
     { term: "Internal consistency", def: "The requirement that the four elements make the same claim. An inconsistent mix is disbelieved even when every element is individually sound." },
-    { term: "People (7Ps)", def: "Staff as part of the service product: recruitment, training, scripting, appearance, and discretion to resolve problems." },
+    { term: "Costly signal", def: "A claim that is expensive to make and therefore believed — a high price or selective distribution, as opposed to an assertion in an advertisement." },
+    { term: "People (7Ps)", def: "Staff as part of the service product: recruitment, training, appearance, and discretion to resolve problems." },
     { term: "Process (7Ps)", def: "The procedure of delivery — booking, queuing, handover, recovery — which for many services is the experience itself." },
     { term: "Physical evidence (7Ps)", def: "Tangible cues that let a customer judge an intangible service before buying: premises, documents, uniforms, confirmations." },
-    { term: "4Cs", def: "Lauterborn’s customer-side restatement: customer solution, cost to the customer, convenience, communication." }
+    { term: "4Cs", def: "Lauterborn's customer-side restatement: customer solution, cost to the customer, convenience, communication." },
+    { term: "Comparable store sales", def: "Sales measured only in shops open in both periods, so growth is not flattered by opening new ones. The honest retail number." }
   ],
   quiz: [
+    { id: "w01l05q12", concept: "mix-failure", type: "mcq",
+      q: "JCPenney replaced roughly 590 promotions a year with about 12, and set honest everyday prices. Comparable store sales fell 18.9% in Q1 and 31.7% by Q4. What is the best diagnosis?",
+      options: [
+        "The new prices were still too high for the market",
+        "One P changed while product, place and promotion did not, so the mix stopped agreeing with itself",
+        "Customers did not understand the new pricing and needed more advertising",
+        "The chief executive moved too slowly for the board"
+      ],
+      answer: 1,
+      explain: "The clothes, the shops and the shelves were identical the day before and the day after. Only price and the promotional architecture moved, so the sentence the mix had been saying for decades stopped being grammatical. Option A fails on the facts — the everyday prices were *lower*. Option C is the reflex the lecture warns about: more advertising cannot repair a contradiction between the Ps, because the customer disbelieves the product claim, not the message." },
+
+    { id: "w01l05q13", concept: "mix-failure", type: "short",
+      q: "JCPenney's old system used inflated list prices and constant coupons — arguably a pretence. The new one was more honest and customers left anyway. Explain what the coupon was actually selling, and what a genuine move to everyday low pricing would have required.",
+      must: [{"point":"the coupon was a ritual or an experience, not only a price","any":["ritual","experience","feeling","felt clever","hunt","game","treasure","satisfaction of","thrill","part of what"]},
+             {"point":"removing it removed a benefit the customer valued","any":["removed a benefit","took away","lost something","valued","benefit"]},
+             {"point":"product, place and promotion would have had to move too","any":["product","place","layout","range","shops","promotion","all four","other ps","everything else"]},
+             {"point":"it recruits a different customer and takes years","any":["different customer","new customer","recruit","years","time","patien","slow","long"]}],
+      answer: "The coupon was never only a price. It was a **ritual**: finding the offer, waiting for the sale, feeling clever at the till. That feeling was part of what the customer was buying, so removing the coupon **removed a benefit** while the company insisted it was giving them a gift. A genuine move to everyday low pricing cannot be made on the price lever alone — it needs **product, place and promotion to move with it**: a different range, a different shop layout, a different way of talking, the whole mix rewritten to say one thing. And because everyday low pricing appeals to a **different customer**, it means deliberately recruiting new people to replace the ones you have just told to go away — which takes **years**, and a planned fall in sales you budget for in advance rather than discover in the first quarter.",
+      explain: "The uncomfortable part of this case is that the reasoning was good. Honest prices really are better than fake ones. What was missing was the recognition that a P is not a dial you can turn on its own, and that customers had been buying something nobody had written down." },
     { id: "w01l05q1", concept: "four-ps", type: "multi",
       q: "Which of these decisions belong under **Place**? Select all that apply.",
       options: ["Choosing which retailers stock the product", "Setting the warranty period", "Deciding inventory levels held in region", "Selecting the advertising media", "Deciding whether to sell direct as well as through distributors"],
@@ -1660,6 +1889,7 @@ window.LESSONS['marketing.w01'] = {
 
     { id: "w01l05q5", concept: "mix-critique", type: "short",
       q: "State two serious criticisms of the 4Ps framework and give the strongest defence of continuing to use it.",
+      must: [{"point": "criticism: it is producer-oriented", "any": ["producer", "seller", "done to", "from the firm", "company does"]}, {"point": "criticism: it is static", "any": ["static", "no sequence", "moment", "no time", "does not say when", "order"]}, {"point": "defence: frameworks are judged by usefulness", "any": ["useful", "usefulness", "practice", "nothing has replaced", "still used", "works"]}, {"point": "defence: walking the list catches real omissions", "any": ["checklist", "omission", "catches", "forgot", "completeness", "gap in the plan", "silent on place"]}],
       answer: "**Criticism one — it is producer-oriented:** every element is something the firm does *to* a market, leaving no natural place for relationships, co-creation, or communities that shape a brand without permission. **Criticism two — it is static:** it describes a set of decisions at a moment with no account of sequence, learning or evolution over a product’s life; it says what to decide but never when or in what order. (A third: the categories are conventions chosen partly for alliteration — packaging sits under product although its main job is communication at the shelf.) **Defence:** frameworks are judged by usefulness, not elegance. Nothing proposed since has displaced it in practice. It is memorable under pressure, complete enough that walking the list exposes real omissions — a plan silent on place is genuinely defective — and it maps onto how firms are actually budgeted and organised. Its weaknesses are known and teachable, which is more than its replacements can claim.",
       explain: "Being able to argue both sides is the difference between having learned a framework and having been taught one. Examiners reward the defence more than the criticism, because everyone can criticise." },
 
@@ -1688,6 +1918,7 @@ window.LESSONS['marketing.w01'] = {
 
     { id: "w01l05q9", concept: "four-cs", type: "short",
       q: "Take a gym membership priced at €40 a month. Audit it through the 4Cs, giving one specific point under each C.",
+      must: [{"point": "customer solution: what problem is being solved", "any": ["problem", "job", "solution", "progress", "outcome"]}, {"point": "cost includes time, effort and risk, not only money", "any": ["time", "effort", "risk", "not only money", "total cost", "beyond price"]}, {"point": "convenience: how easy it is for them to buy or use", "any": ["convenien", "easy", "distance", "hours", "access", "how hard"]}, {"point": "communication is two-way and includes listening", "any": ["two-way", "listen", "feedback", "reviews", "complaint", "hear", "both ways"]}],
       answer: "**Customer solution:** the problem is rarely “access to equipment” — it is usually wanting to be fitter, to feel better, or to have a reliable routine, so a gym that sells access alone is answering a question nobody asked; classes, programmes and progress tracking address the actual job. **Cost to the customer:** €40 is only part of it — add travel time, the effort of packing a bag, the social risk of not knowing how to use equipment, and the psychological cost of a rolling contract that is awkward to cancel. **Convenience:** the binding constraint for most members is distance and opening hours relative to their commute; a gym eight minutes further away is used materially less often regardless of quality. **Communication:** most gym communication is one-way acquisition marketing, while the information that would retain members — what to do today, whether they are improving — is absent; listening to why people stop attending is worth more than another January campaign.",
       explain: "The gym case is worth remembering because it shows the Cs catching what the Ps miss: the price is fine, the product is fine, and the business still loses members for reasons that only appear from the customer’s chair." },
 

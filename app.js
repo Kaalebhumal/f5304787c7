@@ -1245,11 +1245,41 @@
         'foundations, then people and markets, then strategy, then the mix, then data, then command.</p>' +
       '</div>';
 
+    var sp = C().spine;
+    if (sp && sp.question) {
+      var sq = el('div', 'spine-q');
+      sq.innerHTML = '<span class="sq-label mono">The one question the whole course answers</span>' +
+        '<p class="sq-text">' + esc(sp.question) + '</p>';
+      col.appendChild(sq);
+    }
+
+    var oc = C().outcomes;
+    if (oc) {
+      var ob = el('section', 'card outcomes');
+      var h = '<h2 class="oc-h">What you will be able to do</h2>';
+      if (oc.claim) h += '<p class="oc-claim">' + esc(oc.claim) + '</p>';
+      h += '<ul class="oc-list">';
+      oc.able.forEach(function (o) {
+        h += '<li><span class="oc-part mono">' + esc(o.part) + '</span><span>' + esc(o.text) + '</span></li>';
+      });
+      h += '</ul>';
+      if (oc.limits && oc.limits.length) {
+        h += '<h3 class="oc-h3">And what it does not give you</h3><ul class="oc-limits">';
+        oc.limits.forEach(function (t) { h += '<li>' + esc(t) + '</li>'; });
+        h += '</ul>';
+      }
+      ob.innerHTML = h;
+      col.appendChild(ob);
+    }
+
     C().parts.forEach(function (part) {
       var ph = el('div', 'block-head');
       ph.innerHTML = '<h2>Part ' + part.id + ' · ' + esc(part.name) + '</h2>' +
         '<span class="hint mono">Weeks ' + part.weeks[0] + '–' + part.weeks[part.weeks.length - 1] + '</span>';
       col.appendChild(ph);
+      if (sp && sp.parts && sp.parts[part.id]) {
+        col.appendChild(el('p', 'part-q', esc(sp.parts[part.id])));
+      }
 
       part.weeks.forEach(function (wn) {
         var w = C().weeks[wn - 1];

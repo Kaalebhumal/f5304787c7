@@ -18,6 +18,45 @@ window.COURSE_DATA.marketing = {
       VI:  "How do you run it, pay for it, and not do harm?"
     }
   },
+  /* What you should be able to DO when the sixteen weeks are over.
+     Written as capabilities, not topics: every line is something that can be
+     checked. `limits` is deliberately here too — the course is honest about
+     what eighty hours cannot buy. */
+  outcomes: {
+    claim: "Take a company you do not work for, judge it from the outside, and produce a marketing " +
+           "plan for it that a sceptical manager would have to argue with rather than dismiss.",
+    able: [
+      { part: "I", text: "Say what marketing is and is not, and name the orientation a company is really run on \u2014 reading it from its prices, its job adverts and its website, not from what it claims." },
+      { part: "I", text: "Draw a market boundary and show how a different boundary changes the share, the rivals and the growth rate you would report." },
+      { part: "I", text: "Run PESTEL, Five Forces and SWOT/TOWS on a real firm and come out with decisions instead of a list." },
+      { part: "II", text: "Trace how a person notices, remembers and decides, and say which stage a given piece of marketing is aimed at." },
+      { part: "II", text: "Name the heuristic or frame a price or an offer is using, and judge whether that use is legitimate." },
+      { part: "II", text: "Map the buying centre in an organisational sale \u2014 who initiates, influences, decides, gates, buys, uses \u2014 and say who must be convinced of what." },
+      { part: "II", text: "Choose the right research design for the question you actually have, write questions that do not manufacture their own answer, and run an experiment that supports a causal claim." },
+      { part: "III", text: "Segment a market on a base that survives the test of being measurable, substantial and actionable, pick a target and defend the pick." },
+      { part: "III", text: "Build a perceptual map from real data and write a positioning statement that rules options out." },
+      { part: "III", text: "Argue differentiation against distinctiveness with the evidence on both sides, rather than repeating whichever you heard first." },
+      { part: "III", text: "Value a brand three ways and say which of the three a finance director will accept." },
+      { part: "IV", text: "Compute elasticity, contribution and the break-even volume of a discount \u2014 including how many extra units a 20% cut has to sell merely to stand still." },
+      { part: "IV", text: "Choose a pricing strategy and show the arithmetic that makes it hold." },
+      { part: "IV", text: "Design a route to the buyer, and diagnose channel conflict before it costs you the channel." },
+      { part: "IV", text: "Write a creative brief, plan media on reach, frequency and recency, and state honestly what advertising can and cannot do." },
+      { part: "V", text: "Compute CAC, LTV and payback, and say at which point a paid-acquisition model stops working." },
+      { part: "V", text: "Tell attribution, marketing-mix modelling and incrementality apart, and explain why last-click quietly over-credits search." },
+      { part: "V", text: "Produce a one-page report that does not flatter the person who commissioned it." },
+      { part: "VI", text: "Write a full marketing plan: situation, objectives, segmentation and positioning, mix, budget, measurement, risk." },
+      { part: "VI", text: "Defend that budget to someone whose job is to cut it." },
+      { part: "VI", text: "Recognise greenwashing and say where the legal and the ethical line each run." },
+      { part: "\u2014", text: "Interrogate any marketing number put in front of you \u2014 where it came from, what it counts, what it leaves out, and who benefits from it being believed." }
+    ],
+    limits: [
+      "Eighty lectures is roughly eighty hours. A bachelor\u2019s degree is about three thousand. The reasoning transfers; the hours do not.",
+      "No degree, no transcript, no supervisor, and no three years of arguing about cases with other students \u2014 which is a real part of what a business school sells.",
+      "You will not have run a budget or lost money on a campaign. The course can give you the reasoning. Only a job or your own venture gives you the scars.",
+      "Specialist depth \u2014 marketing econometrics, research methods at doctoral level \u2014 is deliberately out of scope."
+    ]
+  },
+
   parts: [
     { id: "I",   name: "Foundations",            weeks: [1, 2, 3] },
     { id: "II",  name: "People and markets",     weeks: [4, 5, 6] },
