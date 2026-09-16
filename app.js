@@ -1161,11 +1161,15 @@
         '<p style="font-size:14px;color:var(--ink-2);line-height:1.6;margin:0 0 14px;max-width:58ch">' + esc(next.blurb) + '</p>' +
         '<div style="display:flex;gap:9px;flex-wrap:wrap">' +
         (avail
-          ? '<button class="btn btn-primary" data-go="#/lesson/' + next.id + '">Begin lecture ' + ICON.arrow + '</button>'
+          ? (window.VIDEOS && window.VIDEOS[H.ACTIVE() + '.' + next.id]
+              ? '<button class="btn btn-primary" id="todayWatch">Watch lecture ' + next.idx + ' ' + ICON.arrow + '</button>'
+              : '<button class="btn btn-primary" data-go="#/lesson/' + next.id + '">Begin lecture ' + ICON.arrow + '</button>')
           : '<span class="pill gold">Not yet written — see the syllabus</span>') +
         '<button class="btn" data-go="#/syllabus">Full syllabus</button>' +
         '</div></div></div>';
     col.appendChild(card);
+    var tw = $('#todayWatch', card);
+    if (tw) tw.onclick = function () { T.autoWatch = next.id; go(withCourse('#/lesson/' + next.id)); };
 
     /* review */
     var rcard = el('div', 'card');
@@ -1476,6 +1480,13 @@
 
     /* slides for the projector, built from the very nodes just rendered */
     try { T.Present.build(built.node, meta, L, body); } catch (e) {}
+
+    /* arrived here from "watch lecture N" — open the player straight away */
+    if (T.autoWatch === meta.id) {
+      T.autoWatch = null;
+      var av = T.Watch && T.Watch.of(meta);
+      if (av) setTimeout(function () { T.Watch.open(meta, av); }, 120);
+    }
 
     /* --- the end of the lecture: say plainly what to do next --- */
     var nx = el('div', 'end-card');
@@ -2176,6 +2187,104 @@
   };
   T.Present = Present;
 
+  /* ---------------------------- offline ------------------------------
+     The app already holds the text, the figures and the tests without a
+     network. A video is too big to force on anybody, so keeping one is a
+     choice, made per lecture, with the size shown and a way to undo it.
+     -------------------------------------------------------------------- */
+  var Offline = {
+    CACHE: 'tms-video',
+    ok: (typeof caches !== 'undefined' && !!window.fetch),
+
+    has: function (src) {
+      if (!Offline.ok) return Promise.resolve(false);
+      return caches.open(Offline.CACHE)
+        .then(function (c) { return c.match(new URL(src, location.href).href, { ignoreSearch: true }); })
+        .then(function (hit) { return !!hit; })
+        .catch(function () { return false; });
+    },
+
+    /* streamed, so the button can show how far it has got */
+    save: function (src, onProgress) {
+      if (!Offline.ok) return Promise.reject(new Error('no cache'));
+      var url = new URL(src, location.href).href;
+      return fetch(url).then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        var total = parseInt(res.headers.get('content-length') || '0', 10);
+        var type = res.headers.get('content-type');
+        if (!res.body || !res.body.getReader) {
+          return res.arrayBuffer().then(function (b) { return { buf: b, type: type }; });
+        }
+        var reader = res.body.getReader(), chunks = [], got = 0;
+        return (function pump() {
+          return reader.read().then(function (r) {
+            if (r.done) {
+              var out = new Uint8Array(got), at = 0;
+              chunks.forEach(function (c) { out.set(c, at); at += c.length; });
+              return { buf: out.buffer, type: type };
+            }
+            chunks.push(r.value);
+            got += r.value.length;
+            if (onProgress && total) onProgress(got / total);
+            return pump();
+          });
+        })();
+      }).then(function (o) {
+        return caches.open(Offline.CACHE).then(function (c) {
+          return c.put(url, new Response(o.buf, {
+            headers: { 'Content-Type': o.type || 'video/mp4', 'Content-Length': String(o.buf.byteLength) }
+          }));
+        });
+      });
+    },
+
+    remove: function (src) {
+      if (!Offline.ok) return Promise.resolve(false);
+      var url = new URL(src, location.href).href;
+      return caches.open(Offline.CACHE).then(function (c) { return c.delete(url, { ignoreSearch: true }); });
+    },
+
+    usage: function () {
+      if (!navigator.storage || !navigator.storage.estimate) return Promise.resolve(null);
+      return navigator.storage.estimate()
+        .then(function (e) { return { used: e.usage || 0, quota: e.quota || 0 }; })
+        .catch(function () { return null; });
+    },
+
+    wire: function (btn, v) {
+      if (!btn) return;
+      if (!Offline.ok) { btn.hidden = true; return; }
+      function paint(state, pct) {
+        if (state === 'saved') {
+          btn.className = 'keep-btn saved';
+          btn.innerHTML = '<span>Saved on this device</span><span class="keep-x">remove</span>';
+        } else if (state === 'saving') {
+          btn.className = 'keep-btn busy';
+          btn.innerHTML = '<span>Saving… ' + Math.round((pct || 0) * 100) + '%</span>';
+        } else {
+          btn.className = 'keep-btn';
+          btn.innerHTML = '<span>Keep on this device</span><span class="keep-mb">' + v.mb + ' MB</span>';
+        }
+      }
+      Offline.has(v.src).then(function (yes) { paint(yes ? 'saved' : 'no'); });
+      btn.onclick = function () {
+        if (btn.classList.contains('busy')) return;
+        Offline.has(v.src).then(function (yes) {
+          if (yes) return Offline.remove(v.src).then(function () { paint('no'); });
+          paint('saving', 0);
+          return Offline.save(v.src, function (p) { paint('saving', p); })
+            .then(function () { paint('saved'); })
+            .catch(function () {
+              btn.className = 'keep-btn';
+              btn.innerHTML = '<span>Could not save — check the connection</span>';
+              setTimeout(function () { paint('no'); }, 2600);
+            });
+        });
+      };
+    }
+  };
+  T.Offline = Offline;
+
   /* ----------------------------- watch -------------------------------
      A rendered lecture: the slides and the voice as one file. Kaaleb asked
      for exactly this — something to watch and listen to, with the written
@@ -2198,7 +2307,7 @@
       r.innerHTML =
         '<div class="wa-bar">' +
           '<span class="wa-title">' + esc(meta.title) + '</span>' +
-          '<span class="wa-note mono">' + v.mb + ' MB · first play needs a connection</span>' +
+          '<button class="keep-btn" id="waKeep"></button>' +
           '<button class="wa-close" id="waClose" aria-label="Close the lecture">✕</button>' +
         '</div>' +
         '<div class="wa-stage">' +
@@ -2210,6 +2319,7 @@
       document.body.classList.add('watching');
       Watch.root = r;
       $('#waClose', r).onclick = Watch.close;
+      Offline.wire($('#waKeep', r), v);
       document.addEventListener('keydown', Watch.key, true);
       var vid = $('#waVid', r);
       /* remember where he stopped, per lecture */

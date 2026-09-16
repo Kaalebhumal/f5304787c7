@@ -1998,3 +1998,16 @@ body.watching { overflow: hidden; }
 .start-alt:hover { color: var(--ink-2); border-color: var(--rule-strong); }
 
 .lesson-aims { margin-top: 4px; }
+
+/* ---- keeping a lecture on the device ---- */
+.keep-btn {
+  flex: 0 0 auto; display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 11px; border-radius: 999px; cursor: pointer; font: inherit; font-size: 12px;
+  border: 1px solid rgba(255,255,255,.22); background: transparent; color: inherit; opacity: .8;
+}
+.keep-btn:hover { opacity: 1; }
+.keep-btn .keep-mb { font-family: var(--font-mono, ui-monospace, monospace); font-size: 10.5px; opacity: .6; }
+.keep-btn .keep-x { font-size: 10.5px; opacity: .55; text-decoration: underline; }
+.keep-btn.saved { border-color: rgba(120,220,170,.5); color: #9fe6c4; opacity: 1; }
+.keep-btn.busy { border-color: rgba(255,255,255,.35); opacity: 1; cursor: default; }
+@media (max-width: 560px) { .keep-btn .keep-mb, .keep-btn .keep-x { display: none; } }

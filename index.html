@@ -6,11 +6,11 @@
 <title>The Marketing Semester</title>
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
-<meta name="description" content="A sixteen-week university course in marketing: lectures read aloud, figures to redraw by hand, and tests that track what you keep getting wrong.">
+<meta name="description" content="Two sixteen-week university courses, marketing and economics: video lectures, the written text, and tests that mark what you write.">
 <meta name="theme-color" content="#f1f2f0" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#11171b" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Marketing">
+<meta name="apple-mobile-web-app-title" content="Semester">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta property="og:title" content="The Marketing Semester">
 <meta property="og:description" content="Sixteen weeks, eighty lectures, one hour a day.">
@@ -79,6 +79,15 @@ img { max-width: 100%; }
 <script>
 if ('serviceWorker' in navigator) {
   addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
+  // A new build takes over immediately (skipWaiting + clients.claim), but the page
+  // already open keeps the old files until it reloads. Reload it once, by itself,
+  // so nobody is left listening to a stale copy.
+  var had = !!navigator.serviceWorker.controller, swapped = false;
+  navigator.serviceWorker.addEventListener('controllerchange', function () {
+    if (!had || swapped) return;
+    swapped = true;
+    location.reload();
+  });
 }
 </script>
 </body>

@@ -1,7 +1,7 @@
 {
-  "name": "The Marketing Semester",
-  "short_name": "Marketing",
-  "description": "A sixteen-week university course in marketing.",
+  "name": "Semester — marketing and economics",
+  "short_name": "Semester",
+  "description": "Two sixteen-week university courses: marketing and economics. Lectures, video, and marked tests.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
